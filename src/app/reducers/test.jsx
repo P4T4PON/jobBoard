@@ -1,7 +1,7 @@
-export const testReducer = (state = 0, action) => {
+export const testReducer = (state = false, action) => {
   switch (action.type) {
     case 'TEST':
-      return state + 1;
+      return !state;
     default:
       return state;
   }

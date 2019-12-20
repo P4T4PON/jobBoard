@@ -3,3 +3,9 @@ export const test = () => {
     type: 'TEST'
   };
 };
+
+export const active = () => {
+  return {
+    type: 'FALSE'
+  };
+};
