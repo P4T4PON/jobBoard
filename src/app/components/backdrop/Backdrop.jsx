@@ -1,12 +1,11 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { Component } from 'react';
 
-import { test } from '../../../app/actions/index';
 import './Backdrop.css';
 
-const Backdrop = () => {
-  const dispatch = useDispatch();
-  return <div className="backdrop" onClick={() => dispatch(test())}></div>;
-};
+class Backdrop extends Component {
+  render() {
+    return <div className="backdrop" onClick={this.props.toggleMenu}></div>;
+  }
+}
 
 export default Backdrop;

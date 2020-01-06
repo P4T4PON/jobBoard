@@ -1,57 +1,127 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { test, active } from '../../actions/index';
 
+import arrowUp from './arrow-up.png';
+import SideDrawer from '../sideDrawer/SideDrawer';
 import './Navbar.css';
 
-const Navbar = () => {
-  const dispatch = useDispatch();
+class Navbar extends Component {
+  state = {
+    menu_active: false,
+    sideBar_active: false,
+    pinkThing_active: true
+  };
 
-  return (
-    <div className="navbar">
-      <Link to="/">
-        <h1 className="hov title">justjoin.it</h1>
-      </Link>
+  toggleMenu = () => {
+    this.setState({ menu_active: !this.state.menu_active });
+  };
 
-      <Link to="/" onClick={() => dispatch(active())}>
-        <h2 className={active ? 'hov txt active' : 'hov txt'}>
-          <i className="fas fa-suitcase"></i>
-          Job Offers
-        </h2>
-      </Link>
+  toggleSideBar = () => {
+    this.setState({ sideBar_active: !this.state.sideBar_active });
+  };
 
-      <Link to="/Brands" onClick={() => dispatch(active())}>
-        <h2 className={active ? 'hov txt' : 'hov txt  active'}>
-          <i className="far fa-building"></i>
-          Brand Stories
-        </h2>
-      </Link>
+  hideSidebar = () => {
+    this.setState({ sideBar_active: false });
+  };
 
-      <a href="https://geek.justjoin.it/">
-        <h2 className="hov">
-          <i className="far fa-newspaper"></i>
-          Just Geek IT
-        </h2>
-      </a>
+  togglePinkThing = () => {
+    this.setState({ pinkThing_active: true });
+  };
 
-      <Link to="/devs/">
-        <h2 className="hov">
-          <i className="fas fa-paste "></i>
-          Matchmaking
-        </h2>
-      </Link>
-      <div className="spacer" />
+  togglePurpThing = () => {
+    this.setState({ pinkThing_active: false });
+  };
 
-      <Link to="/add-offer">
-        <button className="bg-pink">Post a Job</button>
-      </Link>
-      <button className="bg-purple">Sign in</button>
-      <div className="bars hov" onClick={() => dispatch(test())}>
-        <i className="fas fa-bars"></i>
+  toggleNone = () => {
+    this.setState({ pinkThing_active: true });
+  };
+
+  render() {
+    return (
+      <div className="navbar">
+        <Link to="/">
+          <h1 className="title" onClick={this.togglePinkThing}>
+            justjoin.it
+          </h1>
+        </Link>
+        <Link to="/">
+          <h2
+            className={
+              this.state.pinkThing_active ? 'hov txt active' : 'hov txt'
+            }
+            onClick={this.togglePinkThing}
+          >
+            <i className="fas fa-suitcase"></i>
+            Job Offers
+          </h2>
+        </Link>
+        <Link to="/Brands">
+          <h2
+            className={
+              this.state.pinkThing_active ? 'hov txt' : 'hov txt active'
+            }
+            onClick={this.togglePurpThing}
+          >
+            <i className="far fa-building"></i>
+            Brand Stories
+          </h2>
+        </Link>
+        <a href="https://geek.justjoin.it/" target="_blank">
+          <h2 className="hov">
+            <i className="far fa-newspaper"></i>
+            Just Geek IT
+          </h2>
+        </a>
+        <Link to="/devs/">
+          <h2 className="hov" onClick={this.toggleNone}>
+            <i className="fas fa-paste "></i>
+            Matchmaking
+          </h2>
+        </Link>
+        <div className="spacer" />
+        <div className="nav-right">
+          <Link to="/add-offer">
+            <button className="bg-pink">Post a Job</button>
+          </Link>
+          <div className="sign-in">
+            <button className="bg-purple" onClick={this.toggleSideBar}>
+              Sign in
+            </button>
+          </div>
+        </div>
+        <div className="bars hov" onClick={this.toggleMenu}>
+          <i className="fas fa-bars"></i>
+        </div>
+
+        <div
+          className={
+            this.state.sideBar_active ? 'side-bar ' : 'side-bar display-none'
+          }
+        >
+          <div className="arrowUp">
+            <img src={arrowUp} alt="" />
+          </div>
+          <Link to="/devs/" onClick={this.hideSidebar}>
+            <div className="sb-link">
+              <i className="far fa-grin pink-icon"></i>
+              <p className="link-paragraph">Sign in as a Developer</p>
+            </div>
+          </Link>
+
+          <Link to="/users/sign_in" onClick={this.hideSidebar}>
+            <div className="sb-link">
+              <i className="fas fa-suitcase purple-icon"></i>
+              <p>Sign in to Emlployer Panel</p>
+            </div>
+          </Link>
+        </div>
+        <SideDrawer
+          menu_active={this.state.menu_active}
+          toggleMenu={this.toggleMenu}
+        />
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Navbar;

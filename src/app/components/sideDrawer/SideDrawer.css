@@ -18,31 +18,48 @@
 
 .side-drawer ul {
   padding: 0;
-  height: 100%;
+  width: 100%;
   list-style: none;
   display: flex;
   flex-direction: column;
 }
 
 .side-drawer li {
-  margin: 0.5rem 0;
+  height: 56px;
   width: 100%;
-  font-size: 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: #737373;
 }
 
+.side-drawer li i {
+  margin-right: 40px;
+}
+.mar {
+  margin-right: 30px !important;
+}
 .side-drawer li:hover {
   background-color: #f2f2f2;
+  cursor: pointer;
 }
 
 .side-drawer a {
+  width: 100%;
   color: grey;
   text-decoration: none;
   font-size: 1.2rem;
+  color: #737373;
+}
+
+.side-drawer a:visited {
+  color: #737373;
 }
 
 .side-drawer a:hover,
 .side-drawer a:active {
   cursor: pointer;
+  color: #737373 !important;
 }
 
 .side-drawer h1 {
@@ -55,4 +72,22 @@
   font-size: 20px;
   margin-right: 40px;
   margin-left: 40px;
+}
+
+.bars {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+
+  font-size: 24px;
+  margin: 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-none {
+  display: none;
 }

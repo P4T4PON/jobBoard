@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './app/components/navbar/Navbar';
 import './App.css';
@@ -7,14 +7,13 @@ import BrandStories from './app/components/brandStories/BrandStories';
 import JobOffers from './app/components/jobOffers/JobOffers';
 import Machmaking from './app/components/matchmaking/Matchmaking';
 import AddOffer from './app/components/addOffer/AddOffer';
-import SideDrawer from './app/components/sideDrawer/SideDrawer';
-import BackDrop from './app/components/backdrop/Backdrop';
+import Register from './app/components/matchmaking/register/Register';
+import ResetPassword from './app/components/matchmaking/reset-password/ResetPassword';
+import UserLogin from './app/components/userLogin/UserLogin';
+import UserRegister from './app/components/userLogin/userRegister/UserRegister';
+import TermsAndPolicies from './app/components/termsAndPolicies/TermsAndPolicies';
 
-const App: React.FC = () => {
-  const testReducer = useSelector<any | unknown, any | unknown>(
-    state => state.test
-  );
-
+const App = () => {
   return (
     <div>
       <Router>
@@ -66,15 +65,61 @@ const App: React.FC = () => {
             )}
           />
         </Switch>
-
-        {testReducer ? (
-          <Fragment>
-            <SideDrawer />
-            <BackDrop />
-          </Fragment>
-        ) : (
-          <SideDrawer />
-        )}
+        <Switch>
+          <Route
+            exact
+            path="/devs/Register"
+            render={props => (
+              <Fragment>
+                <Register />
+              </Fragment>
+            )}
+          />
+        </Switch>
+        <Switch>
+          <Route
+            exact
+            path="/devs/reset-password"
+            render={props => (
+              <Fragment>
+                <ResetPassword />
+              </Fragment>
+            )}
+          />
+        </Switch>
+        <Switch>
+          <Route
+            exact
+            path="/users/sign_in"
+            render={props => (
+              <Fragment>
+                <UserLogin />
+              </Fragment>
+            )}
+          />
+        </Switch>
+        <Switch>
+          <Route
+            exact
+            path="/users/password/new"
+            render={props => (
+              <Fragment>
+                <UserRegister />
+              </Fragment>
+            )}
+          />
+        </Switch>
+        <Switch>
+          <Route
+            exact
+            path="/terms-and-privacy-policies"
+            render={props => (
+              <Fragment>
+                <TermsAndPolicies />
+              </Fragment>
+            )}
+          />
+        </Switch>
       </Router>
     </div>
   );

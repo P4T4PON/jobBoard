@@ -1,0 +1,54 @@
+.backGround {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+
+.wide {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 900px;
+  height: 250px;
+  margin-top: 20px;
+}
+
+.content h1 {
+  font-size: 24px;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  color: #37474f;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.content h3 {
+  font-size: 16px;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  color: #37474f;
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.content a:hover {
+  cursor: pointer;
+}
+.content a:link {
+  text-decoration: none;
+  color: #039be5;
+}
+
+.content a:visited {
+  text-decoration: none;
+  color: #039be5;
+}
+
+.content i {
+  margin-left: 5px;
+}

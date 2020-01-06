@@ -4,7 +4,9 @@
   text-align: center;
   align-items: center;
   height: 80px;
+  font-weight: 600;
   line-height: 1;
+  border-bottom: 1px solid lightgrey;
 }
 
 .navbar i {
@@ -14,7 +16,7 @@
 h2 {
   margin-right: 30px;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .navbar button {
@@ -22,7 +24,7 @@ h2 {
   font-weight: 600;
   line-height: 38px;
   font-size: 14px;
-  height: 42px;
+  height: 40px;
   margin-right: 12px;
   align-self: center;
   justify-content: center;
@@ -32,6 +34,13 @@ h2 {
   padding: 2px;
   width: 120px;
   border: none;
+  outline: none;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  margin-right: 70px;
 }
 
 .navbar button:hover {
@@ -42,8 +51,16 @@ h2 {
   background: #9c27b0;
 }
 
+.bg-purple:hover {
+  background-color: #660066;
+}
+
 .bg-pink {
   background-color: #ff4081;
+}
+
+.bg-pink:hover {
+  background-color: #cc0066;
 }
 
 .c-pink {
@@ -60,9 +77,13 @@ h2 {
 }
 
 .bars {
-  font-size: 24px;
-  margin-right: 40px;
+  margin-top: 24px;
+  font-size: 20px;
   margin-left: 20px;
+}
+
+.fas.fa-bars {
+  margin-top: 5px;
 }
 
 .title {
@@ -72,10 +93,13 @@ h2 {
   fill: #37474f;
 }
 
-.navbar a:hover,
-.navbar a:link {
+.navbar a:hover {
   text-decoration: none;
   color: #ff69b4;
+}
+
+.navbar a:link {
+  text-decoration: none;
 }
 
 a:visited {
@@ -88,4 +112,91 @@ a:active {
 
 .spacer {
   flex: 1;
+}
+
+.sign-in img {
+  color: white;
+  position: absolute;
+  top: 28px;
+  right: 100px;
+  width: 25px;
+}
+
+.sign-in img:hover {
+  cursor: pointer;
+}
+
+.side-bar {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+  right: 70px;
+  background-color: white;
+  width: 320px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 2px #888888;
+  z-index: 20;
+}
+
+.display-none {
+  display: none;
+}
+
+.arrowUp img {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  width: 24px;
+}
+
+.sb-link {
+  margin-left: 15px;
+  width: 90%;
+  border: 1px solid lightgrey;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+.sb-link:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+.pink-icon {
+  border-radius: 100px;
+  background: rgb(255, 227, 237) none repeat scroll 0% 0%;
+  color: rgb(255, 64, 129);
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purple-icon {
+  border-radius: 100px;
+  background-color: rgb(242, 225, 244);
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(163, 53, 181);
+}
+
+.link-paragraph {
+  margin-right: 24px;
 }
