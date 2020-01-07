@@ -9,7 +9,8 @@ class Navbar extends Component {
   state = {
     menu_active: false,
     sideBar_active: false,
-    pinkThing_active: true
+    jjit_active: true,
+    brandStories_active: false
   };
 
   toggleMenu = () => {
@@ -24,32 +25,33 @@ class Navbar extends Component {
     this.setState({ sideBar_active: false });
   };
 
-  togglePinkThing = () => {
-    this.setState({ pinkThing_active: true });
+  togglejjit = () => {
+    this.setState({ jjit_active: true });
+    this.setState({ brandStories_active: false });
   };
 
-  togglePurpThing = () => {
-    this.setState({ pinkThing_active: false });
+  toggleBrandStories = () => {
+    this.setState({ brandStories_active: true });
+    this.setState({ jjit_active: false });
   };
 
   toggleNone = () => {
-    this.setState({ pinkThing_active: true });
+    this.setState({ brandStories_active: false });
+    this.setState({ jjit_active: false });
   };
 
   render() {
     return (
       <div className="navbar">
         <Link to="/">
-          <h1 className="title" onClick={this.togglePinkThing}>
+          <h1 className="title" onClick={this.togglejjit}>
             justjoin.it
           </h1>
         </Link>
         <Link to="/">
           <h2
-            className={
-              this.state.pinkThing_active ? 'hov txt active' : 'hov txt'
-            }
-            onClick={this.togglePinkThing}
+            className={this.state.jjit_active ? 'hov txt active' : 'hov txt'}
+            onClick={this.togglejjit}
           >
             <i className="fas fa-suitcase"></i>
             Job Offers
@@ -58,9 +60,9 @@ class Navbar extends Component {
         <Link to="/Brands">
           <h2
             className={
-              this.state.pinkThing_active ? 'hov txt' : 'hov txt active'
+              this.state.brandStories_active ? 'hov txt active' : 'hov txt '
             }
-            onClick={this.togglePurpThing}
+            onClick={this.toggleBrandStories}
           >
             <i className="far fa-building"></i>
             Brand Stories

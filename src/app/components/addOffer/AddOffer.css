@@ -2,7 +2,6 @@
   background: url(./header_background.jpg) no-repeat;
   display: flex;
   flex-direction: column;
-  overflow: visible;
   min-height: 443px;
 }
 
@@ -276,7 +275,6 @@
   width: 100%;
   height: 600px;
   background-color: #eeeeee;
-  overflow: hidden;
 }
 
 .side-nav {
@@ -311,16 +309,33 @@
   display: flex;
 }
 
-.slide {
-  max-height: 320px;
-  min-width: 800px;
-  background-color: white;
-  padding: 30px 60px;
-  margin-right: 50px;
+.carousel-row {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-dots li.carousel-dots-active button:before {
+  color: #ff4081 !important;
+}
+
+.carousel-dots li.carousel-dots-active button:hover {
+  color: #ff4081 !important;
+}
+
+.slide {
+  background-color: white;
+  max-width: 820px;
+  min-width: 320px;
+  padding: 30px 60px;
+}
+
+.correct {
+  height: 320px;
+}
+
+.correct img {
+  margin-top: 40px;
 }
 
 .slide-title {

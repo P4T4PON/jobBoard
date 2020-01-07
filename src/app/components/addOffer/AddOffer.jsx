@@ -14,12 +14,14 @@ import Bar from './bar.svg';
 import Brain from './brain.svg';
 import Medal from './medal.svg';
 import Macbook from './macbook.png';
+import Slider from 'infinite-react-carousel';
 
 export class AddOffer extends Component {
   state = {
     counter: 1,
     style: true,
-    pl: true
+    pl: true,
+    myRef: React.createRef()
   };
 
   nextSlide = () => {
@@ -313,193 +315,104 @@ export class AddOffer extends Component {
               <h1>Rekomendacje</h1>
               <div className="carousel-box">
                 <div className="side-nav">
-                  <div className="prev" onClick={this.prevSlide}>
+                  <div className="prev" onClick={this.state.myRef.slickPrev}>
                     {' '}
                     <i className="fas fa-arrow-left"></i>{' '}
                   </div>
-                  <div className="next" onClick={this.nextSlide}>
+                  <div className="next" onClick={this.state.myRef.slickNext}>
                     {' '}
                     <i className="fas fa-arrow-right"></i>
                   </div>
                 </div>
 
-                <div className="carousel-content">
-                  <div className="carousel-slider">
-                    <div className="carousel-real">
-                      <div
-                        className={
-                          this.state.style
-                            ? 'slide firstClone nextSlide'
-                            : 'slide firstClone prevSlide'
-                        }
-                      >
-                        <div className="slide-title">Paulina Brzezińska</div>
-                        <div className="slide-sub_title">
-                          Recruitment Lead - VentureDevs
-                        </div>
-                        <div className="slide-text">
-                          JustJoin IT to wielowymiarowy portal, w pełni
-                          przystosowany do wymogów profesjonalnej rekrutacji IT.
-                          Przejrzystość i transparentność ofert to kluczowe
-                          kryteria, dla których ten portal wybierają najlepsze
-                          firmy i najlepiej wykwalifikowani kandydaci. Oferty
-                          pracy, BrandStory oraz inicjatywy takie jak
-                          justgeek.it skupiają wokół JustJoin najlepszych
-                          specjalistów w branży.
-                        </div>
-                        <img src={Vdlogo}></img>
-                      </div>
-                      <div
-                        className={
-                          this.state.style
-                            ? 'slide nextSlide'
-                            : 'slide prevSlide'
-                        }
-                      >
-                        <div className="slide-title">Marta Serafin</div>
-                        <div className="slide-sub_title">
-                          HR Specialist - DocPlanner / ZnanyLekarz
-                        </div>
-                        <div className="slide-text">
-                          JustJoinIt to portal dla firm, które oczekują dwóch
-                          rzeczy. Po pierwsze: wyników. JJIT z porównaniem do
-                          konkurencji na rynku po prostu "dowozi". Bez
-                          obiecywania niemożliwego oraz bez tracenia czasu
-                          dociera do kandydatów, do których nikt wcześniej nie
-                          dotarł. Po drugie: to portal, dla tych, którzy szukają
-                          nieszablonowego podejścia do marketingu w rekrutacji.
-                          Pisaliśmy wspólnie artykuły, braliśmy udział w
-                          streamingu, wspólnie stworzyliśmy nasz profil
-                          brandowy. JJIT to dla nas nie tablica ogłoszeń o
-                          pracę. Dla nas to Partner{' '}
-                        </div>
-                        <img src={Doc}></img>
-                      </div>
-
-                      <div
-                        className={
-                          this.state.style
-                            ? 'slide nextSlide'
-                            : 'slide prevSlide'
-                        }
-                      >
-                        <div className="slide-title">Anastazja Shelepava</div>
-                        <div className="slide-sub_title">
-                          Talent Acquisition Partner - Schibsted Tech Polska
-                        </div>
-                        <div className="slide-text">
-                          Dzięki Justjoin.it udało nam się zatrudnić 5 mocnych
-                          developerów w zeszłym roku, co jest dobrym wynikiem w
-                          porównaniu do innych portali ogłoszeniowych -
-                          otrzymujemy mniej zgłoszeń, ale są one zdecydowanie
-                          bardziej wartościowe dla nas. Jesteśmy bardzo
-                          zadowoleni ze współpracy, dziękujemy!
-                        </div>
-                        <img src={Schib}></img>
-                      </div>
-
-                      <div
-                        className={
-                          this.state.style
-                            ? 'slide nextSlide'
-                            : 'slide prevSlide'
-                        }
-                      >
-                        <div className="slide-title">Tomasz Potański</div>
-                        <div className="slide-sub_title">
-                          Managing Partner at DevsData
-                        </div>
-                        <div className="slide-text">
-                          W moim biznesie bardzo ważna jest szybkość reakcji,
-                          oferty są pilne, a konkurencja - duża. JJ.it dobrze to
-                          rozumie - zapewniając personalny kontakt z klientem -
-                          uruchamiało promocje marketingowa i social boost juz
-                          tego samego dnia, ktorego dostali zgłoszenie. Jakość
-                          kandydatow jest bardzo dobra, i - w przeciwieństwie do
-                          pewnego konkurencyjnego portalu na polskim rynku -
-                          bardzo podoba mi się to, ze mogę elastycznie, opisowo
-                          wyrazić, z czym oferta jest związana, co będzie
-                          zadaniem kandydata i jakie są dokładne wymagania. Moim
-                          zdaniem najlepszy portal i usługa tego typu w Polsce.
-                        </div>
-                        <img src={Dev}></img>
-                      </div>
-
-                      <div
-                        className={
-                          this.state.style
-                            ? 'slide owl nextSlide'
-                            : 'slide owl prevSlide'
-                        }
-                      >
-                        <div className="slide-title">Jakub Przyborowski</div>
-                        <div className="slide-sub_title">
-                          Co-Founder & Lead Dev - Owls Department
-                        </div>
-                        <div className="slide-text">
-                          justjoin.it wywróciło branżę do góry nogami. Teraz
-                          każda kolejna rekrutacja kończy się dla nas sukcesem,
-                          a proces rozwoju zespołu przestał być karkołomny.
-                          Najbardziej cenię sobie to, że za portal odpowiadają
-                          świetni i zaangażowani ludzie, którzy skutecznie
-                          starają się ułatwiać życie pracodawcom i kandydatom.
-                        </div>
-                        <img src={Owl}></img>
-                      </div>
-
-                      <div
-                        className={
-                          this.state.style
-                            ? 'slide nextSlide'
-                            : 'slide prevSlide'
-                        }
-                      >
-                        <div className="slide-title">Paulina Brzezińska</div>
-                        <div className="slide-sub_title">
-                          Recruitment Lead - VentureDevs
-                        </div>
-                        <div className="slide-text">
-                          JustJoin IT to wielowymiarowy portal, w pełni
-                          przystosowany do wymogów profesjonalnej rekrutacji IT.
-                          Przejrzystość i transparentność ofert to kluczowe
-                          kryteria, dla których ten portal wybierają najlepsze
-                          firmy i najlepiej wykwalifikowani kandydaci. Oferty
-                          pracy, BrandStory oraz inicjatywy takie jak
-                          justgeek.it skupiają wokół JustJoin najlepszych
-                          specjalistów w branży.
-                        </div>
-                        <img src={Vdlogo}></img>
-                      </div>
-
-                      <div
-                        className={
-                          this.state.style
-                            ? 'slide lastClone nextSlide'
-                            : 'slide lastClone prevSlide'
-                        }
-                      >
-                        <div className="slide-title">Marta Serafin</div>
-                        <div className="slide-sub_title">
-                          HR Specialist - DocPlanner / ZnanyLekarz
-                        </div>
-                        <div className="slide-text">
-                          JustJoinIt to portal dla firm, które oczekują dwóch
-                          rzeczy. Po pierwsze: wyników. JJIT z porównaniem do
-                          konkurencji na rynku po prostu "dowozi". Bez
-                          obiecywania niemożliwego oraz bez tracenia czasu
-                          dociera do kandydatów, do których nikt wcześniej nie
-                          dotarł. Po drugie: to portal, dla tych, którzy szukają
-                          nieszablonowego podejścia do marketingu w rekrutacji.
-                          Pisaliśmy wspólnie artykuły, braliśmy udział w
-                          streamingu, wspólnie stworzyliśmy nasz profil
-                          brandowy. JJIT to dla nas nie tablica ogłoszeń o
-                          pracę. Dla nas to Partner{' '}
-                        </div>
-                        <img src={Doc}></img>
-                      </div>
+                <Slider dots ref={this.myRef} dotsClass="carousel-dots">
+                  <div className="slide">
+                    <div className="slide-title">Marta Serafin</div>
+                    <div className="slide-sub_title">
+                      HR Specialist - DocPlanner / ZnanyLekarz
                     </div>
+                    <div className="slide-text">
+                      JustJoinIt to portal dla firm, które oczekują dwóch
+                      rzeczy. Po pierwsze: wyników. JJIT z porównaniem do
+                      konkurencji na rynku po prostu "dowozi". Bez obiecywania
+                      niemożliwego oraz bez tracenia czasu dociera do
+                      kandydatów, do których nikt wcześniej nie dotarł. Po
+                      drugie: to portal, dla tych, którzy szukają
+                      nieszablonowego podejścia do marketingu w rekrutacji.
+                      Pisaliśmy wspólnie artykuły, braliśmy udział w streamingu,
+                      wspólnie stworzyliśmy nasz profil brandowy. JJIT to dla
+                      nas nie tablica ogłoszeń o pracę. Dla nas to Partner{' '}
+                    </div>
+                    <img src={Doc}></img>
                   </div>
-                </div>
+                  <div className="slide correct">
+                    <div className="slide-title">Anastazja Shelepava</div>
+                    <div className="slide-sub_title">
+                      Talent Acquisition Partner - Schibsted Tech Polska
+                    </div>
+                    <div className="slide-text">
+                      Dzięki Justjoin.it udało nam się zatrudnić 5 mocnych
+                      developerów w zeszłym roku, co jest dobrym wynikiem w
+                      porównaniu do innych portali ogłoszeniowych - otrzymujemy
+                      mniej zgłoszeń, ale są one zdecydowanie bardziej
+                      wartościowe dla nas. Jesteśmy bardzo zadowoleni ze
+                      współpracy, dziękujemy!
+                    </div>
+                    <img src={Schib}></img>
+                  </div>
+
+                  <div className="slide">
+                    <div className="slide-title">Tomasz Potański</div>
+                    <div className="slide-sub_title">
+                      Managing Partner at DevsData
+                    </div>
+                    <div className="slide-text">
+                      W moim biznesie bardzo ważna jest szybkość reakcji, oferty
+                      są pilne, a konkurencja - duża. JJ.it dobrze to rozumie -
+                      zapewniając personalny kontakt z klientem - uruchamiało
+                      promocje marketingowa i social boost juz tego samego dnia,
+                      ktorego dostali zgłoszenie. Jakość kandydatow jest bardzo
+                      dobra, i - w przeciwieństwie do pewnego konkurencyjnego
+                      portalu na polskim rynku - bardzo podoba mi się to, ze
+                      mogę elastycznie, opisowo wyrazić, z czym oferta jest
+                      związana, co będzie zadaniem kandydata i jakie są dokładne
+                      wymagania. Moim zdaniem najlepszy portal i usługa tego
+                      typu w Polsce.
+                    </div>
+                    <img src={Dev}></img>
+                  </div>
+                  <div className="slide owl correct">
+                    <div className="slide-title">Jakub Przyborowski</div>
+                    <div className="slide-sub_title">
+                      Co-Founder & Lead Dev - Owls Department
+                    </div>
+                    <div className="slide-text">
+                      justjoin.it wywróciło branżę do góry nogami. Teraz każda
+                      kolejna rekrutacja kończy się dla nas sukcesem, a proces
+                      rozwoju zespołu przestał być karkołomny. Najbardziej cenię
+                      sobie to, że za portal odpowiadają świetni i zaangażowani
+                      ludzie, którzy skutecznie starają się ułatwiać życie
+                      pracodawcom i kandydatom.
+                    </div>
+                    <img src={Owl}></img>
+                  </div>
+                  <div className="slide correct">
+                    <div className="slide-title">Paulina Brzezińska</div>
+                    <div className="slide-sub_title">
+                      Recruitment Lead - VentureDevs
+                    </div>
+                    <div className="slide-text">
+                      JustJoin IT to wielowymiarowy portal, w pełni
+                      przystosowany do wymogów profesjonalnej rekrutacji IT.
+                      Przejrzystość i transparentność ofert to kluczowe
+                      kryteria, dla których ten portal wybierają najlepsze firmy
+                      i najlepiej wykwalifikowani kandydaci. Oferty pracy,
+                      BrandStory oraz inicjatywy takie jak justgeek.it skupiają
+                      wokół JustJoin najlepszych specjalistów w branży.
+                    </div>
+                    <img src={Vdlogo}></img>
+                  </div>
+                </Slider>
               </div>
             </div>
           </div>
