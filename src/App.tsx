@@ -12,6 +12,10 @@ import ResetPassword from './app/components/matchmaking/reset-password/ResetPass
 import UserLogin from './app/components/userLogin/UserLogin';
 import UserRegister from './app/components/userLogin/userRegister/UserRegister';
 import TermsAndPolicies from './app/components/termsAndPolicies/TermsAndPolicies';
+import UserProfile from './app/components/userProfile/UserProfile';
+import UserMachmaking from './app/components/userProfile/userMachmaking/UserMachmaking';
+import UserPreferences from './app/components/userProfile/userPreferences/UserPreferences';
+import UserSettings from './app/components/userProfile/userSettings/UserSettings';
 
 const App = () => {
   return (
@@ -116,6 +120,54 @@ const App = () => {
             render={props => (
               <Fragment>
                 <TermsAndPolicies />
+              </Fragment>
+            )}
+          />
+        </Switch>
+
+        <Switch>
+          <Route
+            exact
+            path="/devs/panel/profile"
+            render={props => (
+              <Fragment>
+                <UserProfile />
+              </Fragment>
+            )}
+          />
+        </Switch>
+
+        <Switch>
+          <Route
+            exact
+            path="/devs/panel/matchmaking"
+            render={props => (
+              <Fragment>
+                <UserMachmaking />
+              </Fragment>
+            )}
+          />
+        </Switch>
+
+        <Switch>
+          <Route
+            exact
+            path="/devs/panel/preferences"
+            render={props => (
+              <Fragment>
+                <UserPreferences />
+              </Fragment>
+            )}
+          />
+        </Switch>
+
+        <Switch>
+          <Route
+            exact
+            path="/devs/panel/settings"
+            render={props => (
+              <Fragment>
+                <UserSettings />
               </Fragment>
             )}
           />

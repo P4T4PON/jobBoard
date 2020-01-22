@@ -207,7 +207,19 @@
 }
 
 .cont input:focus {
-  border-color: #ff4081;
+  border-color: #ff4081 !important;
+}
+
+.cont input:hover {
+  border-color: black;
+}
+
+.cont textarea:hover {
+  border-color: black;
+}
+
+.cont textarea:focus {
+  border-color: #ff4081 !important;
 }
 
 .cont label {

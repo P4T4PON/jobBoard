@@ -43,6 +43,10 @@ h2 {
   margin-right: 70px;
 }
 
+.nav-right a:link {
+  display: flex;
+}
+
 .navbar button:hover {
   cursor: pointer;
 }
@@ -199,4 +203,109 @@ a:active {
 
 .link-paragraph {
   margin-right: 24px;
+}
+
+.user-panel {
+  border-left: 1px solid rgb(229, 234, 243);
+  border-right: 1px solid rgb(229, 234, 243);
+  display: flex;
+  align-self: stretch;
+  -moz-box-align: center;
+  align-items: center;
+  height: 80px;
+}
+
+.userPanel-content {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 14px;
+  max-width: 200px;
+  font-size: 14px;
+  color: rgb(153, 161, 171);
+}
+
+.userPanel-content i {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.userPhoto {
+  border: 3px solid rgb(255, 255, 255);
+
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
+
+  border-radius: 50%;
+
+  color: rgb(255, 255, 255);
+
+  margin: 0px auto;
+
+  background-size: cover !important;
+
+  background-repeat: no-repeat !important;
+
+  overflow: hidden;
+
+  position: relative;
+
+  text-align: center;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  -moz-box-align: center;
+
+  align-items: center;
+
+  width: 40px;
+
+  height: 40px;
+
+  background-color: rgba(0, 0, 0, 0);
+  background-position: 0% 0%;
+  background-attachment: scroll;
+  background-image: url('./waving-bear.jpg');
+  background-origin: padding-box;
+  background-clip: border-box;
+}
+
+.userPanel-sidebar {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: 20;
+  padding: 5px 5px;
+}
+
+.sb-userProfile {
+  border-radius: 5px;
+  justify-content: space-around;
+  margin-left: 12px;
+}
+
+.userPanel-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 204, 221, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userPanel-icon i {
+  margin: 0;
+  font-size: 18px;
+  color: rgb(255, 64, 129);
 }

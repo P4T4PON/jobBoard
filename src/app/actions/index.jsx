@@ -9,3 +9,9 @@ export const active = () => {
     type: 'FALSE'
   };
 };
+
+export const logged = () => {
+  return {
+    type: 'LOGIN'
+  };
+};
