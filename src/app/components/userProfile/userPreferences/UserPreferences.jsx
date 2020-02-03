@@ -1,25 +1,25 @@
-import React, { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import Tile from './Tile';
-import ResetTile from './ResetTile';
-import Button from './Button';
-import ResetButton from './ResetButton';
-import InputRange from 'react-input-range';
-import 'react-input-range/lib/css/index.css';
-import UserPanel from '../UserPanel';
+import React, { useState, Fragment } from "react";
+import { Link } from "react-router-dom";
+import Tile from "./Tile";
+import ResetTile from "./ResetTile";
+import Button from "./Button";
+import ResetButton from "./ResetButton";
+import InputRange from "react-input-range";
+import "react-input-range/lib/css/index.css";
+import UserPanel from "../UserPanel";
 
-import './UserPreferences.css';
+import "./UserPreferences.css";
 
 const UserPreferences = () => {
   const [panelActive, setPanelActive] = useState(3);
   const [showCities, setShowCities] = useState(false);
   const [showTechnologies, setShowTechnologies] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
-  const [city, setCity] = useState('');
-  const [technology, setTechnology] = useState('');
+  const [city, setCity] = useState("");
+  const [technology, setTechnology] = useState("");
 
-  const [remoteJob, setRemoteJob] = useState('');
-  const [company, setCompany] = useState('');
+  const [remoteJob, setRemoteJob] = useState("");
+  const [company, setCompany] = useState("");
   let [value, setValue] = useState({
     min: 0,
     max: 50
@@ -44,17 +44,17 @@ const UserPreferences = () => {
   const [employmentStatus, setEmploymentStatus] = useState(false);
 
   let jobStatusActive = event => {
-    let job_box = document.querySelector('.jobStatus-box');
+    let job_box = document.querySelector(".jobStatus-box");
     for (let i = 0; i < job_box.children.length; i++) {
-      job_box.children[i].className = 'jobStatus-change mr-20';
+      job_box.children[i].className = "jobStatus-change mr-20";
     }
-    if (event.target.className === 'jobStatus-change mr-20') {
-      event.target.className = 'jobStatus-change mr-20 border-pink';
+    if (event.target.className === "jobStatus-change mr-20") {
+      event.target.className = "jobStatus-change mr-20 border-pink";
     } else if (
-      event.target.parentElement.className === 'jobStatus-change mr-20'
+      event.target.parentElement.className === "jobStatus-change mr-20"
     ) {
       event.target.parentElement.className =
-        'jobStatus-change mr-20 border-pink';
+        "jobStatus-change mr-20 border-pink";
     }
   };
 
@@ -66,42 +66,44 @@ const UserPreferences = () => {
     event.target.parentElement.parentElement.remove();
     for (
       let i = 0;
-      i < document.querySelector('.city-ul').children.length;
+      i < document.querySelector(".city-ul").children.length;
       i++
     ) {
       if (
         event.target.parentElement.parentElement.innerText ===
-        document.querySelector('.city-ul').children[i].innerText
+        document.querySelector(".city-ul").children[i].innerText
       ) {
-        document.querySelector('.city-ul').children[i].className = '';
+        document.querySelector(".city-ul").children[i].className = "";
       }
-      setCityHolder(document.querySelector('.city-ul').children[i].innerText);
+      setCityHolder(document.querySelector(".city-ul").children[i].innerText);
     }
   };
 
   let hideCity = event => {
-    if (document.querySelector('#tech').children.length < 2) {
-      if (event.target.className === '') {
-        event.target.className += ' display-none';
+    if (document.querySelector("#tech").children.length < 2) {
+      if (event.target.className === "") {
+        event.target.className += " display-none";
       } else {
-        event.target.parentElement.className += 'display-none';
+        event.target.parentElement.className += "display-none";
       }
     }
   };
 
+  // skoro toggle odpowiada za toglowanie, to co w sytuacji jak to będzie na false i klikniesz ponownie?
+  // drugi raz ustawisz z false na false ... tam powinno być !showCities
   let toggleSetCity = event => {
     setShowCities(false);
 
-    let my_city = document.createElement('div');
+    let my_city = document.createElement("div");
     let chosen_city = event.target.innerHTML;
     let icon =
       '<div class="icon-box"><i class="fas fa-times-circle"></i></div>';
-    my_city.className = 'input-chosen';
+    my_city.className = "input-chosen";
     my_city.innerHTML = chosen_city;
     my_city.innerHTML += icon;
-    my_city.children[0].addEventListener('click', retryCity);
+    my_city.children[0].addEventListener("click", retryCity);
 
-    document.querySelector('#city').appendChild(my_city);
+    document.querySelector("#city").appendChild(my_city);
   };
 
   let searchCities = event => {
@@ -110,59 +112,59 @@ const UserPreferences = () => {
 
     for (
       let i = 0;
-      i < document.querySelector('.city-ul').children.length;
+      i < document.querySelector(".city-ul").children.length;
       i++
     ) {
       if (
         !document
-          .querySelector('.city-ul')
+          .querySelector(".city-ul")
           .children[i].innerText.includes(event.target.value)
       ) {
-        document.querySelector('.city-ul').children[i].className =
-          'display-none';
+        document.querySelector(".city-ul").children[i].className =
+          "display-none";
       }
       for (
         let i = 0;
-        i < document.querySelector('.city-ul').children.length;
+        i < document.querySelector(".city-ul").children.length;
         i++
       ) {
         if (
           document
-            .querySelector('.city-ul')
+            .querySelector(".city-ul")
             .children[i].innerText.includes(event.target.value) &&
-          document.querySelector('.city-ul').children[i].className ===
-            'display-none'
+          document.querySelector(".city-ul").children[i].className ===
+            "display-none"
         ) {
-          if (document.querySelector('#city').children.length < 1) {
-            document.querySelector('.city-ul').children[i].className = '';
+          if (document.querySelector("#city").children.length < 1) {
+            document.querySelector(".city-ul").children[i].className = "";
           } else {
             for (
               let j = 0;
-              j < document.querySelector('#city').children.length;
+              j < document.querySelector("#city").children.length;
               j++
             ) {
               if (
-                document.querySelector('#city').children[j].innerText ===
-                document.querySelector('.city-ul').children[i].innerText
+                document.querySelector("#city").children[j].innerText ===
+                document.querySelector(".city-ul").children[i].innerText
               ) {
-                document.querySelector('.city-ul').children[i].className =
-                  'display-none';
+                document.querySelector(".city-ul").children[i].className =
+                  "display-none";
               } else {
-                document.querySelector('.city-ul').children[i].className = '';
+                document.querySelector(".city-ul").children[i].className = "";
               }
             }
 
             for (
               let k = 0;
-              k < document.querySelector('#city').children.length;
+              k < document.querySelector("#city").children.length;
               k++
             ) {
               if (
-                document.querySelector('#city').children[k].innerText ===
-                document.querySelector('.city-ul').children[i].innerText
+                document.querySelector("#city").children[k].innerText ===
+                document.querySelector(".city-ul").children[i].innerText
               ) {
-                document.querySelector('.city-ul').children[i].className =
-                  'display-none';
+                document.querySelector(".city-ul").children[i].className =
+                  "display-none";
               }
             }
           }
@@ -172,22 +174,28 @@ const UserPreferences = () => {
   };
 
   let focusInput = () => {
-    document.querySelector('.city-input').focus();
+    document.querySelector(".city-input").focus();
 
     setShowCities(true);
   };
 
   let focusTechInput = () => {
-    document.querySelector('.tech-input').focus();
+    document.querySelector(".tech-input").focus();
 
     setShowTechnologies(true);
   };
 
   let focusSkillInput = () => {
-    document.querySelector('.skill-input').focus();
+    document.querySelector(".skill-input").focus();
 
     setShowSkills(true);
   };
+  //1. najedz myszką na 'setCities' i sam Ci podpowie, ze zadeklarowales setCities i nigdzie tego nie uzywasz, wiec po co state?
+  //2. zobacz, ze wszedzie potwarzasz to samo, a malo tego w state trzymasz po prostu fragment z tablicą identycznych elementów
+  // w których nie zmienia się nic oprócz nazwy miasta
+  //3. wgl odpal sobie terminal i zobacz, ile podpowiedzi daje Ci sam eslint (wali warningami o zmiennyh ktore tworzysz i ktorych nie uzywasz wgl)
+  //4. jezeli nigdzie nie nadpisujesz zmiennej to nie uzywaj letów tylko constów i to się tyczy większości projektu
+  // poczytaj o tym : https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75
 
   let [cities, setCities] = useState([
     <Fragment>
@@ -214,21 +222,21 @@ const UserPreferences = () => {
   ]);
   //TECHNOLOGIES
   let toggleSetTechnologies = event => {
-    if (document.querySelector('#tech').children.length > 1) {
+    if (document.querySelector("#tech").children.length > 1) {
       setShowTechnologies(false);
     } else {
       setShowTechnologies(false);
 
-      let my_tech = document.createElement('div');
+      let my_tech = document.createElement("div");
       let chosen_tech = event.target.innerHTML;
       let icon =
         '<div class="icon-box"><i class="fas fa-times-circle"></i></div>';
-      my_tech.className = 'input-chosen';
+      my_tech.className = "input-chosen";
       my_tech.innerHTML = chosen_tech;
       my_tech.innerHTML += icon;
-      my_tech.children[1].addEventListener('click', retryTech);
+      my_tech.children[1].addEventListener("click", retryTech);
 
-      document.querySelector('#tech').appendChild(my_tech);
+      document.querySelector("#tech").appendChild(my_tech);
     }
   };
 
@@ -236,14 +244,14 @@ const UserPreferences = () => {
     event.target.parentElement.parentElement.remove();
     for (
       let i = 0;
-      i < document.querySelector('.tech-ul').children.length;
+      i < document.querySelector(".tech-ul").children.length;
       i++
     ) {
       if (
         event.target.parentElement.parentElement.innerText ===
-        document.querySelector('.tech-ul').children[i].innerText
+        document.querySelector(".tech-ul").children[i].innerText
       ) {
-        document.querySelector('.tech-ul').children[i].className = '';
+        document.querySelector(".tech-ul").children[i].className = "";
       }
     }
   };
@@ -254,59 +262,59 @@ const UserPreferences = () => {
 
     for (
       let i = 0;
-      i < document.querySelector('.tech-ul').children.length;
+      i < document.querySelector(".tech-ul").children.length;
       i++
     ) {
       if (
         !document
-          .querySelector('.tech-ul')
+          .querySelector(".tech-ul")
           .children[i].innerText.includes(event.target.value)
       ) {
-        document.querySelector('.tech-ul').children[i].className =
-          'display-none';
+        document.querySelector(".tech-ul").children[i].className =
+          "display-none";
       }
       for (
         let i = 0;
-        i < document.querySelector('.tech-ul').children.length;
+        i < document.querySelector(".tech-ul").children.length;
         i++
       ) {
         if (
           document
-            .querySelector('.tech-ul')
+            .querySelector(".tech-ul")
             .children[i].innerText.includes(event.target.value) &&
-          document.querySelector('.tech-ul').children[i].className ===
-            'display-none'
+          document.querySelector(".tech-ul").children[i].className ===
+            "display-none"
         ) {
-          if (document.querySelector('#tech').children.length < 1) {
-            document.querySelector('.tech-ul').children[i].className = '';
+          if (document.querySelector("#tech").children.length < 1) {
+            document.querySelector(".tech-ul").children[i].className = "";
           } else {
             for (
               let j = 0;
-              j < document.querySelector('#tech').children.length;
+              j < document.querySelector("#tech").children.length;
               j++
             ) {
               if (
-                document.querySelector('#tech').children[j].innerText ===
-                document.querySelector('.tech-ul').children[i].innerText
+                document.querySelector("#tech").children[j].innerText ===
+                document.querySelector(".tech-ul").children[i].innerText
               ) {
-                document.querySelector('.tech-ul').children[i].className =
-                  'display-none';
+                document.querySelector(".tech-ul").children[i].className =
+                  "display-none";
               } else {
-                document.querySelector('.tech-ul').children[i].className = '';
+                document.querySelector(".tech-ul").children[i].className = "";
               }
             }
 
             for (
               let k = 0;
-              k < document.querySelector('#tech').children.length;
+              k < document.querySelector("#tech").children.length;
               k++
             ) {
               if (
-                document.querySelector('#tech').children[k].innerText ===
-                document.querySelector('.tech-ul').children[i].innerText
+                document.querySelector("#tech").children[k].innerText ===
+                document.querySelector(".tech-ul").children[i].innerText
               ) {
-                document.querySelector('.tech-ul').children[i].className =
-                  'display-none';
+                document.querySelector(".tech-ul").children[i].className =
+                  "display-none";
               }
             }
           }
@@ -390,33 +398,35 @@ const UserPreferences = () => {
   ]);
 
   //SKILLS
+
+  // jak wcześniej, toggle nie powinno być tylko true albo false tylko z negacją
   let toggleSetSkills = event => {
     setShowSkills(false);
 
-    let my_skill = document.createElement('div');
+    let my_skill = document.createElement("div");
     let chosen_skill = event.target.innerHTML;
     let icon =
       '<div class="icon-box"><i class="fas fa-times-circle"></i></div>';
-    my_skill.className = 'input-chosen';
+    my_skill.className = "input-chosen";
     my_skill.innerHTML = chosen_skill;
     my_skill.innerHTML += icon;
-    my_skill.children[0].addEventListener('click', retrySkill);
+    my_skill.children[0].addEventListener("click", retrySkill);
 
-    document.querySelector('#skill').appendChild(my_skill);
+    document.querySelector("#skill").appendChild(my_skill);
   };
 
   let retrySkill = event => {
     event.target.parentElement.parentElement.remove();
     for (
       let i = 0;
-      i < document.querySelector('.skill-ul').children.length;
+      i < document.querySelector(".skill-ul").children.length;
       i++
     ) {
       if (
         event.target.parentElement.parentElement.innerText ===
-        document.querySelector('.skill-ul').children[i].innerText
+        document.querySelector(".skill-ul").children[i].innerText
       ) {
-        document.querySelector('.skill-ul').children[i].className = '';
+        document.querySelector(".skill-ul").children[i].className = "";
       }
     }
   };
@@ -427,65 +437,78 @@ const UserPreferences = () => {
 
     for (
       let i = 0;
-      i < document.querySelector('.skill-ul').children.length;
+      i < document.querySelector(".skill-ul").children.length;
       i++
     ) {
       if (
         !document
-          .querySelector('.skill-ul')
+          .querySelector(".skill-ul")
           .children[i].innerText.includes(event.target.value)
       ) {
-        document.querySelector('.skill-ul').children[i].className =
-          'display-none';
+        document.querySelector(".skill-ul").children[i].className =
+          "display-none";
       }
       for (
         let i = 0;
-        i < document.querySelector('.skill-ul').children.length;
+        i < document.querySelector(".skill-ul").children.length;
         i++
       ) {
         if (
           document
-            .querySelector('.skill-ul')
+            .querySelector(".skill-ul")
             .children[i].innerText.includes(event.target.value) &&
-          document.querySelector('.skill-ul').children[i].className ===
-            'display-none'
+          document.querySelector(".skill-ul").children[i].className ===
+            "display-none"
         ) {
-          if (document.querySelector('#skill').children.length < 1) {
-            document.querySelector('.skill-ul').children[i].className = '';
+          if (document.querySelector("#skill").children.length < 1) {
+            document.querySelector(".skill-ul").children[i].className = "";
           } else {
             for (
               let j = 0;
-              j < document.querySelector('#skill').children.length;
+              j < document.querySelector("#skill").children.length;
               j++
             ) {
               if (
-                document.querySelector('#skill').children[j].innerText ===
-                document.querySelector('.skill-ul').children[i].innerText
+                document.querySelector("#skill").children[j].innerText ===
+                document.querySelector(".skill-ul").children[i].innerText
               ) {
-                document.querySelector('.skill-ul').children[i].className =
-                  'display-none';
+                document.querySelector(".skill-ul").children[i].className =
+                  "display-none";
               } else {
-                document.querySelector('.skill-ul').children[i].className = '';
+                document.querySelector(".skill-ul").children[i].className = "";
               }
             }
 
             for (
               let k = 0;
-              k < document.querySelector('#skill').children.length;
+              k < document.querySelector("#skill").children.length;
               k++
             ) {
               if (
-                document.querySelector('#skill').children[k].innerText ===
-                document.querySelector('.skill-ul').children[i].innerText
+                document.querySelector("#skill").children[k].innerText ===
+                document.querySelector(".skill-ul").children[i].innerText
               ) {
-                document.querySelector('.skill-ul').children[i].className =
-                  'display-none';
+                document.querySelector(".skill-ul").children[i].className =
+                  "display-none";
               }
             }
           }
         }
       }
     }
+  };
+  // to samo, powtarany kod gdzie tylko zmienia się nazwa miasta
+  // pokaze Ci przyklad
+  const devSkills = ["JavaScript", "React", "Angular", "Java", "PHP"];
+
+  const DevSkillsList = () => {
+    return (
+      <div>
+        {devSkills.map(skill => (
+          <li onMouseDown={hideCity}>{skill}</li>
+        ))}
+      </div>
+    );
   };
 
   const [skills, setSkills] = [
@@ -677,9 +700,9 @@ const UserPreferences = () => {
 
     if (
       event.target.parentElement.children[0].className ===
-        'jobStatus-change company border-pink' ||
+        "jobStatus-change company border-pink" ||
       event.target.parentElement.className ===
-        'jobStatus-change company border-pink'
+        "jobStatus-change company border-pink"
     ) {
       setCompanyStage(companyStage - 1);
       if (companyStage === 1) {
@@ -687,8 +710,8 @@ const UserPreferences = () => {
       }
     } else if (
       event.target.parentElement.children[0].className ===
-        'jobStatus-change company' ||
-      event.target.parentElement.className === 'jobStatus-change company'
+        "jobStatus-change company" ||
+      event.target.parentElement.className === "jobStatus-change company"
     ) {
       setCompanyStage(companyStage + 1);
     }
@@ -705,9 +728,9 @@ const UserPreferences = () => {
 
     if (
       event.target.parentElement.children[0].className ===
-        'jobStatus-change company border-pink' ||
+        "jobStatus-change company border-pink" ||
       event.target.parentElement.className ===
-        'jobStatus-change company border-pink'
+        "jobStatus-change company border-pink"
     ) {
       setCompanyKind(companyKind - 1);
       if (companyKind === 1) {
@@ -715,8 +738,8 @@ const UserPreferences = () => {
       }
     } else if (
       event.target.parentElement.children[0].className ===
-        'jobStatus-change company' ||
-      event.target.parentElement.className === 'jobStatus-change company'
+        "jobStatus-change company" ||
+      event.target.parentElement.className === "jobStatus-change company"
     ) {
       setCompanyKind(companyKind + 1);
     }
@@ -733,16 +756,16 @@ const UserPreferences = () => {
 
     if (
       event.target.parentElement.children[0].className ===
-        'jobStatus-button border-pink' ||
-      event.target.parentElement.className === 'jobStatus-button border-pink'
+        "jobStatus-button border-pink" ||
+      event.target.parentElement.className === "jobStatus-button border-pink"
     ) {
       setIndustry(industry - 1);
       if (industry === 1) {
         setIndustryStatus(false);
       }
     } else if (
-      event.target.parentElement.children[0].className === 'jobStatus-button' ||
-      event.target.parentElement.className === 'jobStatus-button'
+      event.target.parentElement.children[0].className === "jobStatus-button" ||
+      event.target.parentElement.className === "jobStatus-button"
     ) {
       setIndustry(industry + 1);
     }
@@ -758,16 +781,16 @@ const UserPreferences = () => {
 
     if (
       event.target.parentElement.children[0].className ===
-        'jobStatus-button border-pink' ||
-      event.target.parentElement.className === 'jobStatus-button border-pink'
+        "jobStatus-button border-pink" ||
+      event.target.parentElement.className === "jobStatus-button border-pink"
     ) {
       setExperiance(experiance - 1);
       if (experiance === 1) {
         setExperianceStatus(false);
       }
     } else if (
-      event.target.parentElement.children[0].className === 'jobStatus-button' ||
-      event.target.parentElement.className === 'jobStatus-button'
+      event.target.parentElement.children[0].className === "jobStatus-button" ||
+      event.target.parentElement.className === "jobStatus-button"
     ) {
       setExperiance(experiance + 1);
     }
@@ -783,16 +806,16 @@ const UserPreferences = () => {
 
     if (
       event.target.parentElement.children[0].className ===
-        'jobStatus-button border-pink' ||
-      event.target.parentElement.className === 'jobStatus-button border-pink'
+        "jobStatus-button border-pink" ||
+      event.target.parentElement.className === "jobStatus-button border-pink"
     ) {
       setEmployment(employment - 1);
       if (employment === 1) {
         setEmploymentStatus(false);
       }
     } else if (
-      event.target.parentElement.children[0].className === 'jobStatus-button' ||
-      event.target.parentElement.className === 'jobStatus-button'
+      event.target.parentElement.children[0].className === "jobStatus-button" ||
+      event.target.parentElement.className === "jobStatus-button"
     ) {
       setEmployment(employment + 1);
     }
@@ -804,6 +827,7 @@ const UserPreferences = () => {
       <div className="preferences">
         <div className="preferences-content">
           <h1>Preferences</h1>
+          <DevSkillsList />
           <form>
             <div className="preferences-box">
               <header className="preferences-header">
@@ -882,7 +906,7 @@ const UserPreferences = () => {
             </div>
 
             <div className="cities-box">
-              <div className={showCities ? 'cities' : 'cities display-none'}>
+              <div className={showCities ? "cities" : "cities display-none"}>
                 <ul onMouseDown={toggleSetCity} className="city-ul">
                   {cities}
                 </ul>
@@ -902,21 +926,21 @@ const UserPreferences = () => {
               <div className="preferences-jobStatus">
                 <div
                   className={
-                    remoteJob === 'yes'
-                      ? 'jobStatus-button mrg-right border-pink '
-                      : 'jobStatus-button mrg-right'
+                    remoteJob === "yes"
+                      ? "jobStatus-button mrg-right border-pink "
+                      : "jobStatus-button mrg-right"
                   }
-                  onClick={() => setRemoteJob('yes')}
+                  onClick={() => setRemoteJob("yes")}
                 >
                   Yes
                 </div>
                 <div
                   className={
-                    remoteJob === 'no'
-                      ? 'jobStatus-button border-pink'
-                      : 'jobStatus-button '
+                    remoteJob === "no"
+                      ? "jobStatus-button border-pink"
+                      : "jobStatus-button "
                   }
-                  onClick={() => setRemoteJob('no')}
+                  onClick={() => setRemoteJob("no")}
                 >
                   No
                 </div>
@@ -937,7 +961,7 @@ const UserPreferences = () => {
                 <div className="jobStatus-box">
                   <div className="z-index100" onClick={clearStageTiles}>
                     <ResetTile
-                      CompanyIcon={'far fa-check-square'}
+                      CompanyIcon={"far fa-check-square"}
                       CompanySpan={"Doesn't matter"}
                       CompanyActive={companyStageStatus}
                     />
@@ -945,32 +969,32 @@ const UserPreferences = () => {
 
                   <div className="z-index100" onClick={toggleStageTiles}>
                     <Tile
-                      CompanyIcon={'fas fa-home'}
-                      CompanySpan={'Early stage(0-30)'}
+                      CompanyIcon={"fas fa-home"}
+                      CompanySpan={"Early stage(0-30)"}
                       CompanyActive={companyStageStatus}
                     />
                   </div>
 
                   <div className="z-index100" onClick={toggleStageTiles}>
                     <Tile
-                      CompanyIcon={'far fa-building'}
-                      CompanySpan={'Growth stage (30-100)'}
+                      CompanyIcon={"far fa-building"}
+                      CompanySpan={"Growth stage (30-100)"}
                       CompanyActive={companyStageStatus}
                     />
                   </div>
 
                   <div className="z-index100" onClick={toggleStageTiles}>
                     <Tile
-                      CompanyIcon={'fas fa-city'}
-                      CompanySpan={'Estabilished(100-250)'}
+                      CompanyIcon={"fas fa-city"}
+                      CompanySpan={"Estabilished(100-250)"}
                       CompanyActive={companyStageStatus}
                     />
                   </div>
 
                   <div className="z-index100" onClick={toggleStageTiles}>
                     <Tile
-                      CompanyIcon={'fas fa-university'}
-                      CompanySpan={'Corporation(250+)'}
+                      CompanyIcon={"fas fa-university"}
+                      CompanySpan={"Corporation(250+)"}
                       CompanyActive={companyStageStatus}
                     />
                   </div>
@@ -992,7 +1016,7 @@ const UserPreferences = () => {
                 <div className="jobStatus-box">
                   <div className="z-index100" onClick={clearKindTiles}>
                     <ResetTile
-                      CompanyIcon={'far fa-check-square'}
+                      CompanyIcon={"far fa-check-square"}
                       CompanySpan={"Doesn't matter"}
                       CompanyActive={companyKindStatus}
                     />
@@ -1000,32 +1024,32 @@ const UserPreferences = () => {
 
                   <div className="z-index100" onClick={toggleKindTiles}>
                     <Tile
-                      CompanyIcon={'fas fa-rocket'}
-                      CompanySpan={'Startup'}
+                      CompanyIcon={"fas fa-rocket"}
+                      CompanySpan={"Startup"}
                       CompanyActive={companyKindStatus}
                     />
                   </div>
 
                   <div className="z-index100" onClick={toggleKindTiles}>
                     <Tile
-                      CompanyIcon={'fas fa-flask'}
-                      CompanySpan={'Software house'}
+                      CompanyIcon={"fas fa-flask"}
+                      CompanySpan={"Software house"}
                       CompanyActive={companyKindStatus}
                     />
                   </div>
 
                   <div className="z-index100" onClick={toggleKindTiles}>
                     <Tile
-                      CompanyIcon={'fas fa-shopping-cart'}
-                      CompanySpan={'E-commerce'}
+                      CompanyIcon={"fas fa-shopping-cart"}
+                      CompanySpan={"E-commerce"}
                       CompanyActive={companyKindStatus}
                     />
                   </div>
 
                   <div className="z-index100" onClick={toggleKindTiles}>
                     <Tile
-                      CompanyIcon={'fas fa-hotel'}
-                      CompanySpan={'Corporation'}
+                      CompanyIcon={"fas fa-hotel"}
+                      CompanySpan={"Corporation"}
                       CompanyActive={companyKindStatus}
                     />
                   </div>
@@ -1057,88 +1081,88 @@ const UserPreferences = () => {
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-dollar-sign'}
-                      CompanySpan={'Fintech'}
+                      CompanyIcon={"fas fa-dollar-sign"}
+                      CompanySpan={"Fintech"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-cube'}
-                      CompanySpan={'Bloackchain'}
+                      CompanyIcon={"fas fa-cube"}
+                      CompanySpan={"Bloackchain"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-shopping-cart'}
-                      CompanySpan={'E-commerce'}
+                      CompanyIcon={"fas fa-shopping-cart"}
+                      CompanySpan={"E-commerce"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'far fa-heart'}
-                      CompanySpan={'Medicine'}
+                      CompanyIcon={"far fa-heart"}
+                      CompanySpan={"Medicine"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-medal'}
-                      CompanySpan={'Military'}
+                      CompanyIcon={"fas fa-medal"}
+                      CompanySpan={"Military"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-plane-departure'}
-                      CompanySpan={'Travel'}
+                      CompanyIcon={"fas fa-plane-departure"}
+                      CompanySpan={"Travel"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-cart-arrow-down'}
-                      CompanySpan={'Martech'}
+                      CompanyIcon={"fas fa-cart-arrow-down"}
+                      CompanySpan={"Martech"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-user-md'}
-                      CompanySpan={'IoT'}
+                      CompanyIcon={"fas fa-user-md"}
+                      CompanySpan={"IoT"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-truck'}
-                      CompanySpan={'Logistic'}
+                      CompanyIcon={"fas fa-truck"}
+                      CompanySpan={"Logistic"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-seedling'}
-                      CompanySpan={'Beauty'}
+                      CompanyIcon={"fas fa-seedling"}
+                      CompanySpan={"Beauty"}
                       CompanyActive={industryStatus}
                     />
                   </div>
 
                   <div className="btn-icon grey" onClick={toggleIndustryTiles}>
                     <Button
-                      CompanyIcon={'fas fa-laptop'}
-                      CompanySpan={'Other'}
+                      CompanyIcon={"fas fa-laptop"}
+                      CompanySpan={"Other"}
                       CompanyActive={industryStatus}
                     />
                   </div>
@@ -1167,21 +1191,21 @@ const UserPreferences = () => {
 
                   <div className="btn-icon" onClick={toggleExperianceTiles}>
                     <Button
-                      CompanySpan={'Junior'}
+                      CompanySpan={"Junior"}
                       CompanyActive={experianceStatus}
                     />
                   </div>
 
                   <div className="btn-icon" onClick={toggleExperianceTiles}>
                     <Button
-                      CompanySpan={'Mid'}
+                      CompanySpan={"Mid"}
                       CompanyActive={experianceStatus}
                     />
                   </div>
 
                   <div className="btn-icon" onClick={toggleExperianceTiles}>
                     <Button
-                      CompanySpan={'Senior'}
+                      CompanySpan={"Senior"}
                       CompanyActive={experianceStatus}
                     />
                   </div>
@@ -1212,21 +1236,21 @@ const UserPreferences = () => {
 
                   <div className="btn-icon" onClick={toggleEmploymentTiles}>
                     <Button
-                      CompanySpan={'B2B'}
+                      CompanySpan={"B2B"}
                       CompanyActive={employmentStatus}
                     />
                   </div>
 
                   <div className="btn-icon" onClick={toggleEmploymentTiles}>
                     <Button
-                      CompanySpan={'Permanent'}
+                      CompanySpan={"Permanent"}
                       CompanyActive={employmentStatus}
                     />
                   </div>
 
                   <div className="btn-icon" onClick={toggleEmploymentTiles}>
                     <Button
-                      CompanySpan={'Mandate contact'}
+                      CompanySpan={"Mandate contact"}
                       CompanyActive={employmentStatus}
                     />
                   </div>
@@ -1306,7 +1330,7 @@ const UserPreferences = () => {
 
             <div className="cities-box">
               <div
-                className={showTechnologies ? 'cities' : 'cities display-none'}
+                className={showTechnologies ? "cities" : "cities display-none"}
               >
                 <ul onMouseDown={toggleSetTechnologies} className="tech-ul">
                   {technologies}
@@ -1337,7 +1361,7 @@ const UserPreferences = () => {
                   }}
                 >
                   <div className="inputStatus" id="skill">
-                    {' '}
+                    {" "}
                   </div>
                   <input
                     name="city"
@@ -1353,7 +1377,7 @@ const UserPreferences = () => {
             <div className="cities-box">
               <div
                 className={
-                  showSkills ? 'cities skills' : 'cities skill display-none'
+                  showSkills ? "cities skills" : "cities skill display-none"
                 }
               >
                 <ul onMouseDown={toggleSetSkills} className="skill-ul">
