@@ -15,3 +15,9 @@ export const logged = () => {
     type: 'LOGIN'
   };
 };
+
+export const brands = () => {
+  return {
+    type: 'TRUE'
+  };
+};

@@ -16,6 +16,7 @@ import UserProfile from './app/components/userProfile/UserProfile';
 import UserMachmaking from './app/components/userProfile/userMachmaking/UserMachmaking';
 import UserPreferences from './app/components/userProfile/userPreferences/UserPreferences';
 import UserSettings from './app/components/userProfile/userSettings/UserSettings';
+import UserPanel from './app/components/userProfile/userPanel/UserPanel';
 
 const App = () => {
   return (
@@ -120,6 +121,18 @@ const App = () => {
             render={props => (
               <Fragment>
                 <TermsAndPolicies />
+              </Fragment>
+            )}
+          />
+        </Switch>
+
+        <Switch>
+          <Route
+            exact
+            path="/devs/panel"
+            render={props => (
+              <Fragment>
+                <UserPanel />
               </Fragment>
             )}
           />

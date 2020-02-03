@@ -143,7 +143,7 @@ a:active {
   flex-direction: column;
   justify-content: center;
   box-shadow: 2px 2px #888888;
-  z-index: 20;
+  z-index: 200;
 }
 
 .display-none {
@@ -286,6 +286,7 @@ a:active {
   border-radius: 5px;
   z-index: 20;
   padding: 5px 5px;
+  z-index: 200;
 }
 
 .sb-userProfile {
@@ -308,4 +309,128 @@ a:active {
   margin: 0;
   font-size: 18px;
   color: rgb(255, 64, 129);
+}
+
+.mr {
+  margin-right: 5px !important;
+}
+
+.contactUs {
+  position: absolute;
+  width: 600px;
+  height: 550px;
+  top: 25%;
+  left: 38%;
+  z-index: 300;
+}
+
+.contactUs-box {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #d1d1d1 !important;
+  font-weight: 400;
+  border-radius: 5px;
+  color: #444;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+.contactUs-header {
+  color: #fff;
+  padding: 20px 15px 5px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: linear-gradient(90deg, #ec4cb6, #9c27b0);
+
+  background-position: center;
+  background-size: cover;
+}
+
+.contactUs-header p {
+  text-align: center;
+}
+
+.contactUs-header h4 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.contactUs-content {
+  padding: 15px 50px 30px 50px;
+}
+
+.brands-i i {
+  font-size: 1.5rem !important;
+}
+
+.contactUs-submitBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactUs-submit {
+  width: 140px;
+  font-weight: 400;
+  box-shadow: none;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff4081;
+  text-align: center;
+  letter-spacing: 0.5px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0px 10px 0px 10px;
+  cursor: pointer;
+}
+
+.contactUs-submit:hover {
+  background-color: #ff5a92;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.contactUs-submit i {
+  margin: 0;
+  margin-left: 2px;
+}
+
+.everything-ok {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  color: #444;
+}
+
+.everything-ok i {
+  font-size: 100px;
+  color: #00cc33;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.everything-ok p {
+  margin: 0;
+}
+
+.everything-okBox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.test {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.background-none {
+  background: none !important;
 }
