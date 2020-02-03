@@ -1,30 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import UserPanel from '../userPanel/UserPanel';
+import UserPanel from '../UserPanel';
+
 import './UserSettings.css';
 
 const UserSettings = () => {
-  const [jobStatus, setJobStatus] = useState('green');
-  const [showStatus, setShowStatus] = useState(false);
+  const [panelActive, setPanelActive] = useState(4);
   const [name, setName] = useState('TestUser');
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [password, setPassword] = useState('');
-
-  let toggleJobStatusGreen = () => {
-    setJobStatus('green');
-    setShowStatus(!showStatus);
-  };
-
-  let toggleJobStatusBlue = () => {
-    setJobStatus('blue');
-    setShowStatus(!showStatus);
-  };
-
-  let toggleJobStatusRed = () => {
-    setJobStatus('red');
-    setShowStatus(!showStatus);
-  };
 
   let checkOldPasswordLength = event => {
     setOldPassword(event.target.value);
@@ -42,7 +27,7 @@ const UserSettings = () => {
 
   return (
     <div className="userLogin-content width-100vw">
-      <UserPanel />
+      <UserPanel active={panelActive} />
       <div className="userSettings">
         <div className="userSettings-content">
           <h1>Settings</h1>

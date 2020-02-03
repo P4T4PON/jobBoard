@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import UserPanel from '../userPanel/UserPanel';
+import UserPanel from '../UserPanel';
+
 import './UserMachmaking.css';
 
 const UserPreferences = () => {
-  const [jobStatus, setJobStatus] = useState('green');
-  const [showStatus, setShowStatus] = useState(false);
-  const [name, setName] = useState('TestUser');
-
+  const [panelActive, setPanelActive] = useState(2);
   const [city, setCity] = useState('trójmiasto');
   const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(5);
@@ -24,41 +22,16 @@ const UserPreferences = () => {
 
   const [preferences, setPreferences] = useState(true);
 
-  const [active, setActive] = useState(true);
-  const [aplied, setAplied] = useState(false);
-  const [rejected, setRejected] = useState(false);
-
-  let toggleActive = () => {
-    setActive(true);
-    setAplied(false);
-    setRejected(false);
-  };
-
-  let toggleAplied = () => {
-    setActive(false);
-    setAplied(true);
-    setRejected(false);
-  };
-
-  let toggleRejected = () => {
-    setActive(false);
-    setAplied(false);
-    setRejected(true);
-  };
-
-  let toggleJobStatusGreen = () => {
-    setJobStatus('green');
-    setShowStatus(!showStatus);
-  };
-
-  let toggleJobStatusBlue = () => {
-    setJobStatus('blue');
-    setShowStatus(!showStatus);
-  };
-
-  let toggleJobStatusRed = () => {
-    setJobStatus('red');
-    setShowStatus(!showStatus);
+  let toggleActive = event => {
+    let user_status = document.querySelector('.userMachmaking-status');
+    for (let i = 0; i < user_status.children.length; i++) {
+      if (user_status.children[i].className.includes('replied-active')) {
+        user_status.children[i].classList.remove('replied-active');
+      }
+    }
+    if (!event.target.className.includes('replied-active')) {
+      event.target.className += ' replied-active';
+    }
   };
 
   let showPreferences = () => {
@@ -67,7 +40,7 @@ const UserPreferences = () => {
 
   return (
     <div className="userLogin-content">
-      <UserPanel />
+      <UserPanel active={panelActive} />
       <div className="userMachmaking">
         <div className="userMachmaking-box">
           <div className="userMachmaking-header">
@@ -200,32 +173,20 @@ const UserPreferences = () => {
             <div className="userMachmaking-options">
               <div className="userMachmaking-status">
                 <div
-                  className={
-                    active
-                      ? 'userMachmaking-item left replied-active'
-                      : 'userMachmaking-item left'
-                  }
+                  className="userMachmaking-item left replied-active"
                   onClick={toggleActive}
                 >
                   Active
                 </div>
                 <div
-                  className={
-                    aplied
-                      ? 'userMachmaking-item middle replied-active'
-                      : 'userMachmaking-item middle'
-                  }
-                  onClick={toggleAplied}
+                  className="userMachmaking-item middle"
+                  onClick={toggleActive}
                 >
                   Aplied
                 </div>
                 <div
-                  className={
-                    rejected
-                      ? 'userMachmaking-item right replied-active'
-                      : 'userMachmaking-item right'
-                  }
-                  onClick={toggleRejected}
+                  className="userMachmaking-item right"
+                  onClick={toggleActive}
                 >
                   Rejected
                 </div>

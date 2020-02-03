@@ -1,7 +1,12 @@
 import React, { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logged } from '../../actions/index';
 
 const UserPanel = props => {
+  const isLogged = useSelector(state => state.isLogged);
+  const dispatch = useDispatch();
+
   const [jobStatus, setJobStatus] = useState('green');
   const [showStatus, setShowStatus] = useState(false);
   const [name, setName] = useState('TestUser');
@@ -12,15 +17,11 @@ const UserPanel = props => {
   };
 
   let loginActive = event => {
-    let user_login = document.querySelector('.userLogin-Options');
-    for (let i = 0; i < user_login.children.length; i++) {
-      user_login.children[i].children[0].className = 'userLogin-Optionslist';
-    }
     if (event.target.parentElement.className === 'userLogin-Optionslist') {
       event.target.parentElement.className =
-        'userLogin-Optionslist userLogin-active ';
+        'userLogin-Optionslist userLogin-active';
     } else if (event.target.className === 'userLogin-Optionslist') {
-      event.target.className = 'userLogin-Optionslist userLogin-active ';
+      event.target.className = 'userLogin-Optionslist userLogin-active';
     }
   };
 
@@ -96,31 +97,62 @@ const UserPanel = props => {
         </div>
         <div className="userLogin-Options">
           <Link to="/devs/panel/profile">
-            <div className="userLogin-Optionslist" onClick={loginActive}>
+            <div
+              className={
+                props.active === 1
+                  ? 'userLogin-Optionslist userLogin-active'
+                  : 'userLogin-Optionslist'
+              }
+              onClick={loginActive}
+            >
               <i className="far fa-user"></i>
               <p>My profile</p>
             </div>
           </Link>
           <Link to="/devs/panel/matchmaking">
-            <div className="userLogin-Optionslist" onClick={loginActive}>
+            <div
+              className={
+                props.active === 2
+                  ? 'userLogin-Optionslist userLogin-active'
+                  : 'userLogin-Optionslist'
+              }
+              onClick={loginActive}
+            >
               <i className="fas fa-inbox"></i>
               <p>Matchmaking</p>
             </div>
           </Link>
           <Link to="/devs/panel/preferences">
-            <div className="userLogin-Optionslist" onClick={loginActive}>
+            <div
+              className={
+                props.active === 3
+                  ? 'userLogin-Optionslist userLogin-active'
+                  : 'userLogin-Optionslist'
+              }
+              onClick={loginActive}
+            >
               <i className="fas fa-pen"></i>
               <p>Preferences</p>
             </div>
           </Link>
           <Link to="/devs/panel/settings">
-            <div className="userLogin-Optionslist " onClick={loginActive}>
+            <div
+              className={
+                props.active === 4
+                  ? 'userLogin-Optionslist userLogin-active'
+                  : 'userLogin-Optionslist'
+              }
+              onClick={loginActive}
+            >
               <i className="fas fa-cog"></i>
               <p>Settings</p>
             </div>
           </Link>
           <Link to="/devs/">
-            <div className="userLogin-Optionslist">
+            <div
+              className="userLogin-Optionslist"
+              onClick={() => dispatch(logged())}
+            >
               <i className="fas fa-power-off"></i>
               <p>Log out</p>
             </div>

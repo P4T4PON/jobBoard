@@ -12,11 +12,11 @@ import ResetPassword from './app/components/matchmaking/reset-password/ResetPass
 import UserLogin from './app/components/userLogin/UserLogin';
 import UserRegister from './app/components/userLogin/userRegister/UserRegister';
 import TermsAndPolicies from './app/components/termsAndPolicies/TermsAndPolicies';
-import UserProfile from './app/components/userProfile/UserProfile';
+import UserProfile from './app/components/userProfile/userProfile/UserProfile';
+import UserPanel from './app/components/userProfile/UserPanel';
 import UserMachmaking from './app/components/userProfile/userMachmaking/UserMachmaking';
 import UserPreferences from './app/components/userProfile/userPreferences/UserPreferences';
 import UserSettings from './app/components/userProfile/userSettings/UserSettings';
-import UserPanel from './app/components/userProfile/userPanel/UserPanel';
 
 const App = () => {
   return (

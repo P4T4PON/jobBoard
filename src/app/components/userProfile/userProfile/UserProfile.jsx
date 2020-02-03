@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './UserProfile.css';
 import { Link } from 'react-router-dom';
-import UserPanel from './userPanel/UserPanel';
+import UserPanel from '../UserPanel';
 
 const UserProfile = () => {
+  const [panelActive, setPanelActive] = useState(1);
   const [userName, setUserName] = useState('TestUser');
   const [name, setName] = useState('TestUser');
   const [userSurname, setUserSurname] = useState('Bobicki');
@@ -12,8 +13,6 @@ const UserProfile = () => {
   const [userStory, setUserStory] = useState('');
   const [userLinkedin, setUserLinkedin] = useState('');
   const [userGithub, setUserGithub] = useState('');
-  const [jobStatus, setJobStatus] = useState('green');
-  const [showStatus, setShowStatus] = useState(false);
 
   let toggleActive = event => {
     for (
@@ -29,21 +28,6 @@ const UserProfile = () => {
     } else {
       event.target.parentElement.className = 'years-box border-pink color-pink';
     }
-  };
-
-  let toggleJobStatusGreen = () => {
-    setJobStatus('green');
-    setShowStatus(!showStatus);
-  };
-
-  let toggleJobStatusBlue = () => {
-    setJobStatus('blue');
-    setShowStatus(!showStatus);
-  };
-
-  let toggleJobStatusRed = () => {
-    setJobStatus('red');
-    setShowStatus(!showStatus);
   };
 
   let checkUserNameLength = event => {
@@ -83,7 +67,7 @@ const UserProfile = () => {
 
   return (
     <div className="userLogin-content">
-      <UserPanel />
+      <UserPanel active={panelActive} />
       <div className="userLogin-container">
         <div className="userLoginContainer-content">
           <h1>

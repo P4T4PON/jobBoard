@@ -6,14 +6,12 @@ import Button from './Button';
 import ResetButton from './ResetButton';
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css';
-import UserPanel from '../userPanel/UserPanel';
+import UserPanel from '../UserPanel';
 
 import './UserPreferences.css';
 
 const UserPreferences = () => {
-  const [jobStatus, setJobStatus] = useState('green');
-  const [showStatus, setShowStatus] = useState(false);
-  const [name, setName] = useState('TestUser');
+  const [panelActive, setPanelActive] = useState(3);
   const [showCities, setShowCities] = useState(false);
   const [showTechnologies, setShowTechnologies] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
@@ -45,20 +43,23 @@ const UserPreferences = () => {
   const [employment, setEmployment] = useState(0);
   const [employmentStatus, setEmploymentStatus] = useState(false);
 
-  let toggleJobStatusGreen = () => {
-    setJobStatus('green');
-    setShowStatus(!showStatus);
+  let jobStatusActive = event => {
+    let job_box = document.querySelector('.jobStatus-box');
+    for (let i = 0; i < job_box.children.length; i++) {
+      job_box.children[i].className = 'jobStatus-change mr-20';
+    }
+    if (event.target.className === 'jobStatus-change mr-20') {
+      event.target.className = 'jobStatus-change mr-20 border-pink';
+    } else if (
+      event.target.parentElement.className === 'jobStatus-change mr-20'
+    ) {
+      event.target.parentElement.className =
+        'jobStatus-change mr-20 border-pink';
+    }
   };
 
-  let toggleJobStatusBlue = () => {
-    setJobStatus('blue');
-    setShowStatus(!showStatus);
-  };
-
-  let toggleJobStatusRed = () => {
-    setJobStatus('red');
-    setShowStatus(!showStatus);
-  };
+  // za duzo zlego kodu i redundancja (64-213) (215-389) (392-666)
+  // redundancja (669-799)
 
   //CITIES
   let retryCity = event => {
@@ -799,8 +800,7 @@ const UserPreferences = () => {
 
   return (
     <div className="userLogin-content">
-      <UserPanel />
-
+      <UserPanel active={panelActive} />
       <div className="preferences">
         <div className="preferences-content">
           <h1>Preferences</h1>
@@ -819,12 +819,8 @@ const UserPreferences = () => {
               <div className="preferences-jobStatus">
                 <div className="jobStatus-box">
                   <div
-                    className={
-                      jobStatus === 'green'
-                        ? 'jobStatus-change border-pink mr-20'
-                        : 'jobStatus-change mr-20'
-                    }
-                    onClick={() => setJobStatus('green')}
+                    className="jobStatus-change mr-20 border-pink"
+                    onClick={jobStatusActive}
                   >
                     <i className="far fa-file-alt"></i>
                     <span>
@@ -832,12 +828,8 @@ const UserPreferences = () => {
                     </span>
                   </div>
                   <div
-                    className={
-                      jobStatus === 'blue'
-                        ? 'jobStatus-change border-pink mr-20'
-                        : 'jobStatus-change mr-20'
-                    }
-                    onClick={() => setJobStatus('blue')}
+                    className="jobStatus-change mr-20"
+                    onClick={jobStatusActive}
                   >
                     <i className="fas fa-envelope-open-text"></i>
                     <span>
@@ -845,12 +837,8 @@ const UserPreferences = () => {
                     </span>
                   </div>
                   <div
-                    className={
-                      jobStatus === 'red'
-                        ? 'jobStatus-change border-pink mr-20'
-                        : 'jobStatus-change mr-20'
-                    }
-                    onClick={() => setJobStatus('red')}
+                    className="jobStatus-change mr-20"
+                    onClick={jobStatusActive}
                   >
                     <i className="fas fa-unlock-alt"></i>
                     <span>
@@ -915,8 +903,8 @@ const UserPreferences = () => {
                 <div
                   className={
                     remoteJob === 'yes'
-                      ? 'jobStatus-button border-pink'
-                      : 'jobStatus-button'
+                      ? 'jobStatus-button mrg-right border-pink '
+                      : 'jobStatus-button mrg-right'
                   }
                   onClick={() => setRemoteJob('yes')}
                 >
