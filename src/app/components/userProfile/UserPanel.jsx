@@ -31,7 +31,7 @@ const UserPanel = props => {
         <div className="userLogin-img"></div>
         <div className="userLogin-welcome">
           <p>Welcome</p>
-          <span>{name}</span>
+          <span>{props.inputValue}</span>
         </div>
         <div
           className={

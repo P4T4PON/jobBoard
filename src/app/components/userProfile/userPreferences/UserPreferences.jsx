@@ -16,8 +16,8 @@ const UserPreferences = () => {
   const [showTechnologies, setShowTechnologies] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
   const [city, setCity] = useState('');
-  const [technology, setTechnology] = useState('');
-
+  const [tech, setTech] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [remoteJob, setRemoteJob] = useState('');
   const [company, setCompany] = useState('');
   let [value, setValue] = useState({
@@ -61,108 +61,124 @@ const UserPreferences = () => {
   // za duzo zlego kodu i redundancja (64-213) (215-389) (392-666)
   // redundancja (669-799)
 
+  // czas zmian
+
   //CITIES
-  let retryCity = event => {
+  let hideCity = event => {
+    if (event.target.className === '') {
+      event.target.className += ' display-none';
+    } else {
+      event.target.parentElement.className += 'display-none';
+    }
+  };
+
+  let retryChosenItem = event => {
     event.target.parentElement.parentElement.remove();
     for (
       let i = 0;
-      i < document.querySelector('.city-ul').children.length;
+      i < document.querySelector(`.${inputValue}-ul`).children.length;
       i++
     ) {
       if (
         event.target.parentElement.parentElement.innerText ===
-        document.querySelector('.city-ul').children[i].innerText
+        document.querySelector(`.${inputValue}-ul`).children[i].innerText
       ) {
-        document.querySelector('.city-ul').children[i].className = '';
-      }
-      setCityHolder(document.querySelector('.city-ul').children[i].innerText);
-    }
-  };
-
-  let hideCity = event => {
-    if (document.querySelector('#tech').children.length < 2) {
-      if (event.target.className === '') {
-        event.target.className += ' display-none';
-      } else {
-        event.target.parentElement.className += 'display-none';
+        document.querySelector(`.${inputValue}-ul`).children[i].className = '';
       }
     }
   };
 
-  let toggleSetCity = event => {
-    setShowCities(false);
-
-    let my_city = document.createElement('div');
-    let chosen_city = event.target.innerHTML;
+  let toggleSetChosenItem = event => {
+    let my_item = document.createElement('div');
+    let chosen_item = event.target.innerHTML;
     let icon =
       '<div class="icon-box"><i class="fas fa-times-circle"></i></div>';
-    my_city.className = 'input-chosen';
-    my_city.innerHTML = chosen_city;
-    my_city.innerHTML += icon;
-    my_city.children[0].addEventListener('click', retryCity);
+    my_item.className = 'input-chosen';
+    my_item.innerHTML = chosen_item;
+    my_item.innerHTML += icon;
+    {
+      inputValue === 'tech'
+        ? my_item.children[1].addEventListener('click', retryChosenItem)
+        : my_item.children[0].addEventListener('click', retryChosenItem);
+    }
 
-    document.querySelector('#city').appendChild(my_city);
+    document.querySelector(`#${inputValue}`).appendChild(my_item);
   };
 
-  let searchCities = event => {
+  let searchInput = event => {
     event.preventDefault();
-    setCity(event.target.value);
+    if (inputValue === 'city') {
+      setCity(event.target.value);
+    } else if (inputValue === 'tech') {
+      setTech(event.target.value);
+    } else if (inputValue === 'skill') {
+      setCity(event.target.value);
+    }
 
     for (
       let i = 0;
-      i < document.querySelector('.city-ul').children.length;
+      i < document.querySelector(`.${inputValue}-ul`).children.length;
       i++
     ) {
       if (
         !document
-          .querySelector('.city-ul')
+          .querySelector(`.${inputValue}-ul`)
           .children[i].innerText.includes(event.target.value)
       ) {
-        document.querySelector('.city-ul').children[i].className =
+        document.querySelector(`.${inputValue}-ul`).children[i].className =
           'display-none';
       }
       for (
         let i = 0;
-        i < document.querySelector('.city-ul').children.length;
+        i < document.querySelector(`.${inputValue}-ul`).children.length;
         i++
       ) {
         if (
           document
-            .querySelector('.city-ul')
+            .querySelector(`.${inputValue}-ul`)
             .children[i].innerText.includes(event.target.value) &&
-          document.querySelector('.city-ul').children[i].className ===
+          document.querySelector(`.${inputValue}-ul`).children[i].className ===
             'display-none'
         ) {
-          if (document.querySelector('#city').children.length < 1) {
-            document.querySelector('.city-ul').children[i].className = '';
+          if (document.querySelector(`#${inputValue}`).children.length < 1) {
+            document.querySelector(`.${inputValue}-ul`).children[i].className =
+              '';
           } else {
             for (
               let j = 0;
-              j < document.querySelector('#city').children.length;
+              j < document.querySelector(`#${inputValue}`).children.length;
               j++
             ) {
               if (
-                document.querySelector('#city').children[j].innerText ===
-                document.querySelector('.city-ul').children[i].innerText
+                document.querySelector(`#${inputValue}`).children[j]
+                  .innerText ===
+                document.querySelector(`.${inputValue}-ul`).children[i]
+                  .innerText
               ) {
-                document.querySelector('.city-ul').children[i].className =
-                  'display-none';
+                document.querySelector(`.${inputValue}-ul`).children[
+                  i
+                ].className = 'display-none';
               } else {
-                document.querySelector('.city-ul').children[i].className = '';
+                document.querySelector(`.${inputValue}-ul`).children[
+                  i
+                ].className = '';
               }
             }
 
             for (
               let k = 0;
-              k < document.querySelector('#city').children.length;
+              k < document.querySelector(`#${inputValue}`).children.length;
               k++
             ) {
               if (
-                document.querySelector('#city').children[k].innerText ===
-                document.querySelector('.city-ul').children[i].innerText
+                document.querySelector(`#${inputValue}`).children[k]
+                  .innerText ===
+                document.querySelector(`.${inputValue}-ul`).children[i]
+                  .innerText
               ) {
-                document.querySelector('.city-ul').children[i].className =
-                  'display-none';
+                document.querySelector(`.${inputValue}-ul`).children[
+                  i
+                ].className = 'display-none';
               }
             }
           }
@@ -173,19 +189,19 @@ const UserPreferences = () => {
 
   let focusInput = () => {
     document.querySelector('.city-input').focus();
-
+    setInputValue('city');
     setShowCities(true);
   };
 
   let focusTechInput = () => {
     document.querySelector('.tech-input').focus();
-
+    setInputValue('tech');
     setShowTechnologies(true);
   };
 
   let focusSkillInput = () => {
     document.querySelector('.skill-input').focus();
-
+    setInputValue('skill');
     setShowSkills(true);
   };
 
@@ -212,108 +228,7 @@ const UserPreferences = () => {
       <li onMouseDown={hideCity}>szczecin</li>
     </Fragment>
   ]);
-  //TECHNOLOGIES
-  let toggleSetTechnologies = event => {
-    if (document.querySelector('#tech').children.length > 1) {
-      setShowTechnologies(false);
-    } else {
-      setShowTechnologies(false);
-
-      let my_tech = document.createElement('div');
-      let chosen_tech = event.target.innerHTML;
-      let icon =
-        '<div class="icon-box"><i class="fas fa-times-circle"></i></div>';
-      my_tech.className = 'input-chosen';
-      my_tech.innerHTML = chosen_tech;
-      my_tech.innerHTML += icon;
-      my_tech.children[1].addEventListener('click', retryTech);
-
-      document.querySelector('#tech').appendChild(my_tech);
-    }
-  };
-
-  let retryTech = event => {
-    event.target.parentElement.parentElement.remove();
-    for (
-      let i = 0;
-      i < document.querySelector('.tech-ul').children.length;
-      i++
-    ) {
-      if (
-        event.target.parentElement.parentElement.innerText ===
-        document.querySelector('.tech-ul').children[i].innerText
-      ) {
-        document.querySelector('.tech-ul').children[i].className = '';
-      }
-    }
-  };
-
-  let searchTechnologies = event => {
-    event.preventDefault();
-    setTechnology(event.target.value);
-
-    for (
-      let i = 0;
-      i < document.querySelector('.tech-ul').children.length;
-      i++
-    ) {
-      if (
-        !document
-          .querySelector('.tech-ul')
-          .children[i].innerText.includes(event.target.value)
-      ) {
-        document.querySelector('.tech-ul').children[i].className =
-          'display-none';
-      }
-      for (
-        let i = 0;
-        i < document.querySelector('.tech-ul').children.length;
-        i++
-      ) {
-        if (
-          document
-            .querySelector('.tech-ul')
-            .children[i].innerText.includes(event.target.value) &&
-          document.querySelector('.tech-ul').children[i].className ===
-            'display-none'
-        ) {
-          if (document.querySelector('#tech').children.length < 1) {
-            document.querySelector('.tech-ul').children[i].className = '';
-          } else {
-            for (
-              let j = 0;
-              j < document.querySelector('#tech').children.length;
-              j++
-            ) {
-              if (
-                document.querySelector('#tech').children[j].innerText ===
-                document.querySelector('.tech-ul').children[i].innerText
-              ) {
-                document.querySelector('.tech-ul').children[i].className =
-                  'display-none';
-              } else {
-                document.querySelector('.tech-ul').children[i].className = '';
-              }
-            }
-
-            for (
-              let k = 0;
-              k < document.querySelector('#tech').children.length;
-              k++
-            ) {
-              if (
-                document.querySelector('#tech').children[k].innerText ===
-                document.querySelector('.tech-ul').children[i].innerText
-              ) {
-                document.querySelector('.tech-ul').children[i].className =
-                  'display-none';
-              }
-            }
-          }
-        }
-      }
-    }
-  };
+  //TECHNOLOGIESa
 
   const [technologies, setTechnologies] = useState([
     <Fragment>
@@ -390,103 +305,6 @@ const UserPreferences = () => {
   ]);
 
   //SKILLS
-  let toggleSetSkills = event => {
-    setShowSkills(false);
-
-    let my_skill = document.createElement('div');
-    let chosen_skill = event.target.innerHTML;
-    let icon =
-      '<div class="icon-box"><i class="fas fa-times-circle"></i></div>';
-    my_skill.className = 'input-chosen';
-    my_skill.innerHTML = chosen_skill;
-    my_skill.innerHTML += icon;
-    my_skill.children[0].addEventListener('click', retrySkill);
-
-    document.querySelector('#skill').appendChild(my_skill);
-  };
-
-  let retrySkill = event => {
-    event.target.parentElement.parentElement.remove();
-    for (
-      let i = 0;
-      i < document.querySelector('.skill-ul').children.length;
-      i++
-    ) {
-      if (
-        event.target.parentElement.parentElement.innerText ===
-        document.querySelector('.skill-ul').children[i].innerText
-      ) {
-        document.querySelector('.skill-ul').children[i].className = '';
-      }
-    }
-  };
-
-  let searchSkills = event => {
-    event.preventDefault();
-    setTechnology(event.target.value);
-
-    for (
-      let i = 0;
-      i < document.querySelector('.skill-ul').children.length;
-      i++
-    ) {
-      if (
-        !document
-          .querySelector('.skill-ul')
-          .children[i].innerText.includes(event.target.value)
-      ) {
-        document.querySelector('.skill-ul').children[i].className =
-          'display-none';
-      }
-      for (
-        let i = 0;
-        i < document.querySelector('.skill-ul').children.length;
-        i++
-      ) {
-        if (
-          document
-            .querySelector('.skill-ul')
-            .children[i].innerText.includes(event.target.value) &&
-          document.querySelector('.skill-ul').children[i].className ===
-            'display-none'
-        ) {
-          if (document.querySelector('#skill').children.length < 1) {
-            document.querySelector('.skill-ul').children[i].className = '';
-          } else {
-            for (
-              let j = 0;
-              j < document.querySelector('#skill').children.length;
-              j++
-            ) {
-              if (
-                document.querySelector('#skill').children[j].innerText ===
-                document.querySelector('.skill-ul').children[i].innerText
-              ) {
-                document.querySelector('.skill-ul').children[i].className =
-                  'display-none';
-              } else {
-                document.querySelector('.skill-ul').children[i].className = '';
-              }
-            }
-
-            for (
-              let k = 0;
-              k < document.querySelector('#skill').children.length;
-              k++
-            ) {
-              if (
-                document.querySelector('#skill').children[k].innerText ===
-                document.querySelector('.skill-ul').children[i].innerText
-              ) {
-                document.querySelector('.skill-ul').children[i].className =
-                  'display-none';
-              }
-            }
-          }
-        }
-      }
-    }
-  };
 
   const [skills, setSkills] = [
     <Fragment>
@@ -800,7 +618,7 @@ const UserPreferences = () => {
 
   return (
     <div className="userLogin-content">
-      <UserPanel active={panelActive} />
+      <UserPanel active={panelActive} inputValue={inputValue} />
       <div className="preferences">
         <div className="preferences-content">
           <h1>Preferences</h1>
@@ -874,7 +692,7 @@ const UserPreferences = () => {
                     value={city}
                     placeholder="Select your city"
                     autoComplete="off"
-                    onChange={searchCities}
+                    onChange={searchInput}
                     className="city-input"
                   />
                 </div>
@@ -883,7 +701,7 @@ const UserPreferences = () => {
 
             <div className="cities-box">
               <div className={showCities ? 'cities' : 'cities display-none'}>
-                <ul onMouseDown={toggleSetCity} className="city-ul">
+                <ul onMouseDown={toggleSetChosenItem} className="city-ul">
                   {cities}
                 </ul>
               </div>
@@ -1293,10 +1111,10 @@ const UserPreferences = () => {
                 >
                   <div className="inputStatus" id="tech"></div>
                   <input
-                    value={technology}
+                    value={tech}
                     name="city"
                     placeholder="For example Javascript,html..."
-                    onChange={searchTechnologies}
+                    onChange={searchInput}
                     autoComplete="off"
                     className="tech-input"
                   />
@@ -1308,7 +1126,7 @@ const UserPreferences = () => {
               <div
                 className={showTechnologies ? 'cities' : 'cities display-none'}
               >
-                <ul onMouseDown={toggleSetTechnologies} className="tech-ul">
+                <ul onMouseDown={toggleSetChosenItem} className="tech-ul">
                   {technologies}
                 </ul>
               </div>
@@ -1344,7 +1162,7 @@ const UserPreferences = () => {
                     placeholder="Select skills"
                     className="skill-input"
                     autoComplete="off"
-                    onChange={searchSkills}
+                    onChange={searchInput}
                   />
                 </div>
               </div>
@@ -1356,7 +1174,7 @@ const UserPreferences = () => {
                   showSkills ? 'cities skills' : 'cities skill display-none'
                 }
               >
-                <ul onMouseDown={toggleSetSkills} className="skill-ul">
+                <ul onMouseDown={toggleSetChosenItem} className="skill-ul">
                   {skills}
                 </ul>
               </div>
