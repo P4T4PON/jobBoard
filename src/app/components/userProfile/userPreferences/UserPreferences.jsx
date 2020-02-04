@@ -204,6 +204,12 @@ const UserPreferences = () => {
     setInputValue('skill');
     setShowSkills(true);
   };
+  //1. najedz myszką na 'setCities' i sam Ci podpowie, ze zadeklarowales setCities i nigdzie tego nie uzywasz, wiec po co state?
+  //2. zobacz, ze wszedzie potwarzasz to samo, a malo tego w state trzymasz po prostu fragment z tablicą identycznych elementów
+  // w których nie zmienia się nic oprócz nazwy miasta
+  //3. wgl odpal sobie terminal i zobacz, ile podpowiedzi daje Ci sam eslint (wali warningami o zmiennyh ktore tworzysz i ktorych nie uzywasz wgl)
+  //4. jezeli nigdzie nie nadpisujesz zmiennej to nie uzywaj letów tylko constów i to się tyczy większości projektu
+  // poczytaj o tym : https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75
 
   let [cities, setCities] = useState([
     <Fragment>
@@ -622,6 +628,7 @@ const UserPreferences = () => {
       <div className="preferences">
         <div className="preferences-content">
           <h1>Preferences</h1>
+          <DevSkillsList />
           <form>
             <div className="preferences-box">
               <header className="preferences-header">
