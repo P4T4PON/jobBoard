@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './UserProfile.css';
-import { Link } from 'react-router-dom';
 import UserPanel from '../UserPanel';
 
 const UserProfile = () => {
@@ -66,7 +65,7 @@ const UserProfile = () => {
   let doNothing = () => {};
 
   return (
-    <div className="userLogin-content">
+    <div className="userLogin-content vw-99">
       <UserPanel active={panelActive} />
       <div className="userLogin-container">
         <div className="userLoginContainer-content">

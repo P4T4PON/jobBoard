@@ -219,7 +219,7 @@
 .userLogin-active::before {
   left: 0px;
   width: 47px;
-  height: 10%;
+  height: 11%;
   content: '';
   display: block;
   opacity: 0.4;
@@ -657,4 +657,8 @@
 
 .pink-button:hover {
   background-color: #990033;
+}
+
+.vw-99 {
+  width: 99vw;
 }

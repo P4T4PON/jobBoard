@@ -343,7 +343,7 @@ export class AddOffer extends Component {
                       wspólnie stworzyliśmy nasz profil brandowy. JJIT to dla
                       nas nie tablica ogłoszeń o pracę. Dla nas to Partner{' '}
                     </div>
-                    <img src={Doc}></img>
+                    <img src={Doc} alt=""></img>
                   </div>
                   <div className="slide correct">
                     <div className="slide-title">Anastazja Shelepava</div>
@@ -358,7 +358,7 @@ export class AddOffer extends Component {
                       wartościowe dla nas. Jesteśmy bardzo zadowoleni ze
                       współpracy, dziękujemy!
                     </div>
-                    <img src={Schib}></img>
+                    <img src={Schib} alt=""></img>
                   </div>
 
                   <div className="slide">
@@ -379,7 +379,7 @@ export class AddOffer extends Component {
                       wymagania. Moim zdaniem najlepszy portal i usługa tego
                       typu w Polsce.
                     </div>
-                    <img src={Dev}></img>
+                    <img src={Dev} alt=""></img>
                   </div>
                   <div className="slide owl correct">
                     <div className="slide-title">Jakub Przyborowski</div>
@@ -394,7 +394,7 @@ export class AddOffer extends Component {
                       ludzie, którzy skutecznie starają się ułatwiać życie
                       pracodawcom i kandydatom.
                     </div>
-                    <img src={Owl}></img>
+                    <img src={Owl} alt=""></img>
                   </div>
                   <div className="slide correct">
                     <div className="slide-title">Paulina Brzezińska</div>
@@ -410,7 +410,7 @@ export class AddOffer extends Component {
                       BrandStory oraz inicjatywy takie jak justgeek.it skupiają
                       wokół JustJoin najlepszych specjalistów w branży.
                     </div>
-                    <img src={Vdlogo}></img>
+                    <img src={Vdlogo} alt=""></img>
                   </div>
                 </Slider>
               </div>
@@ -468,7 +468,7 @@ export class AddOffer extends Component {
               <div className="items">
                 <div className="item">
                   <div className="more-logo">
-                    <img src={Rocket} />
+                    <img src={Rocket} alt="" />
                   </div>
                   <div className="more-text">
                     <b>
@@ -483,7 +483,7 @@ export class AddOffer extends Component {
                 </div>
                 <div className="item">
                   <div className="more-logo">
-                    <img src={Bar} />
+                    <img src={Bar} alt="" />
                   </div>
                   <div className="more-text">
                     {this.state.pl ? 'Ponad' : 'Over'}
@@ -495,7 +495,7 @@ export class AddOffer extends Component {
                 </div>
                 <div className="item">
                   <div className="more-logo">
-                    <img src={Brain} />
+                    <img src={Brain} alt="" />
                   </div>
                   <div className="more-text">
                     {this.state.pl
@@ -506,7 +506,7 @@ export class AddOffer extends Component {
                 </div>
                 <div className="item">
                   <div className="more-logo">
-                    <img src={Medal} />
+                    <img src={Medal} alt="" />
                   </div>
                   <div className="more-text">
                     {this.state.pl ? 'W ciągu' : 'In the period of'}{' '}
@@ -519,7 +519,7 @@ export class AddOffer extends Component {
               </div>
             </div>
             <div className="img-col">
-              <img src={Macbook} />
+              <img src={Macbook} alt="" />
             </div>
           </div>
           <div className="button-center">
@@ -535,19 +535,35 @@ export class AddOffer extends Component {
               <a href="/" target="_blank">
                 Just Join IT
               </a>
-              <a href="/brands/story/just-join-it" target="_blank">
+              <a
+                href="/brands/story/just-join-it"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 About us
               </a>
               <a href="/brands" target="_blank">
                 Brand Stories
               </a>
-              <a href="https://rocketjobs.pl/" target="_blank">
+              <a
+                href="https://rocketjobs.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Rocket Jobs
               </a>
-              <a href="/terms-and-privacy-policies" target="_blank">
+              <a
+                href="/terms-and-privacy-policies"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Terms<i className="far fa-file-pdf"></i>
               </a>
-              <a href="/terms-and-privacy-policies" target="_blank">
+              <a
+                href="/terms-and-privacy-policies"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Policy<i className="far fa-file-pdf"></i>
               </a>
             </div>

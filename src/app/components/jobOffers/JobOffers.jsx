@@ -197,7 +197,7 @@ const JobOffers = () => {
               onClick={() => setShowOtherCities(!showOtherCities)}
             ></i>
             <div className="night-mode">
-              <i class="fas fa-sun" onClick={() => setNightMode(false)}></i>
+              <i className="fas fa-sun" onClick={() => setNightMode(false)}></i>
 
               <div
                 className="change-mode"
@@ -211,7 +211,7 @@ const JobOffers = () => {
                   }
                 ></div>
               </div>
-              <i class="fas fa-moon" onClick={() => setNightMode(true)}></i>
+              <i className="fas fa-moon" onClick={() => setNightMode(true)}></i>
             </div>
           </div>
           <div
@@ -510,9 +510,9 @@ const JobOffers = () => {
                   id="inputRangeButton"
                   onClick={() => setShowSalary(!showSalary)}
                 >
-                  <i class="fas fa-dollar-sign"></i>
+                  <i className="fas fa-dollar-sign"></i>
                   <p>Salary</p>
-                  <i class="fas fa-chevron-down"></i>
+                  <i className="fas fa-chevron-down"></i>
                 </div>
                 {showSalary ? (
                   <div className="salaryButton">
@@ -533,9 +533,9 @@ const JobOffers = () => {
                   id="expLevelButton"
                   onClick={() => setShowExpLevel(!showExpLevel)}
                 >
-                  <i class="fas fa-chart-line"></i>
+                  <i className="fas fa-chart-line"></i>
                   <p>Exp. level</p>
-                  <i class="fas fa-chevron-down"></i>
+                  <i className="fas fa-chevron-down"></i>
                 </div>
 
                 <div className={showExpLevel ? 'expLevel op1' : 'expLevel op0'}>

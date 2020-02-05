@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import UserPanel from '../UserPanel';
 
 import './UserSettings.css';
 
 const UserSettings = () => {
   const [panelActive, setPanelActive] = useState(4);
-  const [name, setName] = useState('TestUser');
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [password, setPassword] = useState('');

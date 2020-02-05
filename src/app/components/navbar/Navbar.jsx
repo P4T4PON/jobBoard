@@ -80,14 +80,14 @@ const Navbar = () => {
       }
     }
 
-    if (name != '' && email != '' && companyName != '') {
+    if (name !== '' && email !== '' && companyName !== '') {
       setEverythingOk(true);
     }
   };
 
   let toggleName = event => {
     setName(event.target.value);
-    if (event.target.value != '') {
+    if (event.target.value !== '') {
       if (
         event.target.nextSibling.children[0].className.includes(
           'content-nameError'
@@ -117,7 +117,7 @@ const Navbar = () => {
 
   let toggleCompanyName = event => {
     setCompanyName(event.target.value);
-    if (event.target.value != '') {
+    if (event.target.value !== '') {
       if (
         event.target.nextSibling.children[0].className.includes(
           'content-nameError'
@@ -147,7 +147,7 @@ const Navbar = () => {
 
   let toggleEmail = event => {
     setEmail(event.target.value);
-    if (event.target.value != '') {
+    if (event.target.value !== '') {
       if (
         event.target.nextSibling.children[0].className.includes(
           'content-nameError'
@@ -216,7 +216,11 @@ const Navbar = () => {
           Brand Stories
         </h2>
       </Link>
-      <a href="https://geek.justjoin.it/" target="_blank">
+      <a
+        href="https://geek.justjoin.it/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <h2 className="hov">
           <i className="far fa-newspaper"></i>
           Just Geek IT

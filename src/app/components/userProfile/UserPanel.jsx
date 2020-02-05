@@ -1,15 +1,13 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logged } from '../../actions/index';
 
 const UserPanel = props => {
-  const isLogged = useSelector(state => state.isLogged);
   const dispatch = useDispatch();
 
   const [jobStatus, setJobStatus] = useState('green');
   const [showStatus, setShowStatus] = useState(false);
-  const [name, setName] = useState('TestUser');
 
   let toggleJobStatus = event => {
     setJobStatus(event.target.id);

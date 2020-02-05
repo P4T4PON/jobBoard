@@ -1,8 +1,7 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './app/components/navbar/Navbar';
 import './App.css';
-import { useSelector } from 'react-redux';
 import BrandStories from './app/components/brandStories/BrandStories';
 import JobOffers from './app/components/jobOffers/JobOffers';
 import Machmaking from './app/components/matchmaking/Matchmaking';
