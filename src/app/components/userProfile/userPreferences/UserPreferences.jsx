@@ -3,6 +3,7 @@ import PrefBox from './PrefBox';
 import { JobStatus } from './JobStatus';
 import Input from './Input';
 import Tile from './Tile';
+import SubmitButton from '../../additions/SubmitButton';
 import ResetTile from './ResetTile';
 import Button from './Button';
 import ResetButton from './ResetButton';
@@ -916,9 +917,7 @@ const UserPreferences = () => {
               }
             />
           </form>
-          <div>
-            <input type="submit" value="Update" className="pink-button" />
-          </div>
+          <SubmitButton value={'Update'} className={'pink-button'} />
         </div>
       </div>
     </div>

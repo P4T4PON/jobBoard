@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import './UserProfile.css';
 import UserPanel from '../UserPanel';
+import AnimatedInput from '../../additions/AnimatedInput';
+import UserDetails from './UserDetails';
+import YearsBox from './YearsBox';
+import SubmitButton from '../../additions/SubmitButton';
 
 const UserProfile = () => {
   const [panelActive, setPanelActive] = useState(1);
@@ -62,7 +66,7 @@ const UserProfile = () => {
     setUserGithub(userGithub);
   };
 
-  let doNothing = () => {};
+  const doNothing = () => {};
 
   return (
     <div className="userLogin-content vw-99">
@@ -73,210 +77,169 @@ const UserProfile = () => {
             My profile <p>Complete your profile & apply with just one click!</p>
           </h1>
           <form className="myProfile-content">
-            <div className="userDetails">
-              <div className="userDetails-content">
-                <h3>USER DETAILS</h3>
-                <div className="userDetailsImg-content">
-                  <div className="userDetails-img">
-                    <label htmlFor="file-upload">
-                      <div className="userDetails-changePhoto">
-                        <i className="fas fa-pen"></i>
+            <UserDetails
+              className={'userDetails-content'}
+              title={'USER DETAILS'}
+              content={
+                <Fragment>
+                  <div className="userDetailsImg-content">
+                    <div className="userDetails-img">
+                      <label htmlFor="file-upload">
+                        <div className="userDetails-changePhoto">
+                          <i className="fas fa-pen"></i>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div className="myProfile-input">
+                    <AnimatedInput
+                      divClass={'display-none'}
+                      className={'cont upi'}
+                      type={'text'}
+                      name={'userName'}
+                      value={userName}
+                      fooOnChange={checkUserNameLength}
+                      span={'Name'}
+                    />
+
+                    <AnimatedInput
+                      divClass={'display-none'}
+                      className={'cont upi'}
+                      type={'text'}
+                      name={'userSurname'}
+                      value={userSurname}
+                      fooOnChange={checkUserSurnameLength}
+                      span={'Surname'}
+                    />
+
+                    <AnimatedInput
+                      divClass={'display-none'}
+                      className={'cont upi pointerEventsNone'}
+                      type={'text'}
+                      name={'userEmail'}
+                      value={userEmail}
+                      fooOnChange={doNothing}
+                      span={'Email'}
+                    />
+
+                    <AnimatedInput
+                      divClass={'display-none'}
+                      className={'cont upi'}
+                      type={'text'}
+                      name={'userCity'}
+                      value={userCity}
+                      fooOnChange={checkUserCityLength}
+                      span={'City'}
+                    />
+
+                    <div className="cont upi bigg-input">
+                      <div className="big-input">
+                        <textarea
+                          type="text"
+                          name="userSurname"
+                          autoComplete="off"
+                          spellCheck="false"
+                          required
+                          value={userStory}
+                          onChange={checkUserStoryLength}
+                        />
+                        <label htmlFor="surname" className="label-name">
+                          <span className="content-name">
+                            Introduce Yourself
+                          </span>
+                        </label>
                       </div>
-                    </label>
-                  </div>
-                </div>
-                <div className="myProfile-input">
-                  <div className="cont upi">
-                    <div>
-                      <input
-                        type="text"
-                        name="userName"
-                        autoComplete="off"
-                        spellCheck="false"
-                        required
-                        value={userName}
-                        onChange={checkUserNameLength}
-                      />
-                      <label htmlFor="name" className="label-name">
-                        <span className="content-name">Name</span>
-                      </label>
                     </div>
-                  </div>
-
-                  <div className="cont upi">
-                    <div>
-                      <input
-                        type="text"
-                        name="userSurname"
-                        autoComplete="off"
-                        spellCheck="false"
-                        required
-                        value={userSurname}
-                        onChange={checkUserSurnameLength}
-                      />
-                      <label htmlFor="surname" className="label-name">
-                        <span className="content-name">Surname</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="cont upi pointerEventsNone">
-                    <div>
-                      <input
-                        type="text"
-                        name="userEmail"
-                        autoComplete="off"
-                        spellCheck="false"
-                        required
-                        value={userEmail}
-                        onChange={doNothing}
-                      />
-                      <label htmlFor="email" className="label-name">
-                        <span className="content-name">Email</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="cont upi">
-                    <div>
-                      <input
-                        type="text"
-                        name="userCity"
-                        autoComplete="off"
-                        spellCheck="false"
-                        required
-                        value={userCity}
-                        onChange={checkUserCityLength}
-                      />
-                      <label htmlFor="city" className="label-name">
-                        <span className="content-name">City</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="cont upi bigg-input">
-                    <div className="big-input">
-                      <textarea
-                        type="text"
-                        name="userSurname"
-                        autoComplete="off"
-                        spellCheck="false"
-                        required
-                        value={userStory}
-                        onChange={checkUserStoryLength}
-                      />
-                      <label htmlFor="surname" className="label-name">
-                        <span className="content-name">Introduce Yourself</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </div>{' '}
+                </Fragment>
+              }
+            />
 
             <div className="uploadCV">
-              <div className="uploadCV-content">
-                <h3>UPLOAD CV</h3>
-                <p>Paste your Linkedin page as CV</p>
-                <div className="cont upi margin-10 marginBtm-50 width-100">
-                  <div className="display-flex marginR-10">
-                    <i className="fab fa-linkedin media-icon color-blue"></i>
-                    <input
-                      type="text"
-                      name="Linkedin"
-                      autoComplete="off"
-                      spellCheck="false"
-                      required
+              <UserDetails
+                className={'uploadCV-content'}
+                title={'UPLOAD CV'}
+                content={
+                  <Fragment>
+                    <b>Paste your Linkedin page as CV</b>
+                    <AnimatedInput
+                      divClass={'margTop20'}
+                      inputClass={'fab fa-linkedin media-icon color-blue fs40'}
+                      className={'cont margTop20'}
+                      type={'text'}
+                      name={'linkedin'}
                       value={userLinkedin}
-                      onChange={checkUserLinkedinLength}
+                      fooOnChange={checkUserLinkedinLength}
+                      span={'Linkedin'}
                     />
-                    <label htmlFor="city" className="label-name">
-                      <span className="content-name">Linkedin</span>
-                    </label>
-                  </div>
-                </div>
-                <p>
-                  <b>Or add as attachment</b>
-                  (We accept: PDF)
-                </p>
-                <div className="display-flex flex-center">
-                  <div className="uploadCV-uploadFile">
-                    <div className="uploadFile-box">
-                      <i className="fas fa-file-upload"></i>
+                    <p>
+                      <b>Or add as attachment</b>
+                      (We accept: PDF)
+                    </p>
+                    <div className="display-flex flex-center">
+                      <div className="uploadCV-uploadFile">
+                        <div className="uploadFile-box">
+                          <i className="fas fa-file-upload"></i>
+                        </div>
+                        <div className="uploadFile-text">
+                          {' '}
+                          <p>
+                            Drag and Drop or <b>Browse</b>
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="uploadFile-text">
-                      {' '}
-                      <p>
-                        Drag and Drop or <b>Browse</b>
-                      </p>
+                  </Fragment>
+                }
+              />
+
+              <UserDetails
+                className={'yearsOfExperiance-content'}
+                title={'YEARS OF EXPERIANCE'}
+                paragraph={'How many years of experience do you have?'}
+                content={
+                  <Fragment>
+                    <div className="yearsBoxes-content">
+                      <YearsBox fooOnClick={toggleActive} paragraph={'0-1'} />
+
+                      <YearsBox fooOnClick={toggleActive} paragraph={'1-2'} />
+
+                      <YearsBox fooOnClick={toggleActive} paragraph={'2-4'} />
+
+                      <YearsBox fooOnClick={toggleActive} paragraph={'4-6'} />
+
+                      <YearsBox fooOnClick={toggleActive} paragraph={'6-10'} />
+
+                      <YearsBox fooOnClick={toggleActive} paragraph={'10+'} />
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="yearsOfExperiance">
-                <div className="yearsOfExperiance-content">
-                  <h3>YEARS OF EXPERIANCE</h3>
-                  <p>How many years of experience do you have?</p>
-                  <div className="yearsBoxes-content">
-                    <div className="years-box" onClick={toggleActive}>
-                      <p>0-1</p>
-                      <b>YEARS</b>
-                    </div>
-                    <div className="years-box" onClick={toggleActive}>
-                      <p>1-2</p>
-                      <b>YEARS</b>
-                    </div>
-                    <div className="years-box" onClick={toggleActive}>
-                      <p>2-4</p>
-                      <b>YEARS</b>
-                    </div>
-                    <div className="years-box" onClick={toggleActive}>
-                      <p>4-6</p>
-                      <b>YEARS</b>
-                    </div>
-                    <div className="years-box" onClick={toggleActive}>
-                      <p>6-10</p>
-                      <b>YEARS</b>
-                    </div>
-                    <div className="years-box" onClick={toggleActive}>
-                      <p>10+</p>
-                      <b>YEARS</b>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="socialLinks ">
-                <div className="socialLinks-content">
-                  <h3 className="margin-0">SOCIAL LINKS</h3>
-                  <div className="cont upi margin-0 width-100">
-                    <div className="display-flex">
-                      <i className="fab fa-github media-icon color-black"></i>
-                      <input
-                        type="text"
-                        name="Github"
-                        autoComplete="off"
-                        spellCheck="false"
-                        required
-                        value={userGithub}
-                        onChange={checkUserGithubLength}
-                      />
-                      <label htmlFor="city" className="label-name">
-                        <span className="content-name">Github</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  </Fragment>
+                }
+              />
+
+              <UserDetails
+                className={'socialLinks-content'}
+                title={'SOCIAL LINKS'}
+                content={
+                  <Fragment>
+                    <AnimatedInput
+                      inputClass={'fab fa-github media-icon color-black fs40'}
+                      className={'cont'}
+                      type={'text'}
+                      name={'Github'}
+                      value={userGithub}
+                      fooOnChange={checkUserGithubLength}
+                      span={'Github'}
+                    />
+                  </Fragment>
+                }
+              />
             </div>
           </form>
-          <div>
-            <input
-              type="submit"
-              value="Update profile"
-              className="pink-button"
-              onClick={setStateOfAll}
-            />
-          </div>
+          <SubmitButton
+            value={'Update profile'}
+            className={'pink-button'}
+            submit={setStateOfAll}
+          />
         </div>
       </div>
     </div>

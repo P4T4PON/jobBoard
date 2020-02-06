@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logged } from '../../actions/index';
+import LinkItem from './LinkItem';
 
 const UserPanel = props => {
   const dispatch = useDispatch();
@@ -96,6 +97,7 @@ const UserPanel = props => {
         <div className="userLogin-Options">
           <Link to="/devs/panel/profile">
             <div
+              id="1"
               className={
                 props.active === 1
                   ? 'userLogin-Optionslist userLogin-active'
@@ -107,8 +109,10 @@ const UserPanel = props => {
               <p>My profile</p>
             </div>
           </Link>
+
           <Link to="/devs/panel/matchmaking">
             <div
+              id="2"
               className={
                 props.active === 2
                   ? 'userLogin-Optionslist userLogin-active'
@@ -122,6 +126,7 @@ const UserPanel = props => {
           </Link>
           <Link to="/devs/panel/preferences">
             <div
+              id="3"
               className={
                 props.active === 3
                   ? 'userLogin-Optionslist userLogin-active'
@@ -135,6 +140,7 @@ const UserPanel = props => {
           </Link>
           <Link to="/devs/panel/settings">
             <div
+              id="4"
               className={
                 props.active === 4
                   ? 'userLogin-Optionslist userLogin-active'

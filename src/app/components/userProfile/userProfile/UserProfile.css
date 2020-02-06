@@ -252,7 +252,6 @@
   line-height: 1;
 }
 .userLoginContainer-content p {
-  margin-top: 8px;
   font-size: 23px;
   font-weight: 500;
   color: rgb(153, 160, 170);
@@ -342,12 +341,10 @@
 
 .myProfile-input {
   width: 100%;
-  margin-left: 15px;
+  height: 75%;
 }
 
 .upi {
-  margin-top: 40px;
-  margin-bottom: 40px;
   width: 90%;
 }
 
@@ -413,14 +410,11 @@
 .uploadCV {
   width: 650px;
   height: 500px;
-  margin-left: 20px;
-  margin-bottom: 20px;
 }
 
 .uploadCV-content {
   padding: 10px 25px 30px 25px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  margin-top: 12px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -428,7 +422,6 @@
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   width: 600px;
   height: 440px;
-  margin-bottom: 30px;
 }
 
 .uploadCV-content h3 {
@@ -444,6 +437,10 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
   font-family: 'Open Sans', sans-serif;
+}
+
+.uploadCV-content b {
+  margin-bottom: 20px;
 }
 
 .uploadCV-uploadFile {
@@ -535,7 +532,7 @@
 }
 
 .yearsOfExperiance-content {
-  padding: 20px 20px 0px 20px;
+  padding: 20px 20px 20px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -613,7 +610,7 @@
 }
 
 .socialLinks-content {
-  padding: 20px 20px 0px 20px;
+  padding: 10px 20px 20px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -631,6 +628,10 @@
   font-weight: 600;
   line-height: 1.04;
   margin-bottom: 20px;
+}
+
+.socialLinks-content p {
+  margin: 0;
 }
 
 .pink-button {
@@ -661,4 +662,12 @@
 
 .vw-99 {
   width: 99vw;
+}
+
+.margTop20 {
+  margin-top: 20px;
+}
+
+.fs40 {
+  font-size: 40px;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import UserPanel from '../UserPanel';
-
+import AnimatedInput from '../../additions/AnimatedInput';
+import SubmitButton from '../../additions/SubmitButton';
 import './UserSettings.css';
 
 const UserSettings = () => {
@@ -35,62 +36,35 @@ const UserSettings = () => {
               <p className="margin-0">Follow the instructions below</p>
 
               <div className="passwordChange-box">
-                <div className="passwordChange-input">
-                  <div>
-                    <i className="fas fa-lock  login-icon"></i>
-                  </div>
+                <AnimatedInput
+                  inputClass={'fas fa-lock  login-icon'}
+                  className={'cont'}
+                  type={'text'}
+                  name={'old password'}
+                  value={oldPassword}
+                  fooOnChange={checkOldPasswordLength}
+                  fooOnBlur={checkOldPasswordLength}
+                  span={'Old password'}
+                />
 
-                  <div className="cont">
-                    <div>
-                      <input
-                        type="text"
-                        name="old password"
-                        autoComplete="off"
-                        required
-                        value={oldPassword}
-                        onChange={checkOldPasswordLength}
-                        onBlur={checkOldPasswordLength}
-                      />
-                      <label htmlFor="email" className="label-name">
-                        <span className="content-name">Old password</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="passwordChange-input">
-                  <div>
-                    <i className="fas fa-lock  login-icon"></i>
-                  </div>
-
-                  <div className="cont">
-                    <div>
-                      <input
-                        type="text"
-                        name="new password"
-                        autoComplete="off"
-                        required
-                        value={newPassword}
-                        onChange={checkNewPasswordLength}
-                        onBlur={checkNewPasswordLength}
-                      />
-                      <label htmlFor="email" className="label-name">
-                        <span className="content-name">New password</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
+                <AnimatedInput
+                  inputClass={'fas fa-lock  login-icon'}
+                  className={'cont'}
+                  type={'text'}
+                  name={'new password'}
+                  value={newPassword}
+                  fooOnChange={checkNewPasswordLength}
+                  fooOnBlur={checkNewPasswordLength}
+                  span={'New password'}
+                />
               </div>
             </div>
           </div>
-          <div>
-            <input
-              type="submit"
-              value="Update profile"
-              className="pink-button"
-              onClick={changePassword}
-            />
-          </div>
+          <SubmitButton
+            value={'Update profile'}
+            className={'pink-button'}
+            submit={changePassword}
+          />
         </div>
       </div>
     </div>

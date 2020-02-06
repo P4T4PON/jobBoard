@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import UserPanel from '../UserPanel';
 
+import UserPanel from '../UserPanel';
+import UserChoices from './UserChoices';
+import LinkButton from '../../additions/LinkButton';
 import './UserMachmaking.css';
 
 const UserPreferences = () => {
@@ -45,115 +46,86 @@ const UserPreferences = () => {
         <div className="userMachmaking-box">
           <div className="userMachmaking-header">
             <h2>Your preferences</h2>
-            <Link to="/devs/panel/preferences">
-              <div className="editPreferences-btn">
-                <p>Edit</p>
-              </div>
-            </Link>
+            <LinkButton
+              link={'/devs/panel/preferences'}
+              className={'editPreferences-btn'}
+              text={'Edit'}
+            />
           </div>
           <div className="userMachmaking-preferences">
-            <div className="preferencesBox">
-              <div className="preferencesItem">
-                <i className="fas fa-map-marker-alt blueBox"></i>
-                <div className="preferencesText">
-                  <b>{city}</b>
-                  <span>CITY</span>
-                </div>
-              </div>
-            </div>
+            <UserChoices
+              iconClass={'fas fa-map-marker-alt blueBox'}
+              b={city}
+              span={'CITY'}
+            />
 
-            <div className="preferencesBox">
-              <div className="preferencesItem">
-                <i className="fas fa-dollar-sign lightBlueBox"></i>
-                <div className="preferencesText">
-                  <b>
-                    {minValue}k - {maxValue}k{' '}
-                  </b>
-                  <span>SALARY</span>
-                </div>
-              </div>
-            </div>
+            <UserChoices
+              iconClass={'fas fa-dollar-sign lightBlueBox'}
+              b={`${minValue}k - ${maxValue}k`}
+              span={'SALARY'}
+            />
 
-            <div className="preferencesBox">
-              <div className="preferencesItem">
-                <i className="fas fa-microchip pinkBox"></i>
-                <div className="preferencesText">
-                  <b>{tech}</b>
-                  <span>MAIN TECH</span>
-                </div>
-              </div>
-            </div>
+            <UserChoices
+              iconClass={'fas fa-microchip pinkBox'}
+              b={tech}
+              span={'MAIN TECH'}
+            />
 
-            <div className="preferencesBox">
-              <div className="preferencesItem">
-                <i className="fab fa-react orangeBox"></i>
-                <div className="preferencesText">
-                  <b>{skill}</b>
-                  <span>SKILLS</span>
-                </div>
-              </div>
-            </div>
+            <UserChoices
+              iconClass={'fab fa-react orangeBox'}
+              b={skill}
+              span={'SKILLS'}
+            />
 
-            <div className="preferencesBox">
-              <div className="preferencesItem">
-                <i className="fas fa-umbrella-beach lightBlueBlueBox"></i>
+            <UserChoices
+              iconClass={'fas fa-umbrella-beach lightBlueBlueBox'}
+              b={remote}
+              span={'REMOTE'}
+            />
 
-                <div className="preferencesText">
-                  <b>{remote}</b>
-                  <span>REMOTE</span>
-                </div>
-              </div>
+            <div className={preferences ? 'display-none' : 'preferencesBox'}>
+              <UserChoices
+                bool={true}
+                iconClass={'fas fa-user-friends yellowBox'}
+                b={stage}
+                span={'STAGE'}
+              />
             </div>
 
             <div className={preferences ? 'display-none' : 'preferencesBox'}>
-              <div className="preferencesItem">
-                <i className="fas fa-user-friends yellowBox"></i>
-
-                <div className="preferencesText">
-                  <b>{stage}</b>
-                  <span>STAGE</span>
-                </div>
-              </div>
+              <UserChoices
+                bool={true}
+                iconClass={'fas fa-city redBox'}
+                b={type}
+                span={'TYPE'}
+              />
             </div>
 
             <div className={preferences ? 'display-none' : 'preferencesBox'}>
-              <div className="preferencesItem">
-                <i className="fas fa-city redBox"></i>
-                <div className="preferencesText">
-                  <b>{type}</b>
-                  <span>TYPE</span>
-                </div>
-              </div>
+              <UserChoices
+                bool={true}
+                iconClass={'fas fa-chart-line greenBox'}
+                b={seniority}
+                span={'SENIORITY'}
+              />
             </div>
 
             <div className={preferences ? 'display-none' : 'preferencesBox'}>
-              <div className="preferencesItem">
-                <i className="fas fa-chart-line greenBox"></i>
-                <div className="preferencesText">
-                  <b>{seniority}</b>
-                  <span>SENIORITY</span>
-                </div>
-              </div>
+              <UserChoices
+                bool={true}
+                iconClass={'far fa-building greyBox'}
+                b={industry}
+                span={'INDUSTRY'}
+              />
             </div>
 
             <div className={preferences ? 'display-none' : 'preferencesBox'}>
-              <div className="preferencesItem">
-                <i className="far fa-building greyBox "></i>
-                <div className="preferencesText">
-                  <b>{industry}</b>
-                  <span>INDUSTRY</span>
-                </div>
-              </div>
-            </div>
-
-            <div className={preferences ? 'display-none' : 'preferencesBox'}>
-              <div className="preferencesItem">
-                <i className="far fa-file purpleBox"></i>
-                <div className="preferencesText">
-                  <b>{employment}</b>
-                  <span>EMP. TYPE</span>
-                </div>
-              </div>
+              <UserChoices
+                bool={true}
+                iconClass={'far fa-file purpleBox'}
+                b={employment}
+                span={'EMP.TYPE'}
+              />
             </div>
           </div>
           <div className="showLess">
