@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './UserRegister.css';
 import { Link } from 'react-router-dom';
-
+//klasowy komponent - zamień na funkcyjny
 export default class UserRegister extends Component {
   render() {
     return (

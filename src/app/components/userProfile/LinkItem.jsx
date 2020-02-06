@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+
+//TODO: destrukturyzacja propsow, czym jest foo? dlaczego props.active ma sie rownac 1 a nie np. props o nazwie is Active i true lub false
 const LinkItem = props => {
   return (
     <Fragment>

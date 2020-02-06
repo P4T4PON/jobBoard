@@ -16,7 +16,9 @@ import UserPanel from './app/components/userProfile/UserPanel';
 import UserMachmaking from './app/components/userProfile/userMachmaking/UserMachmaking';
 import UserPreferences from './app/components/userProfile/userPreferences/UserPreferences';
 import UserSettings from './app/components/userProfile/userSettings/UserSettings';
-
+// https://reacttraining.com/react-router/web/guides/quick-start <- zobacz jak powinien byc zbudowany poprawnie router
+// niepotrzbnie az tyle switchy uzywasz, w renderze masz nieuzywane propsy i przekazujesz komponentu w react fragmencie, jest
+// to zla praktyka i niepotrzebny element.
 const App = () => {
   return (
     <div>

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-
+//TODO: destrukturyzacja propsów
 const Input = props => {
   return (
     <Fragment>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logged } from '../../actions/index';
 import LinkItem from './LinkItem';
-
+//nieuzywane importy
 const UserPanel = props => {
   const dispatch = useDispatch();
 
@@ -14,7 +14,7 @@ const UserPanel = props => {
     setJobStatus(event.target.id);
     setShowStatus(!showStatus);
   };
-
+  //lapanie elementow dom js'em -> react :)
   let loginActive = event => {
     if (event.target.parentElement.className === 'userLogin-Optionslist') {
       event.target.parentElement.className =
@@ -32,6 +32,7 @@ const UserPanel = props => {
           <p>Welcome</p>
           <span>{props.inputValue}</span>
         </div>
+        {/*jaki zadanie ma logika ponizszego diva? strasznie zagmatwane*/}
         <div
           className={
             jobStatus === 'green'
@@ -42,10 +43,12 @@ const UserPanel = props => {
               ? 'userLogin-jobStatus red bg-red'
               : null
           }
+          {/* zla nazwa funkcji*/}
           onClick={() => {
             setShowStatus(!showStatus);
           }}
         >
+          {/*self-closing tagi */}
           {jobStatus === 'green' ? (
             <i className="far fa-check-circle big-circle green"></i>
           ) : jobStatus === 'blue' ? (
@@ -63,6 +66,7 @@ const UserPanel = props => {
               ? 'Not open for proposals'
               : null}
           </p>
+          {/*czym jest klasa small-chew? i self closing tag + dlaczego tak skomplikwoana logika do nadawania klasy?*/}
           <i
             className={
               jobStatus === 'green'
@@ -83,6 +87,7 @@ const UserPanel = props => {
           }
         >
           <ul>
+            {/*powtarzalnosc kodu, nadajesz id elementom listy co jest zla praktyka i one sa praktycznie identyczne*/}
             <li onClick={toggleJobStatus} id="green">
               I’m actively looking for a job
             </li>
@@ -148,6 +153,7 @@ const UserPanel = props => {
               }
               onClick={loginActive}
             >
+              {/*self closing tag*/}
               <i className="fas fa-cog"></i>
               <p>Settings</p>
             </div>

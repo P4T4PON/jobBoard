@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO : destrukturyzacja propsow
 const UserDetails = props => {
   return (
     <div className="userDetails">

@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO: destrukturyzacja porpsów
 const ResetButton = props => {
   return (
     <div

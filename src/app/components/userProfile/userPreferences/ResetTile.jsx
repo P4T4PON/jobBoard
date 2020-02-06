@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO: destrukturyzacja propsow
 const ResetTile = props => {
   return (
     <div

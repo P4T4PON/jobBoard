@@ -10,16 +10,20 @@ const JobOffers = () => {
   const [nightMode, setNightMode] = useState(false);
   const [showExpLevel, setShowExpLevel] = useState(false);
   const [showSalary, setShowSalary] = useState(false);
-
+  //let?
   let [value, setValue] = useState({
     min: 0,
     max: 34
   });
 
+  //jest to ogrmony komponent i mozna go podzielic na znacznie mniejsze i powydzielac je w odpowiednie foldery
+  // zastanow sie jak go mozna podzielic
+
   // za duzo linijek i kod sie powtarza z innymi zmiennymi (21-160)
   // mozna ul przypisac do zmiennej i po nim mapowac (224-243)
   // powinno byc w oddzielnym komponencie (247-505) (170-194)
 
+  //  TODO: event parametr nieuzywany, funkcja let i lapiesz elementy czystym js i po nich iterujesz
   let addedChosenCity = event => {
     for (
       let i = 0;
@@ -36,7 +40,7 @@ const JobOffers = () => {
       }
     }
   };
-
+  //let i lapanie po js + przypisywanie klas czystym js
   let addCity = event => {
     if (showOtherCities) {
       setShowOtherCities(false);
@@ -44,8 +48,8 @@ const JobOffers = () => {
       addedChosenCity();
       document.querySelector('.other-cities').className += ' move-right';
     }
-
-    if (cityWasAdded === false) {
+    // tu rowniez lapanie elementow a nawet tworzenie i injectowanie pure js'em + appendowanie - react to to nie jest :)
+    if (!cityWasAdded === false) {
       setShowOtherCities(false);
       addedChosenCity();
       let new_city = document.createElement('div');
@@ -338,7 +342,7 @@ const JobOffers = () => {
                 <p>.NET</p>
               </div>
             </div>
-
+            {/*powtarzanie kodu - moze to byc osobny komponent kotry moze byc zmapowany*/}
             <div className="tech-buttonBox">
               <div
                 className="tech-button light-redIcon icon-self bg-poz0"
@@ -368,6 +372,7 @@ const JobOffers = () => {
                 className="tech-button bordIcon icon-self bg-poz0"
                 onClick={focusTechnology}
               >
+                {/*self closing tagi w i*/}
                 <i className="fas fa-mobile-alt "></i>
               </div>
               <div className="centerNote">
@@ -537,7 +542,7 @@ const JobOffers = () => {
                   <p>Exp. level</p>
                   <i className="fas fa-chevron-down"></i>
                 </div>
-
+                /* nie nic mowiace nazwy klas, powtarzanie sie li*/
                 <div className={showExpLevel ? 'expLevel op1' : 'expLevel op0'}>
                   <ul className={showExpLevel ? 'op1' : 'op0'}>
                     <li onClick={changeExpLevel}>All</li>

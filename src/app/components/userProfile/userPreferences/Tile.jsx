@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import './Tile.css';
-
+//TODO: destrukturyzacja propsow
 const Tile = props => {
   const [active, setActive] = useState(false);
 

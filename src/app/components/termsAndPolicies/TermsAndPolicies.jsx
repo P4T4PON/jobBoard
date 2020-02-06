@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './TermsAndPolicies.css';
-
+//TODO: komponent klasowy - zamien na funkcyjny
 export default class TermsAndPolicies extends Component {
   render() {
     return (

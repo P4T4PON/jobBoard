@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
+//TODO: destrukturyzacja propsów
 const Button = props => {
   const [active, setActive] = useState(false);
-
   if (!props.CompanyActive && active) {
     setActive(false);
   }
