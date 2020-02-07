@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+//TODO: dekonstrukcja propsów
 const LinkButton = props => {
   return (
     <Fragment>

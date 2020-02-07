@@ -3,7 +3,8 @@ import image from './image.png';
 import google from './google-logo.jpg';
 import { Link } from 'react-router-dom';
 import './Matchmaking.css';
-
+//todo: zamień proszę na komponent funkcyjny
+//todo: pamiętaj o folderze z assetami
 class Matchmaking extends Component {
   state = {
     input_type: true,
@@ -58,6 +59,7 @@ class Matchmaking extends Component {
       });
     }
   };
+  //todo niepodomykane odpowiednio tagi
   render() {
     return (
       <div className="matchmaking">

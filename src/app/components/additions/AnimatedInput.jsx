@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO: dekonstrukcja propsow, czym jest fooOnBlur i fooOnChange? (zle nazwy)
 const AnimatedInput = props => {
   return (
     <div className="passwordChange-input">

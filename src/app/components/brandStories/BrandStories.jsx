@@ -6,7 +6,7 @@ const BrandStories = () => {
   const [showOtherCities, setShowOtherCities] = useState(false);
   const [cityWasAdded, setCityWasAdded] = useState(false);
   const [cityWasChosen, setCityWasChosen] = useState(false);
-
+  //TODO: nie używasz eventu w tej funkcji, interujesz po elementach dom złapanych przez js co jest zła praktyką i w reactie nigdy się tak nie robi
   let addedChosenCity = event => {
     for (
       let i = 0;
@@ -23,7 +23,7 @@ const BrandStories = () => {
       }
     }
   };
-
+  //todo: Tu również tworzysz długie i nieczytelne funkcję oraz samym js łapiesz i maniupullujesz elementami DOM
   let addCity = event => {
     if (showOtherCities) {
       setShowOtherCities(false);
@@ -45,7 +45,7 @@ const BrandStories = () => {
 
     if (cityWasAdded) {
       setShowOtherCities(false);
-
+      //wtrzykujesz tutaj hard coded innnerText - w reactie się taak nie robi
       document.querySelector('.added-city').children[0].innerText =
         event.target.innerText;
       document.querySelector('.added-city').children[0].className =
@@ -110,7 +110,7 @@ const BrandStories = () => {
       event.target.classList.remove('unAct');
     }
   };
-
+  //TODO: nie uzywasz eventu i jak wyżesz - manipulacja DOM czystym js
   let focusAllBrands = event => {
     for (
       let i = 0;
@@ -176,6 +176,7 @@ const BrandStories = () => {
               className="otherCities-ul "
               onBlur={() => setShowOtherCities(false)}
             >
+              {/*TODO: powtarzalność kodu*/}
               <li onClick={addCity}>Białystok</li>
               <li onClick={addCity}>Bielsko-biała</li>
               <li onClick={addCity}>Bydgoszcz</li>
@@ -193,7 +194,7 @@ const BrandStories = () => {
               <li onClick={addCity}>Zielona Góra</li>
             </ul>
           </div>
-
+          {/*todo: self-closing tago*/}
           <div className="filters-brands">
             <div className="brand-button all padd" onClick={focusAllBrands}>
               All

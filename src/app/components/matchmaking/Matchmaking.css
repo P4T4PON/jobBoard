@@ -13,7 +13,7 @@
   line-height: 1;
   margin-bottom: 20px;
 }
-
+/*todo: nadpisywanie marginesu*/
 .matchmaking h2 {
   text-align: center;
   font-weight: 600;
@@ -84,7 +84,7 @@
   width: 20px;
   margin-right: 10px;
 }
-
+/*todo: pousuwaj z calego pliku jednostki przy użyciu 0*/
 .span {
   height: 2px;
   background: rgb(231, 233, 239) none repeat scroll 0% 0%;
@@ -205,7 +205,7 @@
   color: black;
   position: absolute;
 }
-
+/*todo: proszę nie używać importantów*/
 .cont input:focus {
   border-color: #ff4081 !important;
 }

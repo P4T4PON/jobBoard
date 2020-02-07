@@ -3,14 +3,14 @@ import image from '../image.png';
 import google from '../google-logo.jpg';
 import { Link } from 'react-router-dom';
 import './Register.css';
-
+//todo: zamień na komponent funkcyjny
 class Register extends Component {
   state = {
     input_type: true,
     email: '',
     emailError: ''
   };
-
+  //todo: nieużywana funkcja
   toggleInput = () => {
     this.setState({ input_type: !this.state.input_type });
   };
@@ -33,7 +33,7 @@ class Register extends Component {
       this.setState({ emailError: 'email is required field' });
     }
   };
-
+  //todo: popraw domykanie tagów
   render() {
     return (
       <div className="reg-register">

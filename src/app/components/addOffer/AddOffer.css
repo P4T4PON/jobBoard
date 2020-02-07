@@ -4,7 +4,7 @@
   flex-direction: column;
   min-height: 443px;
 }
-
+/*TODO: niepotrzebnie napidsujesz margin*/
 .intro-inner {
   position: relative;
   max-width: 1250px;
@@ -49,7 +49,7 @@
 
   color: #37474f;
 }
-
+/*TODO: najedz myszką na podkreśloną linię i zobacz co Ci podpowiada IDE*/
 .flag {
   border: 0.5px solid grey;
   border-left: 1px solid grey;
@@ -106,7 +106,7 @@
   position: relative;
   display: block;
 }
-
+/*TODO: usun jednostę przy 0px*/
 .no-padding {
   padding: 0px;
   margin-top: 20px;
@@ -214,6 +214,7 @@
   display: flex;
   justify-content: center;
 }
+/*TOOD:  zobacz podpowiedź IDE co do letter-spacing*/
 .price-button {
   text-transform: none;
   font-size: 16px;
@@ -314,7 +315,7 @@
   justify-content: center;
   align-items: center;
 }
-
+/*TODO: nie uzywaj importantów */
 .carousel-dots li.carousel-dots-active button:before {
   color: #ff4081 !important;
 }
@@ -345,7 +346,7 @@
   font-weight: 600;
   color: #37474f;
 }
-
+/*TODO: podpowiedź IDE obczaj co do letter-spacing*/
 .slide-sub_title {
   font-size: 12px;
   letter-spacing: 0.28px;
@@ -353,7 +354,7 @@
   margin-bottom: 21px;
   color: #757575;
 }
-
+/*TODO: jak wyżej*/
 .slide-text {
   font-size: 15px;
   font-style: italic;
@@ -445,7 +446,7 @@
   display: flex;
   justify-content: center;
 }
-
+/*TODO: niepotrzebnie nadpisujesz style tej samej klasie*/
 .card-section {
   margin-right: 40px;
   font-size: 20px;

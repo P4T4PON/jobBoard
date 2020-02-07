@@ -40,7 +40,7 @@ const JobOffers = () => {
       }
     }
   };
-  //let i lapanie po js + przypisywanie klas czystym js
+  //todo: let i lapanie po js + przypisywanie klas czystym js
   let addCity = event => {
     if (showOtherCities) {
       setShowOtherCities(false);
@@ -164,7 +164,8 @@ const JobOffers = () => {
 
     setShowExpLevel(false);
   };
-
+  //todo: duza powtarzalnosc kodu, mozna z tego powydzielac male komponenty a przy uzyciu kilku mapować
+  //todo: pozamykaj puste w środku tagi html, aby były self-closing
   return (
     <div className="main-content">
       <div className="sub-header">
@@ -372,7 +373,7 @@ const JobOffers = () => {
                 className="tech-button bordIcon icon-self bg-poz0"
                 onClick={focusTechnology}
               >
-                {/*self closing tagi w i*/}
+                {/*todo: self closing tagi w i*/}
                 <i className="fas fa-mobile-alt "></i>
               </div>
               <div className="centerNote">

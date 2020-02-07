@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import image from '../image.png';
 import './ResetPassword.css';
-
+//todo: zamień to na komponent funkcyjny
 export default class ResetPassword extends Component {
   state = {
     input_type: true,
     email: '',
     emailError: ''
   };
-
+  //todo: nieużywana funkcja
   toggleInput = () => {
     this.setState({ input_type: !this.state.input_type });
   };
@@ -31,6 +31,7 @@ export default class ResetPassword extends Component {
       this.setState({ emailError: 'email is required field' });
     }
   };
+  //todo: podomykaj poprawnie tagi
   render() {
     return (
       <div className="reset">

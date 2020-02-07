@@ -15,7 +15,8 @@ import Brain from './brain.svg';
 import Medal from './medal.svg';
 import Macbook from './macbook.png';
 import Slider from 'infinite-react-carousel';
-
+//TODO: Stwórz folder assets w globalnym folderze i w nim umieść odpowiednio obrazki etc również posortowane w odpowiednio nazwane foldery i stamtąd importuj (to się dotyczy assetów całego projektu)
+//TODO: zamień na komponent funkcyjny
 export class AddOffer extends Component {
   state = {
     counter: 1,
@@ -23,7 +24,7 @@ export class AddOffer extends Component {
     pl: true,
     myRef: React.createRef()
   };
-
+  //TODO: nieużywany jest nextSlide i prevSlide, więc po co tu one?
   nextSlide = () => {
     this.setState({ counter: +1 });
     this.setState({ style: true });
@@ -41,7 +42,9 @@ export class AddOffer extends Component {
   changeLanguageToENG = () => {
     this.setState({ pl: false });
   };
-
+//TODO: przeogromny komponent, porozbijaj go na wiele mniejsze komponenty, a tam gdzie coś powielasz to po zrób jeden reużywalny komponent i po nim mapuj
+  //TODO: popraw wszystkie puste w środku tagi, aby były samozamykające się
+  //TODO: pamiętaj o dekonstrukcji propsów (w tym wypadku wartości state'a, ale i tak proszę, abyś zamienił to na funkcyjny komponent
   render() {
     return (
       <div className="add-offer">
