@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
-import './Tile.css';
-
-const Tile = props => {
+const Tile = ({ companyActive, companyIcon, companySpan }) => {
   const [active, setActive] = useState(false);
 
-  if (!props.CompanyActive && active) {
+  if (!companyActive && active) {
     setActive(false);
   }
 
@@ -18,8 +16,8 @@ const Tile = props => {
       }
       onClick={() => setActive(!active)}
     >
-      <i className={props.CompanyIcon}></i>
-      <span>{props.CompanySpan}</span>
+      <i className={companyIcon}></i>
+      <span>{companySpan}</span>
     </div>
   );
 };

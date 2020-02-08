@@ -1,26 +1,36 @@
 import React from 'react';
 
-const AnimatedInput = props => {
+const AnimatedInput = ({
+  divClass,
+  inputClass,
+  className,
+  type,
+  name,
+  value,
+  checkInputLength,
+  checkInputBlurLength,
+  span
+}) => {
   return (
     <div className="passwordChange-input">
-      <div className={props.divClass}>
-        <i className={props.inputClass}></i>
+      <div className={divClass}>
+        <i className={inputClass}></i>
       </div>
 
-      <div className={props.className}>
+      <div className={className}>
         <div>
           <input
-            type={props.type}
-            name={props.name}
+            type={type}
+            name={name}
             autoComplete="off"
             required
             spellCheck="false"
-            value={props.value}
-            onChange={props.fooOnChange}
-            onBlur={props.fooOnBlur}
+            value={value}
+            onChange={checkInputLength}
+            onBlur={checkInputBlurLength}
           />
           <label htmlFor="email" className="label-name">
-            <span className="content-name">{props.span}</span>
+            <span className="content-name">{span}</span>
           </label>
         </div>
       </div>

@@ -224,3 +224,22 @@ export const skills = [
   'Backbone',
   'Chai'
 ];
+
+export const contactInfo = [
+  'JUST JOIN IT SP. Z O.O',
+  'ul. Lęborska 3B / 1.44',
+  '80-386 Gdańsk',
+  'NIP 584-278-19-57',
+  'KRS 0000774695',
+  'team@justjoin.it',
+  '+48 737 175 805'
+];
+
+export const sideLink = [
+  ['https://www.facebook.com/JustJoinIT/', 'fab fa-facebook-f', 'JustJoinIT'],
+  ['https://event.justjoin.it/', 'fas fa-microphone', 'Event'],
+  ['/brands/story/just-join-it', 'fas fa-user-friends mar', 'About us'],
+  ['https://justjoin.it/feed.atom', 'fas fa-rss', 'RSS'],
+  ['/terms-and-privacy-policies', 'far fa-file-pdf', 'Terms'],
+  ['/terms-and-privacy-policies', 'far fa-file-pdf', 'Policy']
+];

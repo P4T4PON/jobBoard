@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
 
-const Input = props => {
+const Input = ({ id, skill, name, placeholder, className, searchInput }) => {
   return (
     <Fragment>
-      <div className="inputStatus" id={props.id}></div>
+      <div className="inputStatus" id={id}></div>
       <input
-        value={props.skill}
-        name={props.name}
-        placeholder={props.placeholder}
-        className={props.className}
+        value={skill}
+        name={name}
+        placeholder={placeholder}
+        className={className}
         autoComplete="off"
-        onChange={props.foo}
+        onChange={searchInput}
       />
     </Fragment>
   );

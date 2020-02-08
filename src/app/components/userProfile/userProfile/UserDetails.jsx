@@ -1,12 +1,12 @@
 import React from 'react';
 
-const UserDetails = props => {
+const UserDetails = ({ className, paragraph, content }) => {
   return (
     <div className="userDetails">
-      <div className={props.className}>
-        <h3>{props.title}</h3>
-        <p>{props.paragraph}</p>
-        {props.content}
+      <div className={className}>
+        <h3>{className}</h3>
+        <p>{paragraph}</p>
+        {content}
       </div>
     </div>
   );

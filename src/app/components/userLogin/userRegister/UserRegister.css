@@ -11,7 +11,7 @@
 
 .center p {
   color: black;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 15px;
 }
 
@@ -28,6 +28,6 @@
   margin-top: 0px;
 }
 
-.reg {
-  margin-left: 180px;
+.col-blue p {
+  color: #039be5;
 }

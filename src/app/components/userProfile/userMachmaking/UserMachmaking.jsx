@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
-
 import UserPanel from '../UserPanel';
 import UserChoices from './UserChoices';
 import LinkButton from '../../additions/LinkButton';
 import './UserMachmaking.css';
 
 const UserPreferences = () => {
-  const [panelActive, setPanelActive] = useState(2);
-  const [city, setCity] = useState('trójmiasto');
-  const [minValue, setMinValue] = useState(0);
-  const [maxValue, setMaxValue] = useState(5);
+  const [panelActive] = useState(2);
+  const [city] = useState('trójmiasto');
+  const [minValue] = useState(0);
+  const [maxValue] = useState(5);
 
-  const [tech, setTech] = useState('javascript');
-  const [skill, setSkill] = useState('react');
-  const [remote, setRemote] = useState('yes');
+  const [tech] = useState('javascript');
+  const [skill] = useState('react');
+  const [remote] = useState('yes');
 
-  const [stage, setStage] = useState('Growth stage');
-  const [type, setType] = useState('Software house');
-  const [seniority, setSeniority] = useState('Junior');
-  const [industry, setIndustry] = useState('Other');
-  const [employment, setEmployment] = useState('B2B');
+  const [stage] = useState('Growth stage');
+  const [type] = useState('Software house');
+  const [seniority] = useState('Junior');
+  const [industry] = useState('Other');
+  const [employment] = useState('B2B');
 
   const [preferences, setPreferences] = useState(true);
 

@@ -1,13 +1,13 @@
 import React from 'react';
 
-const UserChoices = props => {
+const UserChoices = ({ bool, iconClass, span, b }) => {
   return (
-    <div className={props.bool ? '' : 'preferencesBox'}>
+    <div className={bool ? '' : 'preferencesBox'}>
       <div className="preferencesItem">
-        <i className={props.iconClass}></i>
+        <i className={iconClass}></i>
         <div className="preferencesText">
-          <b>{props.b}</b>
-          <span>{props.span}</span>
+          <b>{b}</b>
+          <span>{span}</span>
         </div>
       </div>
     </div>

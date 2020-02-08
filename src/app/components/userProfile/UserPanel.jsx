@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logged } from '../../actions/index';
-import LinkItem from './LinkItem';
+import UserStatus from './UserStatus';
 
 const UserPanel = props => {
   const dispatch = useDispatch();
@@ -10,12 +10,12 @@ const UserPanel = props => {
   const [jobStatus, setJobStatus] = useState('green');
   const [showStatus, setShowStatus] = useState(false);
 
-  let toggleJobStatus = event => {
+  const toggleJobStatus = event => {
     setJobStatus(event.target.id);
     setShowStatus(!showStatus);
   };
 
-  let loginActive = event => {
+  const loginActive = event => {
     if (event.target.parentElement.className === 'userLogin-Optionslist') {
       event.target.parentElement.className =
         'userLogin-Optionslist userLogin-active';
@@ -32,49 +32,34 @@ const UserPanel = props => {
           <p>Welcome</p>
           <span>{props.inputValue}</span>
         </div>
-        <div
-          className={
-            jobStatus === 'green'
-              ? 'userLogin-jobStatus green bg-green'
-              : jobStatus === 'blue'
-              ? 'userLogin-jobStatus blue bg-blue'
-              : jobStatus === 'red'
-              ? 'userLogin-jobStatus red bg-red'
-              : null
-          }
-          onClick={() => {
-            setShowStatus(!showStatus);
-          }}
-        >
-          {jobStatus === 'green' ? (
-            <i className="far fa-check-circle big-circle green"></i>
-          ) : jobStatus === 'blue' ? (
-            <i className="far fa-envelope big-circle"></i>
-          ) : jobStatus === 'red' ? (
-            <i className="fas fa-times-circle big-circle"></i>
-          ) : null}
-
-          <p>
-            {jobStatus === 'green'
-              ? 'I’m actively looking for a job'
-              : jobStatus === 'blue'
-              ? 'Open for proposals'
-              : jobStatus === 'red'
-              ? 'Not open for proposals'
-              : null}
-          </p>
-          <i
-            className={
-              jobStatus === 'green'
-                ? 'fas fa-chevron-down small-chew green'
-                : jobStatus === 'blue'
-                ? 'fas fa-chevron-down small-chew blue'
-                : jobStatus === 'red'
-                ? 'fas fa-chevron-down small-chew red'
-                : null
-            }
-          ></i>
-        </div>
+        {jobStatus === 'green' ? (
+          <UserStatus
+            setShowStatus={() => {
+              setShowStatus(!showStatus);
+            }}
+            iconClass={'far fa-check-circle big-circle green'}
+            color={'green'}
+            paragraph={'I’m actively looking for a job'}
+          />
+        ) : jobStatus === 'blue' ? (
+          <UserStatus
+            setShowStatus={() => {
+              setShowStatus(!showStatus);
+            }}
+            iconClass={'far fa-envelope big-circle'}
+            color={'blue'}
+            paragraph={'Open for proposals'}
+          />
+        ) : (
+          <UserStatus
+            setShowStatus={() => {
+              setShowStatus(!showStatus);
+            }}
+            iconClass={'fas fa-times-circle big-circle'}
+            color={'red'}
+            paragraph={'Not open for proposals'}
+          />
+        )}
         <div
           className={
             showStatus

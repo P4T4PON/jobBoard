@@ -20,7 +20,7 @@ import {
 import './UserPreferences.css';
 
 const UserPreferences = () => {
-  const [panelActive, setPanelActive] = useState(3);
+  const [panelActive] = useState(3);
   const [showCities, setShowCities] = useState(false);
   const [showTechnologies, setShowTechnologies] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
@@ -50,7 +50,7 @@ const UserPreferences = () => {
   const [employment, setEmployment] = useState(0);
   const [employmentStatus, setEmploymentStatus] = useState(false);
 
-  let renderCities = () => {
+  const renderCities = () => {
     return cities.map((city, index) => (
       <li onMouseDown={hideCity} key={index}>
         {city}
@@ -87,15 +87,12 @@ const UserPreferences = () => {
   const jobStatusActive = event => {
     const job_box = document.querySelector('.jobStatus-box');
     for (let i = 0; i < job_box.children.length; i++) {
-      job_box.children[i].children[0].className = 'jobStatus-change mr-20';
+      job_box.children[i].children[0].className = 'jobStatus-change ';
     }
-    if (event.target.className === 'jobStatus-change mr-20') {
-      event.target.className = 'jobStatus-change mr-20 border-pink';
-    } else if (
-      event.target.parentElement.className === 'jobStatus-change mr-20'
-    ) {
-      event.target.parentElement.className =
-        'jobStatus-change mr-20 border-pink';
+    if (event.target.className === 'jobStatus-change') {
+      event.target.className = 'jobStatus-change border-pink';
+    } else if (event.target.parentElement.className === 'jobStatus-change ') {
+      event.target.parentElement.className = 'jobStatus-change  border-pink';
     }
   };
 
@@ -238,12 +235,6 @@ const UserPreferences = () => {
     setInputValue('skill');
     setShowSkills(true);
   };
-  //1. najedz myszką na 'setCities' i sam Ci podpowie, ze zadeklarowales setCities i nigdzie tego nie uzywasz, wiec po co state?
-  //2. zobacz, ze wszedzie potwarzasz to samo, a malo tego w state trzymasz po prostu fragment z tablicą identycznych elementów
-  // w których nie zmienia się nic oprócz nazwy miasta
-  //3. wgl odpal sobie terminal i zobacz, ile podpowiedzi daje Ci sam eslint (wali warningami o zmiennyh ktore tworzysz i ktorych nie uzywasz wgl)
-  //4. jezeli nigdzie nie nadpisujesz zmiennej to nie uzywaj letów tylko constów i to się tyczy większości projektu
-  // poczytaj o tym : https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75
 
   const assignValue = event => {
     if (event.target.parentElement.parentElement.id !== '') {
@@ -358,7 +349,7 @@ const UserPreferences = () => {
               }
               content={
                 <Fragment>
-                  <div onClick={jobStatusActive}>
+                  <div className="mr-20" onClick={jobStatusActive}>
                     <JobStatus
                       icon={'far fa-file-alt'}
                       span1={'Actively looking '}
@@ -366,7 +357,7 @@ const UserPreferences = () => {
                     />
                   </div>
 
-                  <div onClick={jobStatusActive}>
+                  <div className="mr-20" onClick={jobStatusActive}>
                     <JobStatus
                       icon={'fas fa-envelope-open-text'}
                       span1={'Open '}
@@ -374,7 +365,7 @@ const UserPreferences = () => {
                     />
                   </div>
 
-                  <div onClick={jobStatusActive}>
+                  <div className="mr-20" onClick={jobStatusActive}>
                     <JobStatus
                       icon={'fas fa-unlock-alt'}
                       span1={'Not open '}
@@ -408,7 +399,7 @@ const UserPreferences = () => {
                       placeholder={'Select your city'}
                       className={'city-input'}
                       id={'city'}
-                      foo={searchInput}
+                      searchInput={searchInput}
                     />
                   </div>
                   <div className="cities-box">
@@ -475,41 +466,41 @@ const UserPreferences = () => {
                   >
                     <div className="z-index100 a" onClick={clearTiles}>
                       <ResetTile
-                        CompanyIcon={'far fa-check-square'}
-                        CompanySpan={"Doesn't matter"}
-                        CompanyActive={companyStageStatus}
+                        companyIcon={'far fa-check-square'}
+                        companySpan={"Doesn't matter"}
+                        companyActive={companyStageStatus}
                       />
                     </div>
 
                     <div className="z-index100 a" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'fas fa-home'}
-                        CompanySpan={'Early stage(0-30)'}
-                        CompanyActive={companyStageStatus}
+                        companyIcon={'fas fa-home'}
+                        companySpan={'Early stage(0-30)'}
+                        companyActive={companyStageStatus}
                       />
                     </div>
 
                     <div className="z-index100 a" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'far fa-building'}
-                        CompanySpan={'Growth stage (30-100)'}
-                        CompanyActive={companyStageStatus}
+                        companyIcon={'far fa-building'}
+                        companySpan={'Growth stage (30-100)'}
+                        companyActive={companyStageStatus}
                       />
                     </div>
 
                     <div className="z-index100 a" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'fas fa-city'}
-                        CompanySpan={'Estabilished(100-250)'}
-                        CompanyActive={companyStageStatus}
+                        companyIcon={'fas fa-city'}
+                        companySpan={'Estabilished(100-250)'}
+                        companyActive={companyStageStatus}
                       />
                     </div>
 
                     <div className="z-index100 a" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'fas fa-university'}
-                        CompanySpan={'Corporation(250+)'}
-                        CompanyActive={companyStageStatus}
+                        companyIcon={'fas fa-university'}
+                        companySpan={'Corporation(250+)'}
+                        companyActive={companyStageStatus}
                       />
                     </div>
                   </div>
@@ -534,41 +525,41 @@ const UserPreferences = () => {
                   >
                     <div className="z-index100" onClick={clearTiles}>
                       <ResetTile
-                        CompanyIcon={'far fa-check-square'}
-                        CompanySpan={"Doesn't matter"}
-                        CompanyActive={companyKindStatus}
+                        companyIcon={'far fa-check-square'}
+                        companySpan={"Doesn't matter"}
+                        companyActive={companyKindStatus}
                       />
                     </div>
 
                     <div className="z-index100" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'fas fa-rocket'}
-                        CompanySpan={'Startup'}
-                        CompanyActive={companyKindStatus}
+                        companyIcon={'fas fa-rocket'}
+                        companySpan={'Startup'}
+                        companyActive={companyKindStatus}
                       />
                     </div>
 
                     <div className="z-index100" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'fas fa-flask'}
-                        CompanySpan={'Software house'}
-                        CompanyActive={companyKindStatus}
+                        companyIcon={'fas fa-flask'}
+                        companySpan={'Software house'}
+                        companyActive={companyKindStatus}
                       />
                     </div>
 
                     <div className="z-index100" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'fas fa-shopping-cart'}
-                        CompanySpan={'E-commerce'}
-                        CompanyActive={companyKindStatus}
+                        companyIcon={'fas fa-shopping-cart'}
+                        companySpan={'E-commerce'}
+                        companyActive={companyKindStatus}
                       />
                     </div>
 
                     <div className="z-index100" onClick={toggleTiles}>
                       <Tile
-                        CompanyIcon={'fas fa-hotel'}
-                        CompanySpan={'Corporation'}
-                        CompanyActive={companyKindStatus}
+                        companyIcon={'fas fa-hotel'}
+                        companySpan={'Corporation'}
+                        companyActive={companyKindStatus}
                       />
                     </div>
                   </div>
@@ -595,96 +586,96 @@ const UserPreferences = () => {
                   >
                     <div className="btn-icon" onClick={clearTiles}>
                       <ResetButton
-                        CompanySpan={"Doesn't matter"}
-                        CompanyActive={industryStatus}
+                        companySpan={"Doesn't matter"}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-dollar-sign'}
-                        CompanySpan={'Fintech'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-dollar-sign'}
+                        companySpan={'Fintech'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-cube'}
-                        CompanySpan={'Bloackchain'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-cube'}
+                        companySpan={'Bloackchain'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-shopping-cart'}
-                        CompanySpan={'E-commerce'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-shopping-cart'}
+                        companySpan={'E-commerce'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'far fa-heart'}
-                        CompanySpan={'Medicine'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'far fa-heart'}
+                        companySpan={'Medicine'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-medal'}
-                        CompanySpan={'Military'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-medal'}
+                        companySpan={'Military'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-plane-departure'}
-                        CompanySpan={'Travel'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-plane-departure'}
+                        companySpan={'Travel'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-cart-arrow-down'}
-                        CompanySpan={'Martech'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-cart-arrow-down'}
+                        companySpan={'Martech'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-user-md'}
-                        CompanySpan={'IoT'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-user-md'}
+                        companySpan={'IoT'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-truck'}
-                        CompanySpan={'Logistic'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-truck'}
+                        companySpan={'Logistic'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-seedling'}
-                        CompanySpan={'Beauty'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-seedling'}
+                        companySpan={'Beauty'}
+                        companyActive={industryStatus}
                       />
                     </div>
 
                     <div className="btn-icon grey" onClick={toggleTiles}>
                       <Button
-                        CompanyIcon={'fas fa-laptop'}
-                        CompanySpan={'Other'}
-                        CompanyActive={industryStatus}
+                        companyIcon={'fas fa-laptop'}
+                        companySpan={'Other'}
+                        companyActive={industryStatus}
                       />
                     </div>
                   </div>
@@ -709,29 +700,29 @@ const UserPreferences = () => {
                   >
                     <div className="btn-icon" onClick={clearTiles}>
                       <ResetButton
-                        CompanySpan={"Doesn't matter"}
-                        CompanyActive={experianceStatus}
+                        companySpan={"Doesn't matter"}
+                        companyActive={experianceStatus}
                       />
                     </div>
 
                     <div className="btn-icon" onClick={toggleTiles}>
                       <Button
-                        CompanySpan={'Junior'}
-                        CompanyActive={experianceStatus}
+                        companySpan={'Junior'}
+                        companyActive={experianceStatus}
                       />
                     </div>
 
                     <div className="btn-icon" onClick={toggleTiles}>
                       <Button
-                        CompanySpan={'Mid'}
-                        CompanyActive={experianceStatus}
+                        companySpan={'Mid'}
+                        companyActive={experianceStatus}
                       />
                     </div>
 
                     <div className="btn-icon" onClick={toggleTiles}>
                       <Button
-                        CompanySpan={'Senior'}
-                        CompanyActive={experianceStatus}
+                        companySpan={'Senior'}
+                        companyActive={experianceStatus}
                       />
                     </div>
                   </div>
@@ -758,29 +749,29 @@ const UserPreferences = () => {
                   >
                     <div className="btn-icon" onClick={clearTiles}>
                       <ResetButton
-                        CompanySpan={"Doesn't matter"}
-                        CompanyActive={employmentStatus}
+                        companySpan={"Doesn't matter"}
+                        companyActive={employmentStatus}
                       />
                     </div>
 
                     <div className="btn-icon" onClick={toggleTiles}>
                       <Button
-                        CompanySpan={'B2B'}
-                        CompanyActive={employmentStatus}
+                        companySpan={'B2B'}
+                        companyActive={employmentStatus}
                       />
                     </div>
 
                     <div className="btn-icon" onClick={toggleTiles}>
                       <Button
-                        CompanySpan={'Permanent'}
-                        CompanyActive={employmentStatus}
+                        companySpan={'Permanent'}
+                        companyActive={employmentStatus}
                       />
                     </div>
 
                     <div className="btn-icon" onClick={toggleTiles}>
                       <Button
-                        CompanySpan={'Mandate contact'}
-                        CompanyActive={employmentStatus}
+                        companySpan={'Mandate contact'}
+                        companyActive={employmentStatus}
                       />
                     </div>
                   </div>
@@ -848,7 +839,7 @@ const UserPreferences = () => {
                       placeholder={'For example Javascript, Html...'}
                       className={'tech-input'}
                       id={'tech'}
-                      foo={searchInput}
+                      searchInput={searchInput}
                     />
                   </div>
 
@@ -893,7 +884,7 @@ const UserPreferences = () => {
                       placeholder={'Select skills'}
                       className={'skill-input'}
                       id={'skill'}
-                      foo={searchInput}
+                      searchInput={searchInput}
                     />
                   </div>
 

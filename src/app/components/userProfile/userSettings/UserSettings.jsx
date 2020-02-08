@@ -5,20 +5,20 @@ import SubmitButton from '../../additions/SubmitButton';
 import './UserSettings.css';
 
 const UserSettings = () => {
-  const [panelActive, setPanelActive] = useState(4);
+  const [panelActive] = useState(4);
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
-  const [password, setPassword] = useState('');
+  const [setPassword] = useState('');
 
-  let checkOldPasswordLength = event => {
+  const checkOldPasswordLength = event => {
     setOldPassword(event.target.value);
   };
 
-  let checkNewPasswordLength = event => {
+  const checkNewPasswordLength = event => {
     setNewPassword(event.target.value);
   };
 
-  let changePassword = () => {
+  const changePassword = () => {
     if (oldPassword === newPassword) {
       setPassword(newPassword);
     }
@@ -39,22 +39,22 @@ const UserSettings = () => {
                 <AnimatedInput
                   inputClass={'fas fa-lock  login-icon'}
                   className={'cont'}
-                  type={'text'}
+                  type={'password'}
                   name={'old password'}
                   value={oldPassword}
-                  fooOnChange={checkOldPasswordLength}
-                  fooOnBlur={checkOldPasswordLength}
+                  checkInputLength={checkOldPasswordLength}
+                  checkInputBlurLength={checkOldPasswordLength}
                   span={'Old password'}
                 />
 
                 <AnimatedInput
                   inputClass={'fas fa-lock  login-icon'}
                   className={'cont'}
-                  type={'text'}
+                  type={'password'}
                   name={'new password'}
                   value={newPassword}
-                  fooOnChange={checkNewPasswordLength}
-                  fooOnBlur={checkNewPasswordLength}
+                  checkInputLength={checkNewPasswordLength}
+                  checkInputBlurLength={checkNewPasswordLength}
                   span={'New password'}
                 />
               </div>

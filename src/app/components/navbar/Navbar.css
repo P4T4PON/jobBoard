@@ -40,6 +40,7 @@ h2 {
 .nav-right {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-right: 70px;
 }
 
@@ -198,7 +199,7 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(163, 53, 181);
+  color: rgb(163, 53, 181) !important;
 }
 
 .link-paragraph {
@@ -358,11 +359,20 @@ a:active {
 }
 
 .contactUs-content {
-  padding: 15px 50px 30px 50px;
+  padding: 30px 0 60px 100px;
+}
+
+.brands-i {
+  color: #37474f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .brands-i i {
   font-size: 1.5rem !important;
+  margin: 0 !important;
 }
 
 .contactUs-submitBox {
@@ -433,4 +443,33 @@ a:active {
 
 .background-none {
   background: none !important;
+}
+
+.roundedBtn {
+  color: #fff;
+  font-weight: 600;
+  line-height: 38px;
+  font-size: 14px;
+  height: 40px;
+  margin-right: 12px;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  padding: 2px;
+  width: 120px;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.margTop-20 {
+  margin-top: 20px;
+}
+
+.marg0 {
+  margin: 0 !important;
 }

@@ -1,15 +1,13 @@
 import React from 'react';
 
-const ResetButton = props => {
+const ResetButton = ({ companyActive, companySpan }) => {
   return (
     <div
       className={
-        props.CompanyActive
-          ? 'jobStatus-button '
-          : 'jobStatus-button border-pink '
+        companyActive ? 'jobStatus-button ' : 'jobStatus-button border-pink '
       }
     >
-      <span>{props.CompanySpan}</span>
+      <span>{companySpan}</span>
     </div>
   );
 };

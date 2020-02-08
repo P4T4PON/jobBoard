@@ -7,17 +7,17 @@ import YearsBox from './YearsBox';
 import SubmitButton from '../../additions/SubmitButton';
 
 const UserProfile = () => {
-  const [panelActive, setPanelActive] = useState(1);
+  const [panelActive] = useState(1);
   const [userName, setUserName] = useState('TestUser');
-  const [name, setName] = useState('TestUser');
+  const [setName] = useState('TestUser');
   const [userSurname, setUserSurname] = useState('Bobicki');
-  const [userEmail, setUserEmail] = useState('bobek123@wp.pl');
+  const [userEmail] = useState('bobek123@wp.pl');
   const [userCity, setUserCity] = useState('');
   const [userStory, setUserStory] = useState('');
   const [userLinkedin, setUserLinkedin] = useState('');
   const [userGithub, setUserGithub] = useState('');
 
-  let toggleActive = event => {
+  const toggleActive = event => {
     for (
       let i = 0;
       i < document.querySelector('.yearsBoxes-content').children.length;
@@ -33,31 +33,31 @@ const UserProfile = () => {
     }
   };
 
-  let checkUserNameLength = event => {
+  const checkUserNameLength = event => {
     setUserName(event.target.value);
   };
 
-  let checkUserSurnameLength = event => {
+  const checkUserSurnameLength = event => {
     setUserSurname(event.target.value);
   };
 
-  let checkUserCityLength = event => {
+  const checkUserCityLength = event => {
     setUserCity(event.target.value);
   };
 
-  let checkUserStoryLength = event => {
+  const checkUserStoryLength = event => {
     setUserStory(event.target.value);
   };
 
-  let checkUserLinkedinLength = event => {
+  const checkUserLinkedinLength = event => {
     setUserLinkedin(event.target.value);
   };
 
-  let checkUserGithubLength = event => {
+  const checkUserGithubLength = event => {
     setUserGithub(event.target.value);
   };
 
-  let setStateOfAll = () => {
+  const setStateOfAll = () => {
     setName(userName);
     setUserStory(userStory);
     setUserSurname(userSurname);
@@ -98,7 +98,7 @@ const UserProfile = () => {
                       type={'text'}
                       name={'userName'}
                       value={userName}
-                      fooOnChange={checkUserNameLength}
+                      checkInputLength={checkUserNameLength}
                       span={'Name'}
                     />
 
@@ -108,7 +108,7 @@ const UserProfile = () => {
                       type={'text'}
                       name={'userSurname'}
                       value={userSurname}
-                      fooOnChange={checkUserSurnameLength}
+                      checkInputLength={checkUserSurnameLength}
                       span={'Surname'}
                     />
 
@@ -118,7 +118,7 @@ const UserProfile = () => {
                       type={'text'}
                       name={'userEmail'}
                       value={userEmail}
-                      fooOnChange={doNothing}
+                      checkInputLength={doNothing}
                       span={'Email'}
                     />
 
@@ -128,7 +128,7 @@ const UserProfile = () => {
                       type={'text'}
                       name={'userCity'}
                       value={userCity}
-                      fooOnChange={checkUserCityLength}
+                      checkInputLength={checkUserCityLength}
                       span={'City'}
                     />
 
@@ -150,7 +150,7 @@ const UserProfile = () => {
                         </label>
                       </div>
                     </div>
-                  </div>{' '}
+                  </div>
                 </Fragment>
               }
             />
@@ -169,7 +169,7 @@ const UserProfile = () => {
                       type={'text'}
                       name={'linkedin'}
                       value={userLinkedin}
-                      fooOnChange={checkUserLinkedinLength}
+                      checkInputLength={checkUserLinkedinLength}
                       span={'Linkedin'}
                     />
                     <p>
@@ -182,7 +182,6 @@ const UserProfile = () => {
                           <i className="fas fa-file-upload"></i>
                         </div>
                         <div className="uploadFile-text">
-                          {' '}
                           <p>
                             Drag and Drop or <b>Browse</b>
                           </p>
@@ -200,17 +199,20 @@ const UserProfile = () => {
                 content={
                   <Fragment>
                     <div className="yearsBoxes-content">
-                      <YearsBox fooOnClick={toggleActive} paragraph={'0-1'} />
+                      <YearsBox toggleActive={toggleActive} paragraph={'0-1'} />
 
-                      <YearsBox fooOnClick={toggleActive} paragraph={'1-2'} />
+                      <YearsBox toggleActive={toggleActive} paragraph={'1-2'} />
 
-                      <YearsBox fooOnClick={toggleActive} paragraph={'2-4'} />
+                      <YearsBox toggleActive={toggleActive} paragraph={'2-4'} />
 
-                      <YearsBox fooOnClick={toggleActive} paragraph={'4-6'} />
+                      <YearsBox toggleActive={toggleActive} paragraph={'4-6'} />
 
-                      <YearsBox fooOnClick={toggleActive} paragraph={'6-10'} />
+                      <YearsBox
+                        toggleActive={toggleActive}
+                        paragraph={'6-10'}
+                      />
 
-                      <YearsBox fooOnClick={toggleActive} paragraph={'10+'} />
+                      <YearsBox toggleActive={toggleActive} paragraph={'10+'} />
                     </div>
                   </Fragment>
                 }
@@ -227,7 +229,7 @@ const UserProfile = () => {
                       type={'text'}
                       name={'Github'}
                       value={userGithub}
-                      fooOnChange={checkUserGithubLength}
+                      checkInputLength={checkUserGithubLength}
                       span={'Github'}
                     />
                   </Fragment>

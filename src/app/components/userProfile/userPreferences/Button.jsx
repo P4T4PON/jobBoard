@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const Button = props => {
+const Button = ({ companyActive, companyIcon, companySpan }) => {
   const [active, setActive] = useState(false);
 
-  if (!props.CompanyActive && active) {
+  if (!companyActive && active) {
     setActive(false);
   }
 
@@ -12,8 +12,8 @@ const Button = props => {
       className={active ? 'jobStatus-button border-pink' : 'jobStatus-button'}
       onClick={() => setActive(!active)}
     >
-      {props.CompanyIcon ? <i className={props.CompanyIcon}></i> : null}
-      <span>{props.CompanySpan}</span>
+      {companyIcon ? <i className={companyIcon}></i> : null}
+      <span>{companySpan}</span>
     </div>
   );
 };

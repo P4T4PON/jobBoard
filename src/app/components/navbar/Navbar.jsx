@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logged } from '../../actions/index';
-
-import arrowUp from './arrow-up.png';
+import NavLink from './NavLink';
+import NavButton from './NavButton';
 import SideDrawer from '../sideDrawer/SideDrawer';
+import LinkButton from '../additions/LinkButton';
+import UserPanelLink from './UserPanelLink';
+import ContactInput from './contactUs/ContactInput';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -16,23 +19,22 @@ const Navbar = () => {
   const [brands, setBrands] = useState(false);
   const [contactUs, setContactUs] = useState(false);
   const [everythingOk, setEverythingOk] = useState(false);
-
-  let [name, setName] = useState('');
-  let [email, setEmail] = useState('');
-  let [companyName, setCompanyName] = useState('');
+  const [activeId, setActiveId] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [companyName, setCompanyName] = useState('');
   const [phone, setPhone] = useState('');
 
   const isLogged = useSelector(state => state.isLogged);
   const dispatch = useDispatch();
 
-  let toggleMenu = () => {
+  const toggleMenu = () => {
     setMenu_active(!menu_active);
   };
 
-  // "get started" duzo zlego kodu powtarzanie 34-180
   // nie wiem czy tak powinno sie robić (447-468)
 
-  let resetVariables = () => {
+  const resetVariables = () => {
     setName('');
     setEmail('');
     setCompanyName('');
@@ -40,7 +42,7 @@ const Navbar = () => {
     setEverythingOk(false);
   };
 
-  let checkAllInputs = event => {
+  const checkAllInputs = event => {
     if (name === '') {
       if (!document.getElementById('name').className.includes('formError')) {
         document.getElementById('name').className += ' formError';
@@ -85,8 +87,22 @@ const Navbar = () => {
     }
   };
 
-  let toggleName = event => {
-    setName(event.target.value);
+  const setVariable = event => {
+    setActiveId(event.target.parentElement.id);
+  };
+
+  const toggleInput = event => {
+    const etv = event.target.value;
+    if (activeId === 'name') {
+      setName(etv);
+    } else if (activeId === 'companyName') {
+      setCompanyName(etv);
+    } else if (activeId === 'email') {
+      setEmail(etv);
+    } else if (activeId === 'phone') {
+      setPhone(etv);
+    }
+
     if (event.target.value !== '') {
       if (
         event.target.nextSibling.children[0].className.includes(
@@ -113,70 +129,6 @@ const Navbar = () => {
           ' icon-error';
       }
     }
-  };
-
-  let toggleCompanyName = event => {
-    setCompanyName(event.target.value);
-    if (event.target.value !== '') {
-      if (
-        event.target.nextSibling.children[0].className.includes(
-          'content-nameError'
-        )
-      ) {
-        event.target.nextSibling.children[0].classList.remove(
-          'content-nameError'
-        );
-        event.target.parentElement.classList.remove('formError');
-        event.target.parentElement.parentElement.children[0].classList.remove(
-          'icon-error'
-        );
-      }
-    } else if (event.target.value === '') {
-      if (
-        !event.target.nextSibling.children[0].className.includes(
-          'content-nameError'
-        )
-      ) {
-        event.target.nextSibling.children[0].className += ' content-nameError';
-        event.target.parentElement.className += ' formError';
-        event.target.parentElement.parentElement.children[0].className +=
-          ' icon-error';
-      }
-    }
-  };
-
-  let toggleEmail = event => {
-    setEmail(event.target.value);
-    if (event.target.value !== '') {
-      if (
-        event.target.nextSibling.children[0].className.includes(
-          'content-nameError'
-        )
-      ) {
-        event.target.nextSibling.children[0].classList.remove(
-          'content-nameError'
-        );
-        event.target.parentElement.classList.remove('formError');
-        event.target.parentElement.parentElement.children[0].classList.remove(
-          'icon-error'
-        );
-      }
-    } else if (event.target.value === '') {
-      if (
-        !event.target.nextSibling.children[0].className.includes(
-          'content-nameError'
-        )
-      ) {
-        event.target.nextSibling.children[0].className += ' content-nameError';
-        event.target.parentElement.className += ' formError';
-        event.target.parentElement.parentElement.children[0].className +=
-          ' icon-error';
-      }
-    }
-  };
-
-  let togglePhone = event => {
-    setPhone(event.target.value);
   };
 
   return (
@@ -190,32 +142,30 @@ const Navbar = () => {
       >
         <h1 className="title">justjoin.it</h1>
       </Link>
-      <Link
-        to="/"
-        onClick={() => {
+      <NavLink
+        link={'/'}
+        fooOnClick={() => {
           setBrandStories_active(false);
           setJjit_active(true);
           setBrands(false);
         }}
-      >
-        <h2 className={jjit_active ? 'hov txt active' : 'hov txt'}>
-          <i className="fas fa-suitcase"></i>
-          Job Offers
-        </h2>
-      </Link>
-      <Link
-        to="/Brands"
-        onClick={() => {
+        active={jjit_active}
+        iconClass={'fas fa-suitcase'}
+        text={'Job Offers'}
+      />
+
+      <NavLink
+        link={'/Brands'}
+        fooOnClick={() => {
           setBrandStories_active(true);
           setJjit_active(false);
           setBrands(true);
         }}
-      >
-        <h2 className={brandStories_active ? 'hov txt active' : 'hov txt '}>
-          <i className="far fa-building"></i>
-          Brand Stories
-        </h2>
-      </Link>
+        active={brandStories_active}
+        iconClass={'far fa-building'}
+        text={'Brand Stories'}
+      />
+
       <a
         href="https://geek.justjoin.it/"
         target="_blank"
@@ -226,29 +176,31 @@ const Navbar = () => {
           Just Geek IT
         </h2>
       </a>
-      <Link
-        to={isLogged ? '/devs/panel/matchmaking' : '/devs/'}
-        onClick={() => {
+      <NavLink
+        isLogged={isLogged}
+        link={'/devs/'}
+        fooOnClick={() => {
           setBrandStories_active(false);
           setJjit_active(false);
           setBrands(false);
         }}
-      >
-        <h2 className="hov">
-          <i className="fas fa-paste "></i>
-          Matchmaking
-        </h2>
-      </Link>
+        iconClass={'fas fa-paste'}
+        text={'Matchmaking'}
+      />
       <div className="spacer" />
       <div className="nav-right">
         {brands ? (
-          <button className="bg-pink" onClick={() => setContactUs(true)}>
-            Get Started
-          </button>
+          <NavButton
+            className={'bg-pink'}
+            fooOnClick={() => setContactUs(true)}
+            text={'Get Started'}
+          />
         ) : (
-          <Link to="/add-offer">
-            <button className="bg-pink">Post a Job</button>
-          </Link>
+          <LinkButton
+            link={'/add-offer'}
+            className={'roundedBtn bg-pink'}
+            text={'Post a Job'}
+          />
         )}
 
         {isLogged ? (
@@ -263,19 +215,17 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <div className="sign-in">
-            <button
-              className="bg-purple"
-              onClick={() => {
-                setSideBar_active(!sideBar_active);
-                setBrands(false);
-              }}
-            >
-              Sign in
-            </button>
-          </div>
+          <NavButton
+            className={'bg-purple'}
+            fooOnClick={() => {
+              setSideBar_active(!sideBar_active);
+              setBrands(false);
+            }}
+            text={'Sign in'}
+          />
         )}
       </div>
+
       <div
         className={
           userPanel_active
@@ -283,70 +233,52 @@ const Navbar = () => {
             : 'userPanel-sidebar display-none'
         }
       >
-        <Link to="/devs/panel/profile">
-          <div
-            className="sb-link sb-userProfile"
-            onClick={() => {
-              setUserPanel_active(false);
-              setBrands(false);
-            }}
-          >
-            <div className="userPanel-icon">
-              <i className="far fa-user"></i>
-            </div>
-            <p className="link-paragraph">My profile</p>
-          </div>
-        </Link>
-        <Link to="/devs/panel/settings">
-          <div
-            className="sb-link sb-userProfile"
-            onClick={() => {
-              setUserPanel_active(false);
-              setBrands(false);
-            }}
-          >
-            <div className="userPanel-icon">
-              <i className="fas fa-cog"></i>
-            </div>
-            <p className="link-paragraph">Settings</p>
-          </div>
-        </Link>
-        <Link to="/devs/">
-          <div
-            className="sb-link sb-userProfile"
-            onClick={() => {
-              dispatch(logged());
-              setUserPanel_active(false);
-              setBrands(false);
-            }}
-          >
-            <div className="userPanel-icon">
-              <i className="fas fa-power-off"></i>
-            </div>
-            <p className="link-paragraph">Log out</p>
-          </div>
-        </Link>
+        <UserPanelLink
+          link={'/devs/panel/profile'}
+          setUserPanel_active={() => {
+            setUserPanel_active(false);
+            setBrands(false);
+          }}
+          iconClass={'far fa-user'}
+          paragraph={'My profile'}
+        />
+        <UserPanelLink
+          link={'/devs/panel/settings'}
+          setUserPanel_active={() => {
+            setUserPanel_active(false);
+            setBrands(false);
+          }}
+          iconClass={'fas fa-cog'}
+          paragraph={'Settings'}
+        />
+        <UserPanelLink
+          link={'/'}
+          setUserPanel_active={() => {
+            dispatch(logged());
+            setUserPanel_active(false);
+            setBrands(false);
+          }}
+          iconClass={'fas fa-power-off'}
+          paragraph={'Log out'}
+        />
       </div>
+
       <div className="bars hov" onClick={() => setMenu_active(!menu_active)}>
         <i className="fas fa-bars mr"></i>
       </div>
       <div className={sideBar_active ? 'side-bar ' : 'side-bar display-none'}>
-        <div className="arrowUp">
-          <img src={arrowUp} alt="" />
-        </div>
-        <Link to="/devs/" onClick={() => setSideBar_active(false)}>
-          <div className="sb-link">
-            <i className="far fa-grin pink-icon"></i>
-            <p className="link-paragraph">Sign in as a Developer</p>
-          </div>
-        </Link>
-
-        <Link to="/users/sign_in" onClick={() => setSideBar_active(false)}>
-          <div className="sb-link">
-            <i className="fas fa-suitcase purple-icon"></i>
-            <p>Sign in to Emlployer Panel</p>
-          </div>
-        </Link>
+        <UserPanelLink
+          link={'/devs/'}
+          setUserPanel_active={() => setSideBar_active(false)}
+          iconClass={'far fa-grin pink-icon'}
+          paragraph={'Sign in as a Developer'}
+        />
+        <UserPanelLink
+          link={'/users/sign_in'}
+          setUserPanel_active={() => setSideBar_active(false)}
+          iconClass={'fas fa-suitcase purple-icon'}
+          paragraph={'Sign in to Emlployer Panel'}
+        />
       </div>
       <SideDrawer menu_active={menu_active} toggleMenu={toggleMenu} />
       <div className={contactUs ? 'contactUs' : 'display-none'}>
@@ -369,74 +301,45 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="contactUs-content">
-              <div className="input brands-i">
-                <i className="fas fa-user-circle"></i>
-                <div className="form" id="name">
-                  <input
-                    type="text"
-                    name="name"
-                    autoComplete="off"
-                    value={name}
-                    required
-                    onChange={toggleName}
-                  />
-                  <label htmlFor="name" className="label-name">
-                    <span className="content-name">Name *</span>
-                  </label>
-                </div>
-              </div>
+              <ContactInput
+                iconClass={'fas fa-user-circle'}
+                id={'name'}
+                setVariable={setVariable}
+                name={name}
+                toggleInput={toggleInput}
+                span={'Name *'}
+                value={name}
+              />
 
-              <div className="input brands-i">
-                <i className="fas fa-city"></i>
-                <div className="form" id="companyName">
-                  <input
-                    type="text"
-                    name="companyName"
-                    autoComplete="off"
-                    value={companyName}
-                    required
-                    onChange={toggleCompanyName}
-                  />
-                  <label htmlFor="name" className="label-name">
-                    <span className="content-name">Company name *</span>
-                  </label>
-                </div>
-              </div>
+              <ContactInput
+                iconClass={'fas fa-city'}
+                id={'companyName'}
+                setVariable={setVariable}
+                name={name}
+                toggleInput={toggleInput}
+                span={'Company name *'}
+                value={companyName}
+              />
 
-              <div className="input brands-i">
-                <i className="fas fa-envelope"></i>
-                <div className="form" id="email">
-                  <input
-                    type="text"
-                    name="email"
-                    autoComplete="off"
-                    value={email}
-                    required
-                    onChange={toggleEmail}
-                  />
-                  <label htmlFor="name" className="label-name">
-                    <span className="content-name">Email *</span>
-                  </label>
-                </div>
-              </div>
+              <ContactInput
+                iconClass={'fas fa-envelope'}
+                id={'email'}
+                setVariable={setVariable}
+                name={name}
+                toggleInput={toggleInput}
+                span={'Email *'}
+                value={email}
+              />
 
-              <div className="input brands-i">
-                <i className="fas fa-phone"></i>
-
-                <div className="form" id="phone">
-                  <input
-                    type="text"
-                    name="phone"
-                    autoComplete="off"
-                    value={phone}
-                    required
-                    onChange={togglePhone}
-                  />
-                  <label htmlFor="name" className="label-name">
-                    <span className="content-name">Phone number</span>
-                  </label>
-                </div>
-              </div>
+              <ContactInput
+                iconClass={'fas fa-phone'}
+                id={'phone'}
+                setVariable={setVariable}
+                name={name}
+                toggleInput={toggleInput}
+                span={'Phone number'}
+                value={phone}
+              />
             </div>
           )}
           <div className="contactUs-submitBox">

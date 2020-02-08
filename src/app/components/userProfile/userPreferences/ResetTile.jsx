@@ -1,16 +1,16 @@
 import React from 'react';
 
-const ResetTile = props => {
+const ResetTile = ({ companyActive, companyIcon, companySpan }) => {
   return (
     <div
       className={
-        props.CompanyActive
+        companyActive
           ? 'jobStatus-change company '
           : 'jobStatus-change company border-pink '
       }
     >
-      <i className={props.CompanyIcon}></i>
-      <span>{props.CompanySpan}</span>
+      <i className={companyIcon}></i>
+      <span>{companySpan}</span>
     </div>
   );
 };

@@ -1,19 +1,19 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-const LinkItem = props => {
+const LinkItem = ({ link, active, loginActive, iconClass, paragraph }) => {
   return (
     <Fragment>
-      <Link to={props.link}>
+      <Link to={link}>
         <div
           className={
-            props.active === 1
+            active === 1
               ? 'userLogin-Optionslist userLogin-active'
               : 'userLogin-Optionslist'
           }
-          onClick={props.fooOnClick}
+          onClick={loginActive}
         >
-          <i className={props.iconClass}></i>
-          <p>{props.paragraph}</p>
+          <i className={iconClass}></i>
+          <p>{paragraph}</p>
         </div>
       </Link>
     </Fragment>

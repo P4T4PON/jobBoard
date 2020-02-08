@@ -1,13 +1,13 @@
 import React from 'react';
 
-export const JobStatus = props => {
+export const JobStatus = ({ icon, span1, span2 }) => {
   return (
-    <div className="jobStatus-change mr-20">
-      <i className={props.icon}></i>
+    <div className="jobStatus-change">
+      <i className={icon}></i>
       <span>
-        {props.span1}
+        {span1}
         <br></br>
-        {props.span2}
+        {span2}
       </span>
     </div>
   );
