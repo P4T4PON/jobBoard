@@ -15,11 +15,14 @@ const JobOffers = () => {
   const [nightMode, setNightMode] = useState(false);
   const [showExpLevel, setShowExpLevel] = useState(false);
   const [showSalary, setShowSalary] = useState(false);
-
+  //let?
   let [value, setValue] = useState({
     min: 0,
     max: 34
   });
+
+  //jest to ogrmony komponent i mozna go podzielic na znacznie mniejsze i powydzielac je w odpowiednie foldery
+  // zastanow sie jak go mozna podzielic
 
   // za duzo linijek i kod sie powtarza z innymi zmiennymi (21-160)
   // mozna ul przypisac do zmiennej i po nim mapowac (224-243)
@@ -60,7 +63,7 @@ const JobOffers = () => {
       }
     }
   };
-
+  //todo: let i lapanie po js + przypisywanie klas czystym js
   let addCity = event => {
     if (showOtherCities) {
       setShowOtherCities(false);
@@ -68,8 +71,8 @@ const JobOffers = () => {
       addedChosenCity();
       document.querySelector('.other-cities').className += ' move-right';
     }
-
-    if (cityWasAdded === false) {
+    // tu rowniez lapanie elementow a nawet tworzenie i injectowanie pure js'em + appendowanie - react to to nie jest :)
+    if (!cityWasAdded === false) {
       setShowOtherCities(false);
       addedChosenCity();
       let new_city = document.createElement('div');
@@ -184,7 +187,8 @@ const JobOffers = () => {
 
     setShowExpLevel(false);
   };
-
+  //todo: duza powtarzalnosc kodu, mozna z tego powydzielac male komponenty a przy uzyciu kilku mapować
+  //todo: pozamykaj puste w środku tagi html, aby były self-closing
   return (
     <div className="main-content">
       <div className="sub-header">

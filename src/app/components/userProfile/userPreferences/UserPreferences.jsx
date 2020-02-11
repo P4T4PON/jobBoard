@@ -20,7 +20,12 @@ import {
 import './UserPreferences.css';
 
 const UserPreferences = () => {
+<<<<<<< HEAD
   const [panelActive] = useState(3);
+=======
+  //nie uzywasz setPanelActive nigdzie
+  const [panelActive, setPanelActive] = useState(3);
+>>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
   const [showCities, setShowCities] = useState(false);
   const [showTechnologies, setShowTechnologies] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
@@ -49,8 +54,13 @@ const UserPreferences = () => {
 
   const [employment, setEmployment] = useState(0);
   const [employmentStatus, setEmploymentStatus] = useState(false);
+<<<<<<< HEAD
 
   const renderCities = () => {
+=======
+  //czemu let?
+  let renderCities = () => {
+>>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
     return cities.map((city, index) => (
       <li onMouseDown={hideCity} key={index}>
         {city}
@@ -84,6 +94,8 @@ const UserPreferences = () => {
     ));
   };
 
+  //wszystko łapiesz i ustawiasz po protu w js a nie wykorzystując reacta
+
   const jobStatusActive = event => {
     const job_box = document.querySelector('.jobStatus-box');
     for (let i = 0; i < job_box.children.length; i++) {
@@ -95,7 +107,7 @@ const UserPreferences = () => {
       event.target.parentElement.className = 'jobStatus-change  border-pink';
     }
   };
-
+  // przykładowo robisz to również w czystym js łapiąc po classach
   const hideCity = event => {
     if (event.target.className === '') {
       event.target.className += ' display-none';
@@ -103,7 +115,7 @@ const UserPreferences = () => {
       event.target.parentElement.className += 'display-none';
     }
   };
-
+  // totalnie nie rozumiem co robi ta funkcja i dlaczego w taki sposób
   const retryChosenItem = event => {
     event.target.parentElement.parentElement.remove();
     for (
@@ -123,6 +135,7 @@ const UserPreferences = () => {
   const toggleSetChosenItem = event => {
     const my_item = document.createElement('div');
     const chosen_item = event.target.innerHTML;
+    //trzymasz tutaj hard coded html w zmiennej, przypominam to jest react ;)
     const icon =
       '<div class="icon-box"><i class="fas fa-times-circle"></i></div>';
     my_item.className = 'input-chosen';
@@ -136,7 +149,8 @@ const UserPreferences = () => {
 
     document.querySelector(`#${inputValue}`).appendChild(my_item);
   };
-
+  // nie mam zielonego pojęcia co robi ta funkcja, bardzo wiele skomplikowanych pętli które nie wiadomo co robią,
+  // ponownie jest to czysty js
   const searchInput = event => {
     event.preventDefault();
     if (inputValue === 'city') {
@@ -243,7 +257,7 @@ const UserPreferences = () => {
       setStatusValue(event.target.parentElement.parentElement.parentElement.id);
     }
   };
-
+//TODO: zamien na switcha
   const clearTiles = () => {
     if (statusValue === 'Status') {
       setCompanyStageStatus(false);
@@ -262,7 +276,7 @@ const UserPreferences = () => {
       setEmployment(0);
     }
   };
-
+//TODO: Czym jest var1? i za co odpowiada ta funkcja
   const var1 = () => {
     if (statusValue === 'Status') {
       setCompanyStage(companyStage - 1);
@@ -291,7 +305,7 @@ const UserPreferences = () => {
       }
     }
   };
-
+// jak var1??
   const var2 = () => {
     if (statusValue === 'Status') {
       setCompanyStage(companyStage + 1);
@@ -312,6 +326,7 @@ const UserPreferences = () => {
   };
 
   const toggleTiles = event => {
+    //ponownie łapiesz po domie elementy - react ;)
     const etpec0cn = event.target.parentElement.children[0].className;
     const etpecn = event.target.parentElement.className;
     if (
@@ -357,15 +372,25 @@ const UserPreferences = () => {
                     />
                   </div>
 
+<<<<<<< HEAD
                   <div className="mr-20" onClick={jobStatusActive}>
+=======
+                  <div onClick={jobStatusActive}>
+                    {/* czym są propsy komponentu JobStatus? nazwy o niczym nie mówia i jest bardzo nieczytelne*/}
+>>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
                     <JobStatus
                       icon={'fas fa-envelope-open-text'}
                       span1={'Open '}
                       span2={'for proposals'}
                     />
                   </div>
+<<<<<<< HEAD
 
                   <div className="mr-20" onClick={jobStatusActive}>
+=======
+                  {/*TODO: zmień nazwę funkcji ona cos setuje*/}
+                  <div onClick={jobStatusActive}>
+>>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
                     <JobStatus
                       icon={'fas fa-unlock-alt'}
                       span1={'Not open '}
@@ -378,6 +403,7 @@ const UserPreferences = () => {
           </form>
 
           <form>
+            {/*//TODO: nazwa komponentu o niczym nie mówi, tak contentu do komponentu się wstrzykuje*/}
             <PrefBox
               heading={'preferences-heading blue'}
               className={'width-100'}
@@ -393,6 +419,7 @@ const UserPreferences = () => {
                       setShowCities(false);
                     }}
                   >
+                    {/*czym jest foo i searchInput? złe nazewnictwo*/}
                     <Input
                       value={city}
                       name={'city'}
@@ -423,6 +450,8 @@ const UserPreferences = () => {
               iconClass={'fas fa-umbrella-beach'}
               title={'Are you willing to work remotely?'}
               paragraph={'We will try to find you an attractive remote job.'}
+              //przekazujesz tutaj jako content caly komponent, to jest bardzo zla praktyka i tak się nie robi. Jak juz chcesz przekazac
+              //komponent jako props poczytaj o propsie children i jego zastosowaniu
               content={
                 <Fragment>
                   <div
@@ -473,6 +502,9 @@ const UserPreferences = () => {
                     </div>
 
                     <div className="z-index100 a" onClick={toggleTiles}>
+                      {/* przy takiej powtarzalnoci można zmapować - powtarzanie kodu
+                      Dodatkowo komponent jest źle zbudowany i propsy zaczynasz z wielkich liter!!
+                      */}
                       <Tile
                         companyIcon={'fas fa-home'}
                         companySpan={'Early stage(0-30)'}
@@ -695,6 +727,7 @@ const UserPreferences = () => {
                 <Fragment>
                   <div
                     className="jobStatus-box"
+                    //nazw klas oraz id nie piszemy z wielkich liter
                     id="Experiance"
                     onMouseDown={assignValue}
                   >

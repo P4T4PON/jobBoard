@@ -1,3 +1,4 @@
+/* todo: w zły sposób obliczasz wysokość, użyj funkcji z css*/
 .main-content {
   height: 100vh - 80px;
   width: 97vw;
@@ -6,7 +7,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-
+/*todo: nadpisujesz padding*/
 .sub-header {
   width: 100%;
   background-color: #f3f6f8;
@@ -296,7 +297,7 @@
 .move-right {
   left: 750px !important;
 }
-
+/*todo: nadpisywanie paddingu*/
 .tech-names {
   width: 57%;
   display: flex;
@@ -309,7 +310,7 @@
   display: flex;
   justify-content: center;
 }
-
+/*todo: nadpisywanie...*/
 .centerNote p {
   margin: 0;
   font-size: 12px;
@@ -354,7 +355,7 @@
 .change-buttonActive {
   transform: translateX(100%);
 }
-
+/*todo: nazwy klas piszemy z małych liter, z zaczynając od pierwszej wielkiej litery piszemy nazwy komponentów*/
 .JustifyContent-fs {
   justify-content: flex-start;
 }

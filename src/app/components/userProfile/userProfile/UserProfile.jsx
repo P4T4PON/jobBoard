@@ -5,7 +5,7 @@ import AnimatedInput from '../../additions/AnimatedInput';
 import UserDetails from './UserDetails';
 import YearsBox from './YearsBox';
 import SubmitButton from '../../additions/SubmitButton';
-
+//TODO: nie uzywasz zadeklarowanych funkcji to zmiany stanu w wielu miejscach
 const UserProfile = () => {
   const [panelActive] = useState(1);
   const [userName, setUserName] = useState('TestUser');
@@ -16,8 +16,13 @@ const UserProfile = () => {
   const [userStory, setUserStory] = useState('');
   const [userLinkedin, setUserLinkedin] = useState('');
   const [userGithub, setUserGithub] = useState('');
+<<<<<<< HEAD
 
   const toggleActive = event => {
+=======
+  // nazwa funckji let, w pętli lapiesz js'em elementy z domu i po nich iterujesz, w reactie sie tak nie robi i jest to niesamowicie niewydajne pod katem performance'u
+  let toggleActive = event => {
+>>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
     for (
       let i = 0;
       i < document.querySelector('.yearsBoxes-content').children.length;
@@ -32,8 +37,13 @@ const UserProfile = () => {
       event.target.parentElement.className = 'years-box border-pink color-pink';
     }
   };
+<<<<<<< HEAD
 
   const checkUserNameLength = event => {
+=======
+  //wszystkie ponizsze funkcje sa letami
+  let checkUserNameLength = event => {
+>>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
     setUserName(event.target.value);
   };
 
@@ -65,7 +75,7 @@ const UserProfile = () => {
     setUserLinkedin(userLinkedin);
     setUserGithub(userGithub);
   };
-
+  // ??
   const doNothing = () => {};
 
   return (
@@ -77,6 +87,7 @@ const UserProfile = () => {
             My profile <p>Complete your profile & apply with just one click!</p>
           </h1>
           <form className="myProfile-content">
+            {/*wrzucasz */}
             <UserDetails
               className={'userDetails-content'}
               title={'USER DETAILS'}

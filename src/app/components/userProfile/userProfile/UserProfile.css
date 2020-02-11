@@ -4,7 +4,7 @@
   overflow: visible;
   display: flex;
 }
-
+/*po co te przerwy? i nie dajemy 0% tylko 0 i nic wiecej przy takiej wartosci*/
 .userLogin-sidebar {
   flex-shrink: 0;
 
@@ -23,7 +23,7 @@
   position: sticky;
   top: 20px;
 }
-
+/* przerwy miedzy liniami i jednostyki przy 0 oraz uzywanie importantow*/
 .userLogin-img {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
 
@@ -295,7 +295,9 @@
   margin-bottom: 40px;
   color: rgba(0, 0, 0, 0.87);
 }
-
+/* importanty i jednostki przy 0 + ide Ci podpowiada, ze duplikujesz kod, skoro tych samyh styli uzywasz w dwoch klasach to
+  napisz odpowiedni selektor
+*/
 .userDetails-img {
   border: 3px solid rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
@@ -659,11 +661,11 @@
 .pink-button:hover {
   background-color: #990033;
 }
-
+/*co czego jest Ci potrzebne 99vw?*/
 .vw-99 {
   width: 99vw;
 }
-
+/*czy koniecznoscia jest tworzenie specjalnych klas do nadawania tylko 20 marginu, lepiej to w komponencie reaktowym ostylowac odpowiednio wrappery elementow*/
 .margTop20 {
   margin-top: 20px;
 }

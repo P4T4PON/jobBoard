@@ -10,7 +10,7 @@
   max-width: 1280px;
   margin: 0px auto;
 }
-
+/*jak ustawiasz w css jakąs wartsc na 0 to nie uzywamy jednostek, po prostu 0 -> zastosuj tam gdzie to sie powtarza*/
 .preferences-content h1 {
   margin: 30px 0px;
   color: #2e384d;
@@ -46,6 +46,7 @@
 
 .preferences-header p {
   color: rgb(135, 144, 150);
+  /*nadajesz margin zero na wszystkie strony a następnie nadpisujesz lewy i dolny, why?*/
   margin: 0;
   margin-left: 50px;
   margin-bottom: 30px;
@@ -174,7 +175,8 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.08);
 }
-
+/* używanie importantów w css jest baaardzo złą praktyką :)*/
+/*      https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity    */
 .border-pink {
   color: #ff4081 !important;
   border-color: #ff4081 !important;
