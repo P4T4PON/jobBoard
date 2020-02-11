@@ -5,7 +5,6 @@ import MachmakingInput from './MatchmakingInput';
 import SubmitButton from '../additions/SubmitButton';
 import MachmakingLink from './MachmakingLink';
 import './Matchmaking.css';
-<<<<<<< HEAD
 
 const Matchmaking = () => {
   const [input_type, setInputType] = useState(true);
@@ -13,18 +12,6 @@ const Matchmaking = () => {
   const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
-=======
-//todo: zamień proszę na komponent funkcyjny
-//todo: pamiętaj o folderze z assetami
-class Matchmaking extends Component {
-  state = {
-    input_type: true,
-    email: '',
-    emailError: '',
-    password: '',
-    passwordError: ''
-  };
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
 
   const toggleInput = () => {
     setInputType(!input_type);
@@ -66,37 +53,6 @@ class Matchmaking extends Component {
       setPasswordError('password must have at least 6 characters');
     }
   };
-<<<<<<< HEAD
-=======
-  //todo niepodomykane odpowiednio tagi
-  render() {
-    return (
-      <div className="matchmaking">
-        <div className="logging">
-          <h1>Get started for free</h1>
-          <div className="media">
-            <a href="" className="media-item">
-              <img src={google} className="google-icon" />
-              <p>Sign in with Google</p>
-            </a>
-            <a href="" className="media-item">
-              <i className="fab fa-github media-icon color-black"></i>
-              <p> Sign in with Github</p>
-            </a>
-            <a href="" className="media-item">
-              <i className="fab fa-linkedin media-icon color-blue"></i>
-              <p>Sign in with Linkedin</p>
-            </a>
-            <a href="" className="media-item">
-              <i className="fab fa-facebook-f media-icon color-blue"></i>
-              <p>Sign in with Facebook</p>
-            </a>
-          </div>
-
-          <div className="span">
-            <span className="span-item">Or</span>
-          </div>
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
 
   return (
     <div className="matchmaking">

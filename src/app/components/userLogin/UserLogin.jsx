@@ -6,7 +6,6 @@ import Submit from '../additions/SubmitButton';
 import LinkButton from '../additions/LinkButton';
 import UserBox from './UserBox';
 
-<<<<<<< HEAD
 const UserLogin = () => {
   return (
     <UserBox
@@ -38,15 +37,5 @@ const UserLogin = () => {
     />
   );
 };
-=======
-export default class UserLogin extends Component {
-  render() {
-    return (
-      <div className="main">
-        {/*TODO: self-closing tag ale w takim razie po co Ci taki pusty div?*/}
-        <div className="blocker"></div>
-        <div className="card">
-          <h1>justjoin.it</h1>
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
 
 export default UserLogin;

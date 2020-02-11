@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logged } from '../../actions/index';
-<<<<<<< HEAD
 import UserStatus from './UserStatus';
 
-=======
-import LinkItem from './LinkItem';
-//nieuzywane importy
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
 const UserPanel = props => {
   const dispatch = useDispatch();
 
@@ -19,13 +14,8 @@ const UserPanel = props => {
     setJobStatus(event.target.id);
     setShowStatus(!showStatus);
   };
-<<<<<<< HEAD
 
   const loginActive = event => {
-=======
-  //lapanie elementow dom js'em -> react :)
-  let loginActive = event => {
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
     if (event.target.parentElement.className === 'userLogin-Optionslist') {
       event.target.parentElement.className =
         'userLogin-Optionslist userLogin-active';
@@ -42,7 +32,6 @@ const UserPanel = props => {
           <p>Welcome</p>
           <span>{props.inputValue}</span>
         </div>
-<<<<<<< HEAD
         {jobStatus === 'green' ? (
           <UserStatus
             setShowStatus={() => {
@@ -71,55 +60,6 @@ const UserPanel = props => {
             paragraph={'Not open for proposals'}
           />
         )}
-=======
-        {/*jaki zadanie ma logika ponizszego diva? strasznie zagmatwane*/}
-        <div
-          className={
-            jobStatus === 'green'
-              ? 'userLogin-jobStatus green bg-green'
-              : jobStatus === 'blue'
-              ? 'userLogin-jobStatus blue bg-blue'
-              : jobStatus === 'red'
-              ? 'userLogin-jobStatus red bg-red'
-              : null
-          }
-          {/* zla nazwa funkcji*/}
-          onClick={() => {
-            setShowStatus(!showStatus);
-          }}
-        >
-          {/*self-closing tagi */}
-          {jobStatus === 'green' ? (
-            <i className="far fa-check-circle big-circle green"></i>
-          ) : jobStatus === 'blue' ? (
-            <i className="far fa-envelope big-circle"></i>
-          ) : jobStatus === 'red' ? (
-            <i className="fas fa-times-circle big-circle"></i>
-          ) : null}
-
-          <p>
-            {jobStatus === 'green'
-              ? 'I’m actively looking for a job'
-              : jobStatus === 'blue'
-              ? 'Open for proposals'
-              : jobStatus === 'red'
-              ? 'Not open for proposals'
-              : null}
-          </p>
-          {/*czym jest klasa small-chew? i self closing tag + dlaczego tak skomplikwoana logika do nadawania klasy?*/}
-          <i
-            className={
-              jobStatus === 'green'
-                ? 'fas fa-chevron-down small-chew green'
-                : jobStatus === 'blue'
-                ? 'fas fa-chevron-down small-chew blue'
-                : jobStatus === 'red'
-                ? 'fas fa-chevron-down small-chew red'
-                : null
-            }
-          ></i>
-        </div>
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
         <div
           className={
             showStatus

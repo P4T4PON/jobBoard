@@ -20,12 +20,7 @@ import {
 import './UserPreferences.css';
 
 const UserPreferences = () => {
-<<<<<<< HEAD
   const [panelActive] = useState(3);
-=======
-  //nie uzywasz setPanelActive nigdzie
-  const [panelActive, setPanelActive] = useState(3);
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
   const [showCities, setShowCities] = useState(false);
   const [showTechnologies, setShowTechnologies] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
@@ -54,13 +49,8 @@ const UserPreferences = () => {
 
   const [employment, setEmployment] = useState(0);
   const [employmentStatus, setEmploymentStatus] = useState(false);
-<<<<<<< HEAD
 
   const renderCities = () => {
-=======
-  //czemu let?
-  let renderCities = () => {
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
     return cities.map((city, index) => (
       <li onMouseDown={hideCity} key={index}>
         {city}
@@ -257,7 +247,7 @@ const UserPreferences = () => {
       setStatusValue(event.target.parentElement.parentElement.parentElement.id);
     }
   };
-//TODO: zamien na switcha
+  //TODO: zamien na switcha
   const clearTiles = () => {
     if (statusValue === 'Status') {
       setCompanyStageStatus(false);
@@ -276,7 +266,7 @@ const UserPreferences = () => {
       setEmployment(0);
     }
   };
-//TODO: Czym jest var1? i za co odpowiada ta funkcja
+  //TODO: Czym jest var1? i za co odpowiada ta funkcja
   const var1 = () => {
     if (statusValue === 'Status') {
       setCompanyStage(companyStage - 1);
@@ -305,7 +295,7 @@ const UserPreferences = () => {
       }
     }
   };
-// jak var1??
+  // jak var1??
   const var2 = () => {
     if (statusValue === 'Status') {
       setCompanyStage(companyStage + 1);
@@ -372,25 +362,15 @@ const UserPreferences = () => {
                     />
                   </div>
 
-<<<<<<< HEAD
                   <div className="mr-20" onClick={jobStatusActive}>
-=======
-                  <div onClick={jobStatusActive}>
-                    {/* czym są propsy komponentu JobStatus? nazwy o niczym nie mówia i jest bardzo nieczytelne*/}
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
                     <JobStatus
                       icon={'fas fa-envelope-open-text'}
                       span1={'Open '}
                       span2={'for proposals'}
                     />
                   </div>
-<<<<<<< HEAD
 
                   <div className="mr-20" onClick={jobStatusActive}>
-=======
-                  {/*TODO: zmień nazwę funkcji ona cos setuje*/}
-                  <div onClick={jobStatusActive}>
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
                     <JobStatus
                       icon={'fas fa-unlock-alt'}
                       span1={'Not open '}

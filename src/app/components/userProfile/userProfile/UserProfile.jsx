@@ -16,13 +16,8 @@ const UserProfile = () => {
   const [userStory, setUserStory] = useState('');
   const [userLinkedin, setUserLinkedin] = useState('');
   const [userGithub, setUserGithub] = useState('');
-<<<<<<< HEAD
 
   const toggleActive = event => {
-=======
-  // nazwa funckji let, w pętli lapiesz js'em elementy z domu i po nich iterujesz, w reactie sie tak nie robi i jest to niesamowicie niewydajne pod katem performance'u
-  let toggleActive = event => {
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
     for (
       let i = 0;
       i < document.querySelector('.yearsBoxes-content').children.length;
@@ -37,13 +32,8 @@ const UserProfile = () => {
       event.target.parentElement.className = 'years-box border-pink color-pink';
     }
   };
-<<<<<<< HEAD
 
   const checkUserNameLength = event => {
-=======
-  //wszystkie ponizsze funkcje sa letami
-  let checkUserNameLength = event => {
->>>>>>> 4f0708403c7b6ddc8efea0c79cfa27980e0a2800
     setUserName(event.target.value);
   };
 
