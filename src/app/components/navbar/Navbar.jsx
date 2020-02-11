@@ -6,8 +6,11 @@ import NavLink from './NavLink';
 import NavButton from './NavButton';
 import SideDrawer from '../sideDrawer/SideDrawer';
 import LinkButton from '../additions/LinkButton';
-import UserPanelLink from './UserPanelLink';
+import UserPanelLink from './userPanel/UserPanelLink';
 import ContactInput from './contactUs/ContactInput';
+import ThankYou from './contactUs/ThankYou';
+import UserPanel from './userPanel/UserPanel';
+import ContactUsSubmit from './contactUs/ContactUsSubmit';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -42,7 +45,7 @@ const Navbar = () => {
     setEverythingOk(false);
   };
 
-  const checkAllInputs = event => {
+  const checkAllInputs = () => {
     if (name === '') {
       if (!document.getElementById('name').className.includes('formError')) {
         document.getElementById('name').className += ' formError';
@@ -176,6 +179,7 @@ const Navbar = () => {
           Just Geek IT
         </h2>
       </a>
+
       <NavLink
         isLogged={isLogged}
         link={'/devs/'}
@@ -187,6 +191,7 @@ const Navbar = () => {
         iconClass={'fas fa-paste'}
         text={'Matchmaking'}
       />
+
       <div className="spacer" />
       <div className="nav-right">
         {brands ? (
@@ -204,16 +209,9 @@ const Navbar = () => {
         )}
 
         {isLogged ? (
-          <div className="user-panel">
-            <div
-              className="userPanel-content"
-              onClick={() => setUserPanel_active(!userPanel_active)}
-            >
-              <div className="userPhoto"></div>
-              <div className="userName">TestUser</div>
-              <i className="fas fa-chevron-down" />
-            </div>
-          </div>
+          <UserPanel
+            setUserPanel_active={() => setUserPanel_active(!userPanel_active)}
+          />
         ) : (
           <NavButton
             className={'bg-purple'}
@@ -262,10 +260,10 @@ const Navbar = () => {
           paragraph={'Log out'}
         />
       </div>
-
       <div className="bars hov" onClick={() => setMenu_active(!menu_active)}>
         <i className="fas fa-bars mr"></i>
       </div>
+
       <div className={sideBar_active ? 'side-bar ' : 'side-bar display-none'}>
         <UserPanelLink
           link={'/devs/'}
@@ -292,20 +290,13 @@ const Navbar = () => {
             </p>
           </div>
           {everythingOk ? (
-            <div className="everything-okBox">
-              <div className="everything-ok">
-                <i className="fas fa-check-circle"></i>
-                <b>Thank you!</b>
-                <p>for contacting with us.</p>
-              </div>
-            </div>
+            <ThankYou />
           ) : (
             <div className="contactUs-content">
               <ContactInput
                 iconClass={'fas fa-user-circle'}
                 id={'name'}
                 setVariable={setVariable}
-                name={name}
                 toggleInput={toggleInput}
                 span={'Name *'}
                 value={name}
@@ -315,7 +306,6 @@ const Navbar = () => {
                 iconClass={'fas fa-city'}
                 id={'companyName'}
                 setVariable={setVariable}
-                name={name}
                 toggleInput={toggleInput}
                 span={'Company name *'}
                 value={companyName}
@@ -325,7 +315,6 @@ const Navbar = () => {
                 iconClass={'fas fa-envelope'}
                 id={'email'}
                 setVariable={setVariable}
-                name={name}
                 toggleInput={toggleInput}
                 span={'Email *'}
                 value={email}
@@ -335,21 +324,16 @@ const Navbar = () => {
                 iconClass={'fas fa-phone'}
                 id={'phone'}
                 setVariable={setVariable}
-                name={name}
                 toggleInput={toggleInput}
                 span={'Phone number'}
                 value={phone}
               />
             </div>
           )}
-          <div className="contactUs-submitBox">
-            <div
-              className={everythingOk ? 'display-none' : 'contactUs-submit'}
-              onClick={checkAllInputs}
-            >
-              CONTACT US <i className="far fa-paper-plane"></i>
-            </div>
-          </div>
+          <ContactUsSubmit
+            everythingOk={everythingOk}
+            checkAllInputs={checkAllInputs}
+          />
         </div>
       </div>
       {sideBar_active ? (

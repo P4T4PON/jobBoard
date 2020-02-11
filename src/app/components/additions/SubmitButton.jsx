@@ -1,13 +1,13 @@
 import React from 'react';
 
-const submitButton = props => {
+const submitButton = ({ divClass, value, className, submit }) => {
   return (
-    <div className={props.divClass}>
+    <div className={divClass}>
       <input
         type={'submit'}
-        value={props.value}
-        className={props.className}
-        onClick={props.submit}
+        value={value}
+        className={className}
+        onClick={submit}
       />
     </div>
   );

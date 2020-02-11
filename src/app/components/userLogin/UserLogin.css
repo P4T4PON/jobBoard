@@ -142,7 +142,7 @@
 
 .marg {
   margin-bottom: 0px;
-  margin-left: 50px;
+  align-items: flex-start !important;
 }
 
 .submit {

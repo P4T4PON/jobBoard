@@ -2,7 +2,7 @@ import React from 'react';
 
 const AnimatedInput = ({
   divClass,
-  inputClass,
+  iconClass,
   className,
   type,
   name,
@@ -14,7 +14,7 @@ const AnimatedInput = ({
   return (
     <div className="passwordChange-input">
       <div className={divClass}>
-        <i className={inputClass}></i>
+        <i className={iconClass}></i>
       </div>
 
       <div className={className}>

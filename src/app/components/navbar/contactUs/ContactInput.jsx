@@ -15,7 +15,7 @@ const ContactInput = ({
       <div className="form" id={id} onMouseDown={setVariable}>
         <input
           type="text"
-          name={name}
+          name={'name'}
           autoComplete="off"
           value={value}
           required

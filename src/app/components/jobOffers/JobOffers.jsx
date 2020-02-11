@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import './JobOffers.css';
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css';
+import CityButton from '../additions/CityButton';
+import NightMode from './NightMode';
+import TechButton from '../additions/TechButton';
+import ExpLevel from './ExpLevel';
+import { otherCities, techIcons } from '../../../constans';
 
 const JobOffers = () => {
   const [showOtherCities, setShowOtherCities] = useState(false);
@@ -20,7 +25,26 @@ const JobOffers = () => {
   // mozna ul przypisac do zmiennej i po nim mapowac (224-243)
   // powinno byc w oddzielnym komponencie (247-505) (170-194)
 
-  let addedChosenCity = event => {
+  const toggleTechnologies = () => {
+    return techIcons.map((tech, index) => (
+      <TechButton
+        iconClass={tech[0]}
+        iconColor={tech[1]}
+        focusTechnology={focusTechnology}
+        paragraph={tech[2]}
+      />
+    ));
+  };
+
+  const toggleCities = () => {
+    return otherCities.map((city, index) => (
+      <li key={index} onClick={addCity}>
+        {city}
+      </li>
+    ));
+  };
+
+  let addedChosenCity = () => {
     for (
       let i = 0;
       i < document.querySelector('.filters-cities').children.length;
@@ -123,7 +147,7 @@ const JobOffers = () => {
     }
   };
 
-  let focusAllTechnologies = event => {
+  let focusAllTechnologies = () => {
     for (
       let i = 0;
       i < document.querySelector('.filters-technologies').children.length;
@@ -166,53 +190,34 @@ const JobOffers = () => {
       <div className="sub-header">
         <div className="filters">
           <div className="filters-cities">
-            <div className="city-button all padd" onClick={focusCity}>
-              All
-            </div>
-            <div className="city-button" onClick={focusCity}>
-              Warszawa
-            </div>
-            <div className="city-button" onClick={focusCity}>
-              Kraków
-            </div>
-            <div className="city-button" onClick={focusCity}>
-              Wrocław
-            </div>
-            <div className="city-button" onClick={focusCity}>
-              Poznań
-            </div>
-            <div className="city-button" onClick={focusCity}>
-              Trójmiasto
-            </div>
-            <div className="city-button" onClick={focusCity}>
-              Remote
-            </div>
-            <div className="city-button" onClick={focusCity}>
-              World
-            </div>
-            <div className="added-city"></div>
-            <i
-              className="fas fa-ellipsis-h"
-              id="moreCities-icon"
-              onClick={() => setShowOtherCities(!showOtherCities)}
-            ></i>
-            <div className="night-mode">
-              <i className="fas fa-sun" onClick={() => setNightMode(false)}></i>
+            <CityButton
+              className={'all padd'}
+              focusCity={focusCity}
+              city={'All'}
+            />
 
-              <div
-                className="change-mode"
-                onClick={() => setNightMode(!nightMode)}
-              >
-                <div
-                  className={
-                    nightMode
-                      ? 'change-button change-buttonActive'
-                      : 'change-button'
-                  }
-                ></div>
-              </div>
-              <i className="fas fa-moon" onClick={() => setNightMode(true)}></i>
-            </div>
+            <CityButton focusCity={focusCity} city={'Warszawa'} />
+
+            <CityButton focusCity={focusCity} city={'Kraków'} />
+
+            <CityButton focusCity={focusCity} city={'Wrocław'} />
+
+            <CityButton focusCity={focusCity} city={'Poznań'} />
+
+            <CityButton focusCity={focusCity} city={'Trójmiasto'} />
+
+            <CityButton focusCity={focusCity} city={'Remote'} />
+
+            <CityButton focusCity={focusCity} city={'World'} />
+
+            <div className="added-city"></div>
+
+            <NightMode
+              nightMode={nightMode}
+              showOtherCities={showOtherCities}
+              setNightMode={setNightMode}
+              setShowOtherCities={setShowOtherCities}
+            />
           </div>
           <div
             className={
@@ -227,21 +232,7 @@ const JobOffers = () => {
               className="otherCities-ul"
               onBlur={() => setShowOtherCities(false)}
             >
-              <li onClick={addCity}>Białystok</li>
-              <li onClick={addCity}>Bielsko-biała</li>
-              <li onClick={addCity}>Bydgoszcz</li>
-              <li onClick={addCity}>Częstochowa</li>
-              <li onClick={addCity}>Gliwice</li>
-              <li onClick={addCity}>Katowice</li>
-              <li onClick={addCity}>Kielce</li>
-              <li onClick={addCity}>Lublin</li>
-              <li onClick={addCity}>Łódź</li>
-              <li onClick={addCity}>Olsztyn</li>
-              <li onClick={addCity}>Opole</li>
-              <li onClick={addCity}>Toruń</li>
-              <li onClick={addCity}>Rzeszów</li>
-              <li onClick={addCity}>Szczecin</li>
-              <li onClick={addCity}>Zielona Góra</li>
+              {toggleCities()}
             </ul>
           </div>
 
@@ -254,255 +245,8 @@ const JobOffers = () => {
                 All
               </div>
             </div>
+            {toggleTechnologies()}
 
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button icon-self yellowIcon bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-js "></i>
-              </div>
-              <div className="centerNote">
-                <p>Js</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button orangeIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-html5 "></i>
-              </div>
-              <div className="centerNote">
-                <p>HTML</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button blueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-php "></i>
-              </div>
-              <div className="centerNote">
-                <p>PHP</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button light-redIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-gem "></i>
-              </div>
-              <div className="centerNote">
-                <p>Ruby</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button dark-blueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-python "></i>
-              </div>
-              <div className="centerNote">
-                <p>Python</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button pinkIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-java "></i>
-              </div>
-              <div className="centerNote">
-                <p>Java</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button light-blueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-bacon "></i>
-              </div>
-              <div className="centerNote">
-                <p>.NET</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button light-redIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-stripe-s "></i>
-              </div>
-              <div className="centerNote">
-                <p>Scala</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button  greenIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-cuttlefish "></i>
-              </div>
-              <div className="centerNote">
-                <p>C</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button bordIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-mobile-alt "></i>
-              </div>
-              <div className="centerNote">
-                <p>Mobile</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button light-greenIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-search "></i>
-              </div>
-              <div className="centerNote">
-                <p>Testing</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button blue-blueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-dev "></i>
-              </div>
-              <div className="centerNote">
-                <p> Dev/Ops</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button dark-yellowIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-magic "></i>
-              </div>
-              <div className="centerNote">
-                <p>UX/UI</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button green-blueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-user "></i>
-              </div>
-              <div className="centerNote">
-                <p>PM</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button light-pinkIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-gamepad "></i>
-              </div>
-              <div className="centerNote">
-                <p>Game</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button purpleIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-bitcoin "></i>
-              </div>
-              <div className="centerNote">
-                <p>Blockchain</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button dark-darkBlueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-shield-alt "></i>
-              </div>
-              <div className="centerNote">
-                <p>Security</p>
-              </div>
-            </div>
-
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button blue-greenIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-database "></i>
-              </div>
-              <div className="centerNote">
-                <p>Data</p>
-              </div>
-            </div>
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button lighter-blueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-hippo "></i>
-              </div>
-              <div className="centerNote">
-                <p>Golang</p>
-              </div>
-            </div>
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button darker-blueIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fab fa-stackpath"></i>
-              </div>
-              <div className="centerNote">
-                <p>SAP</p>
-              </div>
-            </div>
-            <div className="tech-buttonBox">
-              <div
-                className="tech-button dark-pinkIcon icon-self bg-poz0"
-                onClick={focusTechnology}
-              >
-                <i className="fas fa-desktop "></i>
-              </div>
-              <div className="centerNote">
-                <p>Other</p>
-              </div>
-            </div>
             <div className="other-filters">
               <div className="allSidebars webkit-right">
                 <div
@@ -527,26 +271,11 @@ const JobOffers = () => {
                   </div>
                 ) : null}
               </div>
-              <div className="allSidebars">
-                <div
-                  className="city-button min-width120"
-                  id="expLevelButton"
-                  onClick={() => setShowExpLevel(!showExpLevel)}
-                >
-                  <i className="fas fa-chart-line"></i>
-                  <p>Exp. level</p>
-                  <i className="fas fa-chevron-down"></i>
-                </div>
-
-                <div className={showExpLevel ? 'expLevel op1' : 'expLevel op0'}>
-                  <ul className={showExpLevel ? 'op1' : 'op0'}>
-                    <li onClick={changeExpLevel}>All</li>
-                    <li onClick={changeExpLevel}>Junior</li>
-                    <li onClick={changeExpLevel}>Mid</li>
-                    <li onClick={changeExpLevel}>Senior</li>
-                  </ul>
-                </div>
-              </div>
+              <ExpLevel
+                changeExpLevel={changeExpLevel}
+                showExpLevel={showExpLevel}
+                setShowExpLevel={setShowExpLevel}
+              />
             </div>
           </div>
         </div>
