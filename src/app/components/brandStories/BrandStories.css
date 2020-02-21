@@ -1,10 +1,9 @@
-/*proszę nie uzywać importantów i unikać ich jak ognia ;)*/
 .brands-ul {
-  left: 570px !important;
+  left: 570px;
 }
 
 .switch-right {
-  left: 670px !important;
+  left: 670px;
 }
 
 .filters-brands {
@@ -43,21 +42,21 @@
 }
 
 .brandYellow:hover {
-  background: #f18c08 !important;
+  background: #f18c08;
 }
 
 .brandRed:hover {
-  background: #e2231e !important;
+  background: #e2231e;
 }
 
 .brandBlue:hover {
-  background: #0f8dba !important;
+  background: #0f8dba;
 }
 
 .brandGreen:hover {
-  background: #00ae9d !important;
+  background: #00ae9d;
 }
 
 .brandPink:hover {
-  background: #cf36d0 !important;
+  background: #cf36d0;
 }
