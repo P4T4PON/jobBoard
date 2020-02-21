@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Checkbox = props => {
+const Checkbox = ({ className, inputClass, paragraph }) => {
   return (
-    <div className={props.className}>
-      <input type="checkbox" className={props.inputClass}></input>
-      <p>{props.paragraph}</p>
+    <div className={className}>
+      <input type="checkbox" className={inputClass}></input>
+      <p>{paragraph}</p>
     </div>
   );
 };
