@@ -5,33 +5,18 @@ import AnimatedInput from '../../additions/AnimatedInput';
 import UserDetails from './UserDetails';
 import YearsBox from './YearsBox';
 import SubmitButton from '../../additions/SubmitButton';
-//TODO: nie uzywasz zadeklarowanych funkcji to zmiany stanu w wielu miejscach
+import { yearsBox } from '../../../../constans';
+
 const UserProfile = () => {
+  const [active, setActive] = useState(0);
   const [panelActive] = useState(1);
   const [userName, setUserName] = useState('TestUser');
-  const [setName] = useState('TestUser');
   const [userSurname, setUserSurname] = useState('Bobicki');
   const [userEmail] = useState('bobek123@wp.pl');
   const [userCity, setUserCity] = useState('');
   const [userStory, setUserStory] = useState('');
   const [userLinkedin, setUserLinkedin] = useState('');
   const [userGithub, setUserGithub] = useState('');
-
-  const toggleActive = event => {
-    for (
-      let i = 0;
-      i < document.querySelector('.yearsBoxes-content').children.length;
-      i++
-    ) {
-      document.querySelector('.yearsBoxes-content').children[i].className =
-        'years-box';
-    }
-    if (event.target.className === 'years-box') {
-      event.target.className = 'years-box border-pink color-pink';
-    } else {
-      event.target.parentElement.className = 'years-box border-pink color-pink';
-    }
-  };
 
   const checkUserNameLength = event => {
     setUserName(event.target.value);
@@ -57,16 +42,17 @@ const UserProfile = () => {
     setUserGithub(event.target.value);
   };
 
-  const setStateOfAll = () => {
-    setName(userName);
-    setUserStory(userStory);
-    setUserSurname(userSurname);
-    setUserCity(userCity);
-    setUserLinkedin(userLinkedin);
-    setUserGithub(userGithub);
+  const renderYearsBoxes = () => {
+    return yearsBox.map((box, index) => (
+      <YearsBox
+        key={index}
+        boxId={index + 1}
+        toggleActive={() => setActive(index + 1)}
+        active={active}
+        paragraph={box}
+      />
+    ));
   };
-  // ??
-  const doNothing = () => {};
 
   return (
     <div className="userLogin-content vw-99">
@@ -77,7 +63,6 @@ const UserProfile = () => {
             My profile <p>Complete your profile & apply with just one click!</p>
           </h1>
           <form className="myProfile-content">
-            {/*wrzucasz */}
             <UserDetails
               className={'userDetails-content'}
               title={'USER DETAILS'}
@@ -119,7 +104,7 @@ const UserProfile = () => {
                       type={'text'}
                       name={'userEmail'}
                       value={userEmail}
-                      checkInputLength={doNothing}
+                      checkInputLength={() => ''}
                       span={'Email'}
                     />
 
@@ -165,7 +150,7 @@ const UserProfile = () => {
                     <b>Paste your Linkedin page as CV</b>
                     <AnimatedInput
                       divClass={'margTop20'}
-                      inputClass={'fab fa-linkedin media-icon color-blue fs40'}
+                      iconClass={'fab fa-linkedin media-icon color-blue fs40'}
                       className={'cont margTop20'}
                       type={'text'}
                       name={'linkedin'}
@@ -200,20 +185,7 @@ const UserProfile = () => {
                 content={
                   <Fragment>
                     <div className="yearsBoxes-content">
-                      <YearsBox toggleActive={toggleActive} paragraph={'0-1'} />
-
-                      <YearsBox toggleActive={toggleActive} paragraph={'1-2'} />
-
-                      <YearsBox toggleActive={toggleActive} paragraph={'2-4'} />
-
-                      <YearsBox toggleActive={toggleActive} paragraph={'4-6'} />
-
-                      <YearsBox
-                        toggleActive={toggleActive}
-                        paragraph={'6-10'}
-                      />
-
-                      <YearsBox toggleActive={toggleActive} paragraph={'10+'} />
+                      {renderYearsBoxes()}
                     </div>
                   </Fragment>
                 }
@@ -225,7 +197,7 @@ const UserProfile = () => {
                 content={
                   <Fragment>
                     <AnimatedInput
-                      inputClass={'fab fa-github media-icon color-black fs40'}
+                      iconClass={'fab fa-github media-icon color-black fs40'}
                       className={'cont'}
                       type={'text'}
                       name={'Github'}
@@ -238,11 +210,7 @@ const UserProfile = () => {
               />
             </div>
           </form>
-          <SubmitButton
-            value={'Update profile'}
-            className={'pink-button'}
-            submit={setStateOfAll}
-          />
+          <SubmitButton value={'Update profile'} className={'pink-button'} />
         </div>
       </div>
     </div>

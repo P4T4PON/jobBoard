@@ -1,12 +1,19 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-const LinkItem = ({ link, active, loginActive, iconClass, paragraph }) => {
+const LinkItem = ({
+  link,
+  active,
+  loginActive,
+  iconClass,
+  paragraph,
+  linkId
+}) => {
   return (
     <Fragment>
       <Link to={link}>
         <div
           className={
-            active === 1
+            active === linkId
               ? 'userLogin-Optionslist userLogin-active'
               : 'userLogin-Optionslist'
           }

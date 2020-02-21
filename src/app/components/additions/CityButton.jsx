@@ -1,8 +1,15 @@
 import React from 'react';
 
-const CityButton = ({ className, focusCity, city }) => {
+const CityButton = ({ city, active, toggleActive, cityId, allCities }) => {
   return (
-    <div className={`city-button ${className}`} onClick={focusCity}>
+    <div
+      className={
+        cityId === active && allCities === false
+          ? 'city-button all'
+          : 'city-button'
+      }
+      onClick={toggleActive}
+    >
       {city}
     </div>
   );

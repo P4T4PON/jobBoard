@@ -410,3 +410,45 @@ export const techIcons = [
   ['fab fa-stackpath', 'darker-blueIcon', 'SAP'],
   ['fas fa-desktop', 'dark-pinkIcon', 'Other']
 ];
+
+export const yearsBox = ['0-1', '1-2', '2-4', '4-6', '6-10', '10+'];
+
+export const yourPreferences = [
+  ['CITY', 'trójmiasto', 'fas fa-map-marker-alt blueBox'],
+  ['SALARY', '0k - 5k', 'fas fa-dollar-sign lightBlueBox'],
+  ['MAIN TECH', 'javascript', 'fas fa-microchip pinkBox'],
+  ['SKILLS', 'react', 'fab fa-react orangeBox'],
+  ['REMOTE', 'yes', 'fas fa-umbrella-beach lightBlueBlueBox'],
+  ['STAGE', 'Growth stage', 'fas fa-user-friends yellowBox'],
+  ['TYPE', 'Software house', 'fas fa-city redBox'],
+  ['SENIORITY', 'Junior', 'fas fa-chart-line greenBox'],
+  ['INDUSTRY', 'Other', 'far fa-building greyBox'],
+  ['EMP.TYPE', 'B2B', 'far fa-file purpleBox']
+];
+
+export const jobCities = [
+  'Warszawa',
+  'Kraków',
+  'Wrocław',
+  'Poznań',
+  'Trójmiasto',
+  'Remote',
+  'World'
+];
+
+export const brandCities = [
+  'Warszawa',
+  'Kraków',
+  'Wrocław',
+  'Poznań',
+  'Trójmiasto',
+  'World'
+];
+
+export const brandTechBtn = [
+  ['redIcon brandHover brandRed', 'fas fa-rocket', 'Startup'],
+  ['yellowIcon brandHover brandYellow', 'fas fa-flask', 'Software House'],
+  ['greenIcon brandHover brandGreen', 'fas fa-shopping-cart', 'E-commerance'],
+  ['light-blueIcon brandHover brandBlue', 'fas fa-hotel', 'Corporation'],
+  ['dark-pinkIcon brandHover brandPink', 'fas fa-desktop', 'Other']
+];

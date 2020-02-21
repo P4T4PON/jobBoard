@@ -1,6 +1,14 @@
 import React, { Fragment } from 'react';
 
-const Input = ({ id, skill, name, placeholder, className, searchInput }) => {
+const Input = ({
+  id,
+  skill,
+  name,
+  placeholder,
+  className,
+  searchInput,
+  hideInput
+}) => {
   return (
     <Fragment>
       <div className="inputStatus" id={id}></div>
@@ -11,6 +19,7 @@ const Input = ({ id, skill, name, placeholder, className, searchInput }) => {
         className={className}
         autoComplete="off"
         onChange={searchInput}
+        onBlur={hideInput}
       />
     </Fragment>
   );

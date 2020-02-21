@@ -8,12 +8,14 @@ const Button = ({ companyActive, companyIcon, companySpan }) => {
   }
 
   return (
-    <div
-      className={active ? 'jobStatus-button border-pink' : 'jobStatus-button'}
-      onClick={() => setActive(!active)}
-    >
-      {companyIcon ? <i className={companyIcon}></i> : null}
-      <span>{companySpan}</span>
+    <div className="btn-icon">
+      <div
+        className={active ? 'jobStatus-button border-pink' : 'jobStatus-button'}
+        onClick={() => setActive(!active)}
+      >
+        {companyIcon ? <i className={companyIcon}></i> : null}
+        <span>{companySpan}</span>
+      </div>
     </div>
   );
 };

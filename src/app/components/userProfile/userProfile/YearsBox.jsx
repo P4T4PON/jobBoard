@@ -1,8 +1,13 @@
 import React from 'react';
 
-const YearsBox = ({ paragraph, toggleActive }) => {
+const YearsBox = ({ paragraph, boxId, toggleActive, active }) => {
   return (
-    <div className="years-box" onClick={toggleActive}>
+    <div
+      className={
+        boxId === active ? 'years-box border-pink color-pink' : 'years-box'
+      }
+      onClick={toggleActive}
+    >
       <p>{paragraph}</p>
       <b>YEARS</b>
     </div>

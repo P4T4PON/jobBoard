@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 
-const Tile = ({ companyActive, companyIcon, companySpan }) => {
-  const [active, setActive] = useState(false);
-
-  if (!companyActive && active) {
-    setActive(false);
-  }
-
+const Tile = ({ companyIcon, companySpan, toggleTile, active }) => {
   return (
     <div
       className={
         active
-          ? 'jobStatus-change company border-pink'
-          : 'jobStatus-change company'
+          ? 'jobStatus-change company mr-20 border-pink'
+          : 'jobStatus-change company mr-20'
       }
-      onClick={() => setActive(!active)}
+      onClick={toggleTile}
     >
       <i className={companyIcon}></i>
       <span>{companySpan}</span>

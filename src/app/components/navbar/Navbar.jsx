@@ -11,7 +11,9 @@ import ContactInput from './contactUs/ContactInput';
 import ThankYou from './contactUs/ThankYou';
 import UserPanel from './userPanel/UserPanel';
 import ContactUsSubmit from './contactUs/ContactUsSubmit';
+import Roads from '../navbar/roads/Roads';
 import './Navbar.css';
+import UserPanelBox from './userPanel/UserPanelBox';
 
 const Navbar = () => {
   const [menu_active, setMenu_active] = useState(false);
@@ -34,8 +36,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenu_active(!menu_active);
   };
-
-  // nie wiem czy tak powinno sie robić (447-468)
 
   const resetVariables = () => {
     setName('');
@@ -134,66 +134,17 @@ const Navbar = () => {
     }
   };
 
+  const onBrandsChange = newBrands => {
+    setBrands(newBrands);
+  };
+
   return (
     <div className="navbar">
-      <Link
-        to="/"
-        onClick={() => {
-          setBrandStories_active(false);
-          setJjit_active(true);
-        }}
-      >
-        <h1 className="title">justjoin.it</h1>
-      </Link>
-      <NavLink
-        link={'/'}
-        fooOnClick={() => {
-          setBrandStories_active(false);
-          setJjit_active(true);
-          setBrands(false);
-        }}
-        active={jjit_active}
-        iconClass={'fas fa-suitcase'}
-        text={'Job Offers'}
-      />
-
-      <NavLink
-        link={'/Brands'}
-        fooOnClick={() => {
-          setBrandStories_active(true);
-          setJjit_active(false);
-          setBrands(true);
-        }}
-        active={brandStories_active}
-        iconClass={'far fa-building'}
-        text={'Brand Stories'}
-      />
-
-      <a
-        href="https://geek.justjoin.it/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h2 className="hov">
-          <i className="far fa-newspaper"></i>
-          Just Geek IT
-        </h2>
-      </a>
-
-      <NavLink
-        isLogged={isLogged}
-        link={'/devs/'}
-        fooOnClick={() => {
-          setBrandStories_active(false);
-          setJjit_active(false);
-          setBrands(false);
-        }}
-        iconClass={'fas fa-paste'}
-        text={'Matchmaking'}
-      />
+      <Roads brands={brands} changeBrands={onBrandsChange} />
 
       <div className="spacer" />
-      <div className="nav-right">
+      <UserPanelBox newBrands={brands} />
+      {/* <div className="nav-right">
         {brands ? (
           <NavButton
             className={'bg-pink'}
@@ -222,7 +173,7 @@ const Navbar = () => {
             text={'Sign in'}
           />
         )}
-      </div>
+      </div> */}
 
       <div
         className={
@@ -260,6 +211,7 @@ const Navbar = () => {
           paragraph={'Log out'}
         />
       </div>
+
       <div className="bars hov" onClick={() => setMenu_active(!menu_active)}>
         <i className="fas fa-bars mr"></i>
       </div>
@@ -278,7 +230,9 @@ const Navbar = () => {
           paragraph={'Sign in to Emlployer Panel'}
         />
       </div>
+
       <SideDrawer menu_active={menu_active} toggleMenu={toggleMenu} />
+
       <div className={contactUs ? 'contactUs' : 'display-none'}>
         <div className="contactUs-box">
           <div className="contactUs-header">
