@@ -1,18 +1,16 @@
-/* todo: w zły sposób obliczasz wysokość, użyj funkcji z css*/
 .main-content {
-  height: 100vh - 80px;
+  height: calc(100vh - 100px);
   width: 97vw;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-/*todo: nadpisujesz padding*/
+
 .sub-header {
   width: 100%;
   background-color: #f3f6f8;
   padding: 0 40px 5px 18px;
-  padding-top: 0px;
   height: 126px;
   display: flex;
   align-items: flex-start;
@@ -297,12 +295,11 @@
 .move-right {
   left: 750px !important;
 }
-/*todo: nadpisywanie paddingu*/
+
 .tech-names {
   width: 57%;
   display: flex;
-  padding: 0;
-  padding-left: 85px;
+  padding: 0 0 0 85px;
   justify-content: space-between;
 }
 
@@ -310,11 +307,10 @@
   display: flex;
   justify-content: center;
 }
-/*todo: nadpisywanie...*/
+
 .centerNote p {
-  margin: 0;
+  margin: 5px 0 0 0;
   font-size: 12px;
-  margin-top: 5px;
 }
 
 .night-mode {
@@ -355,14 +351,14 @@
 .change-buttonActive {
   transform: translateX(100%);
 }
-/*todo: nazwy klas piszemy z małych liter, z zaczynając od pierwszej wielkiej litery piszemy nazwy komponentów*/
-.JustifyContent-fs {
+
+/* .JustifyContent-fs {
   justify-content: flex-start;
 }
 
 .JustifyContent-fe {
   justify-content: flex-end;
-}
+} */
 
 .other-filters {
   float: right;
