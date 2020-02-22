@@ -1,8 +1,69 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Button from '../../Button';
+import { industry, industryNames } from '../../../../../../constans';
 
 const IndustryBox = () => {
+  const [tiles, setTiles] = useState({
+    all: false,
+    fintech: false,
+    bloackchain: false,
+    ecommerce: false,
+    medicine: false,
+    military: false,
+    travel: false,
+    martech: false,
+    iot: false,
+    logistic: false,
+    beauty: false,
+    other: false
+  });
+
+  useEffect(() => {
+    checkTiles();
+  });
+
+  const checkTiles = () => {
+    const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
+    let newTiles = tiles;
+
+    if (activatedTiles.length === 0) {
+      newTiles['all'] = true;
+      setTiles({ ...newTiles });
+    } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
+      newTiles['all'] = false;
+      setTiles({ ...newTiles });
+    }
+  };
+
+  const handleTileChange = name => {
+    let newTiles = tiles;
+    newTiles[name] = !newTiles[name];
+    setTiles({
+      ...newTiles
+    });
+  };
+
+  const resetAllTiles = () => {
+    for (let i = 0; i < industryNames.length; i++) {
+      tiles[industryNames[i]] = false;
+    }
+    setTiles({
+      ...tiles
+    });
+  };
+
+  const renderIndustry = () => {
+    return industry.map((ind, index) => (
+      <Button
+        key={index}
+        companyIcon={ind[0]}
+        companySpan={ind[1]}
+        toggleTile={() => handleTileChange(ind[2])}
+        active={tiles[ind[2]]}
+      />
+    ));
+  };
   return (
     <div className="preferences-box">
       <UserPreferencesHeader
@@ -16,38 +77,12 @@ const IndustryBox = () => {
       />
       <div className="preferences-jobStatus">
         <div className="jobStatus-box">
-          <Button companySpan={"Doesn't matter"} />
-
-          <Button companyIcon={'fas fa-dollar-sign'} companySpan={'Fintech'} />
-
-          <Button companyIcon={'fas fa-cube'} companySpan={'Bloackchain'} />
-
           <Button
-            companyIcon={'fas fa-shopping-cart'}
-            companySpan={'E-commerce'}
+            companySpan={"Doesn't matter"}
+            toggleTile={resetAllTiles}
+            active={tiles['all']}
           />
-
-          <Button companyIcon={'far fa-heart'} companySpan={'Medicine'} />
-
-          <Button companyIcon={'fas fa-medal'} companySpan={'Military'} />
-
-          <Button
-            companyIcon={'fas fa-plane-departure'}
-            companySpan={'Travel'}
-          />
-
-          <Button
-            companyIcon={'fas fa-cart-arrow-down'}
-            companySpan={'Martech'}
-          />
-
-          <Button companyIcon={'fas fa-user-md'} companySpan={'IoT'} />
-
-          <Button companyIcon={'fas fa-truck'} companySpan={'Logistic'} />
-
-          <Button companyIcon={'fas fa-seedling'} companySpan={'Beauty'} />
-
-          <Button companyIcon={'fas fa-laptop'} companySpan={'Other'} />
+          {renderIndustry()}
         </div>
       </div>
     </div>
