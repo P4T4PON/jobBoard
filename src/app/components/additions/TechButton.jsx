@@ -19,7 +19,7 @@ const TechButton = ({
         }
         onClick={toggleActive}
       >
-        <i className={iconClass}></i>
+        <i className={iconClass} />
       </div>
       <div className="centerNote">
         <p>{paragraph}</p>
