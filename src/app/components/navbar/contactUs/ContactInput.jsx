@@ -2,17 +2,39 @@ import React from 'react';
 
 const ContactInput = ({
   id,
-  name,
   value,
   toggleInput,
   span,
-  setVariable,
-  iconClass
+  iconClass,
+  activeInput
 }) => {
   return (
     <div className="input brands-i">
-      <i className={iconClass}></i>
-      <div className="form" id={id} onMouseDown={setVariable}>
+      <i
+        className={
+          activeInput === false && value === ''
+            ? iconClass
+            : value != ''
+            ? iconClass
+            : id === 'phone'
+            ? iconClass
+            : activeInput && value === ''
+            ? `${iconClass} icon-error`
+            : null
+        }
+      />
+      <div
+        className={
+          activeInput === false && value === ''
+            ? 'form'
+            : value != ''
+            ? 'form'
+            : id === 'phone'
+            ? 'form'
+            : 'form formError'
+        }
+        id={id}
+      >
         <input
           type="text"
           name={'name'}
@@ -22,7 +44,19 @@ const ContactInput = ({
           onChange={toggleInput}
         />
         <label htmlFor="name" className="label-name">
-          <span className="content-name">{span}</span>
+          <span
+            className={
+              activeInput === false && value === ''
+                ? 'content-name'
+                : value != ''
+                ? 'content-name'
+                : id === 'phone'
+                ? 'content-name'
+                : 'content-name content-nameError'
+            }
+          >
+            {span}
+          </span>
         </label>
       </div>
     </div>
