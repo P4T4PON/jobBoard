@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './app/components/navbar/Navbar';
 import './App.css';
@@ -25,129 +25,57 @@ const App = () => {
       <Router>
         <Navbar />
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={props => (
-              <Fragment>
-                <JobOffers />
-              </Fragment>
-            )}
-          />
+          <Route exact path="/" render={() => <JobOffers />} />
         </Switch>
 
         <Switch>
-          <Route
-            exact
-            path="/Brands"
-            render={props => (
-              <Fragment>
-                <BrandStories />
-              </Fragment>
-            )}
-          />
+          <Route exact path="/Brands" render={() => <BrandStories />} />
         </Switch>
 
         <Switch>
-          <Route
-            exact
-            path="/devs/"
-            render={props => (
-              <Fragment>
-                <Machmaking />
-              </Fragment>
-            )}
-          />
+          <Route exact path="/devs/" render={() => <Machmaking />} />
         </Switch>
 
         <Switch>
-          <Route
-            exact
-            path="/add-offer"
-            render={props => (
-              <Fragment>
-                <AddOffer />
-              </Fragment>
-            )}
-          />
+          <Route exact path="/add-offer" render={() => <AddOffer />} />
         </Switch>
         <Switch>
-          <Route
-            exact
-            path="/devs/Register"
-            render={props => (
-              <Fragment>
-                <Register />
-              </Fragment>
-            )}
-          />
+          <Route exact path="/devs/Register" render={() => <Register />} />
         </Switch>
         <Switch>
           <Route
             exact
             path="/devs/reset-password"
-            render={props => (
-              <Fragment>
-                <ResetPassword />
-              </Fragment>
-            )}
+            render={() => <ResetPassword />}
           />
         </Switch>
         <Switch>
-          <Route
-            exact
-            path="/users/sign_in"
-            render={props => (
-              <Fragment>
-                <UserLogin />
-              </Fragment>
-            )}
-          />
+          <Route exact path="/users/sign_in" render={() => <UserLogin />} />
         </Switch>
         <Switch>
           <Route
             exact
             path="/users/password/new"
-            render={props => (
-              <Fragment>
-                <UserRegister />
-              </Fragment>
-            )}
+            render={() => <UserRegister />}
           />
         </Switch>
         <Switch>
           <Route
             exact
             path="/terms-and-privacy-policies"
-            render={props => (
-              <Fragment>
-                <TermsAndPolicies />
-              </Fragment>
-            )}
+            render={() => <TermsAndPolicies />}
           />
         </Switch>
 
         <Switch>
-          <Route
-            exact
-            path="/devs/panel"
-            render={props => (
-              <Fragment>
-                <UserPanel />
-              </Fragment>
-            )}
-          />
+          <Route exact path="/devs/panel" render={() => <UserPanel />} />
         </Switch>
 
         <Switch>
           <Route
             exact
             path="/devs/panel/profile"
-            render={props => (
-              <Fragment>
-                <UserProfile />
-              </Fragment>
-            )}
+            render={() => <UserProfile />}
           />
         </Switch>
 
@@ -155,11 +83,7 @@ const App = () => {
           <Route
             exact
             path="/devs/panel/matchmaking"
-            render={props => (
-              <Fragment>
-                <UserMachmaking />
-              </Fragment>
-            )}
+            render={() => <UserMachmaking />}
           />
         </Switch>
 
@@ -167,11 +91,7 @@ const App = () => {
           <Route
             exact
             path="/devs/panel/preferences"
-            render={props => (
-              <Fragment>
-                <UserPreferences />
-              </Fragment>
-            )}
+            render={() => <UserPreferences />}
           />
         </Switch>
 
@@ -179,11 +99,7 @@ const App = () => {
           <Route
             exact
             path="/devs/panel/settings"
-            render={props => (
-              <Fragment>
-                <UserSettings />
-              </Fragment>
-            )}
+            render={() => <UserSettings />}
           />
         </Switch>
       </Router>

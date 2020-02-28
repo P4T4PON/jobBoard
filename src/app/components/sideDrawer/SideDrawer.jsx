@@ -4,7 +4,7 @@ import './SideDrawer.css';
 import SideLink from './SideLink';
 import { contactInfo, sideLink } from '../../../constans';
 
-const SideDrawer = props => {
+const SideDrawer = ({ toggleMenu, menu_active }) => {
   const [contact, setContact] = useState(false);
 
   let renderContactInfo = () => {
@@ -12,8 +12,8 @@ const SideDrawer = props => {
   };
 
   const renderBackdrop = () => {
-    if (props.menu_active) {
-      return <BackDrop toggleMenu={props.toggleMenu} />;
+    if (menu_active) {
+      return <BackDrop toggleMenu={toggleMenu} />;
     }
   };
 
@@ -31,9 +31,8 @@ const SideDrawer = props => {
 
   return (
     <Fragment>
-      {' '}
       {renderBackdrop()}
-      <nav className={`side-drawer ${props.menu_active ? 'open' : null}`}>
+      <nav className={`side-drawer ${menu_active ? 'open' : null}`}>
         <h1>justjoin.it</h1>
         <ul>
           <SideLink

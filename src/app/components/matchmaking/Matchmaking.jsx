@@ -1,9 +1,10 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import image from './image.png';
 import MachmakingHref from './MachmakingHref';
 import MachmakingInput from './MatchmakingInput';
 import SubmitButton from '../additions/SubmitButton';
 import MachmakingLink from './MachmakingLink';
+import { websides } from '../../../constans';
 import './Matchmaking.css';
 
 const Matchmaking = () => {
@@ -12,6 +13,18 @@ const Matchmaking = () => {
   const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
+
+  const toggleWebsides = () => {
+    const text = 'Sign in';
+    return websides.map((side, index) => (
+      <MachmakingHref
+        key={index}
+        color={side[0]}
+        className={side[1]}
+        paragraph={`${text} ${side[2]}`}
+      />
+    ));
+  };
 
   const toggleInput = () => {
     setInputType(!input_type);
@@ -39,8 +52,6 @@ const Matchmaking = () => {
   const passwordExist = () => {
     if (password.length === 0) {
       setPasswordError('password is required field');
-    } else if (password.length < 6) {
-      setPasswordError('password must have at least 6 characters');
     }
   };
 
@@ -59,29 +70,7 @@ const Matchmaking = () => {
       <div className="logging">
         <div className="media">
           <h1>Get started for free</h1>
-
-          <MachmakingHref
-            color={'black'}
-            className={'fab fa-google'}
-            paragraph={'Sign in with Google'}
-          />
-          <MachmakingHref
-            color={'black'}
-            className={'fab fa-github'}
-            paragraph={'Sign in with Github'}
-          />
-
-          <MachmakingHref
-            color={'blue'}
-            className={'fab fa-linkedin'}
-            paragraph={'Sign in with Linkedin'}
-          />
-
-          <MachmakingHref
-            color={'blue'}
-            className={'fab fa-facebook-f'}
-            paragraph={'Sign in with Facebook'}
-          />
+          {toggleWebsides()}
         </div>
 
         <div className="span">

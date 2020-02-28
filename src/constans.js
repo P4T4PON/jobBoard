@@ -1,3 +1,13 @@
+import Doc from './app/components/addOffer/znanylekarz.png';
+import Schib from './app/components/addOffer/schibsted.png';
+import Dev from './app/components/addOffer/devsdata.png';
+import Owl from './app/components/addOffer/owls.png';
+import Vdlogo from './app/components/addOffer/vdlogo.png';
+import Rocket from './app/components/addOffer/rocket.svg';
+import Bar from './app/components/addOffer/bar.svg';
+import Brain from './app/components/addOffer/brain.svg';
+import Medal from './app/components/addOffer/medal.svg';
+
 export const technologiesFab = [
   ['JavaScript', 'js'],
   ['HTML', 'html5'],
@@ -326,47 +336,65 @@ export const slideContent = [
   [
     'Marta Serafin',
     'HR Specialist - DocPlanner / ZnanyLekarz',
-    'JustJoinIt to portal dla firm, które oczekują dwóch rzeczy.Po pierwsze: wyników. JJIT z porównaniem do konkurencji na rynku po prostu "dowozi". Bez obiecywania niemożliwego oraz bez tracenia czasu dociera do kandydatów, do których nikt wcześniej nie dotarł. Po drugie: to portal, dla tych, którzy szukają nieszablonowego podejścia do marketingu w rekrutacji. Pisaliśmy wspólnie artykuły, braliśmy udział w streamingu, wspólnie stworzyliśmy nasz profil brandowy. JJIT to dla nas nie tablica ogłoszeń o pracę. Dla nas to Partner'
+    'JustJoinIt to portal dla firm, które oczekują dwóch rzeczy.Po pierwsze: wyników. JJIT z porównaniem do konkurencji na rynku po prostu "dowozi". Bez obiecywania niemożliwego oraz bez tracenia czasu dociera do kandydatów, do których nikt wcześniej nie dotarł. Po drugie: to portal, dla tych, którzy szukają nieszablonowego podejścia do marketingu w rekrutacji. Pisaliśmy wspólnie artykuły, braliśmy udział w streamingu, wspólnie stworzyliśmy nasz profil brandowy. JJIT to dla nas nie tablica ogłoszeń o pracę. Dla nas to Partner',
+    Doc
   ],
   [
     'Anastazja Shelepava',
     'Talent Acquisition Partner - Schibsted Tech Polska',
-    'Dzięki Justjoin.it udało nam się zatrudnić 5 mocnych developerów w zeszłym roku, co jest dobrym wynikiem w porównaniu do innych portali ogłoszeniowych - otrzymujemy mniej zgłoszeń, ale są one zdecydowanie bardziej wartościowe dla nas. Jesteśmy bardzo zadowoleni ze współpracy, dziękujemy!'
+    'Dzięki Justjoin.it udało nam się zatrudnić 5 mocnych developerów w zeszłym roku, co jest dobrym wynikiem w porównaniu do innych portali ogłoszeniowych - otrzymujemy mniej zgłoszeń, ale są one zdecydowanie bardziej wartościowe dla nas. Jesteśmy bardzo zadowoleni ze współpracy, dziękujemy!',
+    Schib
   ],
   [
     'Tomasz Potański',
     'Managing Partner at DevsData',
-    '  W moim biznesie bardzo ważna jest szybkość reakcji, oferty są pilne, a konkurencja - duża. JJ.it dobrze to rozumie - zapewniając personalny kontakt z klientem - uruchamiało promocje marketingowa i social boost juz tego samego dnia, ktorego dostali zgłoszenie. Jakość kandydatow jest bardzo dobra, i - w przeciwieństwie do pewnego konkurencyjnego portalu na polskim rynku - bardzo podoba mi się to, ze mogę elastycznie, opisowo wyrazić, z czym oferta jest związana, co będzie zadaniem kandydata i jakie są dokładne wymagania. Moim zdaniem najlepszy portal i usługa tego typu w Polsce.'
+    '  W moim biznesie bardzo ważna jest szybkość reakcji, oferty są pilne, a konkurencja - duża. JJ.it dobrze to rozumie - zapewniając personalny kontakt z klientem - uruchamiało promocje marketingowa i social boost juz tego samego dnia, ktorego dostali zgłoszenie. Jakość kandydatow jest bardzo dobra, i - w przeciwieństwie do pewnego konkurencyjnego portalu na polskim rynku - bardzo podoba mi się to, ze mogę elastycznie, opisowo wyrazić, z czym oferta jest związana, co będzie zadaniem kandydata i jakie są dokładne wymagania. Moim zdaniem najlepszy portal i usługa tego typu w Polsce.',
+    Dev
   ],
   [
     'Jakub Przyborowski',
     'Co-Founder & Lead Dev - Owls Department',
-    'justjoin.it wywróciło branżę do góry nogami. Teraz każda kolejna rekrutacja kończy się dla nas sukcesem, a proces rozwoju zespołu przestał być karkołomny. Najbardziej cenię sobie to, że za portal odpowiadają świetni i zaangażowani ludzie, którzy skutecznie starają się ułatwiać życie pracodawcom i kandydatom.'
+    'justjoin.it wywróciło branżę do góry nogami. Teraz każda kolejna rekrutacja kończy się dla nas sukcesem, a proces rozwoju zespołu przestał być karkołomny. Najbardziej cenię sobie to, że za portal odpowiadają świetni i zaangażowani ludzie, którzy skutecznie starają się ułatwiać życie pracodawcom i kandydatom.',
+    Owl
   ],
   [
     'Paulina Brzezińska',
     'Recruitment Lead - VentureDevs',
-    ' JustJoin IT to wielowymiarowy portal, w pełni przystosowany do wymogów profesjonalnej rekrutacji IT. Przejrzystość i transparentność ofert to kluczowe kryteria, dla których ten portal wybierają najlepsze firmy i najlepiej wykwalifikowani kandydaci. Oferty pracy, BrandStory oraz inicjatywy takie jak justgeek.it skupiają wokół JustJoin najlepszych specjalistów w branży.'
+    ' JustJoin IT to wielowymiarowy portal, w pełni przystosowany do wymogów profesjonalnej rekrutacji IT. Przejrzystość i transparentność ofert to kluczowe kryteria, dla których ten portal wybierają najlepsze firmy i najlepiej wykwalifikowani kandydaci. Oferty pracy, BrandStory oraz inicjatywy takie jak justgeek.it skupiają wokół JustJoin najlepszych specjalistów w branży.',
+    Vdlogo
   ]
 ];
 
 export const AddOfferItems = [
   [
     'Najszybciej rozwijający się portal pracy w branży IT w Polsce',
-    'The Fastest growing IT job board in Poland'
+    'The Fastest growing IT job board in Poland',
+    Rocket
   ],
   [
     'Ponad 8.5 milionów odsłon ogłoszeń w 2018',
-    'Over 8.5 million job ad pageviews in 2018'
+    'Over 8.5 million job ad pageviews in 2018',
+    Bar
   ],
   [
     'Fantastyczna społeczność, wraz z którą rozwijamy nasz job board',
-    'Fantastic community, together with which we develop our job board'
+    'Fantastic community, together with which we develop our job board',
+    Brain
   ],
   [
     'W ciągu 24 miesięcy zaufało nam już ponad 1500 marek z 15 krajów',
-    'In the period of 24 months period we’ve been trusted by over 1500 brands from 15 countries'
+    'In the period of 24 months period we’ve been trusted by over 1500 brands from 15 countries',
+    Medal
   ]
+];
+
+export const AddOfferHrefs = [
+  ['/', 'Just Join IT'],
+  ['/brands/story/just-join-it', 'About us'],
+  ['/brands', 'Brand Stories'],
+  ['https://rocketjobs.pl/', 'Rocket Jobs'],
+  ['/terms-and-privacy-policies', 'Terms', 'far fa-file-pdf'],
+  ['/terms-and-privacy-policies', 'Policy', 'far fa-file-pdf']
 ];
 
 export const otherCities = [
@@ -451,4 +479,117 @@ export const brandTechBtn = [
   ['greenIcon brandHover brandGreen', 'fas fa-shopping-cart', 'E-commerance'],
   ['light-blueIcon brandHover brandBlue', 'fas fa-hotel', 'Corporation'],
   ['dark-pinkIcon brandHover brandPink', 'fas fa-desktop', 'Other']
+];
+
+export const companyStage = [
+  ['far fa-check-square', "Doesn't matter", 'all'],
+  ['fas fa-home', 'Early stage(0-30)', 'earlyStage'],
+  ['far fa-building', 'Growth stage (30-100)', 'growthStage'],
+  ['fas fa-city', 'Estabilished(100-250)', 'estabilished'],
+  ['fas fa-university', 'Corporation(250+)', 'corporation']
+];
+
+export const companyStageNames = [
+  'all',
+  'earlyStage',
+  'growthStage',
+  'estabilished',
+  'corporation'
+];
+
+export const companyKind = [
+  ['far fa-check-square', "Doesn't matter", 'all'],
+  ['fas fa-rocket', 'Startup', 'startup'],
+  ['fas fa-flask', 'Software house', 'softwareHouse'],
+  ['fas fa-shopping-cart', 'E-commerce', 'ecommerce'],
+  ['fas fa-hotel', 'Corporation', 'corporation']
+];
+
+export const companyKindNames = [
+  'all',
+  'startup',
+  'softwareHouse',
+  'ecommerce',
+  'corporation'
+];
+
+export const industry = [
+  ['fas fa-dollar-sign', 'Fintech', 'fintech'],
+  ['fas fa-cube', 'Bloackchain', 'bloackchain'],
+  ['fas fa-shopping-cart', 'E-commerce', 'ecommerce'],
+  ['far fa-heart', 'Medicine', 'medicine'],
+  ['fas fa-medal', 'Military', 'military'],
+  ['fas fa-plane-departure', 'Travel', 'travel'],
+  ['fas fa-cart-arrow-down', 'Martech', 'martech'],
+  ['fas fa-user-md', 'IoT', 'iot'],
+  ['fas fa-truck', 'Logistic', 'logistic'],
+  ['fas fa-seedling', 'Beauty', 'beauty'],
+  ['fas fa-laptop', 'Other', 'other']
+];
+
+export const industryNames = [
+  'all',
+  'fintech',
+  'bloackchain',
+  'ecommerce',
+  'medicine',
+  'military',
+  'travel',
+  'martech',
+  'iot',
+  'logistic',
+  'beauty',
+  'other'
+];
+
+export const seniority = [
+  ['Junior', 'junior'],
+  ['Mid', 'mid'],
+  ['Senior', 'senior']
+];
+
+export const seniorityNames = ['all', 'junior', 'mid', 'senior'];
+
+export const employmentType = [
+  ['B2B', 'b2b'],
+  ['Permanent', 'permanent'],
+  ['Mandate contact', 'mandateContact']
+];
+
+export const employmentTypeNames = [
+  'all',
+  'b2b',
+  'permanent',
+  'mandateContact'
+];
+
+export const websides = [
+  ['black', 'fab fa-google', 'with Google'],
+  ['black', 'fab fa-github', 'with Github'],
+  ['blue', 'fab fa-linkedin', 'with Linkedin'],
+  ['blue', 'fab fa-facebook-f', 'with Facebook']
+];
+
+export const linkItem = [
+  ['/devs/panel/profile', 'far fa-user', 'My profile'],
+  ['/devs/panel/matchmaking', 'fas fa-inbox', 'Matchmaking'],
+  ['/devs/panel/preferences', 'fas fa-pen', 'Preferences'],
+  ['/devs/panel/settings', 'fas fa-cog', 'Settings'],
+  ['/devs/', 'fas fa-power-off', 'Log out']
+];
+
+export const userStatus = [
+  [
+    'far fa-check-circle big-circle green',
+    'green',
+    'I’m actively looking for a job'
+  ],
+  ['far fa-envelope big-circle', 'blue', 'Open for proposals'],
+  ['fas fa-times-circle big-circle', 'red', 'Not open for proposals']
+];
+
+export const listItem = [
+  ['green', 'I’m actively looking for a job'],
+  ['blue', 'Open for proposals'],
+  ['red', 'Not open for proposals']
 ];

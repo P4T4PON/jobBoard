@@ -25,7 +25,7 @@ const EmploymentTypeBox = () => {
     if (activatedTiles.length === 0) {
       newTiles['all'] = true;
       setTiles({ ...newTiles });
-    } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
+    } else if (activatedTiles.length > 1 && newTiles['all'] !== false) {
       newTiles['all'] = false;
       setTiles({ ...newTiles });
     }

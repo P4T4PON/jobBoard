@@ -6,8 +6,8 @@ import {
   priceCardPremiumEng,
   priceCardBusinessPl,
   priceCardBusinessEng
-} from '../../../constans';
-import Submit from '../additions/SubmitButton';
+} from '../../../../../constans';
+import Submit from '../../../additions/SubmitButton';
 
 const renderPriceCardBasicPl = () => {
   return priceCardBasicPl.map((card, index) => (
@@ -89,7 +89,7 @@ const PriceCard = ({ pl, type, price }) => {
           <div className="value">{price}</div>
           <div className="currency">PLN</div>
         </div>
-        <span className="after"></span>
+        <span className="after" />
       </div>
       <div className="description">
         <ul className="benefits">

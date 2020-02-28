@@ -15,6 +15,7 @@ const UserPreferences = () => {
   const togglePreferences = () => {
     return yourPreferences.map((pref, index) => (
       <div
+        key={index}
         className={preferences && index > 4 ? 'display-none' : 'preferencesBox'}
       >
         <UserChoices

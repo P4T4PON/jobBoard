@@ -14,7 +14,7 @@ const ContactInput = ({
         className={
           activeInput === false && value === ''
             ? iconClass
-            : value != ''
+            : value !== ''
             ? iconClass
             : id === 'phone'
             ? iconClass
@@ -27,7 +27,7 @@ const ContactInput = ({
         className={
           activeInput === false && value === ''
             ? 'form'
-            : value != ''
+            : value !== ''
             ? 'form'
             : id === 'phone'
             ? 'form'
@@ -48,7 +48,7 @@ const ContactInput = ({
             className={
               activeInput === false && value === ''
                 ? 'content-name'
-                : value != ''
+                : value !== ''
                 ? 'content-name'
                 : id === 'phone'
                 ? 'content-name'

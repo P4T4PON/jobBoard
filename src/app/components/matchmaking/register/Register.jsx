@@ -5,11 +5,24 @@ import MachmakingHref from '../MachmakingHref';
 import MachmakingInput from '../MatchmakingInput';
 import SubmitButton from '../../additions/SubmitButton';
 import MachmakingLink from '../MachmakingLink';
+import { websides } from '../../../../constans';
 import './Register.css';
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
+
+  const toggleWebsides = () => {
+    const text = 'Register';
+    return websides.map((side, index) => (
+      <MachmakingHref
+        key={index}
+        color={side[0]}
+        className={side[1]}
+        paragraph={`${text} ${side[2]}`}
+      />
+    ));
+  };
 
   const checkEmailLength = event => {
     setEmail(event.target.value);
@@ -35,29 +48,7 @@ const Register = () => {
       <div className="registering">
         <div className="media">
           <h1>Get started for free</h1>
-
-          <MachmakingHref
-            color={'black'}
-            className={'fab fa-google'}
-            paragraph={'Login in with Google'}
-          />
-          <MachmakingHref
-            color={'black'}
-            className={'fab fa-github'}
-            paragraph={'Login in with Github'}
-          />
-
-          <MachmakingHref
-            color={'blue'}
-            className={'fab fa-linkedin'}
-            paragraph={'Login in with Linkedin'}
-          />
-
-          <MachmakingHref
-            color={'blue'}
-            className={'fab fa-facebook-f'}
-            paragraph={'Login in with Facebook'}
-          />
+          {toggleWebsides()}
         </div>
 
         <div className="span">
@@ -82,7 +73,7 @@ const Register = () => {
             </h2>
           </div>
 
-          <SubmitButton value={'Register'} className={'login-submit'} />
+          <SubmitButton value={' Register '} className={' login-submit '} />
         </div>
 
         <MachmakingLink
