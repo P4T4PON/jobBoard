@@ -10,11 +10,10 @@
 .sub-header {
   width: 100%;
   background-color: #f3f6f8;
-  padding: 0 40px 5px 18px;
+  padding: 3px 40px 5px 18px;
   height: 126px;
   display: flex;
   align-items: flex-start;
-  padding-top: 3px;
 }
 
 .filters {
@@ -72,7 +71,7 @@
 }
 
 .tech-buttonBox {
-  margin: 0px 10px 0px 10px;
+  margin: 0 10px 0px 10px;
 }
 
 .tech-button {
@@ -90,7 +89,7 @@
 }
 
 .tech-button p {
-  margin: 0px;
+  margin: 0;
   text-align: center;
   font-size: 0.8rem;
   color: #99a1ab;
@@ -339,8 +338,8 @@
 .change-button {
   border-radius: 50%;
   background-color: #f1f1f1;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -351,14 +350,6 @@
 .change-buttonActive {
   transform: translateX(100%);
 }
-/*TODO: co się z tym stało, ze to tylko jest zakomentowane, a todo's usuniety?*/
-/* .JustifyContent-fs {
-  justify-content: flex-start;
-}
-
-.JustifyContent-fe {
-  justify-content: flex-end;
-} */
 
 .other-filters {
   float: right;
