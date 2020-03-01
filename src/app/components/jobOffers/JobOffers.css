@@ -6,7 +6,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-
+/*TODO: shorthand paddingu, nadpisywanie paddingu, i w calym pliku popraw jednostki o wartosci zero*/
 .sub-header {
   width: 100%;
   background-color: #f3f6f8;
@@ -351,7 +351,7 @@
 .change-buttonActive {
   transform: translateX(100%);
 }
-
+/*TODO: co się z tym stało, ze to tylko jest zakomentowane, a todo's usuniety?*/
 /* .JustifyContent-fs {
   justify-content: flex-start;
 }

@@ -18,6 +18,7 @@ const BrandTechBtn = ({
       }
       onClick={toggleActive}
     >
+      {/*TODO: znowu tag 'i' ;d*/}
       <i className={iconClass}></i>
       <p>{paragraph}</p>
     </div>
