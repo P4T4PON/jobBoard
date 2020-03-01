@@ -178,6 +178,8 @@
 }
 /* używanie importantów w css jest baaardzo złą praktyką :)*/
 /*      https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity    */
+
+/*TODO: poprawic wartości zerowe oraz niepotrzebne nadpisywanie styli*/
 .border-pink {
   color: #ff4081 !important;
   border-color: #ff4081 !important;
@@ -347,7 +349,7 @@
   z-index: 100;
   margin-right: 15px;
 }
-
+/*TODO: duplikacja*/
 .btn-icon {
   margin: 0px 10px 10px;
   margin-left: 10px;

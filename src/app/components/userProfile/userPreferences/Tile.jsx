@@ -10,6 +10,8 @@ const Tile = ({ companyIcon, companySpan, toggleTile, active }) => {
       }
       onClick={toggleTile}
     >
+
+      {/*  TODO: tag oraz nieużywany import*/}
       <i className={companyIcon}></i>
       <span>{companySpan}</span>
     </div>

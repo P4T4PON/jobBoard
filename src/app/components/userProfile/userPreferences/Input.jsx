@@ -11,6 +11,7 @@ const Input = ({
 }) => {
   return (
     <Fragment>
+      {/*  TODO: domkniecie poprawne taga*/}
       <div className="inputStatus" id={id}></div>
       <input
         value={skill}

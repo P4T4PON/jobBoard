@@ -12,6 +12,7 @@ const PrefBox = ({
     <div className="preferences-box">
       <header className="preferences-header">
         <div className={heading}>
+          {/*  TODO: tag*/}
           <i className={iconClass}></i>
           <h2>{title}</h2>
         </div>

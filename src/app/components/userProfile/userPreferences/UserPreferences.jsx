@@ -19,7 +19,7 @@ import './UserPreferences.css';
 const UserPreferences = () => {
   const [panelActive] = useState(3);
   const [statusValue] = useState('');
-
+//TODO: co to za przerwy pomiędzy komponentami? :D
   return (
     <div className="userLogin-content vw-99">
       <UserPanel active={panelActive} inputValue={statusValue} />

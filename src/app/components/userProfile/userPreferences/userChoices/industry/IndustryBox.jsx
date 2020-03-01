@@ -30,6 +30,7 @@ const IndustryBox = () => {
     if (activatedTiles.length === 0) {
       newTiles['all'] = true;
       setTiles({ ...newTiles });
+    //TODO: odradzam Ci używania != , dużo lepiej użyć !==  . Poczytaj sobie o koercji typów i napisz mi dlaczego !== jest lepsze i dobrą praktyką, a != uważa się za złą praktyke
     } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
       newTiles['all'] = false;
       setTiles({ ...newTiles });
@@ -64,6 +65,7 @@ const IndustryBox = () => {
       />
     ));
   };
+
   return (
     <div className="preferences-box">
       <UserPreferencesHeader

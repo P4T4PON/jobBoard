@@ -17,6 +17,7 @@ export const JobStatus = ({
       }
       onClick={setJobStatusActive}
     >
+      {/*TODO: tagi do poprawy */}
       <i className={icon}></i>
       <span>
         {span1}
