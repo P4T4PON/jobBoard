@@ -1,5 +1,5 @@
 import React from 'react';
-
+//ta sama akcje z tagiem "i"
 const AnimatedInput = ({
   divClass,
   iconClass,

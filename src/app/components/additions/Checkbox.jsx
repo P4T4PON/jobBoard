@@ -1,5 +1,5 @@
 import React from 'react';
-
+// popraw tag input
 const Checkbox = ({ className, inputClass, paragraph }) => {
   return (
     <div className={className}>
