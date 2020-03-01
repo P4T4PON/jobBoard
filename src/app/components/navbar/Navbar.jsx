@@ -144,36 +144,6 @@ const Navbar = () => {
 
       <div className="spacer" />
       <UserPanelBox newBrands={brands} />
-      {/* <div className="nav-right">
-        {brands ? (
-          <NavButton
-            className={'bg-pink'}
-            fooOnClick={() => setContactUs(true)}
-            text={'Get Started'}
-          />
-        ) : (
-          <LinkButton
-            link={'/add-offer'}
-            className={'roundedBtn bg-pink'}
-            text={'Post a Job'}
-          />
-        )}
-
-        {isLogged ? (
-          <UserPanel
-            setUserPanel_active={() => setUserPanel_active(!userPanel_active)}
-          />
-        ) : (
-          <NavButton
-            className={'bg-purple'}
-            fooOnClick={() => {
-              setSideBar_active(!sideBar_active);
-              setBrands(false);
-            }}
-            text={'Sign in'}
-          />
-        )}
-      </div> */}
 
       <div
         className={
