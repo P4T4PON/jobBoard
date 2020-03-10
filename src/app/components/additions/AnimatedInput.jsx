@@ -9,7 +9,9 @@ const AnimatedInput = ({
   value,
   checkInputLength,
   checkInputBlurLength,
-  span
+  span,
+  spanClass,
+  insideIcon
 }) => {
   return (
     <div className="passwordChange-input">
@@ -30,7 +32,8 @@ const AnimatedInput = ({
             onBlur={checkInputBlurLength}
           />
           <label htmlFor="email" className="label-name">
-            <span className="content-name">{span}</span>
+            <span className={`content-name ${spanClass}`}>{span}</span>
+            {insideIcon ? <i className={`${insideIcon} inside-icon`} /> : null}
           </label>
         </div>
       </div>

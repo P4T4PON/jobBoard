@@ -253,6 +253,32 @@
   border-radius: 10px;
 }
 
+.inpont input + .label-name .content-name {
+  transform: translateY(-140%);
+  color: #99a1ab;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.inpont textarea + .label-name .content-name {
+  transform: translateY(-140%);
+  color: #99a1ab;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.inpont input {
+  margin-right: 60px;
+}
+
+.inpont input {
+  padding: 0px 35px;
+}
+
+.inside-icon {
+  margin-top: 20px;
+}
+
 .error {
   color: red;
   width: 100%;

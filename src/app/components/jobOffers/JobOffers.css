@@ -263,6 +263,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .otherCities-ul {
@@ -351,14 +352,6 @@
 .change-buttonActive {
   transform: translateX(100%);
 }
-
-/* .JustifyContent-fs {
-  justify-content: flex-start;
-}
-
-.JustifyContent-fe {
-  justify-content: flex-end;
-} */
 
 .other-filters {
   float: right;

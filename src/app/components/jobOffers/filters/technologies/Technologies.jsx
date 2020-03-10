@@ -5,7 +5,7 @@ import ExpLevel from '../../ExpLevel';
 import { techIcons } from '../../../../../constans';
 import Salary from '../../Salary';
 
-const Technologies = () => {
+const Technologies = ({ toggleAllTechnologies }) => {
   const [allTechnologies, setAllTechnologies] = useState(true);
   const [active, setActive] = useState(0);
 
@@ -19,6 +19,7 @@ const Technologies = () => {
         toggleActive={() => {
           setActive(index + 1);
           setAllTechnologies(false);
+          toggleAllTechnologies(tech[3]);
         }}
         active={active}
         allTechnologies={allTechnologies}
@@ -31,7 +32,10 @@ const Technologies = () => {
     <div className="filters-technologies">
       <AllCitiesButton
         city={'All'}
-        toggleActive={() => setAllTechnologies(true)}
+        toggleActive={() => {
+          setAllTechnologies(true);
+          toggleAllTechnologies('');
+        }}
         allCities={allTechnologies}
       />
 

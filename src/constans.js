@@ -1,3 +1,5 @@
+import OfferDetails from './app/components/jobOffers/companyProfile/companyAdditions/offerDetails/OfferDetails';
+
 export const technologiesFab = [
   ['JavaScript', 'js'],
   ['HTML', 'html5'],
@@ -388,27 +390,27 @@ export const otherCities = [
 ];
 
 export const techIcons = [
-  ['fab fa-js', 'yellowIcon', 'Js'],
-  ['fab fa-html5', 'orangeIcon', 'HTML'],
-  ['fab fa-php ', 'blueIcon', 'PHP'],
-  ['fas fa-gem ', 'light-redIcon', 'Ruby'],
-  ['fab fa-python', 'dark-blueIcon', 'Python'],
-  ['fab fa-java', 'pinkIcon', 'Java'],
-  ['fas fa-bacon', 'light-blueIcon', '.NET'],
-  ['fab fa-stripe-s', 'light-redIcon', 'Scala'],
-  ['fab fa-cuttlefish', 'greenIcon', 'C'],
-  ['fas fa-mobile-alt', 'bordIcon', 'Mobile'],
-  ['fas fa-search', 'light-greenIcon', 'Testing'],
-  ['fab fa-dev', 'blue-blueIcon', 'Dev/Ops'],
-  ['fas fa-magic', 'dark-yellowIcon', 'UX/UI'],
-  ['fas fa-user', 'green-blueIcon', 'PM'],
-  ['fas fa-gamepad', 'light-pinkIcon', 'Game'],
-  ['fab fa-bitcoin', 'purpleIcon', 'Blockchain'],
-  ['fas fa-shield-alt', 'dark-darkBlueIcon', 'Security'],
-  ['fas fa-database ', 'blue-greenIcon', 'Data'],
-  ['fas fa-hippo ', 'blueIcon', 'Golang'],
-  ['fab fa-stackpath', 'darker-blueIcon', 'SAP'],
-  ['fas fa-desktop', 'dark-pinkIcon', 'Other']
+  ['fab fa-js', 'yellowIcon', 'Js', 'javascript'],
+  ['fab fa-html5', 'orangeIcon', 'HTML', 'html'],
+  ['fab fa-php ', 'blueIcon', 'PHP', 'php'],
+  ['fas fa-gem ', 'light-redIcon', 'Ruby', 'ruby'],
+  ['fab fa-python', 'dark-blueIcon', 'Python', 'python'],
+  ['fab fa-java', 'pinkIcon', 'Java', 'java'],
+  ['fas fa-bacon', 'light-blueIcon', '.NET', '.net'],
+  ['fab fa-stripe-s', 'light-redIcon', 'Scala', 'scala'],
+  ['fab fa-cuttlefish', 'greenIcon', 'C', 'c'],
+  ['fas fa-mobile-alt', 'bordIcon', 'Mobile', 'mobile'],
+  ['fas fa-search', 'light-greenIcon', 'Testing', 'testing'],
+  ['fab fa-dev', 'blue-blueIcon', 'Dev/Ops', 'dev/ops'],
+  ['fas fa-magic', 'dark-yellowIcon', 'UX/UI', 'ux/ui'],
+  ['fas fa-user', 'green-blueIcon', 'PM', ''],
+  ['fas fa-gamepad', 'light-pinkIcon', 'Game', 'game'],
+  ['fab fa-bitcoin', 'purpleIcon', 'Blockchain', 'blockchain'],
+  ['fas fa-shield-alt', 'dark-darkBlueIcon', 'Security', 'security'],
+  ['fas fa-database ', 'blue-greenIcon', 'Data', 'data'],
+  ['fas fa-hippo ', 'blueIcon', 'Golang', 'golang'],
+  ['fab fa-stackpath', 'darker-blueIcon', 'SAP', 'sap'],
+  ['fas fa-desktop', 'dark-pinkIcon', 'Other', 'other']
 ];
 
 export const yearsBox = ['0-1', '1-2', '2-4', '4-6', '6-10', '10+'];
@@ -451,4 +453,131 @@ export const brandTechBtn = [
   ['greenIcon brandHover brandGreen', 'fas fa-shopping-cart', 'E-commerance'],
   ['light-blueIcon brandHover brandBlue', 'fas fa-hotel', 'Corporation'],
   ['dark-pinkIcon brandHover brandPink', 'fas fa-desktop', 'Other']
+];
+
+export const companyOffers = [
+  {
+    link: '/offers/Magento',
+    img:
+      'https://bucket.justjoin.it/offers/company_logos/thumb/f4ecece935004f975f33f003d12b414715714c48.png?1581341301',
+
+    bgColor: 'bg-yellow',
+    itemBorder: 'ib-yellow',
+    title: 'Frontend Magento Developer',
+    min: '5 500',
+    max: '10 000',
+    companyName: 'Polcode',
+    companyAddress: 'Starowiślna 13 ',
+    companyCity: 'Kraków',
+    name: '7N',
+    companyLink: 'https://www.7n.com/',
+    companySize: '700+',
+    companyType: 'B2b',
+    exp: 'Mid',
+    age: 'New',
+    companyTags: ['html5', 'css', 'javascript'],
+    companyOfferDetails: [
+      ['nice to have', 'Javascript'],
+      ['junior', 'Angular'],
+      ['senior', 'React']
+    ],
+    companyDescription:
+      '7N to agent doświadczonych specjalistów IT. Jesteśmy firmą z duńskimi korzeniami o zasięgu globalnym. W ciągu 30 lat działalności dowiedliśmy, że jawny i przejrzysty model finansowy, współpraca wyłącznie z ekspertami w swoich dziedzinach oraz bardzo dobra opieka nad nimi są najlepszym modelem konsultingu IT. Promujemy kompetencje naszych konsultantów u klientów, oferując możliwość uczestniczenia w różnych projektach, dołączając do tego długoterminowość współpracy i zawodową stabilność.',
+    remote: true,
+    technology: 'javascript'
+  },
+  {
+    link: '/offers/Golang',
+    img:
+      'https://bucket.justjoin.it/offers/company_logos/original/c60585aefe092c6dc92b27ec10d75d47c53e9ef4.jpg?1576666786',
+
+    bgColor: 'ib-lightBlue',
+    itemBorder: 'ib-lightBlue',
+    title: 'Golang Developer',
+    min: '12 500',
+    max: '17 000',
+    companyName: 'Sii',
+    companyAddress: 'Grunwaldzka472E 13 ',
+    companyCity: 'Sopot',
+    name: 'Sii',
+    companyLink: 'https://www.cybercom.com/pl/Poland/',
+    companySize: '200+',
+    companyType: 'B2Permanentb',
+    exp: 'Senior',
+    age: '1 day ago',
+    companyTags: ['gitlab', 'docker', 'golang'],
+    companyOfferDetails: [
+      ['senior', 'Javascript'],
+      ['nice to have', 'Angular'],
+      ['regular', 'React'],
+      ['advanced', 'PHP']
+    ],
+    companyDescription:
+      'SiiDevs provides strategy, design, and development services to top startups and global enterprises. We’re a growing team of coders, designers, digital architects, strategy gurus, process aficionados, marketing geeks, business nerds, jokesters, meme lovers, digital product builders and entrepreneurs of all kinds.',
+    remote: false,
+    technology: '.net'
+  },
+
+  {
+    link: '/offers/Golang',
+    img:
+      'https://bucket.justjoin.it/offers/company_logos/original/c60585aefe092c6dc92b27ec10d75d47c53e9ef4.jpg?1576666786',
+
+    bgColor: 'ib-lightBlue',
+    itemBorder: 'ib-lightBlue',
+    title: 'Golang Developer',
+    min: '12 500',
+    max: '17 000',
+    companyName: 'Sii',
+    companyAddress: 'Grunwaldzka472E 13 ',
+    companyCity: 'Wrocław',
+    name: 'Sii',
+    companyLink: 'https://www.cybercom.com/pl/Poland/',
+    companySize: '200+',
+    companyType: 'B2Permanentb',
+    exp: 'Senior',
+    age: '1 day ago',
+    companyTags: ['gitlab', 'docker', 'golang'],
+    companyOfferDetails: [
+      ['senior', 'Javascript'],
+      ['nice to have', 'Angular'],
+      ['regular', 'React'],
+      ['advanced', 'PHP']
+    ],
+    companyDescription:
+      'SiiDevs provides strategy, design, and development services to top startups and global enterprises. We’re a growing team of coders, designers, digital architects, strategy gurus, process aficionados, marketing geeks, business nerds, jokesters, meme lovers, digital product builders and entrepreneurs of all kinds.',
+    remote: false,
+    technology: '.net'
+  },
+  {
+    link: '/offers/Golang',
+    img:
+      'https://bucket.justjoin.it/offers/company_logos/original/c60585aefe092c6dc92b27ec10d75d47c53e9ef4.jpg?1576666786',
+
+    bgColor: 'ib-lightBlue',
+    itemBorder: 'ib-lightBlue',
+    title: 'Golang Developer',
+    min: '12 500',
+    max: '17 000',
+    companyName: 'Sii',
+    companyAddress: 'Grunwaldzka472E 13 ',
+    companyCity: 'Warszawa',
+    name: 'Sii',
+    companyLink: 'https://www.cybercom.com/pl/Poland/',
+    companySize: '200+',
+    companyType: 'B2Permanentb',
+    exp: 'Senior',
+    age: '1 day ago',
+    companyTags: ['gitlab', 'docker', 'golang'],
+    companyOfferDetails: [
+      ['senior', 'Javascript'],
+      ['nice to have', 'Angular'],
+      ['regular', 'React'],
+      ['advanced', 'PHP']
+    ],
+    companyDescription:
+      'SiiDevs provides strategy, design, and development services to top startups and global enterprises. We’re a growing team of coders, designers, digital architects, strategy gurus, process aficionados, marketing geeks, business nerds, jokesters, meme lovers, digital product builders and entrepreneurs of all kinds.',
+    remote: true,
+    technology: 'php'
+  }
 ];

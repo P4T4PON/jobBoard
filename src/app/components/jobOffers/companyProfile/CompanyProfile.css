@@ -1,0 +1,462 @@
+.offer-details {
+  padding: 0 15px 15px 15px;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  color: #37474f;
+  font-size: 14px;
+}
+
+.offer-header {
+  height: 235px;
+  position: relative;
+  margin: 0 0 90px 0;
+}
+
+.offer-backgorund {
+  height: 100%;
+  border-radius: 0 0 4px 4px;
+  padding: 20px 20px 0 20px;
+}
+
+.offer-content {
+  display: flex;
+  align-items: center;
+}
+
+.offer-imgBox {
+  width: 147px;
+  height: 147px;
+  background-clip: padding-box;
+  position: relative;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.offer-img {
+  width: 117px;
+  height: 117px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #fff;
+  flex-shrink: 0;
+}
+
+.offer-img img {
+  width: 60%;
+  height: 60%;
+}
+
+.offer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 25px;
+  color: #fff;
+}
+
+.offer-info h1 {
+  margin: 5px 0 5px 0;
+}
+
+.offer-info h2 {
+  margin: 0;
+}
+
+.offer-salary {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.offer-apply {
+  color: rgb(68, 138, 255);
+  margin: 0px 0px 0px auto;
+  background-color: rgb(255, 255, 255);
+  text-transform: none;
+  box-shadow: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+}
+
+.offer-apply i {
+  margin-right: 5px;
+  margin-left: 25px;
+}
+
+.offer-specBox {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  padding: 0px 15px;
+  width: 100%;
+  transform: translateY(50%);
+}
+
+.offer-spec {
+  -moz-box-align: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  -moz-box-pack: center;
+  justify-content: center;
+  margin: 0px 5px;
+  padding: 20px 5px;
+  position: relative;
+}
+
+.offer-spec a {
+  text-decoration: none;
+  color: rgb(3, 155, 229);
+  margin: 5px 0 5px 0;
+}
+
+.spec-icon {
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 8px;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+}
+
+.i-red {
+  color: rgb(255, 82, 82);
+}
+
+.i-yellow {
+  color: rgb(251, 140, 0);
+}
+
+.i-purple {
+  color: rgb(171, 71, 188);
+}
+
+.i-green {
+  color: rgb(102, 187, 106);
+}
+
+.i-blue {
+  color: rgb(68, 138, 255);
+}
+
+.offer-type {
+  white-space: nowrap;
+  color: rgb(153, 161, 171);
+  font-size: 11px;
+}
+
+.bg-yellow {
+  background-image: url('./offer-backgorund.png'),
+    linear-gradient(30deg, rgb(255, 199, 6), rgb(255, 175, 0));
+}
+
+.bg-lightBlue {
+  background-image: url('./offer-backgorund.png'),
+    linear-gradient(30deg, rgb(63, 197, 230), rgb(79, 164, 253));
+}
+
+.bg-red {
+  background: url('./offer-backgorund.png') center center no-repeat,
+    linear-gradient(30deg, #fa656b, #f9597a);
+}
+
+.offet-text {
+  margin: 5px 0 5px 0;
+}
+
+.offer-details-content {
+  border-radius: 5px;
+  box-shadow: rgba(225, 232, 240, 0.7) 0px 2px 18px 10px;
+  margin-top: 40px;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  color: #99a1ab;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.offer-details-header {
+  color: rgb(55, 71, 79);
+  border-bottom: 2px solid rgb(243, 246, 248);
+  font-weight: 600;
+  font-size: 18px;
+  padding: 12px 20px;
+}
+
+.offer-details-box {
+  padding: 24px;
+  position: relative;
+  color: #99a1ab;
+  outline: currentcolor none medium;
+}
+
+.offer-details-box-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 0px -20px;
+  box-sizing: inherit;
+}
+
+.offer-details-box-part {
+  flex: 0 0 25%;
+  margin: 0px 0px 32px;
+  display: flex;
+  -moz-box-pack: start;
+  justify-content: flex-start;
+}
+
+.offer-details-box-part-content {
+  position: relative;
+}
+
+.offer-dots {
+  display: flex;
+  -moz-box-pack: start;
+  justify-content: flex-start;
+  margin-bottom: 4px;
+}
+
+.grey-dot {
+  background-color: rgb(191, 197, 210);
+}
+
+.pink-dot {
+  background-color: rgb(255, 64, 129);
+}
+
+.offer-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0px 10px 0px 0px;
+  box-sizing: inherit;
+  color: #99a1ab;
+  outline: currentcolor none medium;
+}
+
+.offer-description {
+  color: rgb(55, 71, 79);
+  font-weight: 600;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.offer-level {
+  color: rgb(153, 161, 171);
+}
+
+.offer-description-box {
+  padding: 20px;
+}
+
+.offer-description-content {
+  color: rgb(55, 71, 79);
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+.offer-additional-info {
+  margin-top: 25px;
+  color: rgb(153, 161, 171);
+  font-size: 11px;
+}
+
+.offer-apply-box {
+  padding: 12px 20px;
+}
+
+.offer-apply-box-content {
+  width: calc(100% + 16px);
+  margin: -8px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.mg-btm6 {
+  margin-bottom: 6px;
+}
+
+.companyProfileTextArea textarea {
+  resize: none;
+  outline: none;
+  width: 300px;
+  min-height: 50px;
+  border-radius: 5px;
+  margin-left: 20px;
+  padding: 30px 60px 0px 40px;
+  font-size: 18px;
+}
+
+.mg-left20 {
+  margin-left: 20px;
+}
+
+.tai {
+  margin-left: 20px;
+  margin-top: 35px;
+}
+
+.upload-cv {
+  width: 300px;
+  height: 50px;
+  border: 1px grey solid;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 20px 80px 10px 20px;
+  font-size: 18px;
+}
+
+.upload-cv:hover {
+  cursor: pointer;
+  border-color: rgb(255, 64, 129);
+}
+
+.wd-100 {
+  width: 100%;
+  display: flex;
+}
+
+.width-auto {
+  width: auto !important;
+  margin-right: 0 !important;
+}
+
+.getFile-box {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.getFile-box i {
+  font-size: 30px;
+  color: #bfc5d2;
+}
+
+.mgl-40 {
+  margin-right: 30px;
+}
+
+.float-left {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.newBox {
+  display: flex;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.newBox-input {
+  display: flex;
+  margin-top: 15px;
+  width: 20px;
+  height: 20px;
+}
+
+.additional-info {
+  display: flex;
+  align-items: flex-end;
+  height: 50px;
+}
+
+.additional-info a {
+  color: rgb(3, 155, 229);
+}
+
+.additional-info h3 {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.applyToState {
+  position: relative;
+  margin: auto;
+}
+
+.applyBtn {
+  background: rgb(255, 64, 129) none repeat scroll 0% 0%;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 64, 129);
+  border-radius: 18px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 50px;
+  font-size: 14px;
+  overflow: hidden;
+  text-transform: none;
+  box-shadow: rgba(255, 64, 129, 0.31) 0px 23px 26px -13px;
+  transition: all 0.3s ease-out 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.apply-dart {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 0.5px solid #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.applyBtn i {
+  color: rgb(255, 64, 129);
+}
+
+.showMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 0 10px;
+  color: rgb(3, 155, 229);
+  font-weight: 400;
+}
+
+.apply-agree {
+  margin-left: 15px;
+}

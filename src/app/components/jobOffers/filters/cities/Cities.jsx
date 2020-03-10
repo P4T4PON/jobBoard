@@ -4,7 +4,7 @@ import AllCitiesButton from '../../../additions/AllCitiesButton';
 import NightMode from '../../NightMode';
 import { otherCities, jobCities } from '../../../../../constans';
 
-const Cities = () => {
+const Cities = ({ toggleAllCities }) => {
   const [nightMode, setNightMode] = useState(false);
   const [showOtherCities, setShowOtherCities] = useState(false);
   const [cityWasChosen] = useState(false);
@@ -16,7 +16,12 @@ const Cities = () => {
 
   const toggleOtherCities = () => {
     return otherCities.map((city, index) => (
-      <li key={index} onClick={addCity}>
+      <li
+        key={index}
+        onClick={() => {
+          addCity(city);
+        }}
+      >
         {city}
       </li>
     ));
@@ -30,6 +35,7 @@ const Cities = () => {
         toggleActive={() => {
           setActive(index + 1);
           setAllCities(false);
+          toggleAllCities(city, '');
         }}
         active={active}
         allCities={allCities}
@@ -38,13 +44,18 @@ const Cities = () => {
     ));
   };
 
-  let addCity = event => {
+  const addCity = city => {
+    document.querySelector('.added-city').firstChild.innerText = city;
+    document
+      .querySelector('.added-city')
+      .firstChild.addEventListener('click', () => {
+        toggleAllCities(city, '');
+      });
+    toggleAllCities(city, '');
     setShowOtherCities(false);
     setShowAddedCity(true);
     setAllCities(false);
     setActive(8);
-    document.querySelector('.added-city').firstChild.innerText =
-      event.target.innerText;
   };
 
   return (
@@ -52,7 +63,10 @@ const Cities = () => {
       <div className="filters-cities">
         <AllCitiesButton
           allCities={allCities}
-          toggleActive={() => setAllCities(true)}
+          toggleActive={() => {
+            setAllCities(true);
+            toggleAllCities('', '');
+          }}
           city={'All'}
         />
 
