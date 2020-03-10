@@ -8,11 +8,11 @@
 
 .preferences-content {
   max-width: 1280px;
-  margin: 0px auto;
+  margin: 0 auto;
 }
-/*jak ustawiasz w css jakąs wartsc na 0 to nie uzywamy jednostek, po prostu 0 -> zastosuj tam gdzie to sie powtarza*/
+
 .preferences-content h1 {
-  margin: 30px 0px;
+  margin: 30px 0;
   color: #2e384d;
   font-size: 34px;
   font-family: Open Sans, sans-serif;
@@ -32,8 +32,8 @@
 .preferences-box {
   padding: 30px;
   margin-bottom: 43px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -47,10 +47,7 @@
 
 .preferences-header p {
   color: rgb(135, 144, 150);
-  /*nadajesz margin zero na wszystkie strony a następnie nadpisujesz lewy i dolny, why?*/
-  margin: 0;
-  margin-left: 50px;
-  margin-bottom: 30px;
+  margin: 0 0 30px 50px;
   font-size: 14px;
 }
 
@@ -176,11 +173,10 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.08);
 }
-/* używanie importantów w css jest baaardzo złą praktyką :)*/
-/*      https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity    */
-.border-pink {
-  color: #ff4081 !important;
-  border-color: #ff4081 !important;
+
+.border-pink span {
+  color: #ff4081;
+  border-color: #ff4081;
 }
 
 .border-pink i {

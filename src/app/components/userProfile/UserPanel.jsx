@@ -18,7 +18,7 @@ const UserPanel = props => {
   return (
     <div className="userLogin-sidebar">
       <div className="userLogin-sidebarContent">
-        <div className="userLogin-img"></div>
+        <div className="userDetails-img"></div>
         <div className="userLogin-welcome">
           <p>Welcome</p>
           <span>{props.inputValue}</span>

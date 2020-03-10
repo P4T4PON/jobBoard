@@ -452,3 +452,85 @@ export const brandTechBtn = [
   ['light-blueIcon brandHover brandBlue', 'fas fa-hotel', 'Corporation'],
   ['dark-pinkIcon brandHover brandPink', 'fas fa-desktop', 'Other']
 ];
+
+export const companyStage = [
+  ['far fa-check-square', "Doesn't matter", 'all'],
+  ['fas fa-home', 'Early stage(0-30)', 'earlyStage'],
+  ['far fa-building', 'Growth stage (30-100)', 'growthStage'],
+  ['fas fa-city', 'Estabilished(100-250)', 'estabilished'],
+  ['fas fa-university', 'Corporation(250+)', 'corporation']
+];
+
+export const companyStageNames = [
+  'all',
+  'earlyStage',
+  'growthStage',
+  'estabilished',
+  'corporation'
+];
+
+export const companyKind = [
+  ['far fa-check-square', "Doesn't matter", 'all'],
+  ['fas fa-rocket', 'Startup', 'startup'],
+  ['fas fa-flask', 'Software house', 'softwareHouse'],
+  ['fas fa-shopping-cart', 'E-commerce', 'ecommerce'],
+  ['fas fa-hotel', 'Corporation', 'corporation']
+];
+
+export const companyKindNames = [
+  'all',
+  'startup',
+  'softwareHouse',
+  'ecommerce',
+  'corporation'
+];
+
+export const industry = [
+  ['fas fa-dollar-sign', 'Fintech', 'fintech'],
+  ['fas fa-cube', 'Bloackchain', 'bloackchain'],
+  ['fas fa-shopping-cart', 'E-commerce', 'ecommerce'],
+  ['far fa-heart', 'Medicine', 'medicine'],
+  ['fas fa-medal', 'Military', 'military'],
+  ['fas fa-plane-departure', 'Travel', 'travel'],
+  ['fas fa-cart-arrow-down', 'Martech', 'martech'],
+  ['fas fa-user-md', 'IoT', 'iot'],
+  ['fas fa-truck', 'Logistic', 'logistic'],
+  ['fas fa-seedling', 'Beauty', 'beauty'],
+  ['fas fa-laptop', 'Other', 'other']
+];
+
+export const industryNames = [
+  'all',
+  'fintech',
+  'bloackchain',
+  'ecommerce',
+  'medicine',
+  'military',
+  'travel',
+  'martech',
+  'iot',
+  'logistic',
+  'beauty',
+  'other'
+];
+
+export const seniority = [
+  ['Junior', 'junior'],
+  ['Mid', 'mid'],
+  ['Senior', 'senior']
+];
+
+export const seniorityNames = ['all', 'junior', 'mid', 'senior'];
+
+export const employmentType = [
+  ['B2B', 'b2b'],
+  ['Permanent', 'permanent'],
+  ['Mandate contact', 'mandateContact']
+];
+
+export const employmentTypeNames = [
+  'all',
+  'b2b',
+  'permanent',
+  'mandateContact'
+];

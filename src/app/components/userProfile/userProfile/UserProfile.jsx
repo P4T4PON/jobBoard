@@ -55,7 +55,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="userLogin-content vw-99">
+    <div className="userLogin-content">
       <UserPanel active={panelActive} />
       <div className="userLogin-container">
         <div className="userLoginContainer-content">
@@ -69,7 +69,7 @@ const UserProfile = () => {
               content={
                 <Fragment>
                   <div className="userDetailsImg-content">
-                    <div className="userDetails-img">
+                    <div className="userDetails-img userLogin-img">
                       <label htmlFor="file-upload">
                         <div className="userDetails-changePhoto">
                           <i className="fas fa-pen"></i>

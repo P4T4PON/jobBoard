@@ -16,7 +16,7 @@ const RemoteJobBtn = ({
       }
       onClick={setRemoteActive}
     >
-      {text}
+      <span>{text}</span>
     </div>
   );
 };

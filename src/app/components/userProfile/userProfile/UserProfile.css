@@ -1,76 +1,49 @@
 .userLogin-content {
-  width: 100vw;
+  width: 99vw;
   background: rgb(245, 247, 250) none repeat scroll 0% 0%;
   overflow: visible;
   display: flex;
 }
-/*po co te przerwy? i nie dajemy 0% tylko 0 i nic wiecej przy takiej wartosci*/
+
 .userLogin-sidebar {
   flex-shrink: 0;
-
   width: 220px;
-
-  padding: 20px 0px;
-
+  padding: 20px 0;
   text-align: center;
-
   border-right: 1px solid rgb(228, 232, 240);
-
-  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  background: rgb(255, 255, 255) none repeat scroll 0 0;
 }
 
 .userLogin-sidebarContent {
   position: sticky;
   top: 20px;
 }
-/* przerwy miedzy liniami i jednostyki przy 0 oraz uzywanie importantow*/
-.userLogin-img {
+
+/* .userLogin-img {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
-
   color: rgb(255, 255, 255);
-
-  margin: 0px auto;
-
-  margin-bottom: 0px;
-
-  background-size: cover !important;
-
-  background-repeat: no-repeat !important;
-
+  margin: 0 auto;
+  margin-bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
-
   position: relative;
-
   text-align: center;
-
   flex-shrink: 0;
-
   display: flex;
-
   -moz-box-align: center;
-
   align-items: center;
-
   width: 100px;
-
   height: 100px;
-
   background-color: rgba(0, 0, 0, 0);
-
-  background-position: 0% 0%;
-
+  background-position: 0 0;
   background-attachment: scroll;
-
   background-image: url('./waving-bear.jpg');
-
   background-origin: padding-box;
-
   background-clip: border-box;
-
   border: 3px solid rgb(255, 255, 255);
-
   border-radius: 50%;
-}
+} */
 
 .userLogin-welcome {
   font-size: 14px;
@@ -84,11 +57,10 @@
 }
 
 .userLogin-jobStatus {
-  margin: 0px 8px;
+  margin: 0 8px;
   border-radius: 20px;
   font-size: 10px;
   padding: 8px 10px;
-
   font-weight: 600;
   cursor: pointer;
   text-align: left;
@@ -144,8 +116,8 @@
   width: 240px;
   height: 160px;
   background-color: #fff;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
   z-index: 20;
   margin-left: 5px;
   border-radius: 5px;
@@ -217,7 +189,7 @@
 }
 
 .userLogin-active::before {
-  left: 0px;
+  left: 0;
   width: 47px;
   height: 11%;
   content: '';
@@ -240,7 +212,7 @@
 }
 
 .userLoginContainer-content {
-  margin: 0px auto;
+  margin: 0 auto;
   max-width: 1280px;
 }
 
@@ -272,8 +244,8 @@
   padding: 20px 20px 40px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   margin-bottom: 22px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -295,17 +267,15 @@
   margin-bottom: 40px;
   color: rgba(0, 0, 0, 0.87);
 }
-/* importanty i jednostki przy 0 + ide Ci podpowiada, ze duplikujesz kod, skoro tych samyh styli uzywasz w dwoch klasach to
-  napisz odpowiedni selektor
-*/
+
 .userDetails-img {
   border: 3px solid rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 6px 13px 0;
   border-radius: 50%;
   color: rgb(255, 255, 255);
-  margin: 0px auto;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -313,14 +283,19 @@
   display: flex;
   -moz-box-align: center;
   align-items: center;
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
   background-color: rgba(0, 0, 0, 0);
-  background-position: 0% 0%;
+  background-position: 0 0;
   background-attachment: scroll;
   background-image: url('./waving-bear.jpg');
   background-origin: padding-box;
   background-clip: border-box;
+}
+
+.userLogin-img {
+  width: 130px;
+  height: 130px;
 }
 
 .userDetails-changePhoto {
@@ -331,8 +306,8 @@
   position: absolute;
   text-align: center;
   cursor: pointer;
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  left: 0;
 }
 
 .userDetails-changePhoto i {
@@ -417,8 +392,8 @@
 .uploadCV-content {
   padding: 10px 25px 30px 25px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -536,8 +511,8 @@
 .yearsOfExperiance-content {
   padding: 20px 20px 20px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -614,8 +589,8 @@
 .socialLinks-content {
   padding: 10px 20px 20px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -660,14 +635,6 @@
 
 .pink-button:hover {
   background-color: #990033;
-}
-/*co czego jest Ci potrzebne 99vw?*/
-.vw-99 {
-  width: 99vw;
-}
-/*czy koniecznoscia jest tworzenie specjalnych klas do nadawania tylko 20 marginu, lepiej to w komponencie reaktowym ostylowac odpowiednio wrappery elementow*/
-.margTop20 {
-  margin-top: 20px;
 }
 
 .fs40 {
