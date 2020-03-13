@@ -5,7 +5,7 @@ import ExpLevel from '../../ExpLevel';
 import { techIcons } from '../../../../../constans';
 import Salary from '../../Salary';
 
-const Technologies = ({ toggleAllTechnologies }) => {
+const Technologies = ({ toggleAllTechnologies, toggleExpLevel }) => {
   const [allTechnologies, setAllTechnologies] = useState(true);
   const [active, setActive] = useState(0);
 
@@ -44,7 +44,7 @@ const Technologies = ({ toggleAllTechnologies }) => {
       <div className="other-filters">
         <Salary />
 
-        <ExpLevel />
+        <ExpLevel toggleExpLevel={toggleExpLevel} />
       </div>
     </div>
   );

@@ -3,7 +3,13 @@ import './Sidebar.css';
 import OfferItem from './OfferItem';
 import { companyOffers } from '../../../../constans';
 
-const Sidebar = ({ toggleProfile, city, toggleAllCities, newTechnology }) => {
+const Sidebar = ({
+  toggleProfile,
+  city,
+  toggleAllCities,
+  newTechnology,
+  expLevel
+}) => {
   const renderOffers = () => {
     return companyOffers.map((offer, index) => (
       <OfferItem
@@ -35,6 +41,7 @@ const Sidebar = ({ toggleProfile, city, toggleAllCities, newTechnology }) => {
         toggleAllCities={toggleAllCities}
         oldTechnology={offer.technology}
         newTechnology={newTechnology}
+        expLevel={expLevel}
       />
     ));
   };

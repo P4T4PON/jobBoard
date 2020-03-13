@@ -25,7 +25,8 @@ const OfferItem = ({
   remote,
   toggleAllCities,
   oldTechnology,
-  newTechnology
+  newTechnology,
+  expLevel
 }) => {
   const renderTags = () => {
     return companyTags.map((tag, index) => (
@@ -43,29 +44,58 @@ const OfferItem = ({
     <div
       {...test()}
       className={
-        newTechnology === '' && city === ''
+        newTechnology === '' && city === '' && expLevel === ''
           ? 'offer-item'
-          : newTechnology === '' && city === companyAddress[1]
+          : newTechnology === '' &&
+            city === companyAddress[1] &&
+            (expLevel === '' || expLevel === exp)
           ? 'offer-item'
-          : city === '' && newTechnology === oldTechnology
+          : city === '' &&
+            newTechnology === oldTechnology &&
+            (expLevel === '' || expLevel === exp)
           ? 'offer-item'
-          : city === companyAddress[1] && newTechnology === oldTechnology
+          : city === companyAddress[1] &&
+            newTechnology === oldTechnology &&
+            (expLevel === '' || expLevel === exp)
           ? 'offer-item'
           : (city === 'Trójmiasto' &&
               companyAddress[1] === 'Gdańsk' &&
-              (oldTechnology === newTechnology || newTechnology === '')) ||
+              (oldTechnology === newTechnology || newTechnology === '') &&
+              (expLevel === '' || expLevel === exp)) ||
             (city === 'Trójmiasto' &&
               companyAddress[1] === 'Gdynia' &&
-              (oldTechnology === newTechnology || newTechnology === '')) ||
+              (oldTechnology === newTechnology || newTechnology === '') &&
+              (expLevel === '' || expLevel === exp)) ||
             (city === 'Trójmiasto' &&
               companyAddress[1] === 'Sopot' &&
-              (oldTechnology === newTechnology || newTechnology === ''))
+              (oldTechnology === newTechnology || newTechnology === '') &&
+              (expLevel === '' || expLevel === exp))
           ? 'offer-item'
-          : remote && city === 'Remote' && newTechnology === ''
+          : remote &&
+            city === 'Remote' &&
+            newTechnology === '' &&
+            (expLevel === '' || expLevel === exp)
           ? 'offer-item'
-          : remote && city === 'Remote' && oldTechnology === newTechnology
+          : remote &&
+            city === 'Remote' &&
+            oldTechnology === newTechnology &&
+            (expLevel === '' || expLevel === exp)
           ? 'offer-item'
-          : city === companyAddress[1] && newTechnology != oldTechnology
+          : (expLevel === '' || expLevel === exp) &&
+            (oldTechnology === newTechnology || newTechnology === '') &&
+            (city === '' || city === companyAddress[1])
+          ? 'offer-item'
+          : city === companyAddress[1] &&
+            newTechnology !== oldTechnology &&
+            (expLevel === '' || expLevel === exp)
+          ? 'display-none'
+          : city !== companyAddress[1] &&
+            newTechnology === oldTechnology &&
+            (expLevel === '' || expLevel === exp)
+          ? 'display-none'
+          : city === companyAddress[1] &&
+            newTechnology === oldTechnology &&
+            (expLevel !== '' || expLevel !== exp)
           ? 'display-none'
           : 'display-none'
       }

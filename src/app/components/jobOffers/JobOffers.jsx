@@ -24,12 +24,10 @@ const JobOffers = () => {
   const [offerDetail, setOfferDetail] = useState('');
   const [companyDescription, setCompanyDescription] = useState('');
   const [path, setPath] = useState('/');
-
   const [remote, setRemote] = useState('');
-
   const [city, setCity] = useState('');
-
   const [technology, setTechnology] = useState('');
+  const [expLevel, setExpLevel] = useState('');
 
   const toggleProfile = (
     newLink,
@@ -78,6 +76,10 @@ const JobOffers = () => {
     setTechnology(newTechnology);
   };
 
+  const toggleExpLevel = newExpLevel => {
+    setExpLevel(newExpLevel);
+  };
+
   return (
     <div className="main-content">
       <div className="sub-header">
@@ -87,7 +89,10 @@ const JobOffers = () => {
             toggleProfile={toggleProfile}
           />
 
-          <Technologies toggleAllTechnologies={toggleAllTechnologies} />
+          <Technologies
+            toggleAllTechnologies={toggleAllTechnologies}
+            toggleExpLevel={toggleExpLevel}
+          />
         </div>
       </div>
       <Router>
@@ -101,6 +106,7 @@ const JobOffers = () => {
                 city={city}
                 toggleAllCities={toggleAllCities}
                 newTechnology={technology}
+                expLevel={expLevel}
               />
             )}
           />

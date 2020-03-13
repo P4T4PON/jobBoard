@@ -566,7 +566,7 @@ export const companyOffers = [
     companyLink: 'https://www.cybercom.com/pl/Poland/',
     companySize: '200+',
     companyType: 'B2Permanentb',
-    exp: 'Senior',
+    exp: 'Junior',
     age: '1 day ago',
     companyTags: ['gitlab', 'docker', 'golang'],
     companyOfferDetails: [

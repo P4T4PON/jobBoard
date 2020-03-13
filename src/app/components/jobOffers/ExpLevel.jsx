@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
-const ExpLevel = () => {
+const ExpLevel = ({ toggleExpLevel }) => {
   const [showExpLevel, setShowExpLevel] = useState(false);
   const [expLevelChosen, setExpLevelChosen] = useState(false);
+  const [expLevel, setExpLevel] = useState('');
 
   const changeExpLevel = event => {
-    document.getElementById('expLevelButton').children[1].innerText =
-      event.target.innerText;
+    setExpLevel(event.target.innerText);
     setExpLevelChosen(true);
     setShowExpLevel(false);
+    toggleExpLevel(event.target.innerText);
   };
 
   const resetExpLevel = () => {
-    const exp = document.getElementById('expLevelButton');
-    exp.children[1].innerText = 'Exp. level';
-    exp.className = 'city-button min-width120 all';
+    setExpLevel('');
     setShowExpLevel(false);
     setExpLevelChosen(false);
+    toggleExpLevel('');
   };
 
   return (
@@ -30,9 +30,9 @@ const ExpLevel = () => {
         id="expLevelButton"
         onClick={() => setShowExpLevel(!showExpLevel)}
       >
-        <i className="fas fa-chart-line"></i>
-        <p>Exp. level</p>
-        <i className="fas fa-chevron-down"></i>
+        <i className="fas fa-chart-line" />
+        <p>{expLevel === '' ? 'Exp. level' : expLevel}</p>
+        <i className="fas fa-chevron-down" />
       </div>
 
       <div className={showExpLevel ? 'expLevel op1' : 'expLevel op0'}>
