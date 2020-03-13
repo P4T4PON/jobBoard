@@ -19,32 +19,6 @@
   top: 20px;
 }
 
-/* .userLogin-img {
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
-  color: rgb(255, 255, 255);
-  margin: 0 auto;
-  margin-bottom: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  flex-shrink: 0;
-  display: flex;
-  -moz-box-align: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0);
-  background-position: 0 0;
-  background-attachment: scroll;
-  background-image: url('./waving-bear.jpg');
-  background-origin: padding-box;
-  background-clip: border-box;
-  border: 3px solid rgb(255, 255, 255);
-  border-radius: 50%;
-} */
-
 .userLogin-welcome {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
@@ -544,7 +518,7 @@
 }
 
 .yearsBoxes-content b {
-  font-weight: 400 !important;
+  font-weight: 400;
 }
 
 .years-box {
@@ -570,15 +544,15 @@
 }
 
 .border-pink {
-  border-color: #ff4081 !important;
+  border: 2px solid #ff4081;
 }
 
 .color-pink p {
-  color: #ff4081 !important;
+  color: #ff4081;
 }
 
 .color-pink {
-  color: #ff4081 !important;
+  color: #ff4081;
 }
 
 .socialLinks {

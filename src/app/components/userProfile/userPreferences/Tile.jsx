@@ -6,7 +6,7 @@ const Tile = ({ companyIcon, companySpan, toggleTile, active }) => {
       className={
         active
           ? 'jobStatus-change company mr-20 border-pink'
-          : 'jobStatus-change company mr-20'
+          : 'jobStatus-change company jobStatus-border'
       }
       onClick={toggleTile}
     >

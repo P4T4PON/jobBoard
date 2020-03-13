@@ -145,6 +145,10 @@
   width: 100%;
 }
 
+.jobStatus-border {
+  border: 2px solid rgb(228, 232, 240);
+}
+
 .jobStatus-change {
   border-radius: 10px;
   width: 160px;
@@ -152,7 +156,7 @@
   font-size: 12px;
   line-height: 20px;
   padding: 20px 10px;
-  border: 2px solid rgb(228, 232, 240);
+  margin-right: 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -301,33 +305,26 @@
 }
 
 .display-none {
-  display: none !important;
+  display: none;
 }
 
 .jobStatus-button {
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: rgba(0, 0, 0, 0.87);
-
   font-size: 0.875rem;
-
   font-family: Open Sans, sans-serif;
-
   font-weight: 500;
-
   line-height: 1.75;
-
-  border: 2px solid rgb(228, 232, 240);
-
   border-radius: 24px;
-
   text-transform: none;
-
   min-width: 60px;
-
   padding: 9px 21px;
+}
+
+.jobStatus-button i {
+  color: rgb(135, 144, 150);
 }
 
 .jobStatus-button:hover {

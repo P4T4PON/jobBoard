@@ -4,7 +4,11 @@ const Button = ({ active, toggleTile, companyIcon, companySpan }) => {
   return (
     <div className="btn-icon">
       <div
-        className={active ? 'jobStatus-button border-pink' : 'jobStatus-button'}
+        className={
+          active
+            ? 'jobStatus-button border-pink'
+            : 'jobStatus-button jobStatus-border'
+        }
         onClick={toggleTile}
       >
         {companyIcon ? <i className={companyIcon}></i> : null}

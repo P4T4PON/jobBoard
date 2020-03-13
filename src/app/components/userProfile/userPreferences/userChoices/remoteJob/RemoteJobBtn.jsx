@@ -12,7 +12,7 @@ const RemoteJobBtn = ({
       className={
         remoteJob === remoteActive
           ? `jobStatus-button border-pink ${className}`
-          : `jobStatus-button ${className}`
+          : `jobStatus-button jobStatus-border ${className}`
       }
       onClick={setRemoteActive}
     >

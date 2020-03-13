@@ -12,8 +12,8 @@ export const JobStatus = ({
     <div
       className={
         jobStatusId === jobStatusActive
-          ? 'jobStatus-change border-pink mr-20'
-          : 'jobStatus-change mr-20'
+          ? 'jobStatus-change border-pink'
+          : 'jobStatus-change jobStatus-border'
       }
       onClick={setJobStatusActive}
     >
