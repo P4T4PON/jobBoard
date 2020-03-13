@@ -30,9 +30,9 @@ const ExpLevel = () => {
         id="expLevelButton"
         onClick={() => setShowExpLevel(!showExpLevel)}
       >
-        <i className="fas fa-chart-line"></i>
+        <i className="fas fa-chart-line" />
         <p>Exp. level</p>
-        <i className="fas fa-chevron-down"></i>
+        <i className="fas fa-chevron-down" />
       </div>
 
       <div className={showExpLevel ? 'expLevel op1' : 'expLevel op0'}>

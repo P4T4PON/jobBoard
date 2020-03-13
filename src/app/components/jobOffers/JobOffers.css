@@ -6,7 +6,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-/*TODO: shorthand paddingu, nadpisywanie paddingu, i w calym pliku popraw jednostki o wartosci zero*/
+
 .sub-header {
   width: 100%;
   background-color: #f3f6f8;
@@ -71,7 +71,7 @@
 }
 
 .tech-buttonBox {
-  margin: 0 10px 0px 10px;
+  margin: 0 10px 0 10px;
 }
 
 .tech-button {
