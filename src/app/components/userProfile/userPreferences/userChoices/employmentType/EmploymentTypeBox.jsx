@@ -2,51 +2,61 @@ import React, { useState, useEffect } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Button from '../../Button';
 import {
+  checkTiles,
+  handleTileChange,
+  resetAllTiles
+} from '../../../../../../helperFunctions';
+import {
   employmentType,
-  employmentTypeNames
+  employmentTypeNames,
+  employmentTypeState
 } from '../../../../../../constans';
-
 const EmploymentTypeBox = () => {
-  const [tiles, setTiles] = useState({
-    all: false,
-    b2b: false,
-    permanent: false,
-    mandateContact: false
-  });
+  const [tiles, setTiles] = useState(employmentTypeState);
 
   useEffect(() => {
     checkTiles();
   });
 
-  const checkTiles = () => {
-    const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
-    let newTiles = tiles;
+  {
+    checkTiles(tiles, setTiles);
+  }
+  {
+    handleTileChange(tiles, setTiles);
+  }
+  {
+    resetAllTiles(tiles, setTiles);
+  }
 
-    if (activatedTiles.length === 0) {
-      newTiles['all'] = true;
-      setTiles({ ...newTiles });
-    } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
-      newTiles['all'] = false;
-      setTiles({ ...newTiles });
-    }
-  };
+  // const checkTiles = () => {
+  //   const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
+  //   let newTiles = tiles;
 
-  const handleTileChange = name => {
-    let newTiles = tiles;
-    newTiles[name] = !newTiles[name];
-    setTiles({
-      ...newTiles
-    });
-  };
+  //   if (activatedTiles.length === 0) {
+  //     newTiles['all'] = true;
+  //     setTiles({ ...newTiles });
+  //   } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
+  //     newTiles['all'] = false;
+  //     setTiles({ ...newTiles });
+  //   }
+  // };
 
-  const resetAllTiles = () => {
-    for (let i = 0; i < employmentTypeNames.length; i++) {
-      tiles[employmentTypeNames[i]] = false;
-    }
-    setTiles({
-      ...tiles
-    });
-  };
+  // const handleTileChange = name => {
+  //   let newTiles = tiles;
+  //   newTiles[name] = !newTiles[name];
+  //   setTiles({
+  //     ...newTiles
+  //   });
+  // };
+
+  // const resetAllTiles = () => {
+  //   for (let i = 0; i < employmentTypeNames.length; i++) {
+  //     tiles[employmentTypeNames[i]] = false;
+  //   }
+  //   setTiles({
+  //     ...tiles
+  //   });
+  // };
 
   const renderEmploymentType = () => {
     return employmentType.map((type, index) => (

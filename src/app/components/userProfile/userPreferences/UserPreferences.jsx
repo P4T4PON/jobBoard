@@ -27,27 +27,16 @@ const UserPreferences = () => {
         <div className="preferences-content">
           <h1>Preferences</h1>
           <JobStatusBox />
-
           <WorkPlaceBox />
-
           <RemoteJob />
-
           <CompanyStageBox />
-
           <CompanyKindBox />
-
           <IndustryBox />
-
           <SeniorityBox />
-
           <EmploymentTypeBox />
-
           <SalaryBox />
-
           <TechnologiesBox />
-
           <SkillBox />
-
           <SubmitButton value={'Update'} className={'pink-button'} />
         </div>
       </div>

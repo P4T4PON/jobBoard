@@ -534,3 +534,10 @@ export const employmentTypeNames = [
   'permanent',
   'mandateContact'
 ];
+
+export const employmentTypeState = {
+  all: false,
+  b2b: false,
+  permanent: false,
+  mandateContact: false
+};

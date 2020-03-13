@@ -3,6 +3,8 @@ import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Tile from '../../Tile';
 import { companyKind, companyKindNames } from '../../../../../../constans';
 
+//TODO: CompanyKindBox i CompanyStageBox maja 56 lini zduplikowanej logiki, zastanów się jak bardzo są one podobne i jak to ulepszyć, żeby nie powtarzać identycznej logiki tworząc ją na nowo
+
 const CompanyKindBox = () => {
   const [tiles, setTiles] = useState({
     all: false,

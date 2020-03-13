@@ -11,7 +11,7 @@ const Input = ({
 }) => {
   return (
     <Fragment>
-      <div className="inputStatus" id={id}></div>
+      <div className="inputStatus" id={id} />
       <input
         value={skill}
         name={name}

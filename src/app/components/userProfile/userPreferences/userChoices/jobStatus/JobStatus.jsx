@@ -17,7 +17,7 @@ export const JobStatus = ({
       }
       onClick={setJobStatusActive}
     >
-      <i className={icon}></i>
+      <i className={icon} />
       <span>
         {span1}
         <br></br>

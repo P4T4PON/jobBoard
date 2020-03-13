@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Tile = ({ companyIcon, companySpan, toggleTile, active }) => {
   return (
@@ -10,7 +10,7 @@ const Tile = ({ companyIcon, companySpan, toggleTile, active }) => {
       }
       onClick={toggleTile}
     >
-      <i className={companyIcon}></i>
+      <i className={companyIcon} />
       <span>{companySpan}</span>
     </div>
   );

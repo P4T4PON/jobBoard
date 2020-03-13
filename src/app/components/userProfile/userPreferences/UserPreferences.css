@@ -323,10 +323,6 @@
   padding: 9px 21px;
 }
 
-.jobStatus-button i {
-  color: rgb(135, 144, 150);
-}
-
 .jobStatus-button:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.08);
@@ -340,7 +336,7 @@
   z-index: 100;
   margin-right: 15px;
 }
-
+/*TODO: duplikacja*/
 .btn-icon {
   margin: 0px 10px 10px;
   margin-left: 10px;
