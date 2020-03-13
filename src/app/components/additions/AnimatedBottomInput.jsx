@@ -1,9 +1,8 @@
 import React from 'react';
-//popraw tag "i"
 const AnimatedBottomInput = props => {
   return (
     <div className="input">
-      <i className={props.iconClass}/>
+      <i className={props.iconClass} />
       <div className="form">
         <input type={props.type} name="name" autoComplete="off" required />
         <label htmlFor="name" className="label-name">

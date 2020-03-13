@@ -1,5 +1,4 @@
 import React from 'react';
-//ta sama akcje z tagiem "i"
 const AnimatedInput = ({
   divClass,
   iconClass,
@@ -14,7 +13,7 @@ const AnimatedInput = ({
   return (
     <div className="passwordChange-input">
       <div className={divClass}>
-        <i className={iconClass}></i>
+        <i className={iconClass} />
       </div>
 
       <div className={className}>

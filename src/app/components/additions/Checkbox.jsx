@@ -1,9 +1,8 @@
 import React from 'react';
-// popraw tag input
 const Checkbox = ({ className, inputClass, paragraph }) => {
   return (
     <div className={className}>
-      <input type="checkbox" className={inputClass}></input>
+      <input type="checkbox" className={inputClass} />
       <p>{paragraph}</p>
     </div>
   );

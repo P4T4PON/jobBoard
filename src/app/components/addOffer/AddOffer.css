@@ -4,12 +4,10 @@
   flex-direction: column;
   min-height: 443px;
 }
-/*TODO: niepotrzebnie napidsujesz margin*/
 .intro-inner {
   position: relative;
   max-width: 1250px;
-  margin: 0 auto;
-  margin-bottom: 25px;
+  margin: 0 auto 25px auto;
 }
 
 .text {
@@ -106,9 +104,9 @@
   position: relative;
   display: block;
 }
-/*TODO: usun jednostę przy 0px*/
+
 .no-padding {
-  padding: 0px;
+  padding: 0;
   margin-top: 20px;
 }
 
