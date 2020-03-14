@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { day } from '../../actions/index';
+import { useSelector, useDispatch } from 'react-redux';
 import './JobOffers.css';
 import Sidebar from './sidebar/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -7,6 +9,9 @@ import Technologies from './filters/technologies/Technologies';
 import CompanyProfile from './companyProfile/CompanyProfile';
 
 const JobOffers = () => {
+  const isDay = useSelector(state => state.isDay);
+  const dispatch = useDispatch();
+
   const [link, setLink] = useState('');
   const [title, setTitle] = useState('');
   const [min, setMin] = useState('');
@@ -82,7 +87,7 @@ const JobOffers = () => {
 
   return (
     <div className="main-content">
-      <div className="sub-header">
+      <div className={isDay ? 'sub-header' : 'sub-headerNightMode'}>
         <div className="filters">
           <Cities
             toggleAllCities={toggleAllCities}
@@ -107,6 +112,7 @@ const JobOffers = () => {
                 toggleAllCities={toggleAllCities}
                 newTechnology={technology}
                 expLevel={expLevel}
+                isDay={isDay}
               />
             )}
           />

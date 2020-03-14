@@ -4,8 +4,11 @@ import AllCitiesButton from '../../../additions/AllCitiesButton';
 import ExpLevel from '../../ExpLevel';
 import { techIcons } from '../../../../../constans';
 import Salary from '../../Salary';
+import { useSelector } from 'react-redux';
 
 const Technologies = ({ toggleAllTechnologies, toggleExpLevel }) => {
+  const isDay = useSelector(state => state.isDay);
+
   const [allTechnologies, setAllTechnologies] = useState(true);
   const [active, setActive] = useState(0);
 
@@ -37,14 +40,15 @@ const Technologies = ({ toggleAllTechnologies, toggleExpLevel }) => {
           toggleAllTechnologies('');
         }}
         allCities={allTechnologies}
+        isDay={isDay}
       />
 
       {toggleTechnologies()}
 
       <div className="other-filters">
-        <Salary />
+        <Salary isDay={isDay} />
 
-        <ExpLevel toggleExpLevel={toggleExpLevel} />
+        <ExpLevel toggleExpLevel={toggleExpLevel} isDay={isDay} />
       </div>
     </div>
   );

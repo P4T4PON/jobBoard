@@ -21,3 +21,9 @@ export const brands = () => {
     type: 'TRUE'
   };
 };
+
+export const day = () => {
+  return {
+    type: 'NIGHT'
+  };
+};

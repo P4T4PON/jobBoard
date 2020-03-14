@@ -8,7 +8,8 @@ const Sidebar = ({
   city,
   toggleAllCities,
   newTechnology,
-  expLevel
+  expLevel,
+  isDay
 }) => {
   const renderOffers = () => {
     return companyOffers.map((offer, index) => (
@@ -42,11 +43,16 @@ const Sidebar = ({
         oldTechnology={offer.technology}
         newTechnology={newTechnology}
         expLevel={expLevel}
+        isDay={isDay}
       />
     ));
   };
 
-  return <div className="sidebar-offers">{renderOffers()}</div>;
+  return (
+    <div className={isDay ? 'sidebar-offers' : 'sidebar-offersNightMode'}>
+      {renderOffers()}
+    </div>
+  );
 };
 
 export default Sidebar;

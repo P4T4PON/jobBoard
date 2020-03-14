@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ExpLevel = ({ toggleExpLevel }) => {
+const ExpLevel = ({ toggleExpLevel, isDay }) => {
   const [showExpLevel, setShowExpLevel] = useState(false);
   const [expLevelChosen, setExpLevelChosen] = useState(false);
   const [expLevel, setExpLevel] = useState('');
@@ -25,6 +25,8 @@ const ExpLevel = ({ toggleExpLevel }) => {
         className={
           expLevelChosen
             ? 'city-button min-width120 all'
+            : isDay === false
+            ? 'city-buttonNightMode min-width120'
             : 'city-button min-width120'
         }
         id="expLevelButton"

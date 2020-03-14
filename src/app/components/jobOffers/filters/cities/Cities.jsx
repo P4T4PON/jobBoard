@@ -3,9 +3,11 @@ import CityButton from '../../../additions/CityButton';
 import AllCitiesButton from '../../../additions/AllCitiesButton';
 import NightMode from '../../NightMode';
 import { otherCities, jobCities } from '../../../../../constans';
+import { useSelector } from 'react-redux';
 
 const Cities = ({ toggleAllCities }) => {
-  const [nightMode, setNightMode] = useState(false);
+  const isDay = useSelector(state => state.isDay);
+
   const [showOtherCities, setShowOtherCities] = useState(false);
   const [cityWasChosen] = useState(false);
   const [showAddedCity, setShowAddedCity] = useState(false);
@@ -40,6 +42,7 @@ const Cities = ({ toggleAllCities }) => {
         active={active}
         allCities={allCities}
         city={city}
+        isDay={isDay}
       />
     ));
   };
@@ -68,12 +71,14 @@ const Cities = ({ toggleAllCities }) => {
             toggleAllCities('', '');
           }}
           city={'All'}
+          isDay={isDay}
         />
 
         {toggleJobCities()}
 
         <div
           className={showAddedCity ? 'added-city' : 'added-city display-none'}
+          onBlur={() => setShowOtherCities(false)}
         >
           <CityButton
             cityId={8}
@@ -84,13 +89,12 @@ const Cities = ({ toggleAllCities }) => {
             active={active}
             allCities={allCities}
             city={cityName}
+            isDay={isDay}
           />
         </div>
 
         <NightMode
-          nightMode={nightMode}
           showOtherCities={showOtherCities}
-          setNightMode={setNightMode}
           setShowOtherCities={setShowOtherCities}
         />
       </div>
@@ -104,9 +108,7 @@ const Cities = ({ toggleAllCities }) => {
             : 'other-cities display-none'
         }
       >
-        <ul className="otherCities-ul" onBlur={() => setShowOtherCities(false)}>
-          {toggleOtherCities()}
-        </ul>
+        <ul className="otherCities-ul">{toggleOtherCities()}</ul>
       </div>
     </Fragment>
   );

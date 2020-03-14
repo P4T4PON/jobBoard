@@ -4,17 +4,21 @@
   background-color: #f3f6f8;
   overflow: auto;
   scroll-behavior: smooth;
+  transition: all 0.3s ease-out 0s;
 }
 
-.offer-item a {
-  text-decoration: none;
-  width: 100%;
+.sidebar-offersNightMode {
+  width: 50%;
+  height: calc(100vh - 216px);
+  background-color: rgb(57, 57, 57);
+  overflow: auto;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-out 0s;
 }
 
 .offer-item {
   display: flex;
   width: 98%;
-  background-color: aqua;
   cursor: pointer;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -25,9 +29,33 @@
   display: flex;
 }
 
+.offer-item a {
+  text-decoration: none;
+  width: 100%;
+}
+
 .offer-item:hover {
   transition: box-shadow 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07), 0 3px 7px 0 rgba(0, 0, 0, 0.06);
+}
+
+.offer-itemNightMode {
+  display: flex;
+  width: 98%;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  height: 77px;
+  margin: 0 10px 12px 10px;
+  padding: 0;
+  background-color: rgb(76, 80, 82);
+  display: flex;
+  transition: all 0.3s ease-out 0s;
+}
+
+.offer-itemNightMode a {
+  text-decoration: none;
+  width: 100%;
 }
 
 .ib-lightBlue {
@@ -89,6 +117,12 @@
   margin: 0 5px 0 0;
   line-height: 23px;
   font-weight: 600;
+  transition: all 0.3s ease-out 0s;
+}
+
+.offer-titleNightMode {
+  color: rgb(183, 196, 208);
+  transition: all 0.3s ease-out 0s;
 }
 
 .flex-right {
@@ -112,12 +146,30 @@
   border-radius: 16px;
   white-space: nowrap;
   line-height: 11px;
+  transition: all 0.3s ease-out 0s;
   border: 1px solid #e0e0e0;
+}
+
+.ageNightMode {
+  font-size: 12px;
+  margin: 0 0 0 16px;
+  padding: 4px 7px;
+  border-radius: 16px;
+  white-space: nowrap;
+  line-height: 11px;
+  color: rgb(183, 196, 208);
+  background-color: rgb(57, 57, 57);
+  transition: all 0.3s ease-out 0s;
 }
 
 .new {
   color: #4256ef;
   background-color: #d9ddfc;
+}
+
+.newNightMode {
+  color: rgb(221, 221, 221);
+  background-color: rgb(119, 119, 119);
 }
 
 .secondary-line {
@@ -161,6 +213,23 @@
   text-overflow: ellipsis;
   overflow: hidden;
   min-width: 1ch;
+  transition: all 0.3s ease-out 0s;
+}
+
+.tagNightMode {
+  display: inline-block;
+  margin-left: 6px;
+  border-radius: 16px;
+  text-transform: lowercase;
+  padding: 4px 7px;
+  line-height: 11px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 1ch;
+  background-color: rgb(57, 57, 57);
+  color: rgb(183, 196, 208);
+  border: 1px solid rgb(57, 57, 57);
+  transition: all 0.3s ease-out 0s;
 }
 
 .remote-up {

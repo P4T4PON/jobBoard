@@ -15,6 +15,18 @@
   display: flex;
   align-items: flex-start;
   padding-top: 3px;
+  transition: all 0.3s ease-out 0s;
+}
+
+.sub-headerNightMode {
+  width: 100%;
+  background-color: rgb(57, 57, 57);
+  padding: 0 40px 5px 18px;
+  height: 126px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 3px;
+  transition: all 0.3s ease-out 0s;
 }
 
 .filters {
@@ -43,6 +55,28 @@
   margin-right: 5px;
   background-color: #fff;
   color: #777;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-transform: none;
+  margin-left: 10px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-buttonNightMode {
+  max-width: 120px;
+  margin-right: 5px;
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  color: rgb(183, 196, 208);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -360,6 +394,11 @@
 }
 
 .city-button p {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.city-buttonNightMode p {
   margin-left: 5px;
   margin-right: 5px;
 }

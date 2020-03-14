@@ -1,9 +1,15 @@
 import React from 'react';
 
-const AllCitiesButton = ({ city, toggleActive, allCities }) => {
+const AllCitiesButton = ({ city, toggleActive, allCities, isDay }) => {
   return (
     <div
-      className={allCities ? 'city-button all padd' : 'city-button'}
+      className={
+        allCities
+          ? 'city-button all padd'
+          : isDay === false
+          ? 'city-buttonNightMode'
+          : 'city-button'
+      }
       onClick={toggleActive}
     >
       {city}

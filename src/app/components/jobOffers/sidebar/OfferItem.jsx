@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { utils } from '../../../../utils';
 
 const OfferItem = ({
   img,
@@ -26,80 +27,43 @@ const OfferItem = ({
   toggleAllCities,
   oldTechnology,
   newTechnology,
-  expLevel
+  expLevel,
+  isDay
 }) => {
   const renderTags = () => {
     return companyTags.map((tag, index) => (
-      <span className="tag" key={index}>
+      <span className={isDay ? 'tag' : 'tagNightMode'} key={index}>
         {tag}
       </span>
     ));
   };
 
-  const test = () => {
-    console.log(oldTechnology, newTechnology);
+  const tileInFilters = () =>
+    (expLevel === '' || expLevel === exp) &&
+    (newTechnology === '' || oldTechnology === newTechnology) &&
+    (city === companyAddress[1] ||
+      city === '' ||
+      (remote && city === 'Remote') ||
+      (city === 'Trójmiasto' &&
+        (companyAddress[1] === 'Gdańsk' ||
+          companyAddress[1] === 'Gdynia' ||
+          companyAddress[1] === 'Sopot')));
+
+  const filtersEmpty = () =>
+    [newTechnology, city, expLevel].every(element => element === '');
+
+  const tileClasses = () => {
+    let tileClass = '';
+    if (filtersEmpty() || tileInFilters()) {
+      tileClass = isDay ? 'offer-item' : 'offer-itemNightMode';
+    } else {
+      tileClass = 'display-none';
+    }
+    return tileClass;
   };
 
   return (
-    <div
-      {...test()}
-      className={
-        newTechnology === '' && city === '' && expLevel === ''
-          ? 'offer-item'
-          : newTechnology === '' &&
-            city === companyAddress[1] &&
-            (expLevel === '' || expLevel === exp)
-          ? 'offer-item'
-          : city === '' &&
-            newTechnology === oldTechnology &&
-            (expLevel === '' || expLevel === exp)
-          ? 'offer-item'
-          : city === companyAddress[1] &&
-            newTechnology === oldTechnology &&
-            (expLevel === '' || expLevel === exp)
-          ? 'offer-item'
-          : (city === 'Trójmiasto' &&
-              companyAddress[1] === 'Gdańsk' &&
-              (oldTechnology === newTechnology || newTechnology === '') &&
-              (expLevel === '' || expLevel === exp)) ||
-            (city === 'Trójmiasto' &&
-              companyAddress[1] === 'Gdynia' &&
-              (oldTechnology === newTechnology || newTechnology === '') &&
-              (expLevel === '' || expLevel === exp)) ||
-            (city === 'Trójmiasto' &&
-              companyAddress[1] === 'Sopot' &&
-              (oldTechnology === newTechnology || newTechnology === '') &&
-              (expLevel === '' || expLevel === exp))
-          ? 'offer-item'
-          : remote &&
-            city === 'Remote' &&
-            newTechnology === '' &&
-            (expLevel === '' || expLevel === exp)
-          ? 'offer-item'
-          : remote &&
-            city === 'Remote' &&
-            oldTechnology === newTechnology &&
-            (expLevel === '' || expLevel === exp)
-          ? 'offer-item'
-          : (expLevel === '' || expLevel === exp) &&
-            (oldTechnology === newTechnology || newTechnology === '') &&
-            (city === '' || city === companyAddress[1])
-          ? 'offer-item'
-          : city === companyAddress[1] &&
-            newTechnology !== oldTechnology &&
-            (expLevel === '' || expLevel === exp)
-          ? 'display-none'
-          : city !== companyAddress[1] &&
-            newTechnology === oldTechnology &&
-            (expLevel === '' || expLevel === exp)
-          ? 'display-none'
-          : city === companyAddress[1] &&
-            newTechnology === oldTechnology &&
-            (expLevel !== '' || expLevel !== exp)
-          ? 'display-none'
-          : 'display-none'
-      }
-    >
+    <div className={tileClasses()}>
       <div className={`item-border  ${itemBorder}`} />
       <Link
         to={link}
@@ -132,7 +96,13 @@ const OfferItem = ({
           </div>
           <div className="item-row">
             <div className="primary-line">
-              <span className="offer-title">{title}</span>
+              <span
+                className={
+                  isDay ? 'offer-title' : 'offer-title offer-titleNightMode'
+                }
+              >
+                {title}
+              </span>
               <div className={remote ? 'remote-up' : 'display-none'}>
                 Remote
               </div>
@@ -140,7 +110,19 @@ const OfferItem = ({
                 <span className="salary-row">
                   {min} - {max} PLN
                 </span>
-                <span className={age === 'New' ? 'age new' : 'age'}>{age}</span>
+                <span
+                  className={
+                    isDay === false && age === 'New'
+                      ? 'ageNightMode newNightMode'
+                      : isDay === false
+                      ? 'ageNightMode'
+                      : isDay && age === 'New'
+                      ? 'age new'
+                      : 'age'
+                  }
+                >
+                  {age}
+                </span>
               </div>
             </div>
             <div className="secondary-line">

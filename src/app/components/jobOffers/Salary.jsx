@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputRange from 'react-input-range';
 
-const Salary = () => {
+const Salary = ({ isDay }) => {
   const [showSalary, setShowSalary] = useState(false);
   const [value, setValue] = useState({
     min: 0,
@@ -10,7 +10,15 @@ const Salary = () => {
   return (
     <div className="allSidebars webkit-right">
       <div
-        className={showSalary ? 'city-button padd0' : 'city-button'}
+        className={
+          showSalary && isDay === false
+            ? 'city-buttonNightMode padd0'
+            : showSalary
+            ? 'city-button padd0'
+            : isDay === false
+            ? 'city-buttonNightMode '
+            : 'city-button '
+        }
         id="inputRangeButton"
         onClick={() => setShowSalary(!showSalary)}
       >
