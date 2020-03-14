@@ -2,68 +2,28 @@ import React, { useState, useEffect } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Button from '../../Button';
 import {
-  checkTiles,
-  handleTileChange,
-  resetAllTiles
-} from '../../../../../../helperFunctions';
-import {
   employmentType,
   employmentTypeNames,
   employmentTypeState
 } from '../../../../../../constans';
+import {
+  checkTiles,
+  resetAllTiles,
+  handleTileChange
+} from '../../../../../../helperFunctions';
 const EmploymentTypeBox = () => {
   const [tiles, setTiles] = useState(employmentTypeState);
 
   useEffect(() => {
-    checkTiles();
-  });
-
-  {
     checkTiles(tiles, setTiles);
-  }
-  {
-    handleTileChange(tiles, setTiles);
-  }
-  {
-    resetAllTiles(tiles, setTiles);
-  }
-
-  // const checkTiles = () => {
-  //   const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
-  //   let newTiles = tiles;
-
-  //   if (activatedTiles.length === 0) {
-  //     newTiles['all'] = true;
-  //     setTiles({ ...newTiles });
-  //   } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
-  //     newTiles['all'] = false;
-  //     setTiles({ ...newTiles });
-  //   }
-  // };
-
-  // const handleTileChange = name => {
-  //   let newTiles = tiles;
-  //   newTiles[name] = !newTiles[name];
-  //   setTiles({
-  //     ...newTiles
-  //   });
-  // };
-
-  // const resetAllTiles = () => {
-  //   for (let i = 0; i < employmentTypeNames.length; i++) {
-  //     tiles[employmentTypeNames[i]] = false;
-  //   }
-  //   setTiles({
-  //     ...tiles
-  //   });
-  // };
+  });
 
   const renderEmploymentType = () => {
     return employmentType.map((type, index) => (
       <Button
         key={index}
         companySpan={type[0]}
-        toggleTile={() => handleTileChange(type[1])}
+        toggleTile={() => handleTileChange(type[1], tiles, setTiles)}
         active={tiles[type[1]]}
       />
     ));
@@ -83,7 +43,9 @@ const EmploymentTypeBox = () => {
         <div className="jobStatus-box">
           <Button
             companySpan={"Doesn't matter"}
-            toggleTile={resetAllTiles}
+            toggleTile={() =>
+              resetAllTiles(employmentTypeNames, setTiles, tiles)
+            }
             active={tiles['all']}
           />
           {renderEmploymentType()}

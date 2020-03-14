@@ -1,9 +1,6 @@
-import { employmentTypeNames } from './constans';
-
 export const checkTiles = (tiles, setTiles) => {
   const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
   let newTiles = tiles;
-
   if (activatedTiles.length === 0) {
     newTiles['all'] = true;
     setTiles({ ...newTiles });
@@ -13,19 +10,19 @@ export const checkTiles = (tiles, setTiles) => {
   }
 };
 
-export const handleTileChange = (tiles, setTiles, name) => {
+export const resetAllTiles = (seniorityNames, setTiles, tiles) => {
+  for (let i = 0; i < seniorityNames.length; i++) {
+    tiles[seniorityNames[i]] = false;
+  }
+  setTiles({
+    ...tiles
+  });
+};
+
+export const handleTileChange = (name, tiles, setTiles) => {
   let newTiles = tiles;
   newTiles[name] = !newTiles[name];
   setTiles({
     ...newTiles
-  });
-};
-
-export const resetAllTiles = (tiles, setTiles) => {
-  for (let i = 0; i < employmentTypeNames.length; i++) {
-    tiles[employmentTypeNames[i]] = false;
-  }
-  setTiles({
-    ...tiles
   });
 };
