@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Button = ({ companyActive, companyIcon, companySpan }) => {
-  const [active, setActive] = useState(false);
-
-  if (!companyActive && active) {
-    setActive(false);
-  }
-
+const Button = ({ active, toggleTile, companyIcon, companySpan }) => {
   return (
     <div className="btn-icon">
       <div
         className={active ? 'jobStatus-button border-pink' : 'jobStatus-button'}
-        onClick={() => setActive(!active)}
+        onClick={toggleTile}
       >
         {companyIcon ? <i className={companyIcon}></i> : null}
         <span>{companySpan}</span>
