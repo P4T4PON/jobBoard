@@ -3,4 +3,5 @@ body {
   padding: 0;
   color: #99a1ab;
   font-size: 14px;
+  overflow-x: hidden;
 }

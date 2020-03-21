@@ -2,7 +2,7 @@
   flex-grow: 1;
   position: relative;
   padding: 20px;
-  height: calc(100% - 66px);
+  height: 100vh;
   font-family: 'Open Sans', sans-serif;
   color: rgb(55, 71, 79);
   font-size: 0.875rem;
