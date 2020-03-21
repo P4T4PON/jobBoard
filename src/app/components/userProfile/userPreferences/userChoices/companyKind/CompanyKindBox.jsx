@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Tile from '../../Tile';
 import { companyKind, companyKindNames } from '../../../../../../constans';
+import {
+  checkTiles,
+  resetAllTiles,
+  handleTileChange
+} from '../../../../../../utils';
 
 const CompanyKindBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
@@ -13,38 +18,8 @@ const CompanyKindBox = ({ isDay }) => {
   });
 
   useEffect(() => {
-    checkTiles();
+    checkTiles(tiles, setTiles);
   });
-
-  const checkTiles = () => {
-    const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
-    let newTiles = tiles;
-
-    if (activatedTiles.length === 0) {
-      newTiles['all'] = true;
-      setTiles({ ...newTiles });
-    } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
-      newTiles['all'] = false;
-      setTiles({ ...newTiles });
-    }
-  };
-
-  const handleTileChange = name => {
-    let newTiles = tiles;
-    newTiles[name] = !newTiles[name];
-    setTiles({
-      ...newTiles
-    });
-  };
-
-  const resetAllTiles = () => {
-    for (let i = 0; i < companyKindNames.length; i++) {
-      tiles[companyKindNames[i]] = false;
-    }
-    setTiles({
-      ...tiles
-    });
-  };
 
   const renderCompanyKind = () => {
     return companyKind.map((kind, index) => (
@@ -53,7 +28,9 @@ const CompanyKindBox = ({ isDay }) => {
         companyIcon={kind[0]}
         companySpan={kind[1]}
         toggleTile={
-          kind[2] === 'all' ? resetAllTiles : () => handleTileChange(kind[2])
+          kind[2] === 'all'
+            ? () => resetAllTiles(companyKindNames, setTiles, tiles)
+            : () => handleTileChange(kind[2], tiles, setTiles)
         }
         active={tiles[kind[2]]}
         isDay={isDay}

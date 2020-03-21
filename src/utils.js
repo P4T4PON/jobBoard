@@ -1,18 +1,28 @@
-export const tileInFilters = (
-  expLevel,
-  exp,
-  newTechnology,
-  oldTechnology,
-  city,
-  companyAddress,
-  remote
-) =>
-  (expLevel === '' || expLevel === exp) &&
-  (newTechnology === '' || oldTechnology === newTechnology) &&
-  (city === companyAddress[1] ||
-    city === '' ||
-    (remote && city === 'Remote') ||
-    (city === 'Trójmiasto' &&
-      (companyAddress[1] === 'Gdańsk' ||
-        companyAddress[1] === 'Gdynia' ||
-        companyAddress[1] === 'Sopot')));
+export const checkTiles = (tiles, setTiles) => {
+  const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
+  let newTiles = tiles;
+  if (activatedTiles.length === 0) {
+    newTiles['all'] = true;
+    setTiles({ ...newTiles });
+  } else if (activatedTiles.length > 1 && newTiles['all'] !== false) {
+    newTiles['all'] = false;
+    setTiles({ ...newTiles });
+  }
+};
+
+export const resetAllTiles = (seniorityNames, setTiles, tiles) => {
+  for (let i = 0; i < seniorityNames.length; i++) {
+    tiles[seniorityNames[i]] = false;
+  }
+  setTiles({
+    ...tiles
+  });
+};
+
+export const handleTileChange = (name, tiles, setTiles) => {
+  let newTiles = tiles;
+  newTiles[name] = !newTiles[name];
+  setTiles({
+    ...newTiles
+  });
+};

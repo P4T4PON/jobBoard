@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Button from '../../Button';
 import { industry, industryNames } from '../../../../../../constans';
+import {
+  checkTiles,
+  resetAllTiles,
+  handleTileChange
+} from '../../../../../../utils';
 
 const IndustryBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
@@ -20,38 +25,8 @@ const IndustryBox = ({ isDay }) => {
   });
 
   useEffect(() => {
-    checkTiles();
+    checkTiles(tiles, setTiles);
   });
-
-  const checkTiles = () => {
-    const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
-    let newTiles = tiles;
-
-    if (activatedTiles.length === 0) {
-      newTiles['all'] = true;
-      setTiles({ ...newTiles });
-    } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
-      newTiles['all'] = false;
-      setTiles({ ...newTiles });
-    }
-  };
-
-  const handleTileChange = name => {
-    let newTiles = tiles;
-    newTiles[name] = !newTiles[name];
-    setTiles({
-      ...newTiles
-    });
-  };
-
-  const resetAllTiles = () => {
-    for (let i = 0; i < industryNames.length; i++) {
-      tiles[industryNames[i]] = false;
-    }
-    setTiles({
-      ...tiles
-    });
-  };
 
   const renderIndustry = () => {
     return industry.map((ind, index) => (
@@ -59,7 +34,7 @@ const IndustryBox = ({ isDay }) => {
         key={index}
         companyIcon={ind[0]}
         companySpan={ind[1]}
-        toggleTile={() => handleTileChange(ind[2])}
+        toggleTile={() => handleTileChange(ind[2], tiles, setTiles)}
         active={tiles[ind[2]]}
         isDay={isDay}
       />
@@ -88,7 +63,7 @@ const IndustryBox = ({ isDay }) => {
         <div className="jobStatus-box">
           <Button
             companySpan={"Doesn't matter"}
-            toggleTile={resetAllTiles}
+            toggleTile={() => resetAllTiles(industryNames, setTiles, tiles)}
             active={tiles['all']}
             isDay={isDay}
           />

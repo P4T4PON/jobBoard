@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Tile from '../../Tile';
 import { companyStage, companyStageNames } from '../../../../../../constans';
+import {
+  checkTiles,
+  resetAllTiles,
+  handleTileChange
+} from '../../../../../../utils';
 
 const CompanyStageBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
@@ -13,38 +18,8 @@ const CompanyStageBox = ({ isDay }) => {
   });
 
   useEffect(() => {
-    checkTiles();
+    checkTiles(tiles, setTiles);
   });
-
-  const checkTiles = () => {
-    const activatedTiles = Object.keys(tiles).filter(k => tiles[k]);
-    let newTiles = tiles;
-
-    if (activatedTiles.length === 0) {
-      newTiles['all'] = true;
-      setTiles({ ...newTiles });
-    } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
-      newTiles['all'] = false;
-      setTiles({ ...newTiles });
-    }
-  };
-
-  const handleTileChange = name => {
-    let newTiles = tiles;
-    newTiles[name] = !newTiles[name];
-    setTiles({
-      ...newTiles
-    });
-  };
-
-  const resetAllTiles = () => {
-    for (let i = 0; i < companyStageNames.length; i++) {
-      tiles[companyStageNames[i]] = false;
-    }
-    setTiles({
-      ...tiles
-    });
-  };
 
   const renderCompanyStage = () => {
     return companyStage.map((stage, index) => (
@@ -53,7 +28,9 @@ const CompanyStageBox = ({ isDay }) => {
         companyIcon={stage[0]}
         companySpan={stage[1]}
         toggleTile={
-          stage[2] === 'all' ? resetAllTiles : () => handleTileChange(stage[2])
+          stage[2] === 'all'
+            ? () => resetAllTiles(companyStageNames, setTiles, tiles)
+            : () => handleTileChange(stage[2], tiles, setTiles)
         }
         active={tiles[stage[2]]}
         isDay={isDay}
