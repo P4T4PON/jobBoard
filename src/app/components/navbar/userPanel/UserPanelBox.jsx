@@ -5,7 +5,7 @@ import LogOutUserPanel from './LogOutUserPanel';
 import NavButton from '../NavButton';
 import LinkButton from '../../additions/LinkButton';
 
-const UserPanelBox = ({ newBrands, changeContact }) => {
+const UserPanelBox = ({ newBrands, changeContact, isDay }) => {
   const [contactUs] = useState(false);
 
   const isLogged = useSelector(state => state.isLogged);
@@ -31,7 +31,7 @@ const UserPanelBox = ({ newBrands, changeContact }) => {
           />
         )}
 
-        {isLogged ? <LoggedUserPanel /> : <LogOutUserPanel />}
+        {isLogged ? <LoggedUserPanel isDay={isDay} /> : <LogOutUserPanel />}
       </div>
     </Fragment>
   );

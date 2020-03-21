@@ -13,40 +13,50 @@ import SalaryBox from './userChoices/salary/SalaryBox';
 import WorkPlaceBox from './userChoices/workPlace/WorkPlaceBox';
 import TechnologiesBox from './userChoices/technologies/TechnologiesBox';
 import SkillBox from './userChoices/skills/SkillBox';
+import { useSelector } from 'react-redux';
 
 import './UserPreferences.css';
 
 const UserPreferences = () => {
+  const isDay = useSelector(state => state.isDay);
   const [panelActive] = useState(3);
   const [statusValue] = useState('');
 
   return (
     <div className="userLogin-content vw-99">
       <UserPanel active={panelActive} inputValue={statusValue} />
-      <div className="preferences">
-        <div className="preferences-content">
+      <div
+        className={isDay ? 'preferences' : 'preferences preferencesNightMode'}
+      >
+        <div
+          className={
+            isDay
+              ? 'preferences-content'
+              : 'preferences-content preferences-contentNightMode'
+          }
+        >
           <h1>Preferences</h1>
-          <JobStatusBox />
+          <JobStatusBox isDay={isDay} />
 
-          <WorkPlaceBox />
+          <WorkPlaceBox isDay={isDay} />
 
-          <RemoteJob />
+          <RemoteJob isDay={isDay} />
 
-          <CompanyStageBox />
+          <CompanyStageBox isDay={isDay} />
 
-          <CompanyKindBox />
+          <CompanyKindBox isDay={isDay} />
 
-          <IndustryBox />
+          <IndustryBox isDay={isDay} />
 
-          <SeniorityBox />
+          <SeniorityBox isDay={isDay} />
 
-          <EmploymentTypeBox />
+          <EmploymentTypeBox isDay={isDay} />
 
-          <SalaryBox />
+          <SalaryBox isDay={isDay} />
 
-          <TechnologiesBox />
+          <TechnologiesBox isDay={isDay} />
 
-          <SkillBox />
+          <SkillBox isDay={isDay} />
 
           <SubmitButton value={'Update'} className={'pink-button'} />
         </div>

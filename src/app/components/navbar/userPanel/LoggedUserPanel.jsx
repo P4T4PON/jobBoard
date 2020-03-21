@@ -4,7 +4,7 @@ import { logged } from '../../../actions/index';
 import UserPanel from './UserPanel';
 import UserPanelLink from './UserPanelLink';
 
-const LoggedUserPanel = () => {
+const LoggedUserPanel = ({ isDay }) => {
   const [brands, setBrands] = useState(false);
   const [userPanel_active, setUserPanel_active] = useState(false);
 
@@ -12,12 +12,15 @@ const LoggedUserPanel = () => {
   return (
     <Fragment>
       <UserPanel
+        isDay={isDay}
         setUserPanel_active={() => setUserPanel_active(!userPanel_active)}
       />
       <div
         className={
-          userPanel_active
+          userPanel_active && isDay
             ? 'userPanel-sidebar'
+            : userPanel_active && isDay === false
+            ? 'userPanel-sidebar userPanel-sidebarNightMode'
             : 'userPanel-sidebar display-none'
         }
       >

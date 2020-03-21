@@ -2,13 +2,16 @@
   flex-grow: 1;
   position: relative;
   padding: 20px;
-  max-width: calc(100% - 220px);
+  height: calc(100% - 66px);
   font-family: 'Open Sans', sans-serif;
   color: rgb(55, 71, 79);
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.43;
-  height: 87vh;
+}
+
+.userMachmakingNightMode {
+  background-color: rgb(57, 57, 57);
 }
 
 .userMachmaking-box {
@@ -31,6 +34,10 @@
 
 .userMachmaking-header a {
   text-decoration: none;
+}
+
+.userMachmaking-headerNightMode h2 {
+  color: rgb(183, 196, 208);
 }
 
 .editPreferences-btn {
@@ -107,6 +114,14 @@
   border: 3px solid rgb(255, 255, 255);
 
   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 7px 0px;
+}
+
+.preferencesItemNightMode {
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+}
+
+.preferencesItemNightMode b {
+  color: #99a1ab;
 }
 
 .blueBox {
@@ -204,6 +219,10 @@
   line-height: 32px;
 }
 
+.repliesNightMode h1 {
+  color: rgb(183, 196, 208);
+}
+
 .userMachmaking-status {
   display: flex;
 }
@@ -221,6 +240,11 @@
   font-size: 16px;
   color: #b0bac9;
   cursor: pointer;
+}
+
+.userMachmaking-itemNightMode {
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  border-right: 2px solid rgb(57, 57, 57);
 }
 
 .left {
@@ -258,6 +282,10 @@
   font-size: 24px;
   color: rgb(55, 71, 79);
   font-weight: 600;
+}
+
+.maches-contentNightMode {
+  color: rgb(183, 196, 208);
 }
 
 .maches-content i {

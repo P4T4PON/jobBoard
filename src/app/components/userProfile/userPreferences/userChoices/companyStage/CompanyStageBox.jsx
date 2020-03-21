@@ -3,7 +3,7 @@ import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Tile from '../../Tile';
 import { companyStage, companyStageNames } from '../../../../../../constans';
 
-const CompanyStageBox = () => {
+const CompanyStageBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
     all: false,
     earlyStage: false,
@@ -56,14 +56,23 @@ const CompanyStageBox = () => {
           stage[2] === 'all' ? resetAllTiles : () => handleTileChange(stage[2])
         }
         active={tiles[stage[2]]}
+        isDay={isDay}
       />
     ));
   };
 
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading orange'}
+        heading={
+          isDay
+            ? 'preferences-heading orange'
+            : 'preferences-heading preferences-headingNightMode orange'
+        }
         className={''}
         iconClass={'fas fa-user-friends'}
         title={'What stage should the company be in?'}

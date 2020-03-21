@@ -1,8 +1,10 @@
 import React, { useState, Fragment } from 'react';
 import UserPanelLink from './UserPanelLink';
 import NavButton from '../NavButton';
+import { useSelector } from 'react-redux';
 
 const LogOutUserPanel = () => {
+  const isDay = useSelector(state => state.isDay);
   const [brands, setBrands] = useState(false);
   const [sideBar_active, setSideBar_active] = useState(false);
   return (
@@ -15,7 +17,15 @@ const LogOutUserPanel = () => {
         }}
         text={'Sign in'}
       />
-      <div className={sideBar_active ? 'side-bar ' : 'side-bar display-none'}>
+      <div
+        className={
+          sideBar_active && isDay
+            ? 'side-bar '
+            : sideBar_active && isDay === false
+            ? 'side-bar side-barNightMode'
+            : 'side-bar display-none'
+        }
+      >
         <UserPanelLink
           link={'/devs/'}
           setUserPanel_active={() => setSideBar_active(false)}

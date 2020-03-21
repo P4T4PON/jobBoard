@@ -10,14 +10,36 @@ const MatchmakingInput = ({
   toggleInput,
   showPassword,
   inputClass,
-  span
+  span,
+  isDay
 }) => {
+  const test = () => {
+    console.log(error);
+  };
+
   return (
     <Fragment>
+      {test()}
       <div>
-        <i className={`${iconClass} login-icon`}></i>
+        <i
+          className={
+            isDay
+              ? `${iconClass} login-icon`
+              : `${iconClass} login-icon login-iconNightMode`
+          }
+        />
       </div>
-      <div className="cont">
+      <div
+        className={
+          isDay && error !== ''
+            ? 'cont inputError'
+            : isDay === false && error !== ''
+            ? 'cont contNightMode inputError'
+            : isDay
+            ? 'cont'
+            : 'cont contNightMode'
+        }
+      >
         <div>
           <input
             type={type}
@@ -33,8 +55,15 @@ const MatchmakingInput = ({
           </label>
         </div>
         {showPassword ? (
-          <div className="password-shower" onClick={toggleInput}>
-            <i className="fas fa-eye"></i>
+          <div
+            className={
+              isDay
+                ? 'password-shower'
+                : 'password-shower password-showerNightMode'
+            }
+            onClick={toggleInput}
+          >
+            <i className="fas fa-eye" />
           </div>
         ) : null}
       </div>

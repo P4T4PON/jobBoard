@@ -12,6 +12,10 @@
   transition: transform 0.5s ease-out;
 }
 
+.side-drawerNightMode {
+  background-color: rgb(76, 80, 82);
+}
+
 .side-drawer.open {
   transform: translateX(0%);
 }
@@ -31,6 +35,10 @@
   display: flex;
   align-items: center;
   color: #737373;
+}
+
+.side-drawerNightMode li {
+  color: rgb(183, 196, 208);
 }
 
 .side-drawer li i {
@@ -68,6 +76,10 @@
   text-align: center;
 }
 
+.side-drawerNightMode h1 {
+  color: rgb(183, 196, 208);
+}
+
 .side-drawer i {
   font-size: 20px;
   margin-right: 40px;
@@ -90,4 +102,10 @@
 
 .display-none {
   display: none;
+}
+
+.input-laneCenterer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

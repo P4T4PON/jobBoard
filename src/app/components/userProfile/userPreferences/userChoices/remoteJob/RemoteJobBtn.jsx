@@ -5,13 +5,18 @@ const RemoteJobBtn = ({
   remoteJob,
   setRemoteActive,
   text,
-  className
+  className,
+  isDay
 }) => {
   return (
     <div
       className={
-        remoteJob === remoteActive
+        remoteJob === remoteActive && isDay
           ? `jobStatus-button border-pink ${className}`
+          : remoteJob === remoteActive && isDay === false
+          ? `jobStatus-button jobStatus-buttonNightMode border-pink ${className}`
+          : isDay === false
+          ? `jobStatus-button jobStatus-buttonNightMode ${className}`
           : `jobStatus-button ${className}`
       }
       onClick={setRemoteActive}

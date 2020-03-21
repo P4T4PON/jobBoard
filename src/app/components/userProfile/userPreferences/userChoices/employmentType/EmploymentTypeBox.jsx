@@ -6,7 +6,7 @@ import {
   employmentTypeNames
 } from '../../../../../../constans';
 
-const EmploymentTypeBox = () => {
+const EmploymentTypeBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
     all: false,
     b2b: false,
@@ -55,13 +55,22 @@ const EmploymentTypeBox = () => {
         companySpan={type[0]}
         toggleTile={() => handleTileChange(type[1])}
         active={tiles[type[1]]}
+        isDay={isDay}
       />
     ));
   };
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading purple'}
+        heading={
+          isDay
+            ? 'preferences-heading purple'
+            : 'preferences-heading preferences-headingNightMode purple'
+        }
         className={''}
         iconClass={'far fa-file'}
         title={'Employment type'}
@@ -75,6 +84,7 @@ const EmploymentTypeBox = () => {
             companySpan={"Doesn't matter"}
             toggleTile={resetAllTiles}
             active={tiles['all']}
+            isDay={isDay}
           />
           {renderEmploymentType()}
         </div>

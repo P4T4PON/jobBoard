@@ -4,9 +4,12 @@ import { logged } from '../../actions/index';
 import UserStatus from './UserStatus';
 import LinkItem from './LinkItem';
 import ListItem from './ListItem';
+import { useSelector } from 'react-redux';
 
 const UserPanel = props => {
+  const isDay = useSelector(state => state.isDay);
   const dispatch = useDispatch();
+  const [userName, setUserName] = useState('Testuser');
 
   const [jobStatus, setJobStatus] = useState('green');
   const [showStatus, setShowStatus] = useState(false);
@@ -16,12 +19,18 @@ const UserPanel = props => {
   };
 
   return (
-    <div className="userLogin-sidebar">
+    <div
+      className={
+        isDay
+          ? 'userLogin-sidebar'
+          : 'userLogin-sidebar userLogin-sidebarNightMode'
+      }
+    >
       <div className="userLogin-sidebarContent">
         <div className="userLogin-img"></div>
         <div className="userLogin-welcome">
           <p>Welcome</p>
-          <span>{props.inputValue}</span>
+          <span>{userName}</span>
         </div>
         {jobStatus === 'green' ? (
           <UserStatus

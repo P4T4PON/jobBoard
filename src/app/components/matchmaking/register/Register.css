@@ -1,6 +1,6 @@
 .reg-register {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: calc(100vh - 66px);
   display: flex;
   justify-content: flex-end;
 }
@@ -18,12 +18,13 @@
   text-align: center;
   font-weight: 600;
   font-size: 16px;
-  margin: 30px;
+  margin: 15px;
 }
 
 .registering {
-  margin: 70px 100px;
-  width: 400px;
+  margin: 75px 84px;
+  width: 420px;
+  float: right;
 }
 
 .reg-media {
@@ -70,7 +71,7 @@
 }
 
 .color-blue {
-  color: rgb(39, 69, 167);
+  color: rgb(52, 124, 255);
 }
 
 .color-black {
@@ -91,33 +92,12 @@
   width: 400px;
 }
 
-.span-item {
-  color: rgb(191, 197, 210);
-  font-size: 14px;
-  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  padding: 0px 20px;
-  position: relative;
-  top: -12px;
-}
-
 .login {
   display: flex;
   flex-wrap: wrap;
   width: 400px;
   justify-content: center;
   align-items: center;
-}
-
-.login-icon {
-  margin-top: 20px;
-  display: flex;
-  color: black;
-  align-self: center;
-  justify-content: flex-start;
-  align-items: center;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  font-size: 20px;
 }
 
 .login-input:focus {
@@ -142,7 +122,7 @@
 }
 
 .reg-img {
-  width: 48.1%;
+  width: 50%;
 }
 
 .reg-img img {
@@ -189,19 +169,6 @@
   margin-left: 15px;
 }
 
-.password-shower {
-  position: absolute;
-  bottom: 0px;
-  left: 100%;
-  width: 35px;
-  font-size: 25px;
-  color: black;
-}
-
-.password-shower:hover {
-  cursor: pointer;
-}
-
 .content-name {
   position: absolute;
   bottom: 5px;
@@ -217,25 +184,29 @@
   border-radius: 10px;
 }
 
-.checkbox {
+.register-checkbox {
   display: flex;
-  justify-content: center !important;
-  align-items: center !important;
+  justify-content: center;
+  align-items: center;
   font-weight: normal;
-  margin-left: 0 !important;
+  margin: 0 0 15px 0;
 }
 
-.checkbox input {
+.register-checkbox input {
   margin-top: 2px;
   width: 20px;
   height: 20px;
 }
 
-.checkbox h2 {
+.register-checkbox h2 {
   margin: 0px;
   margin-left: 5px;
 }
 
-.checkbox a {
+.register-checkbox a {
   color: #ff4081;
+}
+
+.years-boxNightMode:hover {
+  background: rgba(57, 57, 57, 0.5) none repeat scroll 0% 0%;
 }

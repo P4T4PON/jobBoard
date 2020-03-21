@@ -3,7 +3,7 @@ import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Button from '../../Button';
 import { seniority, seniorityNames } from '../../../../../../constans';
 
-const SeniorityBox = () => {
+const SeniorityBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
     all: false,
     junior: false,
@@ -52,13 +52,22 @@ const SeniorityBox = () => {
         companySpan={senior[0]}
         toggleTile={() => handleTileChange(senior[1])}
         active={tiles[senior[1]]}
+        isDay={isDay}
       />
     ));
   };
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading green'}
+        heading={
+          isDay
+            ? 'preferences-heading green'
+            : 'preferences-heading preferences-headingNightMode green'
+        }
         className={''}
         iconClass={'fas fa-chart-line'}
         title={'Seniority'}
@@ -70,6 +79,7 @@ const SeniorityBox = () => {
             companySpan={"Doesn't matter"}
             toggleTile={resetAllTiles}
             active={tiles['all']}
+            isDay={isDay}
           />
           {renderSeniority()}
         </div>

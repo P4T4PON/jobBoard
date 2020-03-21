@@ -3,8 +3,10 @@ import UserPanel from '../UserPanel';
 import AnimatedInput from '../../additions/AnimatedInput';
 import SubmitButton from '../../additions/SubmitButton';
 import './UserSettings.css';
+import { useSelector } from 'react-redux';
 
 const UserSettings = () => {
+  const isDay = useSelector(state => state.isDay);
   const [panelActive] = useState(4);
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -27,29 +29,42 @@ const UserSettings = () => {
   return (
     <div className="userLogin-content width-100vw">
       <UserPanel active={panelActive} />
-      <div className="userSettings">
+      <div
+        className={
+          isDay ? 'userSettings' : 'userSettings userSettingsNightMode'
+        }
+      >
         <div className="userSettings-content">
           <h1>Settings</h1>
           <div className="passwordChange">
-            <div className="passwordChange-content">
+            <div
+              className={
+                isDay
+                  ? 'passwordChange-content'
+                  : 'passwordChange-content passwordChange-contentNightMode'
+              }
+            >
               <h2 className="margin-0">Set up new password</h2>
               <p className="margin-0">Follow the instructions below</p>
 
               <div className="passwordChange-box">
                 <AnimatedInput
+                  iconClass={'fas fa-lock media-icon'}
                   inputClass={'fas fa-lock  login-icon'}
-                  className={'cont'}
+                  className={isDay ? 'cont' : 'cont upiNightMode contNightMode'}
                   type={'password'}
                   name={'old password'}
                   value={oldPassword}
                   checkInputLength={checkOldPasswordLength}
                   checkInputBlurLength={checkOldPasswordLength}
                   span={'Old password'}
+                  isDay={isDay}
                 />
 
                 <AnimatedInput
+                  iconClass={'fas fa-lock media-icon'}
                   inputClass={'fas fa-lock  login-icon'}
-                  className={'cont'}
+                  className={isDay ? 'cont' : 'cont upiNightMode contNightMode'}
                   type={'password'}
                   name={'new password'}
                   value={newPassword}
@@ -58,6 +73,17 @@ const UserSettings = () => {
                   span={'New password'}
                 />
               </div>
+            </div>
+          </div>
+          <div
+            className={
+              isDay ? 'deleteAcc-box' : 'deleteAcc-box deleteAcc-boxNightMode'
+            }
+          >
+            <h2>Delete Account</h2>
+            <div className="deleteAcc">
+              <p>Delete your account and account data</p>
+              <div className="deleteBtn">Delete my account</div>
             </div>
           </div>
           <SubmitButton

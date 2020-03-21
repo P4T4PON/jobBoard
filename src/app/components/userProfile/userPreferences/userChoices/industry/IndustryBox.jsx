@@ -3,7 +3,7 @@ import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Button from '../../Button';
 import { industry, industryNames } from '../../../../../../constans';
 
-const IndustryBox = () => {
+const IndustryBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
     all: false,
     fintech: false,
@@ -61,13 +61,22 @@ const IndustryBox = () => {
         companySpan={ind[1]}
         toggleTile={() => handleTileChange(ind[2])}
         active={tiles[ind[2]]}
+        isDay={isDay}
       />
     ));
   };
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading grey'}
+        heading={
+          isDay
+            ? 'preferences-heading grey'
+            : 'preferences-heading preferences-headingNightMode grey'
+        }
         className={''}
         iconClass={'far fa-building'}
         title={'Projects in which industry would you like to develop?'}
@@ -81,6 +90,7 @@ const IndustryBox = () => {
             companySpan={"Doesn't matter"}
             toggleTile={resetAllTiles}
             active={tiles['all']}
+            isDay={isDay}
           />
           {renderIndustry()}
         </div>

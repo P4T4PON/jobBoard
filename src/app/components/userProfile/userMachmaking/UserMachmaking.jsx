@@ -6,8 +6,10 @@ import ShowButton from './ShowButton';
 import { yourPreferences } from '../../../../constans';
 import Replies from './Replies';
 import './UserMachmaking.css';
+import { useSelector } from 'react-redux';
 
 const UserPreferences = () => {
+  const isDay = useSelector(state => state.isDay);
   const [active, setActive] = useState(1);
   const [panelActive] = useState(2);
   const [preferences, setPreferences] = useState(true);
@@ -22,6 +24,7 @@ const UserPreferences = () => {
           iconClass={pref[2]}
           b={pref[1]}
           span={pref[0]}
+          isDay={isDay}
         />
       </div>
     ));
@@ -30,9 +33,19 @@ const UserPreferences = () => {
   return (
     <div className="userLogin-content">
       <UserPanel active={panelActive} />
-      <div className="userMachmaking">
+      <div
+        className={
+          isDay ? 'userMachmaking' : 'userMachmaking userMachmakingNightMode'
+        }
+      >
         <div className="userMachmaking-box">
-          <div className="userMachmaking-header">
+          <div
+            className={
+              isDay
+                ? 'userMachmaking-header'
+                : 'userMachmaking-header userMachmaking-headerNightMode'
+            }
+          >
             <h2>Your preferences</h2>
             <LinkButton
               link={'/devs/panel/preferences'}
@@ -48,7 +61,7 @@ const UserPreferences = () => {
             preferences={preferences}
             showPreferences={() => setPreferences(!preferences)}
           />
-          <div className="replies">
+          <div className={isDay ? 'replies' : 'replies repliesNightMode'}>
             <h1>Matchmaking</h1>
             <div className="userMachmaking-options">
               <div className="userMachmaking-status">
@@ -58,6 +71,7 @@ const UserPreferences = () => {
                   side={'left'}
                   toggleActive={() => setActive(1)}
                   active={active}
+                  isDay={isDay}
                 />
 
                 <Replies
@@ -66,6 +80,7 @@ const UserPreferences = () => {
                   side={'middle'}
                   toggleActive={() => setActive(2)}
                   active={active}
+                  isDay={isDay}
                 />
 
                 <Replies
@@ -74,13 +89,20 @@ const UserPreferences = () => {
                   side={'right'}
                   toggleActive={() => setActive(3)}
                   active={active}
+                  isDay={isDay}
                 />
               </div>
             </div>
           </div>
 
           <div className="maches-box">
-            <div className="maches-content">
+            <div
+              className={
+                isDay
+                  ? 'maches-content'
+                  : 'maches-content maches-contentNightMode'
+              }
+            >
               <i className="far fa-folder-open" />
               No matches found
             </div>

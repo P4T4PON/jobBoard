@@ -3,8 +3,10 @@ import image from '../image.png';
 import MachmakingInput from '../MatchmakingInput';
 import SubmitButton from '../../additions/SubmitButton';
 import './ResetPassword.css';
+import { useSelector } from 'react-redux';
 
 const ResetPassword = () => {
+  const isDay = useSelector(state => state.isDay);
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
@@ -24,11 +26,11 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="reset">
-      <div className="reset-body">
+    <div className={isDay ? 'reset' : 'reset logging-boxNightMode'}>
+      <div className={isDay ? 'reset-body' : 'reset-body reset-bodyNightMode'}>
         <h1>Reset password</h1>
         <h2>Type your email to get password reset url.</h2>
-        <div className="reset-inputs">
+        <div className="login">
           <MachmakingInput
             iconClass={'fas fa-user'}
             type={'text'}
@@ -37,6 +39,7 @@ const ResetPassword = () => {
             checkInputBlurLength={emailExist}
             span={'Email'}
             error={emailError}
+            isDay={isDay}
           />
           <SubmitButton value={'Reset password'} className={'reset-submit'} />
         </div>

@@ -2,16 +2,24 @@ import React, { useState } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import InputRange from 'react-input-range';
 
-const SalaryBox = () => {
+const SalaryBox = ({ isDay }) => {
   const [value, setValue] = useState({
     min: 0,
     max: 50
   });
 
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading blue'}
+        heading={
+          isDay
+            ? 'preferences-heading blue'
+            : 'preferences-heading preferences-headingNightMode blue'
+        }
         className={'width-100'}
         iconClass={'fas fa-dollar-sign'}
         title={

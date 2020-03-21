@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import NavLink from '../NavLink';
 
-const Roads = ({ changeBrands }) => {
+const Roads = ({ changeBrands, isDay }) => {
   const [brandStories_active, setBrandStories_active] = useState(false);
   const [jjit_active, setJjit_active] = useState(true);
   const [brands, setBrands] = useState(false);
@@ -19,7 +19,9 @@ const Roads = ({ changeBrands }) => {
           setJjit_active(true);
         }}
       >
-        <h1 className="title">justjoin.it</h1>
+        <h1 className={isDay ? 'title' : 'title titleNightMode'}>
+          justjoin.it
+        </h1>
       </Link>
 
       <NavLink

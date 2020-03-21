@@ -3,7 +3,7 @@ import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Input from '../../Input';
 import { technologiesFab, technologiesFas } from '../../../../../../constans';
 
-const TechnologiesBox = () => {
+const TechnologiesBox = ({ isDay }) => {
   const [tech, setTech] = useState('');
   const [showTech, setShowTech] = useState(false);
 
@@ -34,16 +34,31 @@ const TechnologiesBox = () => {
     setShowTech(true);
   };
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading pink'}
+        heading={
+          isDay
+            ? 'preferences-heading pink'
+            : 'preferences-heading preferences-headingNightMode pink'
+        }
         className={'width-100'}
         iconClass={'fas fa-microchip'}
         title={'Choose your main technology (max 2)'}
         paragraph={'What is your speciality?'}
       />
       <div className="preferences-jobStatus">
-        <div className="inputStatus-box" onClick={focusInput}>
+        <div
+          className={
+            isDay
+              ? 'inputStatus-box'
+              : 'inputStatus-box inputStatus-boxNightMode'
+          }
+          onClick={focusInput}
+        >
           <Input
             value={tech}
             name={'tech'}

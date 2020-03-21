@@ -1,5 +1,3 @@
-import OfferDetails from './app/components/jobOffers/companyProfile/companyAdditions/offerDetails/OfferDetails';
-
 export const technologiesFab = [
   ['JavaScript', 'js'],
   ['HTML', 'html5'],
@@ -459,7 +457,7 @@ export const companyOffers = [
   {
     link: '/offers/Magento',
     img:
-      'https://bucket.justjoin.it/offers/company_logos/thumb/f4ecece935004f975f33f003d12b414715714c48.png?1581341301',
+      'https://bucket.justjoin.it/offers/company_logos/thumb/7cc777a4e302948fb51ee2603dccaed1a2fca81f.png?1583837309',
 
     bgColor: 'bg-yellow',
     itemBorder: 'ib-yellow',
@@ -580,4 +578,86 @@ export const companyOffers = [
     remote: true,
     technology: 'php'
   }
+];
+
+export const companyStage = [
+  ['far fa-check-square', "Doesn't matter", 'all'],
+  ['fas fa-home', 'Early stage(0-30)', 'earlyStage'],
+  ['far fa-building', 'Growth stage (30-100)', 'growthStage'],
+  ['fas fa-city', 'Estabilished(100-250)', 'estabilished'],
+  ['fas fa-university', 'Corporation(250+)', 'corporation']
+];
+
+export const companyStageNames = [
+  'all',
+  'earlyStage',
+  'growthStage',
+  'estabilished',
+  'corporation'
+];
+
+export const companyKind = [
+  ['far fa-check-square', "Doesn't matter", 'all'],
+  ['fas fa-rocket', 'Startup', 'startup'],
+  ['fas fa-flask', 'Software house', 'softwareHouse'],
+  ['fas fa-shopping-cart', 'E-commerce', 'ecommerce'],
+  ['fas fa-hotel', 'Corporation', 'corporation']
+];
+
+export const companyKindNames = [
+  'all',
+  'startup',
+  'softwareHouse',
+  'ecommerce',
+  'corporation'
+];
+
+export const industry = [
+  ['fas fa-dollar-sign', 'Fintech', 'fintech'],
+  ['fas fa-cube', 'Bloackchain', 'bloackchain'],
+  ['fas fa-shopping-cart', 'E-commerce', 'ecommerce'],
+  ['far fa-heart', 'Medicine', 'medicine'],
+  ['fas fa-medal', 'Military', 'military'],
+  ['fas fa-plane-departure', 'Travel', 'travel'],
+  ['fas fa-cart-arrow-down', 'Martech', 'martech'],
+  ['fas fa-user-md', 'IoT', 'iot'],
+  ['fas fa-truck', 'Logistic', 'logistic'],
+  ['fas fa-seedling', 'Beauty', 'beauty'],
+  ['fas fa-laptop', 'Other', 'other']
+];
+
+export const industryNames = [
+  'all',
+  'fintech',
+  'bloackchain',
+  'ecommerce',
+  'medicine',
+  'military',
+  'travel',
+  'martech',
+  'iot',
+  'logistic',
+  'beauty',
+  'other'
+];
+
+export const seniority = [
+  ['Junior', 'junior'],
+  ['Mid', 'mid'],
+  ['Senior', 'senior']
+];
+
+export const seniorityNames = ['all', 'junior', 'mid', 'senior'];
+
+export const employmentType = [
+  ['B2B', 'b2b'],
+  ['Permanent', 'permanent'],
+  ['Mandate contact', 'mandateContact']
+];
+
+export const employmentTypeNames = [
+  'all',
+  'b2b',
+  'permanent',
+  'mandateContact'
 ];

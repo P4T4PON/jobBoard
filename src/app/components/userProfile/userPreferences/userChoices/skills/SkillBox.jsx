@@ -3,7 +3,7 @@ import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Input from '../../Input';
 import { skills } from '../../../../../../constans';
 
-const SkillBox = () => {
+const SkillBox = ({ isDay }) => {
   const [skill, setSkill] = useState('');
   const [showSkill, setShowSkill] = useState(false);
 
@@ -21,9 +21,17 @@ const SkillBox = () => {
   };
 
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading orange-dark'}
+        heading={
+          isDay
+            ? 'preferences-heading orange-dark'
+            : 'preferences-heading preferences-headingNightMode orange-dark'
+        }
         className={'width-100'}
         iconClass={'fab fa-react'}
         title={'Share with us your skills and more tech stack (max 5)'}
@@ -32,7 +40,14 @@ const SkillBox = () => {
         }
       />
       <div className="preferences-jobStatus">
-        <div className="inputStatus-box" onClick={focusInput}>
+        <div
+          className={
+            isDay
+              ? 'inputStatus-box'
+              : 'inputStatus-box inputStatus-boxNightMode'
+          }
+          onClick={focusInput}
+        >
           <Input
             value={skill}
             name={'skill'}

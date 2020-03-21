@@ -37,7 +37,15 @@ const ExpLevel = ({ toggleExpLevel, isDay }) => {
         <i className="fas fa-chevron-down" />
       </div>
 
-      <div className={showExpLevel ? 'expLevel op1' : 'expLevel op0'}>
+      <div
+        className={
+          isDay && showExpLevel
+            ? 'expLevel op1'
+            : isDay === false && showExpLevel
+            ? 'expLevel expLevelNightMode op1'
+            : 'expLevel op0'
+        }
+      >
         <ul className={showExpLevel ? 'op1' : 'op0'}>
           <li onClick={resetExpLevel}>All</li>
           <li onClick={changeExpLevel}>Junior</li>

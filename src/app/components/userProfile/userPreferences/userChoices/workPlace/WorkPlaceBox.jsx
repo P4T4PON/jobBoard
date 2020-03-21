@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Input from '../../Input';
 import { cities } from '../../../../../../constans';
-const WorkPlaceBox = () => {
+const WorkPlaceBox = ({ isDay }) => {
   const [city, setCity] = useState('');
   const [showCities, setShowCities] = useState(false);
 
@@ -20,16 +20,31 @@ const WorkPlaceBox = () => {
   };
 
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading blue'}
+        heading={
+          isDay
+            ? 'preferences-heading blue'
+            : 'preferences-heading preferences-headingNightMode blue'
+        }
         className={'width-100'}
         iconClass={'fas fa-map-marker-alt'}
         title={'Where would you like to work?'}
         paragraph={'Choose as many as you like.'}
       />
       <div className="preferences-jobStatus">
-        <div className="inputStatus-box" onClick={focusInput}>
+        <div
+          className={
+            isDay
+              ? 'inputStatus-box'
+              : 'inputStatus-box inputStatus-boxNightMode'
+          }
+          onClick={focusInput}
+        >
           <Input
             value={city}
             name={'city'}

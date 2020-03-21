@@ -3,17 +3,24 @@
   flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 80px;
+  height: 65px;
   font-weight: 600;
   line-height: 1;
   border-bottom: 1px solid lightgrey;
+  transition: 0.3s ease-out;
 }
 
 .navbar i {
   margin-right: 15px;
 }
 
-h2 {
+.navbarNightMode {
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  border-bottom: 1px solid rgb(57, 57, 57);
+  transition: 0.3s ease-out;
+}
+
+.navbar h2 {
   margin-right: 30px;
   font-weight: normal;
   font-size: 17px;
@@ -42,6 +49,7 @@ h2 {
   flex-direction: row;
   align-items: center;
   margin-right: 70px;
+  height: 100%;
 }
 
 .nav-right a:link {
@@ -82,13 +90,11 @@ h2 {
 }
 
 .bars {
-  margin-top: 24px;
   font-size: 20px;
-  margin-left: 20px;
 }
 
 .fas.fa-bars {
-  margin-top: 5px;
+  margin-right: 5px;
 }
 
 .title {
@@ -96,6 +102,12 @@ h2 {
   margin-right: 40px;
   color: #37474f;
   fill: #37474f;
+  transition: 0.3s ease-out;
+}
+
+.titleNightMode {
+  color: rgb(183, 196, 208);
+  transition: 0.3s ease-out;
 }
 
 .navbar a:hover {
@@ -132,10 +144,9 @@ a:active {
 }
 
 .side-bar {
-  border: 1px solid lightgrey;
   border-radius: 5px;
   position: absolute;
-  top: 100px;
+  top: 80px;
   right: 70px;
   background-color: white;
   width: 320px;
@@ -143,8 +154,12 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 2px 2px #888888;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 24px 0;
   z-index: 200;
+}
+
+.side-barNightMode {
+  background-color: rgb(76, 80, 82);
 }
 
 .display-none {
@@ -207,13 +222,19 @@ a:active {
 }
 
 .user-panel {
-  border-left: 1px solid rgb(229, 234, 243);
-  border-right: 1px solid rgb(229, 234, 243);
+  border: rgb(229, 234, 243) solid;
+  border-width: 0px 1px;
   display: flex;
   align-self: stretch;
   -moz-box-align: center;
   align-items: center;
-  height: 80px;
+  height: 100%;
+  transition: 0.3s ease-out;
+}
+
+.user-panelNightMode {
+  border-color: rgb(57, 57, 57);
+  transition: 0.3s ease-out;
 }
 
 .userPanel-content {
@@ -290,6 +311,10 @@ a:active {
   z-index: 200;
 }
 
+.userPanel-sidebarNightMode {
+  background: rgb(76, 80, 82);
+}
+
 .sb-userProfile {
   border-radius: 5px;
   justify-content: space-around;
@@ -300,7 +325,7 @@ a:active {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: rgba(255, 204, 221, 0.3);
+  background-color: rgb(255, 227, 237);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -471,4 +496,13 @@ a:active {
 
 .marg0 {
   margin: 0 !important;
+}
+
+.sb-linkNightMode {
+  border: 1px solid rgb(57, 57, 57);
+  color: rgb(183, 196, 208);
+}
+
+.sb-linkNightMode:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }

@@ -1,15 +1,13 @@
-import React, { useState, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import BackDrop from '../backdrop/Backdrop';
 import './SideDrawer.css';
 import SideLink from './SideLink';
-import { contactInfo, sideLink } from '../../../constans';
+import { sideLink } from '../../../constans';
+import { useSelector } from 'react-redux';
+import NightMode from '../jobOffers/NightMode';
 
 const SideDrawer = props => {
-  const [contact, setContact] = useState(false);
-
-  let renderContactInfo = () => {
-    return contactInfo.map((contact, index) => <p key={index}>{contact}</p>);
-  };
+  const isDay = useSelector(state => state.isDay);
 
   const renderBackdrop = () => {
     if (props.menu_active) {
@@ -33,8 +31,19 @@ const SideDrawer = props => {
     <Fragment>
       {' '}
       {renderBackdrop()}
-      <nav className={`side-drawer ${props.menu_active ? 'open' : null}`}>
+      <nav
+        className={
+          isDay
+            ? `side-drawer ${props.menu_active ? 'open' : null}`
+            : `side-drawer side-drawerNightMode ${
+                props.menu_active ? 'open' : null
+              }`
+        }
+      >
         <h1>justjoin.it</h1>
+        <div className="input-laneCenterer">
+          <div className="input-line"></div>
+        </div>
         <ul>
           <SideLink
             link={'/users/sign_in'}
@@ -42,15 +51,8 @@ const SideDrawer = props => {
             text={'Employer Panel'}
           />
           {renderSideLinks()}
-          <SideLink
-            iconClass={'fas fa-envelope'}
-            text={'Contact Info'}
-            setContact={() => setContact(!contact)}
-          />
         </ul>
-        <div className={contact ? 'contact-info' : 'contact-info display-none'}>
-          {renderContactInfo()}
-        </div>
+        <NightMode noIcon={true} />
       </nav>
     </Fragment>
   );

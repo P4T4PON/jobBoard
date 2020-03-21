@@ -1,6 +1,6 @@
 .sidebar-offers {
   width: 50%;
-  height: calc(100vh - 216px);
+  height: calc(100vh - 200px);
   background-color: #f3f6f8;
   overflow: auto;
   scroll-behavior: smooth;
@@ -9,7 +9,7 @@
 
 .sidebar-offersNightMode {
   width: 50%;
-  height: calc(100vh - 216px);
+  height: calc(100vh - 200px);
   background-color: rgb(57, 57, 57);
   overflow: auto;
   scroll-behavior: smooth;

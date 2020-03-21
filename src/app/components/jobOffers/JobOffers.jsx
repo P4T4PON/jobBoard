@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { day } from '../../actions/index';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './JobOffers.css';
 import Sidebar from './sidebar/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -10,7 +9,6 @@ import CompanyProfile from './companyProfile/CompanyProfile';
 
 const JobOffers = () => {
   const isDay = useSelector(state => state.isDay);
-  const dispatch = useDispatch();
 
   const [link, setLink] = useState('');
   const [title, setTitle] = useState('');

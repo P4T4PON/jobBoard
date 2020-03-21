@@ -6,8 +6,10 @@ import UserDetails from './UserDetails';
 import YearsBox from './YearsBox';
 import SubmitButton from '../../additions/SubmitButton';
 import { yearsBox } from '../../../../constans';
+import { useSelector } from 'react-redux';
 
 const UserProfile = () => {
+  const isDay = useSelector(state => state.isDay);
   const [active, setActive] = useState(0);
   const [panelActive] = useState(1);
   const [userName, setUserName] = useState('TestUser');
@@ -50,6 +52,7 @@ const UserProfile = () => {
         toggleActive={() => setActive(index + 1)}
         active={active}
         paragraph={box}
+        isDay={isDay}
       />
     ));
   };
@@ -57,14 +60,30 @@ const UserProfile = () => {
   return (
     <div className="userLogin-content vw-99">
       <UserPanel active={panelActive} />
-      <div className="userLogin-container">
-        <div className="userLoginContainer-content">
+      <div
+        className={
+          isDay
+            ? 'userLogin-container'
+            : 'userLogin-container userLogin-containerNightMode'
+        }
+      >
+        <div
+          className={
+            isDay
+              ? 'userLoginContainer-content'
+              : 'userLoginContainer-content userLoginContainer-contentNightMode'
+          }
+        >
           <h1>
             My profile <p>Complete your profile & apply with just one click!</p>
           </h1>
           <form className="myProfile-content">
             <UserDetails
-              className={'userDetails-content'}
+              className={
+                isDay
+                  ? 'userDetails-content'
+                  : 'userDetails-content userDetails-contentNightMode'
+              }
               title={'USER DETAILS'}
               content={
                 <Fragment>
@@ -80,7 +99,11 @@ const UserProfile = () => {
                   <div className="myProfile-input">
                     <AnimatedInput
                       divClass={'display-none'}
-                      className={'cont upi'}
+                      className={
+                        isDay
+                          ? 'cont upi'
+                          : 'cont contNightMode upi upiNightMode'
+                      }
                       type={'text'}
                       name={'userName'}
                       value={userName}
@@ -90,7 +113,11 @@ const UserProfile = () => {
 
                     <AnimatedInput
                       divClass={'display-none'}
-                      className={'cont upi'}
+                      className={
+                        isDay
+                          ? 'cont upi'
+                          : 'cont contNightMode upi upiNightMode'
+                      }
                       type={'text'}
                       name={'userSurname'}
                       value={userSurname}
@@ -100,7 +127,11 @@ const UserProfile = () => {
 
                     <AnimatedInput
                       divClass={'display-none'}
-                      className={'cont upi pointerEventsNone'}
+                      className={
+                        isDay
+                          ? 'cont upi pointerEventsNone '
+                          : 'cont contNightMode upi pointerEventsNone upiNightMode'
+                      }
                       type={'text'}
                       name={'userEmail'}
                       value={userEmail}
@@ -110,7 +141,11 @@ const UserProfile = () => {
 
                     <AnimatedInput
                       divClass={'display-none'}
-                      className={'cont upi'}
+                      className={
+                        isDay
+                          ? 'cont upi'
+                          : 'cont contNightMode upi upiNightMode'
+                      }
                       type={'text'}
                       name={'userCity'}
                       value={userCity}
@@ -118,7 +153,13 @@ const UserProfile = () => {
                       span={'City'}
                     />
 
-                    <div className="cont upi bigg-input">
+                    <div
+                      className={
+                        isDay
+                          ? 'cont upi bigg-input'
+                          : 'cont upi upiNightMode bigg-input bigg-inputNightMode'
+                      }
+                    >
                       <div className="big-input">
                         <textarea
                           type="text"
@@ -143,7 +184,11 @@ const UserProfile = () => {
 
             <div className="uploadCV">
               <UserDetails
-                className={'uploadCV-content'}
+                className={
+                  isDay
+                    ? 'uploadCV-content'
+                    : 'uploadCV-content uploadCV-contentNightMode'
+                }
                 title={'UPLOAD CV'}
                 content={
                   <Fragment>
@@ -151,7 +196,11 @@ const UserProfile = () => {
                     <AnimatedInput
                       divClass={'margTop20'}
                       iconClass={'fab fa-linkedin media-icon color-blue fs40'}
-                      className={'cont margTop20'}
+                      className={
+                        isDay
+                          ? 'cont margTop20'
+                          : 'cont contNightMode upiNightMode margTop20'
+                      }
                       type={'text'}
                       name={'linkedin'}
                       value={userLinkedin}
@@ -179,7 +228,11 @@ const UserProfile = () => {
               />
 
               <UserDetails
-                className={'yearsOfExperiance-content'}
+                className={
+                  isDay
+                    ? 'yearsOfExperiance-content'
+                    : 'yearsOfExperiance-content yearsOfExperiance-contentNightMode'
+                }
                 title={'YEARS OF EXPERIANCE'}
                 paragraph={'How many years of experience do you have?'}
                 content={
@@ -192,13 +245,19 @@ const UserProfile = () => {
               />
 
               <UserDetails
-                className={'socialLinks-content'}
+                className={
+                  isDay
+                    ? 'socialLinks-content'
+                    : 'socialLinks-content socialLinks-contentNightMode'
+                }
                 title={'SOCIAL LINKS'}
                 content={
                   <Fragment>
                     <AnimatedInput
                       iconClass={'fab fa-github media-icon color-black fs40'}
-                      className={'cont'}
+                      className={
+                        isDay ? 'cont' : 'cont upiNightMode contNightMode'
+                      }
                       type={'text'}
                       name={'Github'}
                       value={userGithub}

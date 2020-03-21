@@ -354,6 +354,17 @@
   display: flex;
 }
 
+.night-modeMargin0 {
+  float: left;
+  display: flex;
+}
+
+.night-modeMargin0 {
+  float: left;
+  margin: 0;
+  display: flex;
+}
+
 .night-mode i {
   margin: 0;
   margin-left: 10px;
@@ -413,10 +424,13 @@
     0 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
+.expLevelNightMode {
+  background-color: #4c5052;
+}
+
 .op0 {
   opacity: 0;
   z-index: -200;
-  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
@@ -442,6 +456,7 @@
   font-size: 16px;
   padding-top: 4px;
   padding-bottom: 4px;
+  border-radius: 4px;
   cursor: pointer;
   width: 100%;
   text-align: center;
@@ -449,6 +464,10 @@
 
 .expLevel li:hover {
   background-color: #f3f6f8;
+}
+
+.expLevelNightMode li:hover {
+  background-color: rgb(57, 57, 57);
 }
 
 .min-width120 {

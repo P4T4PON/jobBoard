@@ -6,13 +6,18 @@ export const JobStatus = ({
   span2,
   jobStatusId,
   jobStatusActive,
-  setJobStatusActive
+  setJobStatusActive,
+  isDay
 }) => {
   return (
     <div
       className={
-        jobStatusId === jobStatusActive
+        jobStatusId === jobStatusActive && isDay
           ? 'jobStatus-change border-pink mr-20'
+          : jobStatusId === jobStatusActive && isDay === false
+          ? 'jobStatus-change  border-pink mr-20'
+          : isDay === false
+          ? 'jobStatus-change jobStatus-changeNightMode mr-20'
           : 'jobStatus-change mr-20'
       }
       onClick={setJobStatusActive}

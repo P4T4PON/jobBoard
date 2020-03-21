@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import { JobStatus } from './JobStatus';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
-const JobStatusBox = () => {
+const JobStatusBox = ({ isDay }) => {
   const [jobStatusActive, setJobStatusActive] = useState(1);
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading'}
+        heading={
+          isDay
+            ? 'preferences-heading'
+            : 'preferences-heading preferences-headingNightMode'
+        }
         className={'jobStatus-box'}
         iconClass={'far fa-eye'}
         title={"Ok, let's start! What is your status in job search?"}
@@ -23,6 +31,7 @@ const JobStatusBox = () => {
             setJobStatusActive={() => setJobStatusActive(1)}
             jobStatusActive={jobStatusActive}
             jobStatusId={1}
+            isDay={isDay}
           />
           <JobStatus
             icon={'fas fa-envelope-open-text'}
@@ -31,6 +40,7 @@ const JobStatusBox = () => {
             setJobStatusActive={() => setJobStatusActive(2)}
             jobStatusActive={jobStatusActive}
             jobStatusId={2}
+            isDay={isDay}
           />
           <JobStatus
             icon={'fas fa-unlock-alt'}
@@ -39,6 +49,7 @@ const JobStatusBox = () => {
             setJobStatusActive={() => setJobStatusActive(3)}
             jobStatusActive={jobStatusActive}
             jobStatusId={3}
+            isDay={isDay}
           />
         </div>
       </div>

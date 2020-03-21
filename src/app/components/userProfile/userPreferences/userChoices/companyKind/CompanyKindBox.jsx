@@ -3,7 +3,7 @@ import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Tile from '../../Tile';
 import { companyKind, companyKindNames } from '../../../../../../constans';
 
-const CompanyKindBox = () => {
+const CompanyKindBox = ({ isDay }) => {
   const [tiles, setTiles] = useState({
     all: false,
     startup: false,
@@ -56,14 +56,23 @@ const CompanyKindBox = () => {
           kind[2] === 'all' ? resetAllTiles : () => handleTileChange(kind[2])
         }
         active={tiles[kind[2]]}
+        isDay={isDay}
       />
     ));
   };
 
   return (
-    <div className="preferences-box">
+    <div
+      className={
+        isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+      }
+    >
       <UserPreferencesHeader
-        heading={'preferences-heading red'}
+        heading={
+          isDay
+            ? 'preferences-heading red'
+            : 'preferences-heading preferences-headingNightMode red'
+        }
         className={''}
         iconClass={'fas fa-city'}
         title={'For what kind of company would you like to work for'}
