@@ -45,7 +45,7 @@
   margin-right: 40px;
 }
 .mar {
-  margin-right: 30px !important;
+  margin-right: 30px;
 }
 .side-drawer li:hover {
   background-color: #f2f2f2;
@@ -67,7 +67,7 @@
 .side-drawer a:hover,
 .side-drawer a:active {
   cursor: pointer;
-  color: #737373 !important;
+  color: #737373;
 }
 
 .side-drawer h1 {
