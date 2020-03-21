@@ -1,10 +1,27 @@
 import React from 'react';
 import './Backdrop.css';
-
-//wyjaśnij mi proszę, dlaczego tutaj zwracasz po prostu pustego diva? I zastanów się jakbyś mógł to zrobić inaczej
+import { test } from '../../actions/index';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Backdrop = ({ toggleMenu }) => {
-  return <div className="backdrop" onClick={toggleMenu} />;
+  const isTest = useSelector(state => state.isTest);
+  const dispatch = useDispatch();
+
+  const toggleTest = () => {
+    if (isTest === true) {
+      document.getElementById('body').className = 'overflow-hidden';
+    } else if (isTest === false) {
+      document.getElementById('body').className = 'overflow-visible';
+    }
+  };
+  return (
+    <div
+      className="backdrop"
+      onClick={toggleMenu}
+      onMouseDown={() => dispatch(test())}
+      onMouseUp={toggleTest}
+    />
+  );
 };
 
 export default Backdrop;

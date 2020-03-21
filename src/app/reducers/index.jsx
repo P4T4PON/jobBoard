@@ -6,7 +6,7 @@ import { brandsReducer } from './brands';
 import { dayNightReducer } from './dayNight';
 
 const allReducers = combineReducers({
-  test: testReducer,
+  isTest: testReducer,
   active: activeReducer,
   isLogged: loginReducer,
   IsBrands: brandsReducer,

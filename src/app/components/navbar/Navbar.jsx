@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import SideDrawer from '../sideDrawer/SideDrawer';
 import ContactUs from './contactUs/ContactUs';
 import Roads from '../navbar/roads/Roads';
 import './Navbar.css';
 import UserPanelBox from './userPanel/UserPanelBox';
+import { test } from '../../actions/index';
 
 const Navbar = () => {
   const isDay = useSelector(state => state.isDay);
+  const isTest = useSelector(state => state.isTest);
+  const dispatch = useDispatch();
 
   const [menu_active, setMenu_active] = useState(false);
   const [brands, setBrands] = useState(false);
@@ -25,6 +28,14 @@ const Navbar = () => {
     setContactUs(newContact);
   };
 
+  const toggleTest = () => {
+    if (isTest === true) {
+      document.getElementById('body').className = 'overflow-hidden';
+    } else if (isTest === false) {
+      document.getElementById('body').className = 'overflow-visible';
+    }
+  };
+
   return (
     <div className={isDay ? 'navbar' : 'navbar navbarNightMode'}>
       <Roads brands={brands} changeBrands={onBrandsChange} isDay={isDay} />
@@ -36,7 +47,12 @@ const Navbar = () => {
         isDay={isDay}
       />
 
-      <div className="bars hov" onClick={() => setMenu_active(!menu_active)}>
+      <div
+        className="bars hov"
+        onClick={() => setMenu_active(!menu_active)}
+        onMouseUp={toggleTest}
+        onMouseDown={() => dispatch(test())}
+      >
         <i className="fas fa-bars" />
       </div>
 
