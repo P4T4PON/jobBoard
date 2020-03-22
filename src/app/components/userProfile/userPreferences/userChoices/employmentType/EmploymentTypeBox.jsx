@@ -5,7 +5,7 @@ import {
   employmentType,
   employmentTypeNames
 } from '../../../../../../constans';
-
+//duplikacja kodu
 const EmploymentTypeBox = () => {
   const [tiles, setTiles] = useState({
     all: false,

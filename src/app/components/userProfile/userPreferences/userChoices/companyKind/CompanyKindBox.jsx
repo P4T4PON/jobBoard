@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
 import Tile from '../../Tile';
 import { companyKind, companyKindNames } from '../../../../../../constans';
-
+//pokazuje Ci tutaj zduplikowany fragment kodu z kompany stage, pamiętaj o zasadzie DRY :D
 const CompanyKindBox = () => {
   const [tiles, setTiles] = useState({
     all: false,
@@ -23,6 +23,7 @@ const CompanyKindBox = () => {
     if (activatedTiles.length === 0) {
       newTiles['all'] = true;
       setTiles({ ...newTiles });
+    //  todo: uważaj na koercje
     } else if (activatedTiles.length > 1 && newTiles['all'] != false) {
       newTiles['all'] = false;
       setTiles({ ...newTiles });
@@ -36,7 +37,6 @@ const CompanyKindBox = () => {
       ...newTiles
     });
   };
-
   const resetAllTiles = () => {
     for (let i = 0; i < companyKindNames.length; i++) {
       tiles[companyKindNames[i]] = false;
