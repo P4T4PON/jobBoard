@@ -1,3 +1,6 @@
+// ewidentnie jest to jakiś wygenerowany kawałek kodu w es5, co to jest i o co wgl chodzi z tym varami tutaj??????????
+// poprawnie to to nie jest Panie kolego :O
+
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
