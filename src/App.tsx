@@ -19,6 +19,7 @@ import UserSettings from './app/components/userProfile/userSettings/UserSettings
 // https://reacttraining.com/react-router/web/guides/quick-start <- zobacz jak powinien byc zbudowany poprawnie router
 // niepotrzbnie az tyle switchy uzywasz, w renderze masz nieuzywane propsy i przekazujesz komponentu w react fragmencie, jest
 // to zla praktyka i niepotrzebny element.
+// w renderze masz nieuzywany parametr "props"
 const App = () => {
   return (
     <div>

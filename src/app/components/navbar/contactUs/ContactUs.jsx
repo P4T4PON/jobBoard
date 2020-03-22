@@ -19,7 +19,8 @@ const ContactUs = ({ newContactUs }) => {
     setCompanyName('');
     setPhone('');
   };
-
+  //co robi tan funkcja, czym jest etpid i dlaczego łapiesz po id parent elementu????
+  // dodatkowo masz tutaj baaardzo zawiłą plątaninę ifów. pomyśl Panie jakby to można było hycnąć poprawnie ,pamiętaj o googlowaniu :]
   const toggleInput = event => {
     const etv = event.target.value;
     const etpid = event.target.parentElement.id;

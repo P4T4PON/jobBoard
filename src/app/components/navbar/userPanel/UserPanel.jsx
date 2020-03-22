@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO: pusty div moze byc domkniety
 const UserPanel = ({ setUserPanel_active, isDay }) => {
   return (
     <div className={isDay ? 'user-panel' : 'user-panel user-panelNightMode'}>

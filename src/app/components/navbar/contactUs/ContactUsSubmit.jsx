@@ -7,6 +7,7 @@ const ContactUsSubmit = ({ everythingOk, checkAllInputs }) => {
         className={everythingOk ? 'display-none' : 'contactUs-submit'}
         onClick={checkAllInputs}
       >
+          {/*TODO: tag i do poprawy*/}
         CONTACT US <i className="far fa-paper-plane"></i>
       </div>
     </div>

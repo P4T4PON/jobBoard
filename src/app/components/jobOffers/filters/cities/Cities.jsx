@@ -46,7 +46,7 @@ const Cities = ({ toggleAllCities }) => {
       />
     ));
   };
-
+  //TODO: rownież manipulacja DOM bezpośrednia
   const addCity = city => {
     document.querySelector('.added-city').firstChild.innerText = city;
     document

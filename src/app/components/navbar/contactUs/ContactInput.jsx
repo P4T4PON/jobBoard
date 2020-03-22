@@ -10,6 +10,7 @@ const ContactInput = ({
 }) => {
   return (
     <div className="input brands-i">
+      {/*  niesamowicie skomplikowany łańcuszek tylko do zmiany klasy o.O*/}
       <i
         className={
           activeInput === false && value === ''

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+//todo: import do wyrzucenia
+//todo: zobacz na bledy ktore Ci tutaj podkreśla IDE,
 
 const UserPanelSidebar = () => {
   return (

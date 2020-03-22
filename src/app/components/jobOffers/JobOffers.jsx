@@ -6,7 +6,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Cities from './filters/cities/Cities';
 import Technologies from './filters/technologies/Technologies';
 import CompanyProfile from './companyProfile/CompanyProfile';
-
+/*
+  TODO: To jest przeogromny komponent, ktory sam zobacz ile ma State'ow, zastanow sie jak mozna go zmodyfikowac, zeby bylo przejrzyscie, bo ten kod jest bardzo nieczytelny
+*/
 const JobOffers = () => {
   const isDay = useSelector(state => state.isDay);
 
@@ -32,6 +34,7 @@ const JobOffers = () => {
   const [technology, setTechnology] = useState('');
   const [expLevel, setExpLevel] = useState('');
 
+  //TODO: Popatrz ile argumentów ta funkcja przyjmuje i co robi i zastanów się, jak można napisać to lepiej, czytelniej
   const toggleProfile = (
     newLink,
     newTitle,
@@ -82,7 +85,7 @@ const JobOffers = () => {
   const toggleExpLevel = newExpLevel => {
     setExpLevel(newExpLevel);
   };
-
+  //TODO: ponownie tutaj implementujesz Router, to jest baardzo baaardzo zła praktyka -> wczytaj się prosze w temat używania router'a
   return (
     <div className="main-content">
       <div className={isDay ? 'sub-header' : 'sub-headerNightMode'}>

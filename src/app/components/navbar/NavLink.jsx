@@ -8,6 +8,7 @@ const NavLink = props => {
       onClick={props.fooOnClick}
     >
       <h2 className={props.active ? 'hov txt active' : 'hov txt'}>
+        {/*todo: tag i xd*/}
         <i className={props.iconClass}></i>
         {props.text}
       </h2>

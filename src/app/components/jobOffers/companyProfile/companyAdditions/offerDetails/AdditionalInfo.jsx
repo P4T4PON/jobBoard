@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+//nieuzywany import
 
 const AdditionalInfo = ({ name, companyAddress }) => {
   return (

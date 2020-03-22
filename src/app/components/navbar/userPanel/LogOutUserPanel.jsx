@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 const LogOutUserPanel = () => {
   const isDay = useSelector(state => state.isDay);
+  //nieuzywasz brands
   const [brands, setBrands] = useState(false);
   const [sideBar_active, setSideBar_active] = useState(false);
   return (

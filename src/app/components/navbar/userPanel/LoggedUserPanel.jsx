@@ -5,6 +5,7 @@ import UserPanel from './UserPanel';
 import UserPanelLink from './UserPanelLink';
 
 const LoggedUserPanel = ({ isDay }) => {
+  //  nieuzywasz tutaj nigdzie brands
   const [brands, setBrands] = useState(false);
   const [userPanel_active, setUserPanel_active] = useState(false);
 

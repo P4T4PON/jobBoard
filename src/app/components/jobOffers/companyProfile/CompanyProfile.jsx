@@ -39,7 +39,7 @@ const CompanyProfile = ({
   const toggleUserStory = event => {
     setUserStory(event.target.value);
   };
-
+  //TODO: tutaj lapiesz elementy DOM bezposrednio Reactem co zaprzecza sensowi Reacta (virtual DOM) i nigdy nie manipulujemy tak elementami DOM przy React'ie
   const toggleOverflow = () => {
     document.querySelector('.sidebar-offers').scrollTop = 1000;
   };

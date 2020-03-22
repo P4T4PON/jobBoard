@@ -59,7 +59,7 @@ const Navbar = () => {
       <SideDrawer menu_active={menu_active} toggleMenu={toggleMenu} />
 
       <ContactUs newContactUs={contactUs} />
-
+      {/*todo: domknij div'a Panie kolego :D*/}
       {contactUs ? (
         <div
           className="backdrop"

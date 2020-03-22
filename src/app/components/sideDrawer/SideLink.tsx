@@ -7,6 +7,8 @@ interface Props {
   iconClass: string;
   text: string;
 }
+//TODO: tutaj Ci typescript już sam podopowiada, że przypisujesz zły typ bo próbujesz booleana dać i dokładnie Ci pisze dlaczego, takie coś wykorzystuj jako wskazówkę a nie problem ;)
+//TODO: domknij tag i chłopie :D
 
 // Type 'boolean' is not assignable to type '((event: MouseEvent<HTMLLIElement, MouseEvent>) => void) | undefined'.
 
