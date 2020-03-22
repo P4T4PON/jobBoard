@@ -21,6 +21,10 @@
   top: 20px;
 }
 
+.userLogin-sidebarContentNightMode {
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+}
+
 .userLogin-img {
   box-shadow: rgba(0, 0, 0, 0.08) 0 6px 13px 0;
   color: rgb(255, 255, 255);
@@ -126,6 +130,10 @@
   border-radius: 5px;
 }
 
+.userLogin-jobStatusChangerNightMode {
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+}
+
 .userLogin-jobStatusChanger ul {
   width: 100%;
   height: 100%;
@@ -138,7 +146,7 @@
 }
 
 .userLogin-jobStatusChanger li {
-  padding: 4px 16px 4px 16px;
+  padding: 4px 16px 4px 9px;
   font-size: 16px;
   list-style-type: none;
   width: 90%;
@@ -210,7 +218,6 @@
   -moz-box-flex: 1;
   flex-grow: 1;
   padding: 20px;
-  position: relative;
   max-width: calc(100% - 220px);
 }
 
@@ -693,10 +700,7 @@
 .pink-button:hover {
   background-color: #990033;
 }
-/*co czego jest Ci potrzebne 99vw?*/
-.vw-99 {
-  width: 99vw;
-}
+
 /*czy koniecznoscia jest tworzenie specjalnych klas do nadawania tylko 20 marginu, lepiej to w komponencie reaktowym ostylowac odpowiednio wrappery elementow*/
 .margTop20 {
   margin-top: 20px;

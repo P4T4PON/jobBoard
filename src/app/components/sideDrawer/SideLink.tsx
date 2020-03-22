@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 interface Props {
   link: string;
-  target: any;
-  setContact: any;
+  target?: string;
+  setContact?: MouseEventHandler;
   iconClass: string;
   text: string;
 }
-
-// Type 'boolean' is not assignable to type '((event: MouseEvent<HTMLLIElement, MouseEvent>) => void) | undefined'.
 
 const SideLink: React.FC<Props> = ({
   link,

@@ -58,7 +58,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="userLogin-content vw-99">
+    <div className="userLogin-content">
       <UserPanel active={panelActive} />
       <div
         className={

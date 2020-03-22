@@ -28,7 +28,6 @@ const SideDrawer: React.FC<Props> = props => {
         iconClass={link[1]}
         text={link[2]}
         key={index}
-        setContact
       />
     ));
   };
@@ -55,8 +54,6 @@ const SideDrawer: React.FC<Props> = props => {
             link={'/users/sign_in'}
             iconClass={'fas fa-suitcase'}
             text={'Employer Panel'}
-            target
-            setContact
           />
           {renderSideLinks()}
         </ul>

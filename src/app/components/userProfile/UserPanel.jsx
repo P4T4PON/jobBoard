@@ -56,8 +56,10 @@ const UserPanel = props => {
         )}
         <div
           className={
-            showStatus
+            showStatus && isDay
               ? 'userLogin-jobStatusChanger'
+              : showStatus && isDay === false
+              ? 'userLogin-jobStatusChanger userLogin-jobStatusChangerNightMode'
               : 'userLogin-jobStatusChanger display-none'
           }
         >

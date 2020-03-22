@@ -94,6 +94,11 @@
   justify-content: center;
 }
 
+.offer-apply h2 {
+  font-size: 1rem;
+  margin-right: 25px;
+}
+
 .offer-apply i {
   margin-right: 5px;
   margin-left: 25px;
