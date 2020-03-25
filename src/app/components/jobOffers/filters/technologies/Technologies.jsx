@@ -27,6 +27,7 @@ const Technologies = ({ toggleAllTechnologies, toggleExpLevel }) => {
         active={active}
         allTechnologies={allTechnologies}
         paragraph={tech[2]}
+        isDay={isDay}
       />
     ));
   };

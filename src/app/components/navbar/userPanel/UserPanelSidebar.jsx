@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+//todo: zobacz na bledy ktore Ci tutaj podkreśla IDE,
 
-const UserPanelSidebar = () => {
+const UserPanelSidebar = (event) => {
   return (
     <div
       className={
         userPanel_active
-          ? 'userPanel-sidebar'
+          ? 'userPanel-sidebar '
           : 'userPanel-sidebar display-none'
       }
     >

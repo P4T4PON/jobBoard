@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactElement } from 'react';
 import BackDrop from '../backdrop/Backdrop';
 import './SideDrawer.css';
 import SideLink from './SideLink';
@@ -6,22 +6,23 @@ import { sideLink } from '../../../constans';
 import { useSelector } from 'react-redux';
 import NightMode from '../jobOffers/NightMode';
 
-interface Props {
+interface SideDrawerProps {
   menu_active: boolean;
   toggleMenu: boolean;
 }
 
-const SideDrawer: React.FC<Props> = props => {
+const SideDrawer: React.FC<SideDrawerProps> = ({ menu_active, toggleMenu }: SideDrawerProps): ReactElement => {
   const isDay = useSelector<any, any>(state => state.isDay);
 
   const renderBackdrop = () => {
-    if (props.menu_active) {
-      return <BackDrop toggleMenu={props.toggleMenu} />;
+    if (menu_active) {
+      return <BackDrop toggleMenu={toggleMenu} />;
     }
   };
 
   const renderSideLinks = () => {
     return sideLink.map((link: string[], index: number) => (
+      //  todo: tutaj Ci IDE daje pewną wskazówkę jak najedziesz na komponent... ;)
       <SideLink
         link={link[0]}
         target={'blanc'}
@@ -34,20 +35,17 @@ const SideDrawer: React.FC<Props> = props => {
 
   return (
     <Fragment>
-      {' '}
       {renderBackdrop()}
       <nav
         className={
           isDay
-            ? `side-drawer ${props.menu_active ? 'open' : null}`
-            : `side-drawer side-drawerNightMode ${
-                props.menu_active ? 'open' : null
-              }`
+            ? `sideDrawer ${menu_active ? 'open' : null}`
+            : `sideDrawer sideDrawerNightMode ${menu_active ? 'open' : null}`
         }
       >
         <h1>justjoin.it</h1>
-        <div className="input-laneCenterer">
-          <div className="input-line"></div>
+        <div className="inputLaneCenterer">
+          <div className="inputLine" />
         </div>
         <ul>
           <SideLink

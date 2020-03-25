@@ -119,11 +119,11 @@
   text-decoration: none;
 }
 
-a:visited {
+.navbar a:visited {
   color: #99a1ab;
 }
 
-a:active {
+.navbar a:active {
   color: #ff4081;
 }
 

@@ -1,27 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CompanyProfile.css';
 import CompanySpec from './companyAdditions/specBox/CompanySpec';
 import OfferDetails from './companyAdditions/offerDetails/OfferDetails';
 import AnimatedInput from '../../additions/AnimatedInput';
 import Checkbox from '../../additions/Checkbox';
 import AdditionalInfo from './companyAdditions/offerDetails/AdditionalInfo';
+import { companyOffers } from '../../../../constans';
+
 
 const CompanyProfile = ({
-  min,
-  max,
-  img,
-  companyName,
-  companyAddress,
-  bgColor,
-  name,
-  companyLink,
-  companySize,
-  companyType,
-  exp,
-  age,
-  offerDetail,
-  companyDescription,
-  remote
+  profile
 }) => {
   const [compName, setCompName] = useState('');
   const [email, setEmail] = useState('');
@@ -40,60 +28,72 @@ const CompanyProfile = ({
     setUserStory(event.target.value);
   };
 
-  const toggleOverflow = () => {
-    document.querySelector('.sidebar-offers').scrollTop = 1000;
-  };
+  // const toggleOffer = () => {
+  //   return companyOffers.map((offer) => {
+  //     { setOffers(offer) }
+  //   });
+  // };
 
-  const toggleOffer = () => {
-    console.log(offerDetail);
-  };
+  // setData(companyOffers)
+  // console.log(window.location.pathname)
+  // console.log(companyOffers);
+  // console.log(profile)
+
+  // for (let i = 0; i < companyOffers.length; i++) {
+  //   if (window.location.pathname === companyOffers[i].link) {
+  //     setData(companyOffers[i])
+  //   }
+
+  // const test = () => {
+  //   console.log(data.)
+  // }
 
   const renderDetails = () => {
-    return offerDetail.map((detail, index) => (
+    return profile.companyOfferDetails.map((detail, index) => (
       <OfferDetails key={index} level={detail[0]} description={detail[1]} />
     ));
   };
 
   return (
     <div className="sidebar-offers">
-      {toggleOffer()}
       <div className="offer-details">
         <div className="offer-header">
-          <div className={`offer-backgorund ${bgColor}`}>
+          <div className={`offer-backgorund ${profile.bgColor}`}>
             <div className="offer-content">
               <div className="offer-imgBox">
                 <div className="offer-img">
-                  <img src={img} />
+                  <img src={profile.img} />
                 </div>
               </div>
               <div className="offer-info">
                 <div className="offer-salary">
-                  {min} - {max} net/month
+                  {profile.min} - {profile.max} net/month
                 </div>
                 <div className="offer-remoteUp">
-                  <h1>{companyName}</h1>
-                  <div className={remote ? 'offer-remote' : 'display-none'}>
+                  <h1>{profile.companyName}</h1>
+                  <div className={profile.remote ? 'offer-remote' : 'display-none'}>
                     Remote
                   </div>
                 </div>
-                <h2>{companyAddress}</h2>
+                <h2>{profile.companyAddress}</h2>
               </div>
 
-              <div className="offer-apply" onClick={toggleOverflow}>
+              <div className="offer-apply">
                 <i className="fas fa-envelope" />
-                <h2>Apply</h2>
+                <a href='#ua'><h2>Apply</h2> </a>
               </div>
+
             </div>
             <div className="offer-specBox">
               <CompanySpec
-                companyName={companyName}
-                name={name}
-                companyLink={companyLink}
-                companySize={companySize}
-                companyType={companyType}
-                exp={exp}
-                age={age}
-                offerDetail={offerDetail}
+                companyName={profile.companyName}
+                name={profile.name}
+                companyLink={profile.companyLink}
+                companySize={profile.companySize}
+                companyType={profile.companyType}
+                exp={profile.exp}
+                age={profile.age}
+                offerDetail={profile.offerDetail}
               />
             </div>
           </div>
@@ -108,8 +108,8 @@ const CompanyProfile = ({
           <div className="offer-details-header">description</div>
           <div className="offer-description-box">
             <div className="offer-description-content">
-              <div>{companyDescription}</div>
-              <AdditionalInfo companyAddress={companyAddress} name={name} />
+              <div>{profile.companyDescription}</div>
+              <AdditionalInfo companyAddress={profile.companyAddress} name={profile.name} />
             </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ const CompanyProfile = ({
                 </a>
                 apply.
               </h3>
-              <div className="applyToState">
+              <div className="applyToState" id='ua'>
                 <div className="applyBtn">
                   apply{' '}
                   <div className="apply-dart">

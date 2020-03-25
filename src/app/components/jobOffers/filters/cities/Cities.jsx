@@ -46,7 +46,7 @@ const Cities = ({ toggleAllCities }) => {
       />
     ));
   };
-
+  //TODO: rownież manipulacja DOM bezpośrednia
   const addCity = city => {
     document.querySelector('.added-city').firstChild.innerText = city;
     document
@@ -104,8 +104,8 @@ const Cities = ({ toggleAllCities }) => {
           cityWasChosen && showOtherCities
             ? 'other-cities  move-right'
             : showOtherCities
-            ? 'other-cities'
-            : 'other-cities display-none'
+              ? 'other-cities'
+              : 'other-cities display-none'
         }
       >
         <ul className="otherCities-ul">{toggleOtherCities()}</ul>

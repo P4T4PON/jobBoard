@@ -455,7 +455,7 @@ export const brandTechBtn = [
 
 export const companyOffers = [
   {
-    link: '/offers/Magento',
+    link: '/Offer/Magento',
     img:
       'https://bucket.justjoin.it/offers/company_logos/thumb/7cc777a4e302948fb51ee2603dccaed1a2fca81f.png?1583837309',
 
@@ -485,7 +485,7 @@ export const companyOffers = [
     technology: 'javascript'
   },
   {
-    link: '/offers/Golang',
+    link: '/Offer/Golang',
     img:
       'https://bucket.justjoin.it/offers/company_logos/original/c60585aefe092c6dc92b27ec10d75d47c53e9ef4.jpg?1576666786',
 
@@ -517,7 +517,7 @@ export const companyOffers = [
   },
 
   {
-    link: '/offers/Golang',
+    link: '/Offer/Neoteric',
     img:
       'https://bucket.justjoin.it/offers/company_logos/original/c60585aefe092c6dc92b27ec10d75d47c53e9ef4.jpg?1576666786',
 
@@ -548,7 +548,7 @@ export const companyOffers = [
     technology: '.net'
   },
   {
-    link: '/offers/Golang',
+    link: '/Offer/Kutang',
     img:
       'https://bucket.justjoin.it/offers/company_logos/original/c60585aefe092c6dc92b27ec10d75d47c53e9ef4.jpg?1576666786',
 

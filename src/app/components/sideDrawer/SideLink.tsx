@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
-interface Props {
+interface SideLinkProps {
   link: string;
   target?: string;
   setContact?: MouseEventHandler;
@@ -8,7 +8,7 @@ interface Props {
   text: string;
 }
 
-const SideLink: React.FC<Props> = ({
+const SideLink: React.FC<SideLinkProps> = ({
   link,
   target,
   setContact,
@@ -18,7 +18,7 @@ const SideLink: React.FC<Props> = ({
   return (
     <a href={link} target={target}>
       <li onClick={setContact}>
-        <i className={iconClass}></i>
+        <i className={iconClass} />
         {text}
       </li>
     </a>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ExpLevel = ({ toggleExpLevel, isDay }) => {
   const [showExpLevel, setShowExpLevel] = useState(false);
@@ -26,8 +27,8 @@ const ExpLevel = ({ toggleExpLevel, isDay }) => {
           expLevelChosen
             ? 'city-button min-width120 all'
             : isDay === false
-            ? 'city-buttonNightMode min-width120'
-            : 'city-button min-width120'
+              ? 'city-buttonNightMode min-width120'
+              : 'city-button min-width120'
         }
         id="expLevelButton"
         onClick={() => setShowExpLevel(!showExpLevel)}
@@ -42,19 +43,24 @@ const ExpLevel = ({ toggleExpLevel, isDay }) => {
           isDay && showExpLevel
             ? 'expLevel op1'
             : isDay === false && showExpLevel
-            ? 'expLevel expLevelNightMode op1'
-            : 'expLevel op0'
+              ? 'expLevel expLevelNightMode op1'
+              : 'expLevel op0'
         }
       >
         <ul className={showExpLevel ? 'op1' : 'op0'}>
-          <li onClick={resetExpLevel}>All</li>
-          <li onClick={changeExpLevel}>Junior</li>
-          <li onClick={changeExpLevel}>Mid</li>
-          <li onClick={changeExpLevel}>Senior</li>
+          <Link to='/' className="cityLink" style={linkWidth}><li onClick={resetExpLevel}>All</li></Link>
+          <Link to='/' className="cityLink" style={linkWidth}><li onClick={changeExpLevel}>Junior</li></Link>
+          <Link to='/' className="cityLink" style={linkWidth}><li onClick={changeExpLevel}>Mid</li></Link>
+          <Link to='/' className="cityLink" style={linkWidth}><li onClick={changeExpLevel}>Senior</li></Link>
         </ul>
       </div>
     </div>
   );
 };
+
+const linkWidth = {
+  width: '100%'
+}
+
 
 export default ExpLevel;

@@ -66,7 +66,7 @@ const Navbar = () => {
           onClick={() => {
             setContactUs(false);
           }}
-        ></div>
+        />
       ) : null}
     </div>
   );

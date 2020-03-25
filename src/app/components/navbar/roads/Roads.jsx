@@ -6,6 +6,7 @@ import NavLink from '../NavLink';
 const Roads = ({ changeBrands, isDay }) => {
   const [brandStories_active, setBrandStories_active] = useState(false);
   const [jjit_active, setJjit_active] = useState(true);
+  //nieuzywany state
   const [brands, setBrands] = useState(false);
 
   const isLogged = useSelector(state => state.isLogged);
@@ -56,7 +57,7 @@ const Roads = ({ changeBrands, isDay }) => {
         rel="noopener noreferrer"
       >
         <h2 className="hov">
-          <i className="far fa-newspaper"></i>
+          <i className="far fa-newspaper" />
           Just Geek IT
         </h2>
       </a>

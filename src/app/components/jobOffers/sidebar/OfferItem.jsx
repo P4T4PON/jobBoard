@@ -1,37 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { utils } from '../../../../utils';
 
 const OfferItem = ({
-  img,
-  title,
-  min,
-  max,
-  companyName,
-  companyAddress,
-  age,
-  link,
-  itemBorder,
   toggleProfile,
-  bgColor,
-  name,
-  companyLink,
-  companySize,
-  companyType,
-  exp,
-  offerDetail,
-  companyTags,
-  companyDescription,
   city,
-  remote,
   toggleAllCities,
-  oldTechnology,
   newTechnology,
   expLevel,
-  isDay
+  isDay,
+  offer
 }) => {
   const renderTags = () => {
-    return companyTags.map((tag, index) => (
+    return offer.companyTags.map((tag, index) => (
       <span className={isDay ? 'tag' : 'tagNightMode'} key={index}>
         {tag}
       </span>
@@ -39,15 +19,15 @@ const OfferItem = ({
   };
 
   const tileInFilters = () =>
-    (expLevel === '' || expLevel === exp) &&
-    (newTechnology === '' || oldTechnology === newTechnology) &&
-    (city === companyAddress[1] ||
+    (expLevel === '' || expLevel === offer.exp) &&
+    (newTechnology === '' || offer.technology === newTechnology) &&
+    (city === offer.companyCity ||
       city === '' ||
-      (remote && city === 'Remote') ||
+      (offer.remote && city === 'Remote') ||
       (city === 'Trójmiasto' &&
-        (companyAddress[1] === 'Gdańsk' ||
-          companyAddress[1] === 'Gdynia' ||
-          companyAddress[1] === 'Sopot')));
+        (offer.companyCity === 'Gdańsk' ||
+          offer.companyCity === 'Gdynia' ||
+          offer.companyCity === 'Sopot')));
 
   const filtersEmpty = () =>
     [newTechnology, city, expLevel].every(element => element === '');
@@ -62,37 +42,27 @@ const OfferItem = ({
     return tileClass;
   };
 
+  const test = () => {
+    console.log(city)
+  }
+
   return (
     <div className={tileClasses()}>
-      <div className={`item-border  ${itemBorder}`} />
+      {test()}
+      <div className={`item-border  ${offer.itemBorder}`} />
       <Link
-        to={link}
+        to={offer.link}
+
         onMouseDown={() =>
           toggleProfile(
-            link,
-            title,
-            min,
-            max,
-            img,
-            companyName,
-            companyAddress,
-            bgColor,
-            name,
-            companyLink,
-            companySize,
-            companyType,
-            exp,
-            age,
-            offerDetail,
-            companyDescription,
-            remote
+            offer
           )
         }
         onClick={() => toggleAllCities(city, '/')}
       >
         <div className="item-content">
           <div className="company-logo">
-            <img src={img} />
+            <img src={offer.img} />
           </div>
           <div className="item-row">
             <div className="primary-line">
@@ -101,38 +71,38 @@ const OfferItem = ({
                   isDay ? 'offer-title' : 'offer-title offer-titleNightMode'
                 }
               >
-                {title}
+                {offer.title}
               </span>
-              <div className={remote ? 'remote-up' : 'display-none'}>
+              <div className={offer.remote ? 'remote-up' : 'display-none'}>
                 Remote
               </div>
               <div className="flex-right">
                 <span className="salary-row">
-                  {min} - {max} PLN
+                  {offer.min} - {offer.max} PLN
                 </span>
                 <span
                   className={
-                    isDay === false && age === 'New'
+                    isDay === false && offer.age === 'New'
                       ? 'ageNightMode newNightMode'
                       : isDay === false
-                      ? 'ageNightMode'
-                      : isDay && age === 'New'
-                      ? 'age new'
-                      : 'age'
+                        ? 'ageNightMode'
+                        : isDay && offer.age === 'New'
+                          ? 'age new'
+                          : 'age'
                   }
                 >
-                  {age}
+                  {offer.age}
                 </span>
               </div>
             </div>
             <div className="secondary-line">
               <span className="company-info">
                 <span className="company-name">
-                  <i className="fas fa-city" /> {companyName}
+                  <i className="fas fa-city" /> {offer.companyName}
                 </span>
                 <span className="company-address">
                   <i className="fas fa-map-marker-alt" />
-                  {companyAddress}
+                  {offer.companyAddress} {offer.companyCity}
                 </span>
               </span>
               <div className="tags">{renderTags()}</div>

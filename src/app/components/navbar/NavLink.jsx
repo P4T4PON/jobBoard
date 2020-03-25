@@ -8,7 +8,7 @@ const NavLink = props => {
       onClick={props.fooOnClick}
     >
       <h2 className={props.active ? 'hov txt active' : 'hov txt'}>
-        <i className={props.iconClass}></i>
+        <i className={props.iconClass} />
         {props.text}
       </h2>
     </Link>

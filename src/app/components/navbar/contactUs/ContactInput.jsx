@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ContactInput = ({
-  id,
   value,
   toggleInput,
   span,
@@ -12,28 +11,13 @@ const ContactInput = ({
     <div className="input brands-i">
       <i
         className={
-          activeInput === false && value === ''
-            ? iconClass
-            : value != ''
-            ? iconClass
-            : id === 'phone'
-            ? iconClass
-            : activeInput && value === ''
-            ? `${iconClass} icon-error`
-            : null
+          activeInput && value === '' ? `${iconClass} icon-error` : iconClass
         }
       />
       <div
         className={
-          activeInput === false && value === ''
-            ? 'form'
-            : value != ''
-            ? 'form'
-            : id === 'phone'
-            ? 'form'
-            : 'form formError'
+          activeInput && value === '' ? 'form formError' : 'form'
         }
-        id={id}
       >
         <input
           type="text"
@@ -46,13 +30,7 @@ const ContactInput = ({
         <label htmlFor="name" className="label-name">
           <span
             className={
-              activeInput === false && value === ''
-                ? 'content-name'
-                : value != ''
-                ? 'content-name'
-                : id === 'phone'
-                ? 'content-name'
-                : 'content-name content-nameError'
+              activeInput && value === '' ? 'content-name content-nameError' : 'content-name'
             }
           >
             {span}

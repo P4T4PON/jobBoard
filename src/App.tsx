@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './app/components/navbar/Navbar';
 import './App.css';
+import { useSelector } from 'react-redux';
 import BrandStories from './app/components/brandStories/BrandStories';
 import JobOffers from './app/components/jobOffers/JobOffers';
 import Machmaking from './app/components/matchmaking/Matchmaking';
@@ -16,10 +17,58 @@ import UserPanel from './app/components/userProfile/UserPanel';
 import UserMachmaking from './app/components/userProfile/userMachmaking/UserMachmaking';
 import UserPreferences from './app/components/userProfile/userPreferences/UserPreferences';
 import UserSettings from './app/components/userProfile/userSettings/UserSettings';
-// https://reacttraining.com/react-router/web/guides/quick-start <- zobacz jak powinien byc zbudowany poprawnie router
-// niepotrzbnie az tyle switchy uzywasz, w renderze masz nieuzywane propsy i przekazujesz komponentu w react fragmencie, jest
-// to zla praktyka i niepotrzebny element.
+import Sidebar from './app/components/jobOffers/sidebar/Sidebar'
+import CompanyProfile from './app/components/jobOffers/companyProfile/CompanyProfile'
+
+
 const App = () => {
+  const isDay = useSelector<any, any>(state => state.isDay);
+
+  const [profile, setProfile] = useState({
+    link: '',
+    title: '',
+    min: '',
+    max: '',
+    img: '',
+    companyName: '',
+    companyAddress: '',
+    bgColor: '',
+    name: '',
+    companyLink: '',
+    companySize: '',
+    companyType: '',
+    exp: '',
+    age: '',
+    offerDetail: '',
+    companyDescription: '',
+    remote: ''
+  })
+
+  const [path, setPath] = useState('/');
+  const [city, setCity] = useState('');
+  const [technology, setTechnology] = useState('');
+  const [expLevel, setExpLevel] = useState('');
+
+  const toggleProfile = (
+    newProfile: any
+  ) => {
+    setProfile(newProfile)
+  };
+
+
+  const toggleAllCities = (newCity: any, newPath: any) => {
+    setCity(newCity);
+    setPath(newPath);
+  };
+
+  const toggleAllTechnologies = (newTechnology: any) => {
+    setTechnology(newTechnology);
+  };
+
+  const toggleExpLevel = (newExpLevel: any) => {
+    setExpLevel(newExpLevel);
+  };
+
   return (
     <div>
       <Router>
@@ -27,164 +76,106 @@ const App = () => {
         <Switch>
           <Route
             exact
-            path="/"
-            render={props => (
-              <Fragment>
-                <JobOffers />
-              </Fragment>
+            path={path}
+            render={() => <Fragment> <JobOffers toggleAllCities={toggleAllCities} toggleAllTechnologies={toggleAllTechnologies} toggleExpLevel={toggleExpLevel} />
+              <Sidebar
+                toggleProfile={toggleProfile}
+                city={city}
+                toggleAllCities={toggleAllCities}
+                newTechnology={technology}
+                expLevel={expLevel}
+                isDay={isDay}
+              /> </Fragment>}
+          />
+
+          <Route
+            path={'/Offer/:id'}
+            render={() => (
+              <Fragment> <JobOffers toggleAllCities={toggleAllCities} toggleAllTechnologies={toggleAllTechnologies} toggleExpLevel={toggleExpLevel} />
+                <CompanyProfile
+                  profile={profile}
+                /></Fragment>
             )}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
-            path="/Brands"
-            render={props => (
-              <Fragment>
-                <BrandStories />
-              </Fragment>
-            )}
+            path="/brands"
+            render={() => <BrandStories />}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
             path="/devs/"
-            render={props => (
-              <Fragment>
-                <Machmaking />
-              </Fragment>
-            )}
+            render={() => <Machmaking />}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
             path="/add-offer"
-            render={props => (
-              <Fragment>
-                <AddOffer />
-              </Fragment>
-            )}
+            render={() => <AddOffer />}
           />
-        </Switch>
-        <Switch>
+
           <Route
             exact
             path="/devs/Register"
-            render={props => (
-              <Fragment>
-                <Register />
-              </Fragment>
-            )}
+            render={() => <Register />}
           />
-        </Switch>
-        <Switch>
+
           <Route
             exact
             path="/devs/reset-password"
-            render={props => (
-              <Fragment>
-                <ResetPassword />
-              </Fragment>
-            )}
+            render={() => <ResetPassword />}
           />
-        </Switch>
-        <Switch>
+
           <Route
             exact
             path="/users/sign_in"
-            render={props => (
-              <Fragment>
-                <UserLogin />
-              </Fragment>
-            )}
+            render={() => <UserLogin />}
           />
-        </Switch>
-        <Switch>
+
           <Route
             exact
             path="/users/password/new"
-            render={props => (
-              <Fragment>
-                <UserRegister />
-              </Fragment>
-            )}
+            render={() => <UserRegister />}
           />
-        </Switch>
-        <Switch>
+
           <Route
             exact
             path="/terms-and-privacy-policies"
-            render={props => (
-              <Fragment>
-                <TermsAndPolicies />
-              </Fragment>
-            )}
+            render={() => <TermsAndPolicies />}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
             path="/devs/panel"
-            render={props => (
-              <Fragment>
-                <UserPanel />
-              </Fragment>
-            )}
+            render={() => <UserPanel />}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
             path="/devs/panel/profile"
-            render={props => (
-              <Fragment>
-                <UserProfile />
-              </Fragment>
-            )}
+            render={() => <UserProfile />}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
             path="/devs/panel/matchmaking"
-            render={props => (
-              <Fragment>
-                <UserMachmaking />
-              </Fragment>
-            )}
+            render={() => <UserMachmaking />}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
             path="/devs/panel/preferences"
-            render={props => (
-              <Fragment>
-                <UserPreferences />
-              </Fragment>
-            )}
+            render={() => <UserPreferences />}
           />
-        </Switch>
 
-        <Switch>
           <Route
             exact
             path="/devs/panel/settings"
-            render={props => (
-              <Fragment>
-                <UserSettings />
-              </Fragment>
-            )}
+            render={() => <UserSettings />}
           />
+
         </Switch>
       </Router>
     </div>

@@ -5,7 +5,6 @@ import UserPanel from './UserPanel';
 import UserPanelLink from './UserPanelLink';
 
 const LoggedUserPanel = ({ isDay }) => {
-  const [brands, setBrands] = useState(false);
   const [userPanel_active, setUserPanel_active] = useState(false);
 
   const dispatch = useDispatch();
@@ -20,15 +19,14 @@ const LoggedUserPanel = ({ isDay }) => {
           userPanel_active && isDay
             ? 'userPanel-sidebar'
             : userPanel_active && isDay === false
-            ? 'userPanel-sidebar userPanel-sidebarNightMode'
-            : 'userPanel-sidebar display-none'
+              ? 'userPanel-sidebar userPanel-sidebarNightMode'
+              : 'userPanel-sidebar display-none'
         }
       >
         <UserPanelLink
           link={'/devs/panel/profile'}
           setUserPanel_active={() => {
             setUserPanel_active(false);
-            setBrands(false);
           }}
           iconClass={'far fa-user'}
           paragraph={'My profile'}
@@ -37,7 +35,6 @@ const LoggedUserPanel = ({ isDay }) => {
           link={'/devs/panel/settings'}
           setUserPanel_active={() => {
             setUserPanel_active(false);
-            setBrands(false);
           }}
           iconClass={'fas fa-cog'}
           paragraph={'Settings'}
@@ -47,7 +44,6 @@ const LoggedUserPanel = ({ isDay }) => {
           setUserPanel_active={() => {
             dispatch(logged());
             setUserPanel_active(false);
-            setBrands(false);
           }}
           iconClass={'fas fa-power-off'}
           paragraph={'Log out'}

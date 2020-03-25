@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 const LogOutUserPanel = () => {
   const isDay = useSelector(state => state.isDay);
-  const [brands, setBrands] = useState(false);
   const [sideBar_active, setSideBar_active] = useState(false);
   return (
     <Fragment>
@@ -13,7 +12,6 @@ const LogOutUserPanel = () => {
         className={'bg-purple'}
         fooOnClick={() => {
           setSideBar_active(!sideBar_active);
-          setBrands(false);
         }}
         text={'Sign in'}
       />
@@ -22,8 +20,8 @@ const LogOutUserPanel = () => {
           sideBar_active && isDay
             ? 'side-bar '
             : sideBar_active && isDay === false
-            ? 'side-bar side-barNightMode'
-            : 'side-bar display-none'
+              ? 'side-bar side-barNightMode'
+              : 'side-bar display-none'
         }
       >
         <UserPanelLink

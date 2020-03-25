@@ -10,18 +10,22 @@ const CityButton = ({
   isDay
 }) => {
   return (
-    <div
-      className={
-        cityId === active && allCities === false
-          ? 'city-button all'
-          : isDay === false
-          ? 'city-buttonNightMode'
-          : 'city-button'
-      }
-      onClick={toggleActive}
-    >
-      {city}
-    </div>
+    <Link to='/' className="cityLink">
+      <div
+        className={
+          cityId === active && allCities === false
+            ? 'city-button all'
+            : isDay === false
+              ? 'city-buttonNightMode'
+              : 'city-button'
+        }
+        onClick={toggleActive}
+      >
+
+        {city}
+
+      </div>
+    </Link>
   );
 };
 

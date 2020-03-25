@@ -1,4 +1,4 @@
-.side-drawer {
+.sideDrawer {
   height: 100%;
   background-color: white;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
@@ -12,15 +12,15 @@
   transition: transform 0.5s ease-out;
 }
 
-.side-drawerNightMode {
+.sideDrawerNightMode {
   background-color: rgb(76, 80, 82);
 }
 
-.side-drawer.open {
+.sideDrawer.open {
   transform: translateX(0%);
 }
 
-.side-drawer ul {
+.sideDrawer ul {
   padding: 0;
   width: 100%;
   list-style: none;
@@ -28,7 +28,7 @@
   flex-direction: column;
 }
 
-.side-drawer li {
+.sideDrawer li {
   height: 56px;
   width: 100%;
   font-size: 16px;
@@ -37,22 +37,22 @@
   color: #737373;
 }
 
-.side-drawerNightMode li {
+.sideDrawerNightMode li {
   color: rgb(183, 196, 208);
 }
 
-.side-drawer li i {
+.sideDrawer li i {
   margin-right: 40px;
 }
 .mar {
   margin-right: 30px;
 }
-.side-drawer li:hover {
+.sideDrawer li:hover {
   background-color: #f2f2f2;
   cursor: pointer;
 }
 
-.side-drawer a {
+.sideDrawer a {
   width: 100%;
   color: grey;
   text-decoration: none;
@@ -60,27 +60,27 @@
   color: #737373;
 }
 
-.side-drawer a:visited {
+.sideDrawer a:visited {
   color: #737373;
 }
 
-.side-drawer a:hover,
-.side-drawer a:active {
+.sideDrawer a:hover,
+.sideDrawer a:active {
   cursor: pointer;
   color: #737373;
 }
 
-.side-drawer h1 {
+.sideDrawer h1 {
   color: black;
   font-size: 30px;
   text-align: center;
 }
 
-.side-drawerNightMode h1 {
+.sideDrawerNightMode h1 {
   color: rgb(183, 196, 208);
 }
 
-.side-drawer i {
+.sideDrawer i {
   font-size: 20px;
   margin-right: 40px;
   margin-left: 40px;
@@ -90,7 +90,6 @@
   position: absolute;
   top: 2px;
   right: 0px;
-
   font-size: 24px;
   margin: 20px;
 }
@@ -104,12 +103,12 @@
   display: none;
 }
 
-.input-laneCenterer {
+.inputLaneCenterer {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.side-drawerNightMode li:hover {
+.sideDrawerNightMode li:hover {
   background-color: rgba(252, 228, 236, 0.3);
 }
