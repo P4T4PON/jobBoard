@@ -100,6 +100,10 @@
   background: rgb(253, 238, 238) none repeat scroll 0% 0%;
 }
 
+.backgroundRed {
+  background: rgb(253, 238, 238) none repeat scroll 0% 0%;
+}
+
 .userLogin-jobStatus i.small-chew {
   font-size: 11px;
   vertical-align: middle;
@@ -172,6 +176,7 @@
   justify-content: flex-start;
   align-items: center;
   font-weight: 400;
+  color: #37474f;
 }
 
 .userLogin-Optionslist:hover {

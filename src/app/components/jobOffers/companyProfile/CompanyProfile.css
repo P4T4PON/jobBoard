@@ -97,6 +97,7 @@
 .offer-apply h2 {
   font-size: 1rem;
   margin-right: 25px;
+  color: rgb(68, 138, 255);
 }
 
 .offer-apply i {
@@ -191,7 +192,7 @@
     linear-gradient(30deg, rgb(63, 197, 230), rgb(79, 164, 253));
 }
 
-.bg-red {
+.bg-redd {
   background: url('./offer-backgorund.png') center center no-repeat,
     linear-gradient(30deg, #fa656b, #f9597a);
 }

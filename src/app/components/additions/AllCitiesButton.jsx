@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AllCitiesButton = ({ city, toggleActive, allCities, isDay }) => {
+const AllCitiesButton = ({ city, toggleActive, allCities, isDay, linkTo }) => {
   return (
-    <Link to='/' className={isDay ? "cityLink" : 'cityLink cityLinkNightMode'}>
+    <Link to={linkTo ? '/' : '/brands'}>
       <div
         className={
           allCities

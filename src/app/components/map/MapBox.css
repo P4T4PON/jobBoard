@@ -1,0 +1,19 @@
+.map{
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.leaflet-popup-content {
+display: flex;
+align-items: center;
+flex-wrap: nowrap;
+width: 120px;
+margin: 14px;
+}
+
+.leaflet-popup-content img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}

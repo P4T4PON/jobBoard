@@ -8,7 +8,8 @@ const OfferItem = ({
   newTechnology,
   expLevel,
   isDay,
-  offer
+  offer,
+  value
 }) => {
   const renderTags = () => {
     return offer.companyTags.map((tag, index) => (
@@ -20,6 +21,7 @@ const OfferItem = ({
 
   const tileInFilters = () =>
     (expLevel === '' || expLevel === offer.exp) &&
+    ((value[0] * 1000) <= offer.min && (value[1] * 1000) >= offer.max) &&
     (newTechnology === '' || offer.technology === newTechnology) &&
     (city === offer.companyCity ||
       city === '' ||
@@ -27,10 +29,12 @@ const OfferItem = ({
       (city === 'Trójmiasto' &&
         (offer.companyCity === 'Gdańsk' ||
           offer.companyCity === 'Gdynia' ||
-          offer.companyCity === 'Sopot')));
+          offer.companyCity === 'Sopot')))
+
 
   const filtersEmpty = () =>
-    [newTechnology, city, expLevel].every(element => element === '');
+    [newTechnology, city, expLevel, value[0], value[1]].every(element => element === '');
+
 
   const tileClasses = () => {
     let tileClass = '';
@@ -42,13 +46,10 @@ const OfferItem = ({
     return tileClass;
   };
 
-  const test = () => {
-    console.log(city)
-  }
+  const test = () => { }
 
   return (
     <div className={tileClasses()}>
-      {test()}
       <div className={`item-border  ${offer.itemBorder}`} />
       <Link
         to={offer.link}

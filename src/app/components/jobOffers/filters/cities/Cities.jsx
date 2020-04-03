@@ -5,7 +5,7 @@ import NightMode from '../../NightMode';
 import { otherCities, jobCities } from '../../../../../constans';
 import { useSelector } from 'react-redux';
 
-const Cities = ({ toggleAllCities }) => {
+const Cities = ({ toggleAllCities, linkTo }) => {
   const isDay = useSelector(state => state.isDay);
 
   const [showOtherCities, setShowOtherCities] = useState(false);
@@ -43,6 +43,7 @@ const Cities = ({ toggleAllCities }) => {
         allCities={allCities}
         city={city}
         isDay={isDay}
+        linkTo={linkTo}
       />
     ));
   };
@@ -72,6 +73,7 @@ const Cities = ({ toggleAllCities }) => {
           }}
           city={'All'}
           isDay={isDay}
+          linkTo={linkTo}
         />
 
         {toggleJobCities()}
@@ -90,6 +92,7 @@ const Cities = ({ toggleAllCities }) => {
             allCities={allCities}
             city={cityName}
             isDay={isDay}
+            linkTo={linkTo}
           />
         </div>
 

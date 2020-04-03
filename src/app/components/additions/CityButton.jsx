@@ -7,10 +7,11 @@ const CityButton = ({
   toggleActive,
   cityId,
   allCities,
-  isDay
+  isDay,
+  linkTo
 }) => {
   return (
-    <Link to='/' className="cityLink">
+    <Link to={linkTo ? '/' : '/brands'}>
       <div
         className={
           cityId === active && allCities === false
@@ -21,6 +22,7 @@ const CityButton = ({
         }
         onClick={toggleActive}
       >
+
 
         {city}
 

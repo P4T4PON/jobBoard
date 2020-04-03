@@ -19,6 +19,7 @@ import UserPreferences from './app/components/userProfile/userPreferences/UserPr
 import UserSettings from './app/components/userProfile/userSettings/UserSettings';
 import Sidebar from './app/components/jobOffers/sidebar/Sidebar'
 import CompanyProfile from './app/components/jobOffers/companyProfile/CompanyProfile'
+import Map from './app/components/map/MapBox';
 
 
 const App = () => {
@@ -44,10 +45,16 @@ const App = () => {
     remote: ''
   })
 
+  const [linkTo, setLinkTo] = useState(true)
+  const [value, setValue] = useState([0, 50])
   const [path, setPath] = useState('/');
   const [city, setCity] = useState('');
   const [technology, setTechnology] = useState('');
   const [expLevel, setExpLevel] = useState('');
+
+  const toggleValue = (newValue: any) => {
+    setValue(newValue);
+  }
 
   const toggleProfile = (
     newProfile: any
@@ -76,8 +83,8 @@ const App = () => {
         <Switch>
           <Route
             exact
-            path={path}
-            render={() => <Fragment> <JobOffers toggleAllCities={toggleAllCities} toggleAllTechnologies={toggleAllTechnologies} toggleExpLevel={toggleExpLevel} />
+            path={'/'}
+            render={() => <Fragment> <JobOffers linkTo={linkTo} toggleValue={toggleValue} toggleAllCities={toggleAllCities} toggleAllTechnologies={toggleAllTechnologies} toggleExpLevel={toggleExpLevel} />
               <Sidebar
                 toggleProfile={toggleProfile}
                 city={city}
@@ -85,23 +92,23 @@ const App = () => {
                 newTechnology={technology}
                 expLevel={expLevel}
                 isDay={isDay}
+                value={value}
               /> </Fragment>}
           />
 
           <Route
-            path={'/Offer/:id'}
+            exact path={'/Offer/:id'}
             render={() => (
-              <Fragment> <JobOffers toggleAllCities={toggleAllCities} toggleAllTechnologies={toggleAllTechnologies} toggleExpLevel={toggleExpLevel} />
+              <Fragment> <JobOffers linkTo={linkTo} toggleValue={toggleValue} toggleAllCities={toggleAllCities} toggleAllTechnologies={toggleAllTechnologies} toggleExpLevel={toggleExpLevel} />
                 <CompanyProfile
                   profile={profile}
-                /></Fragment>
+                /> </Fragment>
             )}
           />
 
           <Route
-            exact
-            path="/brands"
-            render={() => <BrandStories />}
+            exact path="/brands"
+            render={() => <BrandStories toggleAllCities={toggleAllCities} />}
           />
 
           <Route

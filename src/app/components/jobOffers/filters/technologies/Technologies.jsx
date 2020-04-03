@@ -6,7 +6,7 @@ import { techIcons } from '../../../../../constans';
 import Salary from '../../Salary';
 import { useSelector } from 'react-redux';
 
-const Technologies = ({ toggleAllTechnologies, toggleExpLevel }) => {
+const Technologies = ({ toggleAllTechnologies, toggleExpLevel, toggleValue, linkTo }) => {
   const isDay = useSelector(state => state.isDay);
 
   const [allTechnologies, setAllTechnologies] = useState(true);
@@ -42,12 +42,13 @@ const Technologies = ({ toggleAllTechnologies, toggleExpLevel }) => {
         }}
         allCities={allTechnologies}
         isDay={isDay}
+        linkTo={linkTo}
       />
 
       {toggleTechnologies()}
 
       <div className="other-filters">
-        <Salary isDay={isDay} />
+        <Salary isDay={isDay} toggleValue={toggleValue} />
 
         <ExpLevel toggleExpLevel={toggleExpLevel} isDay={isDay} />
       </div>

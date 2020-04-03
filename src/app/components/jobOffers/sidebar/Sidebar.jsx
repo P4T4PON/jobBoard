@@ -2,6 +2,7 @@ import React from 'react';
 import './Sidebar.css';
 import OfferItem from './OfferItem';
 import { companyOffers } from '../../../../constans';
+import Map from '../../map/MapBox';
 
 const Sidebar = ({
   toggleProfile,
@@ -9,8 +10,8 @@ const Sidebar = ({
   toggleAllCities,
   newTechnology,
   expLevel,
-  isDay
-
+  isDay,
+  value
 }) => {
   const renderOffers = () => {
     return companyOffers.map((offer, index) => (
@@ -23,6 +24,7 @@ const Sidebar = ({
         expLevel={expLevel}
         isDay={isDay}
         toggleProfile={toggleProfile}
+        value={value}
       />
     ));
   };
@@ -32,9 +34,12 @@ const Sidebar = ({
   }
 
   return (
-    <div className={isDay ? 'sidebar-offers' : 'sidebar-offersNightMode'}>
-      {test()}
-      {renderOffers()}
+    <div className='sidebar-box'>
+      <div className={isDay ? 'sidebar-offers' : 'sidebar-offersNightMode'}>
+        {test()}
+        {renderOffers()}
+      </div>
+      <div className='sidebar-map'><Map city={city} technology={newTechnology} expLevel={expLevel} /></div>
     </div>
   );
 };

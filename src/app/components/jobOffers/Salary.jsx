@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
-import InputRange from 'react-input-range';
+import RangeSlider from '../additions/RangeSlider'
 
-const Salary = ({ isDay }) => {
+const Salary = ({ isDay, toggleValue }) => {
   const [showSalary, setShowSalary] = useState(false);
-  const [value, setValue] = useState({
-    min: 0,
-    max: 34
-  });
+  const [value, setValue] = useState([0, 50]);
+
+  const changeValue = (newValue) => {
+    setValue(newValue)
+  }
+
+
   return (
     <div className="allSidebars webkit-right">
+
       <div
         className={
           showSalary && isDay === false
             ? 'city-buttonNightMode padd0'
             : showSalary
-            ? 'city-button padd0'
-            : isDay === false
-            ? 'city-buttonNightMode '
-            : 'city-button '
+              ? 'city-button padd0'
+              : isDay === false
+                ? 'city-buttonNightMode '
+                : 'city-button '
         }
         id="inputRangeButton"
         onClick={() => setShowSalary(!showSalary)}
@@ -27,15 +31,8 @@ const Salary = ({ isDay }) => {
         <i className="fas fa-chevron-down" />
       </div>
       {showSalary ? (
-        <div className="salaryButton">
-          <InputRange
-            maxValue={34}
-            minValue={0}
-            value={value}
-            onChange={value => setValue(value)}
-            formatLabel={value => `${value} k`}
-            allowSameValues={true}
-          />
+        <div className={isDay ? "salaryButton" : 'salaryButton salaryButtonNightMode'}>
+          <RangeSlider changeValue={changeValue} toggleValue={toggleValue} description={true} />
         </div>
       ) : null}
     </div>

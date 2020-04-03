@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux';
 import './JobOffers.css';
 import Cities from './filters/cities/Cities';
 import Technologies from './filters/technologies/Technologies';
+import Sidebar from '../jobOffers/sidebar/Sidebar';
+import CompanyProfile from '../jobOffers/companyProfile/CompanyProfile';
 
-const JobOffers = ({ toggleAllCities, toggleAllTechnologies, toggleExpLevel }) => {
+const JobOffers = ({ toggleAllCities, toggleAllTechnologies, toggleExpLevel, toggleValue, linkTo }) => {
   const isDay = useSelector(state => state.isDay);
 
   return (
@@ -13,11 +15,14 @@ const JobOffers = ({ toggleAllCities, toggleAllTechnologies, toggleExpLevel }) =
         <div className="filters">
           <Cities
             toggleAllCities={toggleAllCities}
+            linkTo={linkTo}
           />
 
           <Technologies
             toggleAllTechnologies={toggleAllTechnologies}
             toggleExpLevel={toggleExpLevel}
+            toggleValue={toggleValue}
+            linkTo={linkTo}
           />
         </div>
       </div>

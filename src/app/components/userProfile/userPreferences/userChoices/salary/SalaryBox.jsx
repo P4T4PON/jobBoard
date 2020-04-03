@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import UserPreferencesHeader from '../../UserPreferencesHeader';
-import InputRange from 'react-input-range';
+import RangeSlider from '../../../../additions/RangeSlider'
 
 const SalaryBox = ({ isDay }) => {
-  const [value, setValue] = useState({
-    min: 0,
-    max: 50
-  });
+  const [value, setValue] = useState([0, 50]);
+
+
+  const changeValue = (newValue) => {
+    setValue(newValue)
+  }
+
+  const toggleValue = () => { }
 
   return (
     <div
@@ -30,23 +34,17 @@ const SalaryBox = ({ isDay }) => {
 
       <div className="input-values">
         <span className="input-span">
-          {value.min * 1000} - {value.max * 1000} (PLN)
+          {value[0] * 1000} - {value[1] * 1000} (PLN)
         </span>
 
         <div className="input-value">
-          Average earnings: {((value.max + value.min) / 2) * 1000} PLN
+          Average earnings: {((value[1] + value[0]) / 2) * 1000} PLN
         </div>
       </div>
-
-      <div className="jobStatus-box input-range">
-        <InputRange
-          maxValue={50}
-          minValue={0}
-          value={value}
-          onChange={value => setValue(value)}
-          formatLabel={value => `${value * 1000} PLN`}
-          allowSameValues={true}
-        />
+      <div className='inputBox'>
+        <div className="jobStatus-box input-range">
+          <RangeSlider changeValue={changeValue} toggleValue={toggleValue} />
+        </div>
       </div>
     </div>
   );

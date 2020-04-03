@@ -39,7 +39,7 @@ const Roads = ({ changeBrands, isDay }) => {
       />
 
       <NavLink
-        link={'/Brands'}
+        link={'/brands'}
         fooOnClick={() => {
           setBrandStories_active(true);
           setJjit_active(false);

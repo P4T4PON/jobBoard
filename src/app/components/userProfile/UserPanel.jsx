@@ -47,20 +47,20 @@ const UserPanel = props => {
             paragraph={'Open for proposals'}
           />
         ) : (
-          <UserStatus
-            setShowStatus={toggleStatus}
-            iconClass={'fas fa-times-circle big-circle'}
-            color={'red'}
-            paragraph={'Not open for proposals'}
-          />
-        )}
+              <UserStatus
+                setShowStatus={toggleStatus}
+                iconClass={'fas fa-times-circle big-circle'}
+                color={'red'}
+                paragraph={'Not open for proposals'}
+              />
+            )}
         <div
           className={
             showStatus && isDay
               ? 'userLogin-jobStatusChanger'
               : showStatus && isDay === false
-              ? 'userLogin-jobStatusChanger userLogin-jobStatusChangerNightMode'
-              : 'userLogin-jobStatusChanger display-none'
+                ? 'userLogin-jobStatusChanger userLogin-jobStatusChangerNightMode'
+                : 'userLogin-jobStatusChanger display-none'
           }
         >
           <ul>

@@ -387,11 +387,15 @@
   padding: 20px 30px 40px 30px;
 }
 
-.input-range {
-  width: 77%;
+.inputBox {
+  width: 70%;
+}
 
+.input-range {
+  /* width: 77%;
   margin-left: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 30px; */
+  width: 100%;
 }
 
 .input-range__slider {
@@ -410,11 +414,11 @@
 .input-range__track {
   transition: left 0.1s ease-out, width 0.1s ease-out;
 }
-
+/* 
 .input-range__track--background {
   margin-right: 100px;
   margin-left: 50px;
-}
+} */
 
 .input-range__track--active {
   transition: left 0.1s ease-out, width 0.1s ease-out;
@@ -424,29 +428,30 @@
   transition: left 0.1s ease-out;
 }
 
-.input-range__label-container {
-  left: 0%;
+ .input-range__label-container {
+   display: none;
+  /* left: 0%;
   color: rgb(135, 144, 150);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.22px;
-  line-height: 17px;
-}
+  line-height: 17px; */
+} 
 
 .input-range__label--value {
   display: none;
 }
 
-.input-range__label--max {
+/* .input-range__label--max {
   margin-top: 2px;
   top: 0;
-}
+} */
 
-.range__label--max {
+/* .range__label--max {
   position: relative;
-}
+} */
 
-.input-range__label--min {
+/* .input-range__label--min {
   margin-top: 2px;
   top: 0;
 }
@@ -458,7 +463,7 @@
   font-weight: 600;
   letter-spacing: 0.22px;
   line-height: 17px;
-}
+} */
 
 .input-values {
   display: flex;
@@ -530,4 +535,12 @@
 
 .mr-10 {
   margin-right: 10px;
+}
+
+.MuiSlider-root  {
+  color: rgb(163, 53, 181)!important;
+}
+
+.MuiSlider-rail {
+  color: rgb(216, 216, 216)!important;
 }
