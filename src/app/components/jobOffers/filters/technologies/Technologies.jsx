@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import TechButton from '../../../additions/TechButton';
 import AllCitiesButton from '../../../additions/AllCitiesButton';
-import ExpLevel from '../../ExpLevel';
 import { techIcons } from '../../../../../constans';
-import Salary from '../../Salary';
 import { useSelector } from 'react-redux';
 
-const Technologies = ({ toggleAllTechnologies, toggleExpLevel, toggleValue, linkTo }) => {
+const Technologies = ({ toggleAllTechnologies, linkTo }) => {
   const isDay = useSelector(state => state.isDay);
-
   const [allTechnologies, setAllTechnologies] = useState(true);
   const [active, setActive] = useState(0);
 
@@ -22,37 +19,30 @@ const Technologies = ({ toggleAllTechnologies, toggleExpLevel, toggleValue, link
         toggleActive={() => {
           setActive(index + 1);
           setAllTechnologies(false);
-          toggleAllTechnologies(tech[3]);
+          toggleAllTechnologies(tech[3], '');
         }}
         active={active}
         allTechnologies={allTechnologies}
-        paragraph={tech[2]}
+        tech={tech}
         isDay={isDay}
       />
     ));
   };
 
   return (
-    <div className="filters-technologies">
+    <Fragment>
       <AllCitiesButton
         city={'All'}
         toggleActive={() => {
           setAllTechnologies(true);
-          toggleAllTechnologies('');
+          toggleAllTechnologies('', '');
         }}
         allCities={allTechnologies}
         isDay={isDay}
         linkTo={linkTo}
       />
-
       {toggleTechnologies()}
-
-      <div className="other-filters">
-        <Salary isDay={isDay} toggleValue={toggleValue} />
-
-        <ExpLevel toggleExpLevel={toggleExpLevel} isDay={isDay} />
-      </div>
-    </div>
+    </Fragment>
   );
 };
 

@@ -8,7 +8,7 @@ const ContactInput = ({
   activeInput
 }) => {
   return (
-    <div className="input brands-i">
+    <div className="input brandsIcon">
       <i
         className={
           activeInput && value === '' ? `${iconClass} icon-error` : iconClass
@@ -27,10 +27,10 @@ const ContactInput = ({
           required
           onChange={toggleInput}
         />
-        <label htmlFor="name" className="label-name">
+        <label htmlFor="name" className="labelName">
           <span
             className={
-              activeInput && value === '' ? 'content-name content-nameError' : 'content-name'
+              activeInput && value === '' ? 'contentName contentNameError' : 'contentName'
             }
           >
             {span}

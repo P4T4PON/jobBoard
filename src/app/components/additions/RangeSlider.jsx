@@ -5,7 +5,7 @@ import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles({
     root: {
-        width: 300,
+        width: '100%',
     },
 });
 
@@ -13,30 +13,27 @@ function valuetext(value) {
     return `${value}k`;
 }
 
-const RangeSlider = ({ changeValue, toggleValue, description }) => {
+const RangeSlider = ({ changeValue, toggleValue, startingValue }) => {
     const classes = useStyles();
-    const [value, setValue] = React.useState([0, 50]);
-
     const handleChange = (event, newValue) => {
-        setValue(newValue);
-        changeValue(value)
+        toggleValue(newValue)
+        changeValue(newValue)
     };
 
-    const commitValue = () => {
-        toggleValue(value)
-        console.log(value)
+    const commitValue = (event) => {
+        toggleValue(startingValue)
+        changeValue(startingValue)
     }
 
     return (
         <div className={classes.root}>
             <Typography id="range-slider" gutterBottom>
-                {description ? <div className='range-sliderDescript'>Choose salary range</div> : null}
             </Typography>
             <Slider
-                value={value}
+                value={startingValue}
                 onChange={handleChange}
                 onChangeCommitted={commitValue}
-                valueLabelDisplay="auto"
+                // valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 getAriaValueText={valuetext}
                 valueLabelFormat={valuetext}

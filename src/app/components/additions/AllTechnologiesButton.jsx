@@ -6,12 +6,12 @@ const AllTechnologiesButton = ({
   allTechnologies
 }) => {
   return (
-    <div className="tech-buttonBox">
+    <div className="techButtonBox">
       <div
         className={
           allTechnologies
-            ? 'tech-button icon-self padd all'
-            : 'tech-button icon-self padd'
+            ? 'techButton iconSelf padd all'
+            : 'techButton iconSelf padd'
         }
         onClick={toggleActive}
       />

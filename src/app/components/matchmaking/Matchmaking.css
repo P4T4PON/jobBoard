@@ -60,7 +60,7 @@
   margin-bottom: 15px;
 }
 
-.media-item {
+.mediaItem {
   border-radius: 24px;
   width: 160px;
   padding: 10px 15px;
@@ -74,15 +74,15 @@
   align-items: center;
 }
 
-.media-item i {
+.mediaItem i {
   font-size: 20px;
 }
 
-.media-item:hover {
+.mediaItem:hover {
   background-color: #cccccc;
 }
 
-.media-icon {
+.mediaIcon {
   display: flex;
   align-self: center;
   margin-right: 5px;
@@ -92,13 +92,8 @@
   color: rgb(39, 69, 167);
 }
 
-.color-black {
+.colorBlack {
   color: black;
-}
-
-.google-icon {
-  width: 20px;
-  margin-right: 10px;
 }
 
 .span {
@@ -109,7 +104,7 @@
   width: 400px;
 }
 
-.span-item {
+.spanItem {
   color: rgb(0, 0, 0);
   font-size: 14px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
@@ -126,7 +121,7 @@
   align-items: center;
 }
 
-.login-icon {
+.loginIcon {
   display: flex;
   color: black;
   align-self: center;
@@ -136,11 +131,7 @@
   font-size: 20px;
 }
 
-.login-input:focus {
-  border: 1px solid #ff4081;
-}
-
-.login-submit {
+.loginSubmit {
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.75;
@@ -155,12 +146,12 @@
   letter-spacing: 0.04rem;
 }
 
-.login-submit:hover {
+.loginSubmit:hover {
   cursor: pointer;
   background-color: #99003d;
 }
 
-.login-submit:active {
+.loginSubmit:active {
   background-color: #ff4081;
 }
 
@@ -256,7 +247,7 @@
   margin-left: 15px;
 }
 
-.password-shower {
+.passwordShower {
   position: absolute;
   bottom: 0px;
   left: 100%;
@@ -265,49 +256,49 @@
   color: black;
 }
 
-.password-shower:hover {
+.passwordShower:hover {
   cursor: pointer;
 }
 
-.password-showerNightMode {
+.passwordShowerNightMode {
   color: rgb(255, 255, 255);
 }
 
-.content-name {
+.contentName {
   position: absolute;
   bottom: 5px;
   left: 0px;
   transition: all 0.3s ease;
 }
 
-.cont input:focus + .label-name .content-name,
-.cont input:valid + .label-name .content-name {
-  transform: translateY(-140%);
+.cont input:focus + .labelName .contentName,
+.cont input:valid + .labelName .contentName {
+  transform: translateY(-170%);
   color: #ff4081;
   background-color: white;
   border-radius: 10px;
 }
 
-.contNightMode input:focus + .label-name .content-name,
-.contNightMode input:valid + .label-name .content-name {
+.contNightMode input:focus + .labelName .contentName,
+.contNightMode input:valid + .labelName .contentName {
   color: #ff4081;
   background-color: rgb(57, 57, 57);
 }
 
-.inputError input:focus + .label-name .content-name,
-.inputError input:valid + .label-name .content-name {
+.inputError input:focus + .labelName .contentName,
+.inputError input:valid + .labelName .contentName {
   color: #f44336;
 }
 
-.inpont input + .label-name .content-name {
-  transform: translateY(-140%);
+.inpont input + .labelName .contentName {
+  transform: translateY(-170%);
   color: #99a1ab;
   background-color: white;
   border-radius: 10px;
 }
 
-.inpont textarea + .label-name .content-name {
-  transform: translateY(-140%);
+.inpont textarea + .labelName .contentName {
+  transform: translateY(-170%);
   color: #99a1ab;
   background-color: white;
   border-radius: 10px;
@@ -338,11 +329,11 @@
   color: #f44336;
 }
 
-.logging-box {
+.loggingBox {
   width: 50%;
 }
 
-.logging-boxNightMode {
+.loggingBoxNightMode {
   background-color: rgb(57, 57, 57);
 }
 
@@ -350,7 +341,7 @@
   color: rgb(55, 71, 79);
 }
 
-.login-iconNightMode {
+.loginIconNightMode {
   color: rgb(55, 71, 79);
 }
 

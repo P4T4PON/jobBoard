@@ -1,13 +1,13 @@
 import React from 'react';
 
-const AnimatedBottomInput = props => {
+const AnimatedBottomInput = ({ iconClass, type, span }) => {
   return (
     <div className="input">
-      <i className={props.iconClass}></i>
+      <i className={iconClass} />
       <div className="form">
-        <input type={props.type} name="name" autoComplete="off" required />
-        <label htmlFor="name" className="label-name">
-          <span className="content-name">{props.span}</span>
+        <input type={type} name="name" autoComplete="off" required />
+        <label htmlFor="name" className="labelName">
+          <span className="contentName">{span}</span>
         </label>
       </div>
     </div>

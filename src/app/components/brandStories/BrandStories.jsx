@@ -4,15 +4,14 @@ import Brands from '../jobOffers/filters/brands/Brands';
 import './BrandStories.css';
 import { useSelector } from 'react-redux';
 
-const BrandStories = ({ toggleAllCities }) => {
+const BrandStories = () => {
   const isDay = useSelector(state => state.isDay);
 
   return (
     <div className="main-content">
-      <div className={isDay ? 'sub-header' : 'sub-headerNightMode'}>
+      <div className={isDay ? 'subHeader' : 'subHeaderNightMode'}>
         <div className="filters">
-          <Cities toggleAllCities={toggleAllCities} />
-
+          <Cities />
           <Brands />
         </div>
       </div>

@@ -1,15 +1,14 @@
-.intro-header {
-  background: url(./header_background.jpg) no-repeat;
+.introHeader {
+  background: url(../additions/img/header_background.jpg) no-repeat;
   display: flex;
   flex-direction: column;
   min-height: 443px;
 }
-/*TODO: niepotrzebnie napidsujesz margin*/
-.intro-inner {
+
+.introInner {
   position: relative;
   max-width: 1250px;
   margin: 0 auto;
-  margin-bottom: 25px;
 }
 
 .text {
@@ -30,7 +29,7 @@
   width: calc(55% + 100px);
 }
 
-.pricing-table {
+.pricingTable {
   background: #fff;
   max-width: 1250px;
   border-radius: 4px;
@@ -39,36 +38,27 @@
   margin-top: -140px;
 }
 
-.pricing-table h1 {
+.pricingTable h1 {
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 0.7px;
   line-height: 37px;
   text-align: center;
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
-
   color: #37474f;
 }
-/*TODO: najedz myszką na podkreśloną linię i zobacz co Ci podpowiada IDE*/
+
 .flag {
   border: 0.5px solid grey;
   border-left: 1px solid grey;
   height: 33px;
-  margin-left: 5px;
-  margin-top: 80px;
-}
-
-.flag:hover {
-  cursor: pointer;
+  margin: 80px 0 0 5px;
 }
 
 .flag img {
   width: 42px;
   height: 32px;
   transition: 0.2s opacity ease-out;
-}
-
-.flag img:hover {
   cursor: pointer;
 }
 
@@ -77,20 +67,20 @@
   transition: 0.2s opacity ease-out;
 }
 
-.language-switch {
+.languageSwitch {
   width: 98%;
   justify-content: flex-end;
   display: flex;
   flex-direction: row;
 }
 
-.price-offers {
+.priceOffers {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.price-card {
+.priceCard {
   width: 30%;
   border: 1px solid #e7e9ed;
   border-radius: 10px;
@@ -100,23 +90,14 @@
   margin-top: 25px;
 }
 
-.card-header {
+.cardHeader {
   text-align: center;
   padding: 56px 0 40px 0;
   position: relative;
   display: block;
 }
-/*TODO: usun jednostę przy 0px*/
-.no-padding {
-  padding: 0px;
-  margin-top: 20px;
-}
 
-.no-padd li {
-  margin-top: 35px;
-}
-
-.recomended-text {
+.recomendedText {
   background: #ff4081;
   text-align: center;
   font-size: 14px;
@@ -175,10 +156,6 @@
   bottom: 0;
 }
 
-.margin-btm {
-  bottom: -35px;
-}
-
 .description {
   padding: 56px 0 42px 0;
   text-align: center;
@@ -214,8 +191,8 @@
   display: flex;
   justify-content: center;
 }
-/*TOOD:  zobacz podpowiedź IDE co do letter-spacing*/
-.price-button {
+
+.priceButton {
   border: none;
   outline: none;
   text-transform: none;
@@ -238,21 +215,20 @@
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
-.price-button:hover {
+.priceButton:hover {
   background-color: #ff66b3;
 }
 
-.recomendation-card {
+.recomendationCard {
   height: 720px;
   width: 100%;
   background: linear-gradient(180deg, #fff 0%, #f0f1f4 100%);
 }
 
-.main-grid {
+.mainGrid {
   max-width: 1250px;
-  height: 720px;
+  max-height: 400px;
   border-radius: 4px;
-  padding-top: 67px;
   background: none;
   margin: 0 auto;
 }
@@ -274,13 +250,13 @@
   color: #37474f;
 }
 
-.carousel-box {
+.carouselBox {
   width: 100%;
   height: 600px;
   background-color: #eeeeee;
 }
 
-.side-nav {
+.sideNav {
   margin-top: 20px;
   width: 100%;
   height: 40px;
@@ -289,7 +265,7 @@
   font-size: 30px;
 }
 
-.side-nav div:hover {
+.sideNav div:hover {
   color: #ff66b3;
   cursor: pointer;
 }
@@ -317,14 +293,6 @@
   justify-content: center;
   align-items: center;
 }
-/*TODO: nie uzywaj importantów */
-.carousel-dots li.carousel-dots-active button:before {
-  color: #ff4081 !important;
-}
-
-.carousel-dots li.carousel-dots-active button:hover {
-  color: #ff4081 !important;
-}
 
 .slide {
   background-color: white;
@@ -341,23 +309,23 @@
   margin-top: 40px;
 }
 
-.slide-title {
+.slideTitle {
   margin-bottom: 10px;
   font-size: 16px;
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-weight: 600;
   color: #37474f;
 }
-/*TODO: podpowiedź IDE obczaj co do letter-spacing*/
-.slide-sub_title {
+
+.slideSubTitle {
   font-size: 12px;
   letter-spacing: 0.28px;
   line-height: 15px;
   margin-bottom: 21px;
   color: #757575;
 }
-/*TODO: jak wyżej*/
-.slide-text {
+
+.slideText {
   font-size: 15px;
   font-style: italic;
   letter-spacing: 0.33px;
@@ -376,30 +344,13 @@
   height: 50px;
 }
 
-.nextSlide {
-  transform: translateX(-120%);
-}
-
-.prevSlide {
-  transform: translateX(0%);
-}
-
 .partners {
   width: 100%;
   height: 720px;
   background: linear-gradient(0deg, #f8fafb 0%, #f0f3f6 71.01%, #e0e7ef 100%);
 }
 
-.main-grid {
-  max-width: 1250px;
-  max-height: 400px;
-  border-radius: 4px;
-
-  background: none;
-  margin: 0 auto;
-}
-
-.partners-header {
+.partnersHeader {
   background: none;
   min-height: 80px;
   box-sizing: border-box;
@@ -409,7 +360,18 @@
   display: flex;
 }
 
-.partners-text h1 {
+.partnersText {
+  color: #757575;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 1.16px;
+  line-height: 31px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 67px;
+}
+
+.partnersText h1 {
   font-size: 46px;
   letter-spacing: 1.08px;
   line-height: 57px;
@@ -422,40 +384,26 @@
   color: #37474f;
 }
 
-.partners-text {
-  color: #757575;
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: 1.16px;
-  line-height: 31px;
-  display: flex;
-  flex-direction: column;
-  padding-top: 67px;
-}
-
-.partners-text p {
+.partnersText p {
   font-weight: bold;
   margin-top: 10px;
 }
 
-.partners-img {
+.partnersImg {
   height: 100%;
   display: flex;
   justify-content: flex-start;
 }
 
-.partners-row {
+.partnersRow {
   display: flex;
   justify-content: center;
 }
-/*TODO: niepotrzebnie nadpisujesz style tej samej klasie*/
-.card-section {
+
+.cardSection {
   margin-right: 40px;
-  font-size: 20px;
   background-color: white;
-  padding: 30px;
   width: 500px;
-  border-radius: 10px;
   box-shadow: 0 15px 30px 0 rgba(214, 231, 249, 0.55);
   border-radius: 10px;
   font-size: 24px;
@@ -464,7 +412,7 @@
   padding: 32px 20px 32px 56px;
 }
 
-.card-text {
+.cardText {
   color: #37474f;
 }
 
@@ -473,14 +421,14 @@
   font-weight: 600;
 }
 
-.moreaboutus {
+.moreAboutUs {
   width: 100%;
   background-color: white;
   overflow: hidden;
   border-bottom: 1px solid grey;
 }
 
-.more-main {
+.moreMain {
   max-width: 1250px;
   border-radius: 4px;
   padding-top: 67px;
@@ -489,7 +437,7 @@
   display: flex;
 }
 
-.text-col h1 {
+.textCol h1 {
   font-size: 46px;
   font-weight: 600;
   letter-spacing: 1.08px;
@@ -502,7 +450,7 @@
   width: 100%;
 }
 
-.img-col {
+.imgCol {
   width: 50%;
   margin-top: 100px;
 }
@@ -514,22 +462,22 @@
   width: 530px;
 }
 
-.more-logo {
+.moreLogo {
   margin-right: 20px;
 }
 
-.more-text {
+.moreText {
   font-size: 20px;
   letter-spacing: 0.47px;
   line-height: 24px;
   color: #37474f;
 }
 
-.more-text b {
+.moreText b {
   color: #37474f;
 }
 
-.button-center {
+.buttonCenter {
   margin-top: 40px;
   width: 100%;
   display: flex;
@@ -540,7 +488,7 @@
   width: 300px;
 }
 
-.more-footer {
+.moreFooter {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -548,7 +496,7 @@
   border-top: 1px solid lightgrey;
 }
 
-.made-by {
+.madeBy {
   display: flex;
   justify-content: center;
   width: 400px;
@@ -558,19 +506,19 @@
   margin-bottom: 40px;
 }
 
-.made-by p {
+.madeBy p {
   color: #ff66b3;
   margin: 0;
   margin-right: 10px;
 }
 
-.more-links {
+.moreLinks {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.more-links a {
+.moreLinks a {
   text-decoration: none;
   font-size: 20px;
   font-weight: 400;
@@ -580,7 +528,7 @@
   color: #757575;
 }
 
-.more-links i {
+.moreLinks i {
   margin-left: 5px;
   font-size: 16px;
 }
@@ -588,4 +536,12 @@
 .range-sliderDescript {
   display: flex;
   align-items: flex-start;
+}
+
+.carousel-dots li.carousel-dots-active button:before {
+  color: #ff4081 !important;
+}
+
+.carousel-dots li.carousel-dots-active button:hover {
+  color: #ff4081 !important;
 }

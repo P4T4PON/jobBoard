@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const TechButton = ({
@@ -9,26 +9,32 @@ const TechButton = ({
   paragraph,
   iconClass,
   allTechnologies,
-  isDay
+  isDay,
+  tech
 }) => {
+  const [showTechnology, setShowTechnology] = useState(false)
+
   return (
-    <Link to='/' className={isDay ? "cityLink" : 'cityLink cityLinkNightMode'}>
-      <div className="tech-buttonBox">
-        <div
-          className={
-            allTechnologies || techId === active
-              ? `tech-button icon-self ${iconColor} bg-poz0`
-              : `tech-button icon-self ${iconColor} bg-poz0 unAct`
-          }
-          onClick={toggleActive}
-        >
-          <i className={iconClass}></i>
+    <div className='techShuffler'>
+      {showTechnology && <div className='techShower'>{tech[2]}</div>}
+      <Link to='/' className={isDay ? "cityLink" : 'cityLink cityLinkNightMode'}>
+        <div onMouseOver={() => setShowTechnology(true)} onMouseLeave={() => setShowTechnology(false)}>
+          <div
+            className={
+              allTechnologies || techId === active
+                ? `techButton iconSelf ${iconColor} bgPoz0`
+                : `techButton iconSelf ${iconColor} bgPoz0 unAct`
+            }
+            onClick={toggleActive}
+          >
+            <i className={iconClass} />
+          </div>
+          <div className="centerNote">
+            <p>{paragraph}</p>
+          </div>
         </div>
-        <div className="centerNote">
-          <p>{paragraph}</p>
-        </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

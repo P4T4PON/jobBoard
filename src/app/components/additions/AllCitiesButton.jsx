@@ -7,10 +7,10 @@ const AllCitiesButton = ({ city, toggleActive, allCities, isDay, linkTo }) => {
       <div
         className={
           allCities
-            ? 'city-button all padd'
+            ? 'cityButton all padd'
             : isDay === false
-              ? 'city-buttonNightMode'
-              : 'city-button'
+              ? 'cityButtonNightMode'
+              : 'cityButton'
         }
         onClick={toggleActive}
       >

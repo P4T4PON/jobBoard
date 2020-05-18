@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BrandTechBtn from '../../../brandStories/BrandTechBtn';
+import BrandTechBtn from '../../../brandStories/techButtons/BrandTechBtn';
 import AllCitiesButton from '../../../additions/AllCitiesButton';
 import { brandTechBtn } from '../../../../../constans';
 
@@ -25,7 +25,7 @@ const Brands = () => {
     ));
   };
   return (
-    <div className="filters-brands">
+    <div className="filtersBrands">
       <AllCitiesButton
         toggleActive={() => setAllTechnologies(true)}
         allCities={allTechnologies}

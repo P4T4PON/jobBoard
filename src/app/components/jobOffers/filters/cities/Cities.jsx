@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import CityButton from '../../../additions/CityButton';
 import AllCitiesButton from '../../../additions/AllCitiesButton';
-import NightMode from '../../NightMode';
+import NightMode from '../../nightMode/NightMode';
 import { otherCities, jobCities } from '../../../../../constans';
 import { useSelector } from 'react-redux';
 
@@ -11,7 +11,6 @@ const Cities = ({ toggleAllCities, linkTo }) => {
   const [showOtherCities, setShowOtherCities] = useState(false);
   const [cityWasChosen] = useState(false);
   const [showAddedCity, setShowAddedCity] = useState(false);
-
   const [cityName] = useState('');
   const [allCities, setAllCities] = useState(true);
   const [active, setActive] = useState(0);
@@ -64,7 +63,7 @@ const Cities = ({ toggleAllCities, linkTo }) => {
 
   return (
     <Fragment>
-      <div className="filters-cities">
+      <div className="filtersCities">
         <AllCitiesButton
           allCities={allCities}
           toggleActive={() => {
@@ -105,13 +104,13 @@ const Cities = ({ toggleAllCities, linkTo }) => {
       <div
         className={
           cityWasChosen && showOtherCities
-            ? 'other-cities  move-right'
+            ? 'otherCities  moveRight'
             : showOtherCities
-              ? 'other-cities'
-              : 'other-cities display-none'
+              ? 'otherCities'
+              : 'otherCities display-none'
         }
       >
-        <ul className="otherCities-ul">{toggleOtherCities()}</ul>
+        <ul className="otherCitiesUl">{toggleOtherCities()}</ul>
       </div>
     </Fragment>
   );

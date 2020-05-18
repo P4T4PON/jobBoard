@@ -10,8 +10,9 @@
   transition: 0.3s ease-out;
 }
 
-.navbar i {
+.roadBox i {
   margin-right: 15px;
+  font-size: 18px;
 }
 
 .navbarNightMode {
@@ -23,7 +24,7 @@
 .navbar h2 {
   margin-right: 30px;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .navbar button {
@@ -42,42 +43,34 @@
   width: 120px;
   border: none;
   outline: none;
-}
-
-.nav-right {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 70px;
-  height: 100%;
-}
-
-.nav-right a:link {
-  display: flex;
-}
-
-.navbar button:hover {
   cursor: pointer;
 }
 
-.bg-purple {
+.navRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.navRight a:link {
+  display: flex;
+}
+
+.bgPurple {
   background: #9c27b0;
 }
 
-.bg-purple:hover {
+.bgPurple:hover {
   background-color: #660066;
 }
 
-.bg-pink {
+.bgPink {
   background-color: #ff4081;
 }
 
-.bg-pink:hover {
+.bgPink:hover {
   background-color: #cc0066;
-}
-
-.c-pink {
-  color: #ff4081;
 }
 
 .active {
@@ -89,17 +82,10 @@
   color: #ff69b4;
 }
 
-.bars {
-  font-size: 20px;
-}
-
-.fas.fa-bars {
-  margin-right: 5px;
-}
-
 .title {
-  margin-left: 30px;
-  margin-right: 40px;
+  margin: 15px 30px 20px 30px;
+  letter-spacing: 0.02rem;
+  font-size: 24px;
   color: #37474f;
   fill: #37474f;
   transition: 0.3s ease-out;
@@ -131,26 +117,14 @@
   flex: 1;
 }
 
-.sign-in img {
-  color: white;
-  position: absolute;
-  top: 28px;
-  right: 100px;
-  width: 25px;
-}
-
-.sign-in img:hover {
-  cursor: pointer;
-}
-
-.side-bar {
+.anonUserPanel {
   border-radius: 5px;
   position: absolute;
   top: 80px;
   right: 70px;
   background-color: white;
-  width: 320px;
-  height: 180px;
+  width: 300px;
+  height: 170px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,7 +132,12 @@
   z-index: 200;
 }
 
-.side-barNightMode {
+.anonUserPanel a {
+  display: flex;
+    justify-content: center;
+}
+
+.anonUserPanelNightMode {
   background-color: rgb(76, 80, 82);
 }
 
@@ -173,27 +152,24 @@
   width: 24px;
 }
 
-.sb-link {
-  margin-left: 15px;
-  width: 90%;
+.sbLink {
+  width: 100%;
+  padding: 11px 22px;
   border: 1px solid lightgrey;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: black;
 }
 
-.sb-link:hover {
+.sbLink:hover {
   cursor: pointer;
   background-color: #e6e6e6;
 }
 
-.pink-icon {
+.pinkIcon {
   border-radius: 100px;
   background: rgb(255, 227, 237) none repeat scroll 0% 0%;
   color: rgb(255, 64, 129);
@@ -205,7 +181,7 @@
   align-items: center;
 }
 
-.purple-icon {
+.purpleIcon {
   border-radius: 100px;
   background-color: rgb(242, 225, 244);
   width: 40px;
@@ -217,11 +193,7 @@
   color: rgb(163, 53, 181) !important;
 }
 
-.link-paragraph {
-  margin-right: 24px;
-}
-
-.user-panel {
+.userPanel {
   border: rgb(229, 234, 243) solid;
   border-width: 0px 1px;
   display: flex;
@@ -232,12 +204,31 @@
   transition: 0.3s ease-out;
 }
 
-.user-panelNightMode {
+.userPanelIcon {
+    vertical-align: middle;
+    color: rgb(255, 64, 129);
+    padding: 12px;
+    border-radius: 50%;
+    background: rgb(255, 227, 237);
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.2rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userPanelNightMode {
   border-color: rgb(57, 57, 57);
   transition: 0.3s ease-out;
 }
 
-.userPanel-content {
+.userPanelContent {
   display: flex;
   -moz-box-align: center;
   align-items: center;
@@ -248,58 +239,42 @@
   color: rgb(153, 161, 171);
 }
 
-.userPanel-content i {
+.userPanelContent i {
   margin: 0;
   margin-left: 10px;
 }
 
 .userPhoto {
   border: 3px solid rgb(255, 255, 255);
-
   box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
-
   border-radius: 50%;
-
   color: rgb(255, 255, 255);
-
   margin: 0px auto;
-
   background-size: cover !important;
-
   background-repeat: no-repeat !important;
-
   overflow: hidden;
-
   position: relative;
-
   text-align: center;
-
   flex-shrink: 0;
-
   display: flex;
-
   -moz-box-align: center;
-
   align-items: center;
-
   width: 40px;
-
   height: 40px;
-
   background-color: rgba(0, 0, 0, 0);
   background-position: 0% 0%;
   background-attachment: scroll;
-  background-image: url('./waving-bear.jpg');
+  background-image: url('../additions/img/waving-bear.jpg');
   background-origin: padding-box;
   background-clip: border-box;
 }
 
-.userPanel-sidebar {
+.loggedUserPanel {
   position: absolute;
-  top: 100px;
+  top: 80px;
   right: 50px;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 260px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 24px 0px;
   display: flex;
@@ -307,38 +282,17 @@
   justify-content: center;
   border-radius: 5px;
   z-index: 20;
-  padding: 5px 5px;
+  padding: 10px 5px 0 5px;
   z-index: 200;
 }
 
-.userPanel-sidebarNightMode {
+.loggedUserPanelNightMode {
   background: rgb(76, 80, 82);
 }
 
-.sb-userProfile {
+.sbUserProfile {
   border-radius: 5px;
   justify-content: space-around;
-  margin-left: 12px;
-}
-
-.userPanel-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: rgb(255, 227, 237);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.userPanel-icon i {
-  margin: 0;
-  font-size: 18px;
-  color: rgb(255, 64, 129);
-}
-
-.mr {
-  margin-right: 5px !important;
 }
 
 .contactUs {
@@ -350,7 +304,7 @@
   z-index: 300;
 }
 
-.contactUs-box {
+.contactUsBox {
   width: 100%;
   height: 100%;
   background: #fff;
@@ -362,7 +316,7 @@
   line-height: 1.5em;
 }
 
-.contactUs-header {
+.contactUsHeader {
   color: #fff;
   padding: 20px 15px 5px 15px;
   border-top-left-radius: 5px;
@@ -373,21 +327,21 @@
   background-size: cover;
 }
 
-.contactUs-header p {
+.contactUsHeader p {
   text-align: center;
 }
 
-.contactUs-header h4 {
+.contactUsHeader h4 {
   margin: 0;
   font-size: 28px;
   font-weight: 600;
 }
 
-.contactUs-content {
+.contactUsContent {
   padding: 20px 50px 20px 50px;
 }
 
-.brands-i {
+.brandsIcon {
   color: #37474f;
   display: flex;
   align-items: center;
@@ -395,19 +349,19 @@
   margin-top: 15px;
 }
 
-.brands-i i {
+.brandsIcon i {
   font-size: 1.5rem !important;
   margin: 0 !important;
 }
 
-.contactUs-submitBox {
+.contactUsSubmitBox {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.contactUs-submit {
+.contactUsSubmit {
   width: 140px;
   font-weight: 400;
   box-shadow: none;
@@ -423,36 +377,18 @@
   cursor: pointer;
 }
 
-.contactUs-submit:hover {
+.contactUsSubmit:hover {
   background-color: #ff5a92;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -1px rgba(0, 0, 0, 0.2);
 }
 
-.contactUs-submit i {
+.contactUsSubmit i {
   margin: 0;
   margin-left: 2px;
 }
 
-.everything-ok {
-  display: flex;
-  flex-direction: column;
-  padding: 60px;
-  color: #444;
-}
-
-.everything-ok i {
-  font-size: 100px;
-  color: #00cc33;
-  margin: 0;
-  margin-bottom: 20px;
-}
-
-.everything-ok p {
-  margin: 0;
-}
-
-.everything-okBox {
+.everythingOkBox {
   height: 100%;
   width: 100%;
   display: flex;
@@ -460,14 +396,22 @@
   align-items: flex-start;
 }
 
-.test {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.everythingOk {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  color: #444;
 }
 
-.background-none {
-  background: none !important;
+.everythingOk i {
+  font-size: 100px;
+  color: #00cc33;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.everythingOk p {
+  margin: 0;
 }
 
 .roundedBtn {
@@ -482,7 +426,8 @@
   display: flex;
   letter-spacing: 1px;
   border-radius: 20px;
-  width: 120px;
+  max-width: 140px;
+  padding: 0 15px;
   border: none;
   outline: none;
   display: flex;
@@ -490,19 +435,28 @@
   align-items: center;
 }
 
-.margTop-20 {
-  margin-top: 20px;
-}
-
-.marg0 {
-  margin: 0 !important;
-}
-
-.sb-linkNightMode {
+.sbLinkNightMode {
   border: 1px solid rgb(57, 57, 57);
   color: rgb(183, 196, 208);
 }
 
-.sb-linkNightMode:hover {
+.sbLinkNightMode:hover {
   background-color: rgba(255, 255, 255, 0.08);
+}
+
+.roadBox {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.sbLinkBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.bars i {
+  margin: 0;
 }

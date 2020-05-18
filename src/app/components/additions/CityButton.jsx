@@ -8,24 +8,22 @@ const CityButton = ({
   cityId,
   allCities,
   isDay,
-  linkTo
+  choseCity,
+  chosenCity,
+  text
 }) => {
   return (
-    <Link to={linkTo ? '/' : '/brands'}>
+    <Link to='/' onClick={() => choseCity(city)}>
       <div
         className={
-          cityId === active && allCities === false
-            ? 'city-button all'
-            : isDay === false
-              ? 'city-buttonNightMode'
-              : 'city-button'
+          cityId === active && allCities === false ? 'cityButton all'
+            : isDay === false ? 'cityButtonNightMode'
+              : chosenCity === city ? 'cityButton chosen'
+                : 'cityButton'
         }
         onClick={toggleActive}
       >
-
-
-        {city}
-
+        {city}{text}
       </div>
     </Link>
   );

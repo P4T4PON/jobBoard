@@ -1,0 +1,13 @@
+
+.userPanelBox {
+    width: 100%;
+    display: flex;
+}
+
+.userProfileError {
+    color: #f44336;
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 5px;
+}

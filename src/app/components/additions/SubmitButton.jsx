@@ -10,7 +10,8 @@ const submitButton = ({ divClass, value, className, submit }) => {
         onClick={submit}
       />
     </div>
-  );
+
+  )
 };
 
 export default submitButton;

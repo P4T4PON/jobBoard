@@ -49,8 +49,8 @@ const ContactUs = ({ newContactUs }) => {
 
   return (
     <div className={newContactUs ? 'contactUs' : 'display-none'}>
-      <div className="contactUs-box">
-        <div className="contactUs-header">
+      <div className="contactUsBox">
+        <div className="contactUsHeader">
           <h4>Share your Brand Story</h4>
           <p>
             Learn how we can help you to increase your brand recognition.
@@ -59,15 +59,15 @@ const ContactUs = ({ newContactUs }) => {
           </p>
         </div>
         {everythingOk ? (
-          <div className="everything-okBox">
-            <div className="everything-ok">
+          <div className="everythingOkBox">
+            <div className="everythingOk">
               <i className="fas fa-check-circle" />
               <b>Thank you!</b>
               <p>for contacting with us.</p>
             </div>
           </div>
         ) : (
-            <div className="contactUs-content">
+            <div className="contactUsContent">
               <ContactInput
                 iconClass={'fas fa-user-circle'}
                 toggleInput={toggleName}

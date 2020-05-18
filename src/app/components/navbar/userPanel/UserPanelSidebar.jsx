@@ -1,18 +1,17 @@
 import React from 'react';
-//todo: zobacz na bledy ktore Ci tutaj podkreśla IDE,
 
 const UserPanelSidebar = (event) => {
   return (
     <div
       className={
         userPanel_active
-          ? 'userPanel-sidebar '
-          : 'userPanel-sidebar display-none'
+          ? 'loggedUserPanel'
+          : 'loggedUserPanel display-none'
       }
     >
       <UserPanelLink
         link={'/devs/panel/profile'}
-        setUserPanel_active={() => {
+        toggleActive={() => {
           setUserPanel_active(false);
           setBrands(false);
         }}
@@ -21,7 +20,7 @@ const UserPanelSidebar = (event) => {
       />
       <UserPanelLink
         link={'/devs/panel/settings'}
-        setUserPanel_active={() => {
+        toggleActive={() => {
           setUserPanel_active(false);
           setBrands(false);
         }}
@@ -30,7 +29,7 @@ const UserPanelSidebar = (event) => {
       />
       <UserPanelLink
         link={'/'}
-        setUserPanel_active={() => {
+        toggleActive={() => {
           dispatch(logged());
           setUserPanel_active(false);
           setBrands(false);

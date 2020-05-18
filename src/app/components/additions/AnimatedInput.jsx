@@ -11,31 +11,42 @@ const AnimatedInput = ({
   checkInputBlurLength,
   span,
   spanClass,
-  insideIcon
+  insideIcon,
+  isDay,
+  error
 }) => {
   return (
     <div className="passwordChange-input">
-      <div className={divClass}>
-        <i className={iconClass}></i>
-      </div>
+      {iconClass && <div className={divClass}>
+        <i className={iconClass} />
+      </div>}
 
-      <div className={className}>
-        <div>
+      <div className={className ? className : 'cont inpont'}>
+        <div className={span === 'Email' ? 'pointerEventsNone' : null}>
           <input
-            type={type}
-            name={name}
+            type={type ? type : 'text'}
+            name={name ? name : 'name'}
             autoComplete="off"
             required
             spellCheck="false"
-            value={value}
+            value={value && value}
             onChange={checkInputLength}
             onBlur={checkInputBlurLength}
+            className={isDay === false ? 'inputNightMode' : null}
           />
-          <label htmlFor="email" className="label-name">
-            <span className={`content-name ${spanClass}`}>{span}</span>
-            {insideIcon ? <i className={`${insideIcon} inside-icon`} /> : null}
+          <label htmlFor="email" className="labelName">
+            <span className={isDay === false ? `contentName ${spanClass} inputNightMode` : `contentName ${spanClass}`} >{span}</span>
+            {insideIcon && <i className={`${insideIcon} inside-icon`} />}
           </label>
         </div>
+        {name === 'name' && value === '' || name === 'surname' && value === '' || name === 'linkedin' && value === '' ?
+          <p className='requiredAlert'>
+            Field required to 1-click apply
+          <i className="fas fa-exclamation-triangle" />
+          </p>
+          : null
+        }
+        <div className="userProfileError">{error}</div>
       </div>
     </div>
   );

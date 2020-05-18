@@ -1,81 +1,48 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import NavLink from '../NavLink';
+import NavLink from './navLink/NavLink';
+import TitleLink from './titleLink/TitleLink'
+import JustGeekIt from './justGeekIt/JustGeekIt'
+import { roads } from '../../../../constans'
 
 const Roads = ({ changeBrands, isDay }) => {
-  const [brandStories_active, setBrandStories_active] = useState(false);
-  const [jjit_active, setJjit_active] = useState(true);
-  //nieuzywany state
-  const [brands, setBrands] = useState(false);
-
+  const [active, setActive] = useState(0)
   const isLogged = useSelector(state => state.isLogged);
 
-  return (
-    <Fragment>
-      <Link
-        to="/"
-        onClick={() => {
-          setBrandStories_active(false);
-          setJjit_active(true);
-        }}
-      >
-        <h1 className={isDay ? 'title' : 'title titleNightMode'}>
-          justjoin.it
-        </h1>
-      </Link>
+  const toggleActive = (newActive) => {
+    setActive(newActive)
+  }
 
+  const renderRoads = () => {
+    return roads.map((road, index) =>
       <NavLink
-        link={'/'}
-        fooOnClick={() => {
-          setBrandStories_active(false);
-          setJjit_active(true);
-          setBrands(false);
-          changeBrands(false);
-        }}
-        active={jjit_active}
-        iconClass={'fas fa-suitcase'}
-        text={'Job Offers'}
-      />
-
-      <NavLink
-        link={'/brands'}
-        fooOnClick={() => {
-          setBrandStories_active(true);
-          setJjit_active(false);
-          setBrands(true);
-          changeBrands(true);
-        }}
-        active={brandStories_active}
-        iconClass={'far fa-building'}
-        text={'Brand Stories'}
-      />
-
-      <a
-        href="https://geek.justjoin.it/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h2 className="hov">
-          <i className="far fa-newspaper" />
-          Just Geek IT
-        </h2>
-      </a>
-
-      <NavLink
+        key={index}
+        link={road.link}
+        iconClass={road.iconClass}
+        text={road.text}
+        toggleActive={toggleActive}
+        linkId={index}
+        active={active}
+        changeBrands={changeBrands}
         isLogged={isLogged}
-        link={'/devs/'}
-        fooOnClick={() => {
-          setBrandStories_active(false);
-          setJjit_active(false);
-          setBrands(false);
-          changeBrands(false);
-        }}
-        iconClass={'fas fa-paste'}
-        text={'Matchmaking'}
       />
-    </Fragment>
+    )
+  }
+
+  return (
+    <div className='roadBox'>
+      <TitleLink isDay={isDay} toggleActive={toggleActive} changeBrands={changeBrands} />
+      {renderRoads()}
+      <JustGeekIt active={active} />
+    </div>
   );
 };
 
 export default Roads;
+
+
+
+
+
+
+
