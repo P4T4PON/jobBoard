@@ -2,7 +2,7 @@ import React from 'react'
 
 const WelcomeUser = ({ userName }) => {
     return (
-        <div className="userLogin-welcome">
+        <div className="userLoginWelcome">
             <p>Welcome</p>
             <span>{userName}</span>
         </div>

@@ -42,8 +42,8 @@ const EmploymentTypeBox = ({ isDay, userEmployment, toggleEmployment, employment
       title={'Employment type'}
       paragraph={'Maybe you have some preferences about your future contract?'}
     >
-      <div className="preferences-jobStatus">
-        <div className="jobStatus-box">
+      <div className="preferencesJobStatus">
+        <div className="jobStatusBox">
           <Button
             companySpan={"Doesn't matter"}
             toggleTile={() =>

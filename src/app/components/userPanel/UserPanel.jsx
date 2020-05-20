@@ -6,7 +6,7 @@ import UserProfile from './userProfile/UserProfile'
 import UserMatchmaking from './userMachmaking/UserMachmaking'
 import UserPreferences from './userPreferences/UserPreferences'
 import UserSettings from './userSettings/UserSettings'
-import { companyStage } from '../../../constans';
+
 
 const UserPanel = () => {
   const [active, setActive] = useState(0)
@@ -402,7 +402,6 @@ const UserPanel = () => {
   const toggleStatus = (newColor) => {
     setContactsData(prevContactsData => ({ ...prevContactsData, userStatus: newColor }))
   }
-
 
   function handleChange(event) {
     const { name, value } = event.target

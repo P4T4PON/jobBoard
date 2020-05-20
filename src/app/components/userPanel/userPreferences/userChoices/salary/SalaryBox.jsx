@@ -14,7 +14,7 @@ const SalaryBox = ({ userSalary, toggleSalary, salaryError }) => {
     >
       <AvargeEarningsBox userSalary={userSalary} />
       <div className='inputBox'>
-        <div className="jobStatus-box input-range">
+        <div className="jobStatusBox input-range">
           <RangeSlider changeValue={toggleSalary} toggleValue={toggleSalary} startingValue={userSalary} />
         </div>
       </div>

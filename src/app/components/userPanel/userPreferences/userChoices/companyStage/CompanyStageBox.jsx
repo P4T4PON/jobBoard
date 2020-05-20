@@ -46,7 +46,7 @@ const CompanyStageBox = ({ isDay, toggleCompanyStage, userCompanyStage, stageErr
       title={'What stage should the company be in?'}
       paragraph={'Choose as many as you like.'}
     >
-      <div className="jobStatus-box">{renderCompanyStage()}</div>
+      <div className="jobStatusBox">{renderCompanyStage()}</div>
       <div className='error' style={{ margin: '10px 0 0 0', fontSize: '18px' }}>{stageError}</div>
     </UserPreferencesBox>
   );

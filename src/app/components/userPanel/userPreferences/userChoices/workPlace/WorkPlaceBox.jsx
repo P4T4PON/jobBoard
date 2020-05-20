@@ -47,12 +47,12 @@ const WorkPlaceBox = ({ isDay, userCities, searchCities, cities, toggleCities, c
       title={'Where would you like to work?'}
       paragraph={'Choose as many as you like.'}
       color={'blue'}>
-      <div className="preferences-jobStatus">
+      <div className="preferencesJobStatus">
         <div
           className={
             isDay
-              ? 'inputStatus-box'
-              : 'inputStatus-box inputStatus-boxNightMode'
+              ? 'inputStatusBox'
+              : 'inputStatusBox inputStatusBoxNightMode'
           }
           onClick={focusInput}
         >

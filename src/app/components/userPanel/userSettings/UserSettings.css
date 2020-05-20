@@ -7,9 +7,9 @@
   height: calc(100vh - 106px);
 }
 
-.width-100vw {
+/* .width-100vw {
   width: 100vw !important;
-}
+} */
 
 .userSettings h1 {
   margin: 30px 0px;
@@ -28,7 +28,7 @@
   color: rgb(183, 196, 208);
 }
 
-.userSettings-content {
+.userSettingsContent {
   max-width: 1280px;
   margin: 0px auto;
 }
@@ -39,7 +39,7 @@
   align-items: flex-start;
 }
 
-.passwordChange-content {
+.passwordChangeContent {
   padding: 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   margin-bottom: 22px;
@@ -52,7 +52,7 @@
   height: 100%;
 }
 
-.passwordChange-content h2 {
+.passwordChangeContent h2 {
   color: #37474f;
   font-size: 24px;
   font-family: Open Sans, sans-serif;
@@ -60,47 +60,47 @@
   line-height: 1;
 }
 
-.passwordChange-content p {
+.passwordChangeContent p {
   margin-bottom: 40px;
   font-weight: 400;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.87);
 }
 
-.passwordChange-contentNightMode {
+.passwordChangeContentNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.passwordChange-contentNightMode p {
+.passwordChangeContentNightMode p {
   color: #99a1ab;
 }
 
-.passwordChange-contentNightMode h2 {
+.passwordChangeContentNightMode h2 {
   color: rgb(183, 196, 208);
 }
 
-.passwordChange-box {
+.passwordChangeBox {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
-.passwordChange-box i {
+.passwordChangeBox i {
   font-size: 24px;
 }
 
-.passwordChange-input {
+.passwordChangeInput {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
   color: #bfc5d2;
 }
 
-.passwordChange-input i {
+.passwordChangeInput i {
   margin-right: 20px;
 }
 
-.deleteAcc-box {
+.deleteAccBox {
   padding: 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   margin-bottom: 20px;
@@ -110,7 +110,7 @@
   color: #99a1ab;
 }
 
-.deleteAcc-box h2 {
+.deleteAccBox h2 {
   color: #37474f;
   font-size: 24px;
   font-family: Open Sans, sans-serif;
@@ -133,11 +133,11 @@
   font-size: 16px;
 }
 
-.deleteAcc-boxNightMode {
+.deleteAccBoxNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.deleteAcc-boxNightMode h2 {
+.deleteAccBoxNightMode h2 {
   color: rgb(183, 196, 208);
 }
 

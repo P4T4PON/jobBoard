@@ -50,8 +50,8 @@ const IndustryBox = ({ isDay, userIndustry, toggleIndustry, industryError }) => 
         'We really intend to match the project to you Choose as many as you like.'
       }
     >
-      <div className="preferences-jobStatus">
-        <div className="jobStatus-box">
+      <div className="preferencesJobStatus">
+        <div className="jobStatusBox">
           <Button
             companySpan={"Doesn't matter"}
             toggleTile={() => resetAllTiles(industryNames, toggleIndustry, test)}

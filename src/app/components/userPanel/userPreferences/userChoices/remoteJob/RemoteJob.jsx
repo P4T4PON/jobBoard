@@ -26,8 +26,8 @@ const RemoteJob = ({ isDay, toggleRemote, remote, remoteError }) => {
       paragraph={'We will try to find you an attractive remote job.'}
       color={'light-blue'}
     >
-      <div className="preferences-jobStatus">
-        <div className='jobStatus-box'
+      <div className="preferencesJobStatus">
+        <div className='jobStatusBox'
         >
           {renderRemoteButtons()}
         </div>

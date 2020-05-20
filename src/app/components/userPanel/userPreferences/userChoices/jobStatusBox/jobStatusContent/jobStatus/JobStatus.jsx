@@ -5,12 +5,12 @@ export const JobStatus = ({ icon, upperText, downText, toggleStatus, userStatus,
     <div
       className={
         userStatus === color && isDay
-          ? 'jobStatus-change border-pink mr-20'
+          ? 'jobStatusChange border-pink mr-20'
           : userStatus === color && isDay === false
-            ? 'jobStatus-change  border-pink mr-20'
+            ? 'jobStatusChange  border-pink mr-20'
             : isDay === false
-              ? 'jobStatus-change jobStatus-changeNightMode mr-20'
-              : 'jobStatus-change mr-20'
+              ? 'jobStatusChange jobStatusChangeNightMode mr-20'
+              : 'jobStatusChange mr-20'
       }
       onClick={toggleStatus}
     >

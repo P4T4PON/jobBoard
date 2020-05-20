@@ -2,10 +2,10 @@ import React from 'react'
 
 const UserDetailImg = () => {
     return (
-        <div className="userDetailsImg-content">
-            <div className="userDetails-img">
+        <div className="userDetailsImgContent">
+            <div className="userDetailsImg">
                 <label htmlFor="file-upload">
-                    <div className="userDetails-changePhoto">
+                    <div className="userDetailsChangePhoto">
                         <i className="fas fa-pen" />
                     </div>
                 </label>

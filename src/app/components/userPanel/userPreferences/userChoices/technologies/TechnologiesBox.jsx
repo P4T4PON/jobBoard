@@ -42,7 +42,7 @@ const TechnologiesBox = ({ isDay, toggleTechnologies, userTechnologies, technolo
   }
 
   const renderChosenCities = () => {
-    return (userTechnologies.map((tech, index) => <div key={index} className='input-chosen'><i style={{ marginRight: '5px' }} className={tech.icon} />
+    return (userTechnologies.map((tech, index) => <div key={index} className='inputChosen'><i style={{ marginRight: '5px' }} className={tech.icon} />
       {tech.name}<i className="fas fa-times-circle" onClick={() => removeTech(tech)} /></div>))
   }
 
@@ -53,12 +53,12 @@ const TechnologiesBox = ({ isDay, toggleTechnologies, userTechnologies, technolo
       paragraph={'What is your speciality?'}
       color={'pink'}
     >
-      <div className="preferences-jobStatus">
+      <div className="preferencesJobStatus">
         <div
           className={
             isDay
-              ? 'inputStatus-box'
-              : 'inputStatus-box inputStatus-boxNightMode'
+              ? 'inputStatusBox'
+              : 'inputStatusBox inputStatusBoxNightMode'
           }
           onClick={focusInput}
         >

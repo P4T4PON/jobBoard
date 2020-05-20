@@ -2,19 +2,19 @@ import React from 'react'
 
 const UserProfileBox = ({ children, isDay, className }) => {
     return (
-        <div className={`userLogin-content ${className && className}`}>
+        <div className={`userLoginContent ${className && className}`}>
             <div
                 className={
                     isDay
-                        ? 'userLogin-container'
-                        : 'userLogin-container userLogin-containerNightMode'
+                        ? 'userLoginContainer'
+                        : 'userLoginContainer userLoginContainerNightMode'
                 }
             >
                 <div
                     className={
                         isDay
-                            ? 'userLoginContainer-content'
-                            : 'userLoginContainer-content userLoginContainer-contentNightMode'
+                            ? 'userLoginContainerContent'
+                            : 'userLoginContainerContent userLoginContainerContentNightMode'
                     }
                 >
                     {children}

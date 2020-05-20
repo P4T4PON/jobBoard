@@ -4,7 +4,7 @@ const DeleteAcc = ({ isDay }) => {
     return (
         <div
             className={
-                isDay ? 'deleteAcc-box' : 'deleteAcc-box deleteAcc-boxNightMode'
+                isDay ? 'deleteAccBox' : 'deleteAccBox deleteAccBoxNightMode'
             }
         >
             <h2>Delete Account</h2>

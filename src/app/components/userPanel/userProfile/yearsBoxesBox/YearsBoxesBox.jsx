@@ -19,7 +19,7 @@ const YearsBoxesBox = ({ isDay, toggleExperiance, inputData }) => {
 
     return (
         <Fragment>
-            <div className="yearsBoxes-content">
+            <div className="yearsBoxesContent">
                 {renderYearsBoxes()}
             </div>
         </Fragment>

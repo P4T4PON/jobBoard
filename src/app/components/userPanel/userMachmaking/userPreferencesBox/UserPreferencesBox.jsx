@@ -1,15 +1,14 @@
 import React, { Fragment, useState } from 'react'
-import UserChoices from './userChices/UserChoices';
+import UserChoices from './userChoices/UserChoices';
 import ShowButton from './showButton/ShowButton';
 
-const UserPreferencesBox = ({ contactsData }) => {
-    const [preferences, setPreferences] = useState(true);
+const UserPreferencesBox = ({ contactsData, preferences, togglePreferences }) => {
 
     const { userCities, remote, companyStage, companyKind, industry, seniority, employment, salary, userTechnologies, userSkills } = contactsData
 
     return (
         <Fragment>
-            <div className="userMachmaking-preferences">
+            <div className="userMachmakingPreferences">
                 <UserChoices
                     iconClass={'fas fa-map-marker-alt blueBox'}
                     b={userCities[0]}
@@ -39,33 +38,36 @@ const UserPreferencesBox = ({ contactsData }) => {
                     iconClass={'fas fa-user-friends yellowBox'}
                     obj={companyStage}
                     span={'STAGE'}
+                    preferences={preferences}
                 />
                 <UserChoices
                     iconClass={'fas fa-city redBox'}
                     obj={companyKind}
                     span={'TYPE'}
+                    preferences={preferences}
                 />
                 <UserChoices
                     iconClass={'fas fa-chart-line greenBox'}
                     obj={seniority}
                     span={'SENIORITY'}
-
+                    preferences={preferences}
                 />
                 <UserChoices
                     iconClass={'far fa-building greyBox'}
                     obj={industry}
                     span={'INDUSTRY'}
-
+                    preferences={preferences}
                 />
                 <UserChoices
                     iconClass={'far fa-file purpleBox'}
                     obj={employment}
                     span={'EMP.TYPE'}
+                    preferences={preferences}
                 />
             </div>
             <ShowButton
                 preferences={preferences}
-                showPreferences={() => setPreferences(!preferences)}
+                showPreferences={togglePreferences}
             />
         </Fragment>
     )

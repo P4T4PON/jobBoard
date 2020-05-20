@@ -43,12 +43,12 @@ const SkillBox = ({ isDay, skills, toggleSkills, userSkills, toggleUserSkills, s
       paragraph={'It will be easier for us to understand you even better.Please, arrange in the hierarchy.'}
       color={'orange-dark'}
     >
-      <div className="preferences-jobStatus">
+      <div className="preferencesJobStatus">
         <div
           className={
             isDay
-              ? 'inputStatus-box'
-              : 'inputStatus-box inputStatus-boxNightMode'
+              ? 'inputStatusBox'
+              : 'inputStatusBox inputStatusBoxNightMode'
           }
           onClick={focusInput}
         >

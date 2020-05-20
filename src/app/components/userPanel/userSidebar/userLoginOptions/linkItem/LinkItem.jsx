@@ -18,8 +18,8 @@ const LinkItem = ({
         <div
           className={
             active === linkId
-              ? 'userLogin-Optionslist userLogin-active'
-              : 'userLogin-Optionslist'
+              ? 'userLoginOptionslist userLoginActive'
+              : 'userLoginOptionslist'
           }
           onClick={() => toggleActive(linkId)}
           onMouseUp={() => linkId === 5 && dispatch(logged())}

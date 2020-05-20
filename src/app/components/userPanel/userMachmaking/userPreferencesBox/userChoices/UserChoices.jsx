@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import transitions from '@material-ui/core/styles/transitions';
 
-const UserChoices = ({ bool, iconClass, span, b, obj }) => {
+const UserChoices = ({ bool, iconClass, span, b, obj, preferences }) => {
   const isDay = useSelector(state => state.isDay);
 
   let [state, setState] = useState([])
@@ -26,11 +27,12 @@ const UserChoices = ({ bool, iconClass, span, b, obj }) => {
   }, [])
 
   return (
-    <div className={bool ? '' : 'preferencesBox'}>
+    <div className={bool ? '' : 'matchmakingPreferencesBox'}>
       <div
         className={
           isDay ? 'preferencesItem' : 'preferencesItem preferencesItemNightMode'
         }
+        style={preferences ? hideBox : showBox}
       >
         <i className={iconClass} />
         <div className="preferencesText">
@@ -41,5 +43,14 @@ const UserChoices = ({ bool, iconClass, span, b, obj }) => {
     </div>
   );
 };
+
+const hideBox = {
+  opacity: '0',
+}
+
+const showBox = {
+  opacity: '1',
+}
+
 
 export default UserChoices;

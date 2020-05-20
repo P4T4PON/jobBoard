@@ -59,7 +59,7 @@ const UserSettings = ({ toggleActive, togglePassword, password }) => {
 
   return (
     <UserProfileBox isDay={isDay} className={'userSettingsContainer'}>
-      <div className="userSettings-content">
+      <div className="userSettingsContent">
         <h1>Settings</h1>
 
         <PasswordChangeBox
@@ -74,7 +74,7 @@ const UserSettings = ({ toggleActive, togglePassword, password }) => {
 
         <SubmitButton
           value={'Update profile'}
-          className={'pink-button'}
+          className={'pinkButton'}
           submit={changePassword}
         />
       </div>

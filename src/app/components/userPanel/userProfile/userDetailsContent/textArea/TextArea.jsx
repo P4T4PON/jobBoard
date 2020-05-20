@@ -9,7 +9,7 @@ const TextArea = ({ isDay, handleChange, story }) => {
                     : 'cont upi upiNightMode biggInput biggInputNightMode'
             }
         >
-            <div className="big-input">
+            <div className="bigInput">
                 <textarea
                     type="text"
                     name="story"

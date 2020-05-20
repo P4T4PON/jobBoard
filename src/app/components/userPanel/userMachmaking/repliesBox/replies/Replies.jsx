@@ -5,12 +5,12 @@ const Replies = ({ toggleActive, text, side, repId, active, isDay }) => {
     <div
       className={
         repId === active && isDay
-          ? `userMachmaking-item replied-active ${side} `
+          ? `userMachmakingItem repliedActive ${side} `
           : repId === active && isDay === false
-          ? `userMachmaking-item userMachmaking-itemNightMode replied-active ${side} `
-          : isDay === false
-          ? `userMachmaking-item userMachmaking-itemNightMode ${side} `
-          : `userMachmaking-item ${side}`
+            ? `userMachmakingItem userMachmakingItemNightMode repliedActive ${side} `
+            : isDay === false
+              ? `userMachmakingItem userMachmakingItemNightMode ${side} `
+              : `userMachmakingItem ${side}`
       }
       onClick={toggleActive}
     >

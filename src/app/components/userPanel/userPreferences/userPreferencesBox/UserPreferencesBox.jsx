@@ -6,13 +6,13 @@ const UserPreferencesBox = ({ children, title, color, paragraph, iconClass }) =>
     return (
         <div
             className={
-                isDay ? 'preferences-box' : 'preferences-box preferences-boxNightMode'
+                isDay ? 'preferencesBox' : 'preferencesBox preferencesBoxNightMode'
             }
         >
-            <header className="preferences-header">
+            <header className="preferencesHeader">
                 <div className={isDay
-                    ? `preferences-heading ${color}`
-                    : `preferences-heading ${color} preferences-headingNightMode`}>
+                    ? `preferencesHeading ${color}`
+                    : `preferencesHeading ${color} preferencesHeadingNightMode`}>
                     <i className={iconClass}></i>
                     <h2>{title}</h2>
                 </div>

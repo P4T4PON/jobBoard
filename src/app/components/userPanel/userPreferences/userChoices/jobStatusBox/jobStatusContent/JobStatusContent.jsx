@@ -21,8 +21,8 @@ const JobStatusContent = ({ isDay, userStatus, toggleStatus }) => {
     }
 
     return (
-        <div className="preferences-jobStatus">
-            <div className="jobStatus-box">
+        <div className="preferencesJobStatus">
+            <div className="jobStatusBox">
                 {renderJobStatus()}
             </div>
         </div>

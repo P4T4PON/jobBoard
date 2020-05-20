@@ -8,14 +8,14 @@ const PasswordChangeBox = ({ isDay, oldPassword, newPassword, oldPasswordError, 
             <div
                 className={
                     isDay
-                        ? 'passwordChange-content'
-                        : 'passwordChange-content passwordChange-contentNightMode'
+                        ? 'passwordChangeContent'
+                        : 'passwordChangeContent passwordChangeContentNightMode'
                 }
             >
-                <h2 className="margin-0">Set up new password</h2>
-                <p className="margin-0">Follow the instructions below</p>
+                <h2 style={{ margin: '0' }}>Set up new password</h2>
+                <p style={{ margin: '0 0 40px 0' }}>Follow the instructions below</p>
 
-                <div className="passwordChange-box">
+                <div className="passwordChangeBox">
                     <div style={{ marginBottom: '10px' }}>
                         <AnimatedInput
                             iconClass={'fas fa-lock mediaIcon'}

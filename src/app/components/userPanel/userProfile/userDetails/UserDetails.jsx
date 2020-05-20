@@ -6,8 +6,8 @@ const UserDetails = ({ className, paragraph, children, title }) => {
   return (
     <div className="userDetails">
       <div className={isDay
-        ? `${className}-content`
-        : `${className}-content ${className}-contentNightMode`}>
+        ? `${className}Content`
+        : `${className}Content ${className}ContentNightMode`}>
         <h3>{title}</h3>
         <p>{paragraph}</p>
         {children}

@@ -3,6 +3,7 @@ import Cities from '../jobOffers/filters/cities/Cities';
 import Brands from '../jobOffers/filters/brands/Brands';
 import './BrandStories.css';
 import { useSelector } from 'react-redux';
+import { Backdrop } from '@material-ui/core';
 
 const BrandStories = () => {
   const isDay = useSelector(state => state.isDay);

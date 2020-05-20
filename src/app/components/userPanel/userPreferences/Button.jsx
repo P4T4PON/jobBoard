@@ -2,14 +2,14 @@ import React from 'react';
 
 const Button = ({ active, toggleTile, companyIcon, companySpan, isDay }) => {
   return (
-    <div className="btn-icon">
+    <div className="btnIcon">
       <div
         className={
           active
-            ? 'jobStatus-button border-pink'
+            ? 'jobStatusButton border-pink'
             : isDay === false
-              ? 'jobStatus-button jobStatus-buttonNightMode'
-              : 'jobStatus-button'
+              ? 'jobStatusButton jobStatusButtonNightMode'
+              : 'jobStatusButton'
         }
         onClick={toggleTile}
       >

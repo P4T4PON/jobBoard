@@ -2,7 +2,7 @@ import React from 'react'
 
 const TextArea = ({ userStory, toggleUserStory, isDay }) => {
     return (
-        <div className="cont biggInput inpont " style={{ width: '50%', marginRight: '0' }}>
+        <div className="cont biggInput inpont " style={{ width: '47%', marginRight: '0' }}>
             <div className="companyProfileTextArea ">
                 <textarea
                     type="text"

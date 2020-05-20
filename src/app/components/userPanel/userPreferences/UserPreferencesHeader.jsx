@@ -5,10 +5,10 @@ const UserPreferencesHeader = ({ iconClass, title, paragraph, color }) => {
   const isDay = useSelector(state => state.isDay);
 
   return (
-    <header className="preferences-header">
+    <header className="preferencesHeader">
       <div className={isDay
-        ? `preferences-heading ${color}`
-        : `preferences-heading ${color} preferences-headingNightMode`}>
+        ? `preferencesHeading ${color}`
+        : `preferencesHeading ${color} preferencesHeadingNightMode`}>
         <i className={iconClass}></i>
         <h2>{title}</h2>
       </div>

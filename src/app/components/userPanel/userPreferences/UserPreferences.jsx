@@ -58,7 +58,7 @@ const UserPreferences = ({ toggleActive, toggleStatus, searchCities,
       <SkillBox isDay={isDay} skills={inputData.skills} toggleSkills={toggleSkills} userSkills={inputData.userSkills}
         toggleUserSkills={toggleUserSkills} skillError={skillError} />
 
-      <SubmitButton value={'Update'} className={'pink-button'} submit={handleSubmit} />
+      <SubmitButton value={'Update'} className={'pinkButton'} submit={handleSubmit} />
 
     </UserProfileBox>
   );

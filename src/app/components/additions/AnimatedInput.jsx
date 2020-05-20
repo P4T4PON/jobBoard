@@ -16,7 +16,7 @@ const AnimatedInput = ({
   error
 }) => {
   return (
-    <div className="passwordChange-input">
+    <div className="passwordChangeInput">
       {iconClass && <div className={divClass}>
         <i className={iconClass} />
       </div>}

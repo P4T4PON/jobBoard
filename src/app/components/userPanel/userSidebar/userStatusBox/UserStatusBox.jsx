@@ -20,10 +20,10 @@ const UserStatusBox = ({ showStatus, isDay, changeStatus, toggleStatus }) => {
         <div
             className={
                 showStatus && isDay
-                    ? 'userLogin-jobStatusChanger'
+                    ? 'userLoginJobStatusChanger'
                     : showStatus && isDay === false
-                        ? 'userLogin-jobStatusChanger userLogin-jobStatusChangerNightMode'
-                        : 'userLogin-jobStatusChanger display-none'
+                        ? 'userLoginJobStatusChanger userLoginJobStatusChangerNightMode'
+                        : 'userLoginJobStatusChanger display-none'
             }
         >
             <ul>

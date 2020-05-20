@@ -15,12 +15,12 @@ const UserSidebar = ({ active, toggleActive, contactsData, toggleStatus }) => {
 
     return (
         <div
-            className={isDay ? 'userLogin-sidebar'
-                : 'userLogin-sidebar userLogin-sidebarNightMode'
+            className={isDay ? 'userLoginSidebar'
+                : 'userLoginSidebar userLoginSidebarNightMode'
             }
         >
-            <div className="userLogin-sidebarContent">
-                <div className="userLogin-img" />
+            <div className="userLoginSidebarContent">
+                <div className="userLoginImg" />
                 <WelcomeUser userName={contactsData.name} />
                 <UserStatus status={contactsData.userStatus} changeStatus={changeStatus} />
                 <UserStatusBox showStatus={showStatus} isDay={isDay} changeStatus={changeStatus} toggleStatus={toggleStatus} />

@@ -25,7 +25,7 @@ const UserDetailsContent = ({ isDay, inputData, handleChange }) => {
     return (
         <Fragment>
             <UserDetailImg />
-            <div className="myProfile-input">
+            <div className="myProfileInput">
                 {renderUserDetails()}
                 <TextArea isDay={isDay} story={inputData.story} handleChange={handleChange} />
             </div>

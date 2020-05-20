@@ -46,8 +46,8 @@ const CompanyKindBox = ({ isDay, toggleCompanyKind, userCompanyKind, kindError }
       title={'For what kind of company would you like to work for'}
       paragraph={'We want to find a company that trully fits you'}
     >
-      <div className="preferences-jobStatus">
-        <div className="jobStatus-box">{renderCompanyKind()}</div>
+      <div className="preferencesJobStatus">
+        <div className="jobStatusBox">{renderCompanyKind()}</div>
       </div>
       <div className='error' style={{ margin: '10px 0 0 0', fontSize: '18px' }}>{kindError}</div>
     </UserPreferencesBox>

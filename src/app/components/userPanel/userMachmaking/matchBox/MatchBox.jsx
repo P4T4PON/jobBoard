@@ -2,12 +2,12 @@ import React from 'react'
 
 const MatchBox = ({ isDay }) => {
     return (
-        <div className="maches-box">
+        <div className="machesBox">
             <div
                 className={
                     isDay
-                        ? 'maches-content'
-                        : 'maches-content maches-contentNightMode'
+                        ? 'machesContent'
+                        : 'machesContent machesContentNightMode'
                 }
             >
                 <i className="far fa-folder-open" />

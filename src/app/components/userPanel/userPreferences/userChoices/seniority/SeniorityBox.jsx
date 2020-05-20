@@ -39,8 +39,8 @@ const SeniorityBox = ({ isDay, userSeniority, toggleSeniority, seniorityError })
       title={'Seniority'}
       paragraph={'We would like to know how experienced you are.'}
     >
-      <div className="preferences-jobStatus">
-        <div className="jobStatus-box">
+      <div className="preferencesJobStatus">
+        <div className="jobStatusBox">
           <Button
             companySpan={"Doesn't matter"}
             toggleTile={() => resetAllTiles(seniorityNames, toggleSeniority, test)}

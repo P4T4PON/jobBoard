@@ -141,10 +141,6 @@
   background-color: rgb(76, 80, 82);
 }
 
-.display-none {
-  display: none;
-}
-
 .arrowUp img {
   position: absolute;
   top: -20px;

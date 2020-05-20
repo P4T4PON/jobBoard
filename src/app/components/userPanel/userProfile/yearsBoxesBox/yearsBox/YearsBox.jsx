@@ -5,12 +5,12 @@ const YearsBox = ({ paragraph, boxId, toggleActive, active, isDay }) => {
     <div
       className={
         boxId === active && isDay === false
-          ? 'years-box yearsBoxNightMode border-pink color-pink'
+          ? 'yearsBox yearsBoxNightMode border-pink color-pink'
           : boxId === active && isDay
-            ? 'years-box border-pink color-pink'
+            ? 'yearsBox border-pink color-pink'
             : isDay
-              ? 'years-box'
-              : 'years-box yearsBoxNightMode'
+              ? 'yearsBox'
+              : 'yearsBox yearsBoxNightMode'
       }
       onClick={toggleActive}
     >

@@ -19,7 +19,7 @@ const UserLoginOptions = ({ active, toggleActive }) => {
     }
 
     return (
-        <div className="userLogin-Options">
+        <div className="userLoginOptions">
             {renderProfileLinks()}
         </div>
 

@@ -18,7 +18,7 @@ const UserProfile = ({ toggleExperiance, toggleActive, inputData, handleSubmit, 
     <UserProfieBox isDay={isDay}>
       <h1>My profile</h1>
       <p>{'Complete your profile & apply with just one click!'}</p>
-      <form className="myProfile-content">
+      <form className="myProfileContent">
         <UserDetails
           className={'userDetails'}
           title={'USER DETAILS'}>
@@ -37,7 +37,7 @@ const UserProfile = ({ toggleExperiance, toggleActive, inputData, handleSubmit, 
           toggleExperiance={toggleExperiance}
         />
       </form>
-      <SubmitButton value={'Update profile'} className={'pink-button'} submit={handleSubmit} />
+      <SubmitButton value={'Update profile'} className={'pinkButton'} submit={handleSubmit} />
     </UserProfieBox>
   );
 };

@@ -5,7 +5,7 @@ const UserStatus = ({ status, changeStatus }) => {
   const { iconClass, paragraph, color } = userStatus[status]
   return (
     <div
-      className={`userLogin-jobStatus ${color} bg-${color}`}
+      className={`userLoginJobStatus ${color} bg-${color}`}
       onClick={changeStatus}
     >
       <i className={iconClass} />

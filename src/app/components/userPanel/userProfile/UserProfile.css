@@ -1,10 +1,10 @@
-.userLogin-content {
+.userLoginContent {
   width: 100vw;
   background: rgb(245, 247, 250) none repeat scroll 0% 0%;
   display: flex;
 }
 
-.userLogin-sidebar {
+.userLoginSidebar {
   z-index: 2;
   flex-shrink: 0;
   width: 220px;
@@ -13,21 +13,21 @@
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
 }
 
-.userLogin-sidebarNightMode {
+.userLoginSidebarNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
   color: rgba(255, 255, 255, 0.8)!important
 }
 
-.userLogin-sidebarContent {
+.userLoginSidebarContent {
   position: sticky;
   top: 20px;
 }
 
-.userLogin-sidebarContentNightMode {
+.userLoginSidebarContentNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.userLogin-img {
+.userLoginImg {
   box-shadow: rgba(0, 0, 0, 0.08) 0 6px 13px 0;
   color: rgb(255, 255, 255);
   margin: 0 auto;
@@ -53,18 +53,18 @@
   border-radius: 50%;
 }
 
-.userLogin-welcome {
+.userLoginWelcome {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 16px;
 }
 
-.userLogin-welcome p {
+.userLoginWelcome p {
   color: rgb(55, 71, 79);
   font-weight: 500;
 }
 
-.userLogin-jobStatus {
+.userLoginJobStatus {
   margin: 0px 8px;
   border-radius: 20px;
   font-size: 10px;
@@ -106,25 +106,25 @@
   background: rgb(253, 238, 238) none repeat scroll 0% 0%;
 }
 
-.userLogin-jobStatus i.small-chew {
+.userLoginJobStatus i.small-chew {
   font-size: 11px;
   vertical-align: middle;
   margin-top: 2px;
   margin-left: 10px;
 }
 
-.userLogin-jobStatus i.big-circle {
+.userLoginJobStatus i.big-circle {
   font-size: 18px;
   vertical-align: middle;
   margin-right: 5px;
 }
 
-.userLogin-jobStatus p {
+.userLoginJobStatus p {
   margin: 0;
   font-weight: 600;
 }
 
-.userLogin-jobStatusChanger {
+.userLoginJobStatusChanger {
   position: absolute;
   width: 240px;
   height: 160px;
@@ -136,11 +136,11 @@
   border-radius: 5px;
 }
 
-.userLogin-jobStatusChangerNightMode {
+.userLoginJobStatusChangerNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.userLogin-jobStatusChanger ul {
+.userLoginJobStatusChanger ul {
   width: 100%;
   height: 100%;
   display: flex;
@@ -151,7 +151,7 @@
   margin-top: 7px;
 }
 
-.userLogin-jobStatusChanger li {
+.userLoginJobStatusChanger li {
   padding: 4px 16px 4px 9px;
   font-size: 16px;
   list-style-type: none;
@@ -162,17 +162,17 @@
   align-items: center;
 }
 
-.userLogin-jobStatusChanger li:hover {
+.userLoginJobStatusChanger li:hover {
   background-color: rgba(255, 243, 230, 0.3);
   cursor: pointer;
 }
 
-.userLogin-Options {
+.userLoginOptions {
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
-.userLogin-Optionslist {
+.userLoginOptionslist {
   padding-left: 12px;
   display: flex;
   justify-content: flex-start;
@@ -181,17 +181,17 @@
   color: #37474f;
 }
 
-.userLogin-Optionslist:hover {
+.userLoginOptionslist:hover {
   background-color: rgba(255, 243, 230, 0.3);
   color: #ff4081;
 }
 
-.userLogin-Optionslist i {
+.userLoginOptionslist i {
   margin-right: 20px;
   font-size: 18px;
 }
 
-.userLogin-active {
+.userLoginActive {
   border-left: #ff4081 solid 4px;
   padding-left: 12px;
   display: flex;
@@ -201,12 +201,12 @@
   font-weight: 400;
 }
 
-.userLogin-Options a:link {
+.userLoginOptions a:link {
   text-decoration: none;
   color: #99a1ab;
 }
 
-.userLogin-active::before {
+.userLoginActive::before {
   left: 0px;
   width: 47px;
   height: 11%;
@@ -217,44 +217,35 @@
   background: linear-gradient(90deg, #ff4081 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-.display-none {
-  display: none;
-}
-
-.userLogin-container {
+.userLoginContainer {
   -moz-box-flex: 1;
   flex-grow: 1;
   padding: 20px;
 }
 
-.userLogin-containerNightMode {
+.userLoginContainerNightMode {
   background-color: rgb(57, 57, 57);
 }
 
-.userLoginContainer-content {
+.userLoginContainerContent {
   margin: 0px auto;
   max-width: 1280px;
 }
 
-.userLoginContainer-content h1 {
+.userLoginContainerContent h1 {
   color: #2e384d;
   font-size: 34px;
   font-family: Open Sans, sans-serif;
   font-weight: 300;
   line-height: 1;
 }
-/* 
-.userLoginContainer-content p {
-  font-size: 23px;
-  font-weight: 500;
-  color: rgb(153, 160, 170);
-} */
 
-.userLoginContainer-contentNightMode h1 {
+
+.userLoginContainerContentNightMode h1 {
   color: rgb(183, 196, 208);
 }
 
-.myProfile-content {
+.myProfileContent {
   width: calc(100% + 24px);
   margin: -12px;
   display: flex;
@@ -265,7 +256,7 @@
   padding: 12px;
 }
 
-.userDetails-content {
+.userDetailsContent {
   padding: 20px 20px 40px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   margin-bottom: 22px;
@@ -278,11 +269,11 @@
   height: 840px;
 }
 
-.userDetails-contentNightMode {
+.userDetailsContentNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.userDetails-content h3 {
+.userDetailsContent h3 {
   color: #bfc5d2;
   font-size: 13px;
   font-family: Open Sans, sans-serif;
@@ -291,15 +282,13 @@
   margin-bottom: 20px;
 }
 
-.userDetailsImg-content {
+.userDetailsImgContent {
   margin-top: 40px;
   margin-bottom: 40px;
   color: rgba(0, 0, 0, 0.87);
 }
-/* importanty i jednostki przy 0 + ide Ci podpowiada, ze duplikujesz kod, skoro tych samyh styli uzywasz w dwoch klasach to
-  napisz odpowiedni selektor
-*/
-.userDetails-img {
+
+.userDetailsImg {
   border: 3px solid rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 13px 0px;
   border-radius: 50%;
@@ -324,7 +313,7 @@
   background-clip: border-box;
 }
 
-.userDetails-changePhoto {
+.userDetailsChangePhoto {
   height: 34px;
   width: 100%;
   opacity: 0.63;
@@ -336,13 +325,13 @@
   left: 0px;
 }
 
-.userDetails-changePhoto i {
+.userDetailsChangePhoto i {
   font-size: 16px;
   margin-top: 5px;
   color: rgb(255, 255, 255);
 }
 
-.myProfile-input {
+.myProfileInput {
   width: 100%;
   height: 75%;
 }
@@ -403,7 +392,7 @@
   font-weight: 400;
 }
 
-.big-input textarea {
+.bigInput textarea {
   width: 585px;
   height: 240px;
   resize: none;
@@ -434,7 +423,7 @@
   height: 500px;
 }
 
-.uploadCV-content {
+.uploadCVContent {
   padding: 10px 25px 30px 25px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -446,7 +435,7 @@
   height: 440px;
 }
 
-.uploadCV-content h3 {
+.uploadCVContent h3 {
   color: #bfc5d2;
   font-size: 13px;
   font-family: Open Sans, sans-serif;
@@ -454,27 +443,27 @@
   line-height: 1.04;
 }
 
-.uploadCV-content p {
+.uploadCVContent p {
   font-size: 0.875rem;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
   font-family: 'Open Sans', sans-serif;
 }
 
-.uploadCV-content b {
+.uploadCVContent b {
   margin-bottom: 20px;
 }
 
-.uploadCV-contentNightMode {
+.uploadCVContentNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.uploadCV-contentNightMode b,
-.uploadCV-contentNightMode p {
+.uploadCVContentNightMode b,
+.uploadCVContentNightMode p {
   color: rgb(183, 196, 208);
 }
 
-.uploadCV-uploadFile {
+.uploadCVCploadFile {
   display: flex;
   -moz-box-align: center;
   justify-content: center;
@@ -487,7 +476,7 @@
   margin-top: 20px;
 }
 
-.uploadFile-box {
+.uploadFileBox {
   height: 138px;
   width: 138px;
   background-color: rgb(250, 250, 250);
@@ -497,38 +486,13 @@
   align-items: center;
 }
 
-.uploadFile-box i {
+.uploadFileBox i {
   font-size: 50px;
   color: #bfc5d2;
 }
 
-.margin-0 {
-  margin: 0;
-}
-
-.margin-10 {
-  margin: 10px;
-}
-
-.marginR-10 {
-  margin-right: 10px;
-}
-
-.width-100 {
-  width: 100%;
-}
-
-.marginBtm-50 {
-  margin-bottom: 50px;
-}
-
 .display-flex {
   display: flex;
-}
-
-.flex-center {
-  justify-content: center;
-  align-items: center;
 }
 
 .display-flex i {
@@ -539,18 +503,23 @@
   left: 8%;
 }
 
-.uploadFile-text {
+.flexCenter {
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadFileText {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.uploadFile-text p {
+.uploadFileText p {
   color: #bfc5d2;
   font-size: 16px;
 }
 
-.uploadFile-text b {
+.uploadFileText b {
   color: rgb(52, 124, 255);
   font-size: 16px;
   font-weight: 400;
@@ -562,7 +531,7 @@
   margin-bottom: 50px;
 }
 
-.yearsOfExperiance-content {
+.yearsOfExperianceContent {
   padding: 20px 20px 20px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -574,14 +543,14 @@
   height: 100%;
 }
 
-.yearsOfExperiance-content p {
+.yearsOfExperianceContent p {
   margin: 0;
   color: rgba(0, 0, 0, 0.87);
   font-size: 16px;
   font-weight: 600;
 }
 
-.yearsOfExperiance-content h3 {
+.yearsOfExperianceContent h3 {
   margin: 0;
   margin-bottom: 20px;
   color: #bfc5d2;
@@ -591,25 +560,25 @@
   line-height: 1.04;
 }
 
-.yearsOfExperiance-contentNightMode {
+.yearsOfExperianceContentNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.yearsOfExperiance-contentNightMode p {
+.yearsOfExperianceContentNightMode p {
   color: rgb(183, 196, 208);
 }
 
-.yearsBoxes-content {
+.yearsBoxesContent {
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
 }
 
-.yearsBoxes-content b {
+.yearsBoxesContent b {
   font-weight: 400 !important;
 }
 
-.years-box {
+.yearsBox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -622,11 +591,11 @@
   margin-right: 5px;
 }
 
-.years-box p {
+.yearsBox p {
   font-size: 22px;
 }
 
-.years-box:hover {
+.yearsBox:hover {
   cursor: pointer;
   background-color: #f2f2f2;
 }
@@ -635,24 +604,27 @@
   background: rgba(57, 57, 57, 0.5) none repeat scroll 0% 0%;
 }
 
-.border-pink {
-  border-color: #ff4081 !important;
+
+.color-pink {
+  color: #ff4081 !important;
 }
+
+/* .border-pink {
+  border-color: #ff4081 !important;
+} */
 
 .color-pink p {
   color: #ff4081 !important;
 }
 
-.color-pink {
-  color: #ff4081 !important;
-}
+
 
 .socialLinks {
   width: 615px;
   height: 120px;
 }
 
-.socialLinks-content {
+.socialLinksContent {
   padding: 10px 20px 20px 20px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -664,11 +636,11 @@
   height: 100%;
 }
 
-.socialLinks-contentNightMode {
+.socialLinksContentNightMode {
   background: rgb(76, 80, 82) none repeat scroll 0% 0%;
 }
 
-.socialLinks-content h3 {
+.socialLinksContent h3 {
   color: #bfc5d2;
   font-size: 13px;
   font-family: Open Sans, sans-serif;
@@ -677,11 +649,11 @@
   margin-bottom: 20px;
 }
 
-.socialLinks-content p {
+.socialLinksContent p {
   margin: 0;
 }
 
-.pink-button {
+.pinkButton {
   text-transform: none;
   font-size: 16px;
   font-weight: 500;
@@ -703,11 +675,10 @@
   border: none;
 }
 
-.pink-button:hover {
+.pinkButton:hover {
   background-color: #990033;
 }
 
-/*czy koniecznoscia jest tworzenie specjalnych klas do nadawania tylko 20 marginu, lepiej to w komponencie reaktowym ostylowac odpowiednio wrappery elementow*/
 .margTop20 {
   margin-top: 20px;
 }

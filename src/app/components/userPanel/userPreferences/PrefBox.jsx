@@ -9,15 +9,15 @@ const PrefBox = ({
   content
 }) => {
   return (
-    <div className="preferences-box">
-      <header className="preferences-header">
+    <div className="preferencesBox">
+      <header className="preferencesHeader">
         <div className={heading}>
           <i className={iconClass}></i>
           <h2>{title}</h2>
         </div>
         <p>{paragraph}</p>
       </header>
-      <div className="preferences-jobStatus">
+      <div className="preferencesJobStatus">
         <div className={className}>{content}</div>
       </div>
     </div>
