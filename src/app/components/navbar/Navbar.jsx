@@ -33,9 +33,9 @@ const Navbar = () => {
 
   const toggleTest = () => {
     if (isTest === true) {
-      document.getElementById('body').className = 'overflow-hidden';
+      document.getElementById("body").style.overflow = "visible";
     } else if (isTest === false) {
-      document.getElementById('body').className = 'overflow-visible';
+      document.getElementById("body").style.overflow = "hidden";
     }
   };
 

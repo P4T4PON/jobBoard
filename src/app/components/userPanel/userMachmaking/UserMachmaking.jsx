@@ -32,3 +32,4 @@ const UserPreferences = ({ toggleActive, contactsData, profileCompleted, prefere
 };
 
 export default UserPreferences;
+

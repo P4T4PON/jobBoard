@@ -8,8 +8,7 @@ const BurgerIcon = ({ toggleTest }) => {
     return (
         <div
             className="bars hov"
-            onMouseUp={toggleTest}
-            onMouseDown={() => dispatch(test())}
+            onMouseUp={() => { dispatch(test()); toggleTest() }}
         >
             <i className="fas fa-bars" />
         </div>
