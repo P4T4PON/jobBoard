@@ -15,7 +15,7 @@ const TextArea = ({ userStory, toggleUserStory, isDay }) => {
                     className={isDay === false ? 'inputNightMode' : null}
                 />
                 <label htmlFor="surname" className="labelName">
-                    <span className={isDay ? "contentName" : "contentName  inputNightMode"} style={{ marginLeft: '20px' }}>
+                    <span className={isDay ? "contentName companyInput" : "contentName  inputNightMode companyInput"} style={{ marginLeft: '20px' }}>
                         Introduce Yourself
                 </span>
                     <i className="fas fa-pen tai" />

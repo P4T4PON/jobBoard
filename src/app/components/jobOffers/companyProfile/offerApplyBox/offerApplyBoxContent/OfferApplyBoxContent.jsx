@@ -21,9 +21,10 @@ const OfferApplyBoxContent = ({ userStory, toggleUserStory }) => {
                         name={'firstName'}
                         value={inputData.firstName}
                         checkInputLength={handleChange}
-                        span={'First & last name'}
+                        span={'first & last name'}
                         insideIcon={'far fa-user'}
                         isDay={isDay}
+                        spanClass={'companyInput'}
                     />
                 </div>
 
@@ -31,9 +32,10 @@ const OfferApplyBoxContent = ({ userStory, toggleUserStory }) => {
                     name={'email'}
                     value={inputData.email}
                     checkInputLength={handleChange}
-                    span={'Email'}
+                    span={'email'}
                     insideIcon={'fas fa-envelope'}
                     isDay={isDay}
+                    spanClass={'companyInput'}
                 />
             </div>
             <IntroduceRow isDay={isDay} userStory={userStory} toggleUserStory={toggleUserStory} />

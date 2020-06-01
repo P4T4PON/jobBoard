@@ -273,7 +273,7 @@
 
 .cont input:focus + .labelName .contentName,
 .cont input:valid + .labelName .contentName {
-  transform: translateY(-170%);
+  transform: translateY(-140%);
   color: #ff4081;
   background-color: white;
   border-radius: 10px;
@@ -291,14 +291,14 @@
 }
 
 .inpont input + .labelName .contentName {
-  transform: translateY(-170%);
+  transform: translateY(-140%);
   color: #99a1ab;
   background-color: white;
   border-radius: 10px;
 }
 
 .inpont textarea + .labelName .contentName {
-  transform: translateY(-170%);
+  transform: translateY(-140%);
   color: #99a1ab;
   background-color: white;
   border-radius: 10px;
@@ -356,4 +356,8 @@
   width: 60%;
   margin: 5px 0 5px 0;
   text-align: center;
+}
+
+.companyInput {
+  transform: translateY(-170%)!important;
 }

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { logged } from '../../../../../actions/index';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const LinkItem = ({
   link,
@@ -11,6 +12,7 @@ const LinkItem = ({
   linkId,
   toggleActive
 }) => {
+  const isDay = useSelector(state => state.isDay);
   const dispatch = useDispatch();
   return (
     <Fragment>
@@ -18,8 +20,10 @@ const LinkItem = ({
         <div
           className={
             active === linkId
-              ? 'userLoginOptionslist userLoginActive'
-              : 'userLoginOptionslist'
+              ? 'userLoginOptionslist userLoginActive' :
+              isDay === false ?
+                'userLoginOptionslist userLoginOptionslistNightMode' :
+                'userLoginOptionslist'
           }
           onClick={() => toggleActive(linkId)}
           onMouseUp={() => linkId === 5 && dispatch(logged())}

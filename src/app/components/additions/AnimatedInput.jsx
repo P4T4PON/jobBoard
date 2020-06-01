@@ -13,7 +13,8 @@ const AnimatedInput = ({
   spanClass,
   insideIcon,
   isDay,
-  error
+  error,
+  companyOffer
 }) => {
   return (
     <div className="passwordChangeInput">

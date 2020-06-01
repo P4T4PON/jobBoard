@@ -11,3 +11,7 @@
     text-align: left;
     margin-top: 5px;
 }
+
+.userLoginOptionslistNightMode {
+    color: rgb(183, 196, 208)!important;
+}

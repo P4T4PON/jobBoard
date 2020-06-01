@@ -10,10 +10,11 @@ const CityButton = ({
   isDay,
   choseCity,
   chosenCity,
-  text
+  text,
+  brands
 }) => {
   return (
-    <Link to='/' onClick={() => choseCity(city)}>
+    <Link to={brands ? '/brands' : '/'} onClick={choseCity ? () => choseCity(city) : null}>
       <div
         className={
           cityId === active && allCities === false ? 'cityButton all'

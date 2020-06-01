@@ -5,7 +5,7 @@ import NightMode from '../../nightMode/NightMode';
 import { otherCities, jobCities } from '../../../../../constans';
 import { useSelector } from 'react-redux';
 
-const Cities = ({ toggleAllCities, linkTo }) => {
+const Cities = ({ toggleAllCities, linkTo, brands }) => {
   const isDay = useSelector(state => state.isDay);
 
   const [showOtherCities, setShowOtherCities] = useState(false);
@@ -43,10 +43,11 @@ const Cities = ({ toggleAllCities, linkTo }) => {
         city={city}
         isDay={isDay}
         linkTo={linkTo}
+        brands={brands}
       />
     ));
   };
-  //TODO: rownież manipulacja DOM bezpośrednia
+
   const addCity = city => {
     document.querySelector('.added-city').firstChild.innerText = city;
     document
