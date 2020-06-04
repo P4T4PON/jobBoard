@@ -41,7 +41,7 @@ const AnimatedInput = ({
           </label>
         </div>
         {name === 'name' && value === '' || name === 'surname' && value === '' || name === 'linkedin' && value === '' ?
-          <p className='requiredAlert'>
+          <p className={'requiredAlert'}>
             Field required to 1-click apply
           <i className="fas fa-exclamation-triangle" />
           </p>

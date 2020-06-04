@@ -1,13 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 
 const FilterButton = ({ text, headIcon, showFilters, filter, chosenCity }) => {
+    const isDay = useSelector(state => state.isDay);
 
     const toggleFilters = () => {
         showFilters(!filter)
     }
 
     return (
-        <button className={chosenCity === text ? 'filterButton chosen' : 'filterButton'} onClick={toggleFilters}>
+        <button className={chosenCity === text ? 'filterButton chosen' : isDay ? 'filterButton' : 'filterButton filterButtonNightMode'} onClick={toggleFilters}>
             <span className='filterButtonContent'>
                 {headIcon && <i className="fas fa-sliders-h mgr10" style={{ marginRight: "10px" }} />}
                 {text}

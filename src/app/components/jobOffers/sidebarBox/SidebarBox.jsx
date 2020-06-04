@@ -10,7 +10,7 @@ const SidebarBox = ({ chosenCity, toggleAllCities, technology, active, value, to
 
     return (
         <div className='sidebarBox'>
-            <div className={isDay ? 'sidebarOffers' : 'sidebarOffersNightMode'}>
+            <div className={isDay ? 'sidebarOffers' : 'sidebarOffers sidebarOffersNightMode'}>
                 <Switch>
                     <Route exact path={'/'}>
                         <Sidebar

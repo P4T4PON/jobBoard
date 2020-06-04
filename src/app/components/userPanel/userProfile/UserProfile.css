@@ -711,3 +711,7 @@
 .requiredAlert i {
   margin-left: 10px;
 }
+
+.requiredAlertNightMode{
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+}

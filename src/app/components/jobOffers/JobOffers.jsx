@@ -5,8 +5,10 @@ import MainContent from './mainContent/MainContent'
 import CityFilters from './cityFilters/CityFilters'
 import SidebarBox from './sidebarBox/SidebarBox'
 import ContactUs from './contactUsBox/contactUs/ContactUs'
+import { useSelector } from 'react-redux';
 
 const JobOffers = () => {
+  const isDay = useSelector(state => state.isDay);
   const [renderParent, setRenderParent] = useState(false)
   const [active, setActive] = useState({ 'all': true, 'junior': false, 'mid': false, 'senior': false })
   const [linkTo, setLinkTo] = useState(true);
@@ -75,7 +77,7 @@ const JobOffers = () => {
 
   const renderFilters = (filter) => {
     return filter.map((item, index) =>
-      <CityButton city={item} key={index} choseCity={choseCity} chosenCity={chosenCity} />
+      <CityButton city={item} key={index} choseCity={choseCity} chosenCity={chosenCity} isDay={isDay} />
     );
   };
 

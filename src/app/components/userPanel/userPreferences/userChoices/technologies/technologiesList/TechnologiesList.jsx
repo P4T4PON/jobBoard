@@ -12,10 +12,12 @@ const TechnologiesList = ({ tech, showTech, technologies, userTechnologies, togg
         return (value.name.toLowerCase().includes(tech.toLowerCase()));
     }
 
-    const filterValues = (userTechnologies) => {
-        for (let i = 0; i < technologies.length; i++) {
-            if (technologies[i] === userTechnologies) {
-                toggleUserTechnologies(userTechnologies, technologies)
+    const filterValues = (tech) => {
+        if (userTechnologies.length < 2) {
+            for (let i = 0; i < technologies.length; i++) {
+                if (technologies[i] === tech) {
+                    toggleUserTechnologies(tech, technologies)
+                }
             }
         }
     }

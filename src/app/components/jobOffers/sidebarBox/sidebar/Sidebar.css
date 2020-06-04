@@ -6,12 +6,13 @@
 
 .sidebar-map {
   width: 50%;
-  height: calc(100vh - 136px);
+  height: calc(100vh - 130px);
 }
 
 .sidebarOffers {
+  padding: 10px 0 10px 10px;
   width: 50%;
-  height: calc(100vh - 136px);
+  height: calc(100vh - 149px);
   background-color: #f3f6f8;
   overflow: auto;
   scroll-behavior: smooth;
@@ -19,11 +20,7 @@
 }
 
 .sidebarOffersNightMode {
-  width: 50%;
-  height: calc(100vh - 134px);
   background: rgb(33, 33, 33);
-  overflow: auto;
-  scroll-behavior: smooth;
   transition: all 0.3s ease-out 0s;
 }
 
@@ -169,7 +166,7 @@
   white-space: nowrap;
   line-height: 11px;
   color: rgb(183, 196, 208);
-  background-color: rgb(57, 57, 57);
+  background-color: rgb(33,33,33);
   transition: all 0.3s ease-out 0s;
 }
 
@@ -237,7 +234,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   min-width: 1ch;
-  background-color: rgb(57, 57, 57);
+  background-color: rgb(33,33,33);
   color: rgb(183, 196, 208);
   border: 1px solid rgb(57, 57, 57);
   transition: all 0.3s ease-out 0s;

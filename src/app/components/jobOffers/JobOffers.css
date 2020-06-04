@@ -8,7 +8,6 @@
 .subHeader {
   width: 100%;
   background-color: #f3f6f8;
-  padding: 0 40px 5px 18px;
   height: 60px;
   display: flex;
   align-items: flex-start;
@@ -18,8 +17,7 @@
 
 .subHeaderNightMode {
   width: 100%;
-  background-color: rgb(57, 57, 57);
-  padding: 0 40px 5px 18px;
+  background-color: rgb(44,44,44);
   height: 60px;
   display: flex;
   align-items: flex-start;
@@ -67,7 +65,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(228, 232, 240);
+  border: 1px solid rgba(0, 0, 0, 0.23);
+}
+
+.cityButton:hover {
+  background-color: rgb(245, 245, 245);
 }
 
 .cityLink {
@@ -100,10 +102,12 @@ color: rgb(153, 161, 171);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.cityButton:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+.cityButtonNightMode:hover {
+  background-color: rgb(33,33,33);
 }
 
 .filtersTechnologies {
@@ -459,21 +463,25 @@ color: rgb(153, 161, 171);
 }
 
 .salaryButton {
-  padding: 12px;
-  width: 250px;
-  height: 70px;
-  background-color: #fff;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 2px 1px -1px rgba(0, 0, 0, 0.12);
-  border-radius: 10px;
+  color: rgb(119, 119, 119);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 25px 10px 20px;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-start;
+    height: 48px;
+    flex: 1 1 0%;
+    padding: 2px 24px 0px;
+    border-radius: 24px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(228, 232, 240);
+    border-image: initial;
 }
 
 .salaryButtonNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(33,33,33);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .padd0 {
@@ -521,6 +529,11 @@ color: rgb(153, 161, 171);
     line-height: 1.75;
 }
 
+.filterButtonNightMode {
+  background: rgb(57, 57, 57);
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgb(57, 57, 57);
+}
 
 .fitersOfCities {
   z-index: 10;
@@ -537,6 +550,10 @@ border-radius: 4px;
 
 .fitersOfCities h3{
 margin: 10px 0;
+}
+
+.fitersOfCitiesNightMode {
+  background: rgb(44,44,44);
 }
 
 .filterButtonBox {
@@ -600,6 +617,10 @@ margin: 10px 0;
   flex-direction: column;
 }
 
+.salaryBoxNightMode{
+  background-color: #2C2C2C;
+}
+
 .salaryTitle {
   display: flex;
 }
@@ -613,22 +634,7 @@ margin: 10px 0;
 }
 
 
-.salaryButton {
-  color: rgb(119, 119, 119);
-  display: flex;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    justify-content: center;
-    align-items: flex-start;
-    height: 48px;
-    flex: 1 1 0%;
-    padding: 2px 24px 0px;
-    border-radius: 24px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(228, 232, 240);
-    border-image: initial;
-}
+
 
 .salaryRange {
   display: flex;
@@ -677,6 +683,15 @@ margin: 10px 0;
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(228, 232, 240);
+}
+
+.seniorityButtonNightMode {
+  background: rgb(57, 57, 57);
+    border-color: rgb(57, 57, 57);
+}
+
+.seniorityButtonNightMode:hover {
+  background-color: rgb(33, 33, 33);
 }
 
 .chosen {

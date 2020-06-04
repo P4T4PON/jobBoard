@@ -16,16 +16,6 @@ const TechnologiesBox = ({ isDay, toggleTechnologies, userTechnologies, technolo
     setShowTech(true);
   };
 
-  const filterValues = (chosenTech) => {
-    if (userTechnologies.length != 2) {
-      for (let i = 0; i < technologies.length; i++) {
-        if (technologies[i].name === chosenTech.name) {
-          technologies.splice(i, 1)
-        }
-      }
-    }
-  }
-
   const filterChosenTechnologies = (chosenTech) => {
     for (let i = 0; i < userTechnologies.length; i++) {
       if (userTechnologies[i] === chosenTech) {

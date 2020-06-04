@@ -57,7 +57,7 @@
 
 .flag img {
   width: 42px;
-  height: 32px;
+  height: 34px;
   transition: 0.2s opacity ease-out;
   cursor: pointer;
 }
@@ -251,8 +251,9 @@
 }
 
 .carouselBox {
+  padding: 70px 0 0 0;
   width: 100%;
-  height: 600px;
+  height: 560px;
   background-color: #eeeeee;
 }
 

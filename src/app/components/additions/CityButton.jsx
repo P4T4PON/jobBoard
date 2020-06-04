@@ -18,7 +18,7 @@ const CityButton = ({
       <div
         className={
           cityId === active && allCities === false ? 'cityButton all'
-            : isDay === false ? 'cityButtonNightMode'
+            : isDay === false ? 'cityButton cityButtonNightMode'
               : chosenCity === city ? 'cityButton chosen'
                 : 'cityButton'
         }

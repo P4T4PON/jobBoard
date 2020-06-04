@@ -1,6 +1,8 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 const SeniorityButton = ({ text, active, changeActive }) => {
+    const isDay = useSelector(state => state.isDay);
 
     const superSecret = function (active) {
         Object.keys(active).forEach((key) => {
@@ -17,7 +19,7 @@ const SeniorityButton = ({ text, active, changeActive }) => {
     }
 
     return (
-        <div className={active[text] ? 'seniorityButton chosen' : 'seniorityButton'} onClick={() => changeActive(superSecret)}>
+        <div className={active[text] ? 'seniorityButton chosen' : isDay ? 'seniorityButton' : 'seniorityButton seniorityButtonNightMode'} onClick={() => changeActive(superSecret)}>
             {text}
         </div >
     )
