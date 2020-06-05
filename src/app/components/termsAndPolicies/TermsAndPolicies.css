@@ -1,0 +1,57 @@
+.backGround {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+/*sam display flex ustawia align items i justify content na flex-start*/
+.wide {
+  display: flex;
+  width: 900px;
+  height: 250px;
+  margin-top: 20px;
+  flex-direction: column;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.content {
+  margin-top: 10px;
+}
+/*nadajesz margin 0 a poźniej go nadpisujesz, uzyj shorthand notation*/
+.content h1 {
+  font-size: 24px;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  color: #37474f;
+  margin: 20px 0 5px 20px;
+}
+
+.content h3 {
+  font-size: 16px;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  color: #37474f;
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.content a:hover {
+  cursor: pointer;
+}
+.content a:link {
+  text-decoration: none;
+  color: #039be5;
+}
+
+.content a:visited {
+  text-decoration: none;
+  color: #039be5;
+}
+
+.content i {
+  margin-left: 5px;
+}

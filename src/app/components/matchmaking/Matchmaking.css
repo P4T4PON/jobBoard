@@ -1,0 +1,362 @@
+.matchmaking {
+  width: 100vw;
+  height: calc(100vh - 66px);
+  display: flex;
+}
+
+.matchmaking h1 {
+  text-align: center;
+  color: #2e384d;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.matchmaking h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.register a {
+  margin-left: 5px;
+}
+
+.logging {
+  float: right;
+  margin: 75px 84px;
+  width: 420px;
+}
+
+.loggingNightMode {
+  background-color: rgb(57, 57, 57);
+}
+
+.media {
+  width: 420px;
+  padding: 0 16px;
+  min-width: 48px;
+  min-height: auto;
+  border-radius: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 0.01;
+}
+
+
+
+.media p {
+  font-size: 12px;
+  height: 0px;
+  color: rgb(117, 117, 117);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.mediaItem {
+  border-radius: 24px;
+  width: 160px;
+  padding: 10px 15px;
+  background-color: rgb(224, 224, 224);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mediaItem i {
+  font-size: 20px;
+}
+
+.mediaItem:hover {
+  background-color: #cccccc;
+}
+
+.mediaIcon {
+  display: flex;
+  align-self: center;
+  margin-right: 5px;
+}
+
+.color-blue {
+  color: rgb(39, 69, 167);
+}
+
+.colorBlack {
+  color: black;
+}
+
+.span {
+  height: 2px;
+  background: rgb(231, 233, 239) none repeat scroll 0% 0%;
+  margin: 0 0 30px;
+  text-align: center;
+  width: 400px;
+}
+
+.spanItem {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  padding: 0px 20px;
+  position: relative;
+  margin-right: 20px;
+}
+
+.login {
+  display: flex;
+  flex-wrap: wrap;
+  width: 420px;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginIcon {
+  display: flex;
+  color: black;
+  align-self: center;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 10px 0 0;
+  font-size: 20px;
+}
+
+.loginSubmit {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.75;
+  text-transform: none;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 6px 100px;
+  outline: none;
+  font-family: Open Sans, sans-serif;
+  letter-spacing: 0.04rem;
+}
+
+.loginSubmit:hover {
+  cursor: pointer;
+  background-color: #99003d;
+}
+
+.loginSubmit:active {
+  background-color: #ff4081;
+}
+
+.register {
+  display: flex;
+  height: 100px;
+  width: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin-top: 15px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.registerNightMode h2 {
+  color: #b7c4d0;
+}
+
+.register a {
+  text-decoration: none;
+  color: #ff4081;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.register a:hover {
+  cursor: pointer;
+}
+
+.img {
+  width: 50%;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+.cont {
+  width: 80%;
+  position: relative;
+  height: 40px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+
+.cont input {
+  width: 100%;
+  height: 50px;
+  color: #595f6e;
+  outline: none;
+  border-radius: 5px;
+  border: 1px #99a1ab solid;
+  font-size: 18px;
+  padding: 0px 20px;
+}
+
+.cont input.big {
+  font-size: 30px;
+  color: black;
+  position: absolute;
+}
+
+.cont input.bigNightMode {
+  color: rgb(183, 196, 208);
+}
+
+.cont input:focus {
+  border-color: #ff4081;
+}
+
+.cont textarea:focus {
+  border-color: #ff4081;
+}
+
+.inputError input {
+  border-color: #f44336;
+}
+
+.inputError input:focus {
+  border: 1.5px solid #f44336;
+}
+
+.cont label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  margin-left: 15px;
+}
+
+.passwordShower {
+  position: absolute;
+  bottom: 0px;
+  left: 100%;
+  width: 35px;
+  font-size: 25px;
+  color: black;
+}
+
+.passwordShower:hover {
+  cursor: pointer;
+}
+
+.passwordShowerNightMode {
+  color: rgb(255, 255, 255);
+}
+
+.contentName {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.cont input:focus + .labelName .contentName,
+.cont input:valid + .labelName .contentName {
+  transform: translateY(-140%);
+  color: #ff4081;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.contNightMode input:focus + .labelName .contentName,
+.contNightMode input:valid + .labelName .contentName {
+  color: #ff4081;
+  background-color: rgb(44,44,44);
+}
+
+.inputError input:focus + .labelName .contentName,
+.inputError input:valid + .labelName .contentName {
+  color: #f44336;
+}
+
+.inpont input + .labelName .contentName {
+  transform: translateY(-140%);
+  color: #99a1ab;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.inpont textarea + .labelName .contentName {
+  transform: translateY(-140%);
+  color: #99a1ab;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.inpont input {
+  margin-right: 60px;
+}
+
+.inpont input {
+  padding: 0px 35px;
+}
+
+.inside-icon {
+  margin-top: 20px;
+}
+
+.error {
+  color: #f44336;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.inputError label {
+  color: #f44336;
+}
+
+.loggingBox {
+  width: 50%;
+}
+
+.loggingBoxNightMode {
+  background-color: rgb(44,44,44);
+}
+
+.iconNightMode {
+  color: rgb(55, 71, 79);
+}
+
+.loginIconNightMode {
+  color: rgb(55, 71, 79);
+}
+
+.contNightMode input {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(183, 196, 208);
+}
+
+.input-line {
+  height: 1px;
+  background: rgb(231, 233, 239) none repeat scroll 0% 0%;
+  width: 60%;
+  margin: 5px 0 5px 0;
+  text-align: center;
+}
+
+.companyInput {
+  transform: translateY(-170%)!important;
+}
+

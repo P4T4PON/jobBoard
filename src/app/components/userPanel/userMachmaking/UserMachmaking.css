@@ -1,0 +1,373 @@
+.userMachmaking {
+  flex-grow: 1;
+  position: relative;
+  padding: 20px;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(55, 71, 79);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+.userMachmakingNightMode {
+  background-color: rgb(57, 57, 57);
+}
+
+/* .userMachmaking-box {
+  max-width: 1280px;
+  margin: 0px auto;
+} */
+
+.userMachmakingHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userMachmakingHeader h2 {
+  color: rgb(55, 71, 79);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.userMachmakingHeader a {
+  text-decoration: none;
+}
+
+.userMachmakingHeaderNightMode h2 {
+  color: rgb(183, 196, 208);
+}
+
+.editPreferencesBtn {
+  background-color: #ab47bc;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  min-width: 80px;
+  border-radius: 40px;
+}
+
+.userMachmakingPreferences {
+  padding: 15px;
+  margin: 0px -10px;
+  min-height: 124px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.matchmakingPreferencesBox {
+  min-width: 238px;
+  padding: 4px;
+}
+
+.preferencesItem {
+  padding: 25px 15px;
+  height: 55px;
+  opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 8px 0px;
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.preferencesItem i {
+  float: left;
+  font-size: 16px;
+  height: 44px;
+  margin-top: -2px;
+  width: 44px;
+  border-radius: 50%;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  margin-right: 10px;
+  border: 3px solid rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 7px 0px;
+}
+
+.preferencesItemNightMode {
+  background: rgb(44,44,44);
+}
+
+.preferencesItemNightMode b {
+  color: #99a1ab;
+}
+
+.blueBox {
+  color: rgb(92, 107, 192);
+  background: rgb(237, 231, 246) none repeat scroll 0% 0%;
+}
+
+.lightBlueBox {
+  color: rgb(92, 107, 192);
+  background: rgb(225, 245, 254) none repeat scroll 0% 0%;
+}
+
+.lightBlueBlueBox {
+  color: rgb(77, 208, 225);
+  background: rgb(225, 245, 254) none repeat scroll 0% 0%;
+}
+
+.pinkBox {
+  color: rgb(255, 64, 129);
+  background: rgb(252, 228, 236) none repeat scroll 0% 0%;
+  font-size: 18px !important;
+}
+
+.yellowBox {
+  color: rgb(249, 168, 37);
+  background: rgb(255, 243, 224) none repeat scroll 0% 0%;
+}
+
+.redBox {
+  color: rgb(255, 93, 93);
+  background: rgb(252, 228, 236) none repeat scroll 0% 0%;
+}
+
+.orangeBox {
+  color: rgb(255, 138, 101);
+  background: rgb(255, 204, 188) none repeat scroll 0% 0%;
+  font-size: 24px !important;
+}
+
+.greenBox {
+  color: rgb(104, 188, 108);
+  background: rgb(230, 244, 244) none repeat scroll 0% 0%;
+}
+
+.greyBox {
+  color: rgb(120, 144, 156);
+  background: rgb(236, 239, 241) none repeat scroll 0% 0%;
+}
+
+.purpleBox {
+  color: rgb(171, 71, 188);
+  background: rgb(232, 234, 246) none repeat scroll 0% 0%;
+}
+
+.preferencesText b {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.preferencesText span {
+  color: rgb(176, 186, 201);
+  font-size: 12px;
+  letter-spacing: 1.13px;
+}
+
+.preferencesText {
+  display: flex;
+  flex-direction: column;
+}
+
+.showLess {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 22px;
+}
+
+
+
+.showLessButton {
+  color: rgb(135, 144, 150);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+  transform: translateY(-300%);
+  transition: transform 0.5s ease;
+}
+
+.showMore {
+  transform: translateY(0%);
+  transition: transform 0.5s ease;
+}
+
+.showLessButton i {
+  margin-left: 5px;
+}
+
+.replies {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+} 
+
+.repliesMore {
+  transform: translateY(0%);
+  transition: transform 0.5s ease;
+}
+
+.replies h1 {
+  color: rgb(55, 71, 79);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.repliesNightMode h1 {
+  color: rgb(183, 196, 208);
+}
+
+.userMachmaking-status {
+  display: flex;
+}
+
+.userMachmakingItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-right: 2px solid rgb(245, 247, 250);
+  min-height: 60px;
+  min-width: 160px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #b0bac9;
+  cursor: pointer;
+}
+
+.userMachmakingItemNightMode {
+  background: rgb(44,44,44) ;
+  border-right: 2px solid rgb(57, 57, 57);
+}
+
+.left {
+  border-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.middle {
+  border-radius: 0px;
+}
+
+.right {
+  border-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.repliedActive {
+  color: rgb(255, 64, 129);
+}
+
+.machesBox {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.machesContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  color: rgb(55, 71, 79);
+  font-weight: 600;
+}
+
+.machesContentNightMode {
+  color: rgb(183, 196, 208);
+}
+
+.machesContent i {
+  font-size: 140px;
+}
+
+
+.matchmakingBackdrop {
+  z-index: 2;
+    right: 0px;
+    bottom: 0px;
+    top: 66px;
+    left: 0px;
+    opacity: 1;
+    backdrop-filter: blur(3px);
+    position: absolute;
+    background-color: rgba(245, 247, 250, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 6px)
+}
+
+.matchmakingAlert {
+  background: #fff;
+  max-width: 800px;
+  box-shadow: rgba(0, 0, 0, 0.13) 0px 12px 28px 0px;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.matchmakingAlertHeader {
+  color: rgb(55, 71, 79);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+}
+
+.separationLine {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(228, 232, 240);
+    border-image: initial;
+}
+
+.profileAlert {
+  color: rgb(55, 71, 79);
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 15px 20px;
+}
+
+.profileAlert p {
+  margin: 0 10px;
+}
+
+.profileAlert i {
+  font-size: 20px;
+  color: rgb(255, 82, 82);
+}
+
+.profileCompleted {
+  background-color: rgba(0, 230, 118, 0.1);
+    color: rgb(73, 189, 133);
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 23.5px;
+    padding: 10px 20px;
+    margin: 15px 0px;
+}
+
+.profileCompleted i {
+  color: rgb(73, 189, 133);
+  font-size: 24px;
+  margin-right: 10px;
+}

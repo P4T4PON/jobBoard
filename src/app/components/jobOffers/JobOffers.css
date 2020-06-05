@@ -1,0 +1,717 @@
+.mainContent {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.subHeader {
+  width: 100%;
+  background-color: #f3f6f8;
+  height: 60px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 3px;
+  transition: all 0.3s ease-out 0s;
+}
+
+.subHeaderNightMode {
+  width: 100%;
+  background-color: rgb(44,44,44);
+  height: 60px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 3px;
+  transition: all 0.3s ease-out 0s;
+}
+
+.filters {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.filtersCities {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.filtersCities i {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.all {
+  color: #fff !important;
+  background: linear-gradient(to right, #ba68c8, #9c27b0);
+}
+
+.cityButton {
+  max-width: 100px;
+  background-color: #fff;
+  color: #777;
+  box-shadow: none;
+  text-transform: none;
+  margin: 0 0 10px 10px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+}
+
+.cityButton:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.cityLink {
+  text-decoration: none;
+color: rgb(153, 161, 171);
+}
+
+.cityLinkNightMode {
+  color: rgb(183, 196, 208);
+}
+
+
+.cityButtonNightMode {
+  max-width: 120px;
+  margin-right: 5px;
+  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  color: rgb(183, 196, 208);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-transform: none;
+  margin-left: 10px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.cityButtonNightMode:hover {
+  background-color: rgb(33,33,33);
+}
+
+.filtersTechnologies {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.techButton {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-transform: none;
+
+  height: 35px;
+  line-height: 35px;
+
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.techButton p {
+  margin: 0px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #99a1ab;
+  cursor: pointer;
+}
+
+.techButton i {
+  font-size: 22px;
+  color: white;
+}
+
+.techButton img {
+  width: 40px;
+}
+
+.iconSelf {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgPoz0 {
+  background-position-x: 0%;
+  background-position-y: 0%;
+  transition: 0.3s ease-out;
+}
+
+.bgPoz0:hover {
+  background-position: 30px;
+  transition: 0.3s ease-out;
+}
+
+.yellowIcon {
+  background: linear-gradient(-90deg, #ffc706, #ffaf00);
+}
+
+.orangeIcon {
+  background: linear-gradient(-90deg, #ff7d50, #fd5d21);
+}
+
+.blueIcon {
+  background: linear-gradient(-90deg, #41adfa, #157cfc);
+}
+
+.redIcon {
+  background: linear-gradient(-90deg, #ef5350, #f44336);
+}
+
+.redIcon i {
+  font-size: 20px;
+}
+
+.darkBlueIcon {
+  background: linear-gradient(-90deg, #1f5eb6, #1f7bc4);
+}
+
+ .lighterPinkIcon {
+  background: linear-gradient(-90deg, #fa656b, #f9597a);
+} 
+
+.lightBlueIcon {
+  background: linear-gradient(-90deg, #3fc5e6, #4fa4fd);
+}
+
+.lightRedIcon {
+  background: linear-gradient(-90deg, #f86468, #f1464c);
+}
+
+.lightRedIcon i {
+  font-size: 20px;
+}
+
+.greenIcon {
+  background: linear-gradient(-90deg, #2fcfbb, #37dd9c);
+}
+
+.bordIcon {
+  background: linear-gradient(-90deg, #e04f86, #ba4a8d);
+}
+
+.lightGreenIcon {
+  background: linear-gradient(-90deg, #89db54, #65af35);
+}
+
+.blueBlueIcon {
+  background: linear-gradient(-90deg, #5266e1, #8166e0);
+}
+
+.darkYellowIcon {
+  background: linear-gradient(-90deg, #ffb74d, #ff9800);
+}
+
+.darkYellowIcon i {
+  font-size: 18px;
+}
+
+.greenBlueIcon {
+  background: linear-gradient(-90deg, #80cbc4, #4db6ac);
+}
+
+.lightPinkIcon {
+  background: linear-gradient(-90deg, #ff4081, #ec407a);
+}
+
+.LightPurpleIcon {
+  background: linear-gradient(-90deg, #ab47bc, #6a1b9a);
+}
+
+.darkDarkBlueIcon {
+  background: linear-gradient(-90deg, #536dfe, #0d47a1);
+}
+
+.blueGreenIcon {
+  background: linear-gradient(-90deg, #009688, #00796b);
+}
+
+.lighterBlueIcon {
+  background: linear-gradient(-90deg, #6ad7e5, #6a8be5);
+}
+
+.darkerBlueIcon {
+  background: linear-gradient(-90deg, #02afeb, #1b68c2);
+}
+
+.purplePinkIcon {
+  background: linear-gradient(-90deg, #ec4cb6, #d44bd5);
+}
+
+.darkPinkIcon {
+  background: linear-gradient(-90deg, #ec4cb6, #d44bd5);
+}
+
+.darkPinkIcon i {
+  font-size: 16px;
+}
+
+.unAct {
+  background: linear-gradient(to right, #9193aa, #7d82a8);
+}
+
+.padd {
+  padding: 0 12px;
+}
+
+.otherCities {
+  position: absolute;
+  left: 650px;
+  top: 121px;
+  opacity: 100;
+  max-height: 600px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.otherCitiesUl {
+  padding: 0;
+  margin: 0;
+}
+
+.otherCitiesUl li {
+  list-style-type: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 7px 24px;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  color: #37474f;
+  user-select: none;
+}
+
+.otherCitiesUl li:hover {
+  cursor: pointer;
+  background-color: #f3f6f8;
+}
+
+.moveRight {
+  left: 750px !important;
+}
+
+.centerNote {
+  display: flex;
+  justify-content: center;
+}
+
+.centerNote p {
+  margin: 5px 0 0 0;
+  font-size: 12px;
+}
+
+.nightMode {
+  float: right;
+  margin-left: auto;
+  display: flex;
+}
+
+.nightModeMargin0 {
+  float: left;
+  display: flex;
+}
+
+.nightModeMargin0 {
+  float: left;
+  margin: 0;
+  display: flex;
+}
+
+.nightMode i {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #9e9e9e;
+}
+
+.changeMode {
+  width: 40px;
+  border-radius: 20px;
+  height: 15px;
+  background-color: #9e9e9e;
+  display: flex;
+  align-items: center;
+}
+
+.changeButton {
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transform: translateX(0%);
+  transition: transform 0.3s ease;
+}
+
+.changeButtonActive {
+  transform: translateX(100%);
+}
+
+.cityButton p {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.cityButtonNightMode p {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.expLevel {
+  margin-top: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.expLevelNightMode {
+  background-color: #4c5052;
+}
+
+.op0 {
+  opacity: 0;
+  z-index: -200;
+  pointer-events: none;
+}
+
+.op1 {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.expLevel ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.expLevel li {
+  list-style-type: none;
+  font-size: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.expLevel li:hover {
+  background-color: #f3f6f8;
+}
+
+.expLevelNightMode li:hover {
+  background-color: rgb(57, 57, 57);
+}
+
+.min-width120 {
+  min-width: 120px;
+}
+
+.allSidebars {
+  text-align: -webkit-center;
+  padding: 0;
+  z-index: 100;
+}
+
+.webkit-right {
+  text-align: -webkit-right;
+}
+
+.salaryButton {
+  color: rgb(119, 119, 119);
+  display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-start;
+    height: 48px;
+    flex: 1 1 0%;
+    padding: 2px 24px 0px;
+    border-radius: 24px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(228, 232, 240);
+    border-image: initial;
+}
+
+.salaryButtonNightMode {
+  background: rgb(33,33,33);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.padd0 {
+  padding: 0;
+  max-width: 92.5px;
+}
+
+.techShuffler {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.techShower {
+  color: #fff;
+  max-width: 60px;
+  padding: 0 7px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(92, 92, 92);
+  border-radius: 4px;
+}
+
+.filterButton {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    padding: 5px 15px;
+    text-transform: none;
+    color: rgb(119, 119, 119);
+    min-width: 148px;
+    justify-content: space-between;
+    border-radius: 18px;
+    background: rgb(255, 255, 255);
+    border-color: rgb(228, 232, 240);
+    outline: none;
+    padding: 6px 16px;
+    min-width: 64px;
+    box-sizing: border-box;
+    font-family: Open Sans,sans-serif;
+    font-weight: 600;
+    line-height: 1.75;
+}
+
+.filterButtonNightMode {
+  background: rgb(57, 57, 57);
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgb(57, 57, 57);
+}
+
+.fitersOfCities {
+  z-index: 10;
+  position: absolute;
+  width: 500px;
+  padding: 24px;
+  background-color: #fff;
+border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 2px 1px -1px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;
+}
+
+.fitersOfCities h3{
+margin: 10px 0;
+}
+
+.fitersOfCitiesNightMode {
+  background: rgb(44,44,44);
+}
+
+.filterButtonBox {
+  width: 100%;
+}
+
+.otherFilters {
+  display: flex;
+}
+
+.otherFiltersBox {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  padding: 0 0 0 80px;
+}
+
+.otherFilters h3 {
+  font-size: 18px;
+    color: rgb(119, 119, 119);
+   display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.exitBox {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 40px;
+}
+
+.exitBox i {
+  cursor: pointer;
+}
+
+.locationCities {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filterClear {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 0.5px solid lightgrey;
+}
+
+.salaryFiltersBox {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  z-index: 400;
+}
+
+.salaryBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.salaryBoxNightMode{
+  background-color: #2C2C2C;
+}
+
+.salaryTitle {
+  display: flex;
+}
+
+.salaryExpectations {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  color: rgb(119, 119, 119);
+}
+
+
+
+
+.salaryRange {
+  display: flex;
+  justify-content: center;
+    align-items: center;
+}
+
+.salarySpacer {
+  color: rgb(119, 119, 119);
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    font-size: 60px;
+    font-weight: 200;
+}
+
+.SeniorityBox {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.seniorityButtons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.seniorityButton {
+  width: 80px;
+  margin-right: 10px;
+  background-color: #fff;
+  color: #777;
+  box-shadow: none;
+  text-transform: none;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(228, 232, 240);
+}
+
+.seniorityButtonNightMode {
+  background: rgb(57, 57, 57);
+    border-color: rgb(57, 57, 57);
+}
+
+.seniorityButtonNightMode:hover {
+  background-color: rgb(33, 33, 33);
+}
+
+.chosen {
+  font-weight: 600;
+  color: rgb(255, 64, 129);
+  background: rgba(255, 64, 129, 0.08);
+  border-color: rgb(255, 64, 129);
+}
+
+.seniorityFooter {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.seniorityFooterContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactUsBox {
+  background-color: #fff;
+  border-radius: 10px;
+}

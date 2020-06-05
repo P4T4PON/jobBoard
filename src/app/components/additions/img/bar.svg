@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="100px" viewBox="0 0 86 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>A32756A0-4CE1-4742-A2BE-82F5CD80072E</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="336.555556%" y1="146.533333%" x2="-2.33333333%" y2="29.3333333%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#CCE2E6" offset="52%"></stop>
+            <stop stop-color="#8FA1BB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-8450%" y1="-393.666667%" x2="-8450%" y2="133.333333%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#CCE2E6" offset="52%"></stop>
+            <stop stop-color="#8FA1BB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-8473%" y1="-248%" x2="-8444.33333%" y2="123%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#CCE2E6" offset="52%"></stop>
+            <stop stop-color="#8FA1BB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="418.111111%" y1="139.079365%" x2="-17.1111111%" y2="31.5555556%" id="linearGradient-4">
+            <stop stop-color="#F3C57A" offset="0%"></stop>
+            <stop stop-color="#F39369" offset="49%"></stop>
+            <stop stop-color="#E94867" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-8150%" y1="-393.666667%" x2="-8150%" y2="133.333333%" id="linearGradient-5">
+            <stop stop-color="#F3C57A" offset="0%"></stop>
+            <stop stop-color="#F39369" offset="49%"></stop>
+            <stop stop-color="#E94867" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-8173%" y1="-248%" x2="-8144.33333%" y2="123%" id="linearGradient-6">
+            <stop stop-color="#F3C57A" offset="0%"></stop>
+            <stop stop-color="#F39369" offset="49%"></stop>
+            <stop stop-color="#E94867" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-8299.55556%" y1="134.962963%" x2="-7768.11111%" y2="32.8148148%" id="linearGradient-7">
+            <stop stop-color="#F3C57A" offset="0%"></stop>
+            <stop stop-color="#F39369" offset="49%"></stop>
+            <stop stop-color="#E94867" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-7850%" y1="-393.666667%" x2="-7850%" y2="133.333333%" id="linearGradient-8">
+            <stop stop-color="#F3C57A" offset="0%"></stop>
+            <stop stop-color="#F39369" offset="49%"></stop>
+            <stop stop-color="#E94867" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-7873%" y1="-248%" x2="-7844.33333%" y2="123%" id="linearGradient-9">
+            <stop stop-color="#F3C57A" offset="0%"></stop>
+            <stop stop-color="#F39369" offset="49%"></stop>
+            <stop stop-color="#E94867" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.9978407%" y1="-5.06838823%" x2="49.9978407%" y2="213.097567%" id="linearGradient-10">
+            <stop stop-color="#F3C57A" offset="0%"></stop>
+            <stop stop-color="#F39369" offset="49%"></stop>
+            <stop stop-color="#E94867" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BlackFriday_light" transform="translate(-398.000000, -3431.000000)">
+            <g id="graph,-chart,-bar,-arrow,-analytics" transform="translate(441.000000, 3481.000000) scale(-1, 1) translate(-441.000000, -3481.000000) translate(398.000000, 3431.000000)">
+                <path d="M85.7142857,46.3095238 L85.7142857,96.3095238 C85.7142857,98.2857143 80.952381,99.8809524 75,99.8809524 C69.047619,99.8809524 64.2857143,98.4047619 64.2857143,96.4285714 L64.2857143,46.4285714 L85.7142857,46.3095238 Z" id="Path" fill="url(#linearGradient-1)"></path>
+                <ellipse id="Oval" fill="url(#linearGradient-2)" cx="75" cy="96.4285714" rx="10.7142857" ry="3.57142857"></ellipse>
+                <ellipse id="Oval" fill="url(#linearGradient-3)" cx="75" cy="46.4285714" rx="10.7142857" ry="3.57142857"></ellipse>
+                <path d="M53.5714286,24.8809524 L53.5714286,96.3095238 C53.5714286,98.2857143 48.8095238,99.8809524 42.8571429,99.8809524 C36.9047619,99.8809524 32.1428571,98.2857143 32.1428571,96.3095238 L32.1428571,24.8809524 L53.5714286,24.8809524 Z" id="Path" fill="url(#linearGradient-4)"></path>
+                <ellipse id="Oval" fill="url(#linearGradient-5)" cx="42.8571429" cy="96.4285714" rx="10.7142857" ry="3.57142857"></ellipse>
+                <ellipse id="Oval" fill="url(#linearGradient-6)" cx="42.8571429" cy="25" rx="10.7142857" ry="3.57142857"></ellipse>
+                <path d="M21.4285714,3.45238095 L21.4285714,96.3095238 C21.4285714,98.2857143 16.6666667,99.8809524 10.7142857,99.8809524 C4.76190476,99.8809524 0,98.4047619 0,96.4285714 L0,3.57142857 L21.4285714,3.45238095 Z" id="Path" fill="url(#linearGradient-7)"></path>
+                <ellipse id="Oval" fill="url(#linearGradient-8)" cx="10.7142857" cy="96.4285714" rx="10.7142857" ry="3.57142857"></ellipse>
+                <ellipse id="Oval" fill="url(#linearGradient-9)" cx="10.7142857" cy="3.57142857" rx="10.7142857" ry="3.57142857"></ellipse>
+                <path d="M84.6428571,23.8095238 L76.7857143,33.6428571 C76.3337309,34.1553582 75.6833347,34.4489576 75,34.4489576 C74.3166653,34.4489576 73.6662691,34.1553582 73.2142857,33.6428571 L65.3571429,23.8095238 C65.1199431,23.5086009 65.0755488,23.0985984 65.2428396,22.753878 C65.4101304,22.4091577 65.7596884,22.1903379 66.1428571,22.1904762 L68.5238095,22.1904762 C69.0760943,22.1904762 69.5238095,21.7427609 69.5238095,21.1904762 L69.5238095,18.8095238 C69.5238095,15.7719577 71.9862434,13.3095238 75.0238095,13.3095238 C78.0613756,13.3095238 80.5238095,15.7719577 80.5238095,18.8095238 L80.5238095,21.1904762 C80.5238095,21.7427609 80.9715248,22.1904762 81.5238095,22.1904762 L83.9047619,22.1904762 C84.2793461,22.2078785 84.6127127,22.4333833 84.7682618,22.7745879 C84.923811,23.1157926 84.8753967,23.5153444 84.6428571,23.8095238 Z" id="Path" fill="url(#linearGradient-10)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
