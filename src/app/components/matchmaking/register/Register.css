@@ -21,6 +21,14 @@
   margin: 15px;
 }
 
+.regRegisterNightMode {
+  background: rgb(44,44,44);
+}
+
+.mediaNightMode h1 {
+  color: #b7c4d0;
+}
+
 .registering {
   margin: 75px 84px;
   width: 420px;

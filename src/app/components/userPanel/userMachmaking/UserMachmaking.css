@@ -96,7 +96,7 @@
 }
 
 .preferencesItemNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44);
 }
 
 .preferencesItemNightMode b {
@@ -242,7 +242,7 @@
 }
 
 .userMachmakingItemNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44) ;
   border-right: 2px solid rgb(57, 57, 57);
 }
 

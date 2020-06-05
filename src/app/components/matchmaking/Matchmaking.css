@@ -48,9 +48,7 @@
   line-height: 0.01;
 }
 
-.mediaNightMode h1 {
-  color: #b7c4d0;
-}
+
 
 .media p {
   font-size: 12px;
@@ -282,7 +280,7 @@
 .contNightMode input:focus + .labelName .contentName,
 .contNightMode input:valid + .labelName .contentName {
   color: #ff4081;
-  background-color: rgb(57, 57, 57);
+  background-color: rgb(44,44,44);
 }
 
 .inputError input:focus + .labelName .contentName,
@@ -334,7 +332,7 @@
 }
 
 .loggingBoxNightMode {
-  background-color: rgb(57, 57, 57);
+  background-color: rgb(44,44,44);
 }
 
 .iconNightMode {
@@ -361,3 +359,4 @@
 .companyInput {
   transform: translateY(-170%)!important;
 }
+

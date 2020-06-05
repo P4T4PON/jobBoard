@@ -32,7 +32,7 @@ const SkillList = ({ showSkill, skill, skills, userSkills, toggleSkills, toggleU
 
     return (
         <div className="cities-box">
-            <div className={showSkill ? 'skills cities' : 'cities display-none'}>
+            <div className={showSkill ? 'skills cities' : 'cities display-none'} style={{ marginTop: '-400px' }}>
                 <ul className="city-ul">{renderSkills()}</ul>
             </div>
         </div>

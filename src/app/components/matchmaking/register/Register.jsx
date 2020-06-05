@@ -10,7 +10,7 @@ const Register = () => {
   const isDay = useSelector(state => state.isDay);
 
   return (
-    <div className="regRegister">
+    <div className={isDay ? "regRegister" : 'regRegister regRegisterNightMode'}>
       <div
         className={isDay ? 'loggingBox' : 'loggingBox loggingBoxNightMode'}
       >

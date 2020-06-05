@@ -68,7 +68,7 @@
 }
 
 .passwordChangeContentNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44) ;
 }
 
 .passwordChangeContentNightMode p {
@@ -134,7 +134,7 @@
 }
 
 .deleteAccBoxNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44);
 }
 
 .deleteAccBoxNightMode h2 {

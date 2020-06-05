@@ -18,6 +18,7 @@ const UserDetailsContent = ({ isDay, inputData, handleChange }) => {
                 value={inputData[detail.toLowerCase()]}
                 checkInputLength={handleChange}
                 span={detail}
+                isDay={isDay}
             />
         ))
     }

@@ -14,7 +14,7 @@
 }
 
 .userLoginSidebarNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44);
   color: rgba(255, 255, 255, 0.8)!important
 }
 
@@ -224,7 +224,7 @@
 }
 
 .userLoginContainerNightMode {
-  background-color: rgb(57, 57, 57);
+  background: rgb(33, 33, 33);
 }
 
 .userLoginContainerContent {
@@ -270,7 +270,7 @@
 }
 
 .userDetailsContentNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44) ;
 }
 
 .userDetailsContent h3 {
@@ -372,14 +372,14 @@
 .upiNightMode textarea:valid + .labelName .contentName {
   transform: translateY(-140%);
   color: #ff4081;
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44) ;
   border-radius: 10px;
 }
 
 .upiNightMode textarea:focus + .labelName .contentName {
   transform: translateY(-140%);
   color: #ff4081;
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44) ;
   border-radius: 10px;
 }
 
@@ -409,7 +409,7 @@
 }
 
 .biggInputNightMode textarea {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44);
   color: rgb(183, 196, 208);
 }
 
@@ -455,7 +455,7 @@
 }
 
 .uploadCVContentNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44);
 }
 
 .uploadCVContentNightMode b,
@@ -561,7 +561,7 @@
 }
 
 .yearsOfExperianceContentNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44) ;
 }
 
 .yearsOfExperianceContentNightMode p {
@@ -637,7 +637,7 @@
 }
 
 .socialLinksContentNightMode {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44) ;
 }
 
 .socialLinksContent h3 {
@@ -689,7 +689,7 @@
 
 .upiNightMode input:focus + .labelName .contentName,
 .upiNightMode input:valid + .labelName .contentName {
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44);
   color: #ff4081;
 }
 
@@ -713,5 +713,5 @@
 }
 
 .requiredAlertNightMode{
-  background: rgb(76, 80, 82) none repeat scroll 0% 0%;
+  background: rgb(44,44,44);
 }

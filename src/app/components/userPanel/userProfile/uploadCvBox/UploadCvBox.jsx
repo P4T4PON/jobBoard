@@ -21,6 +21,7 @@ const UploadCvBox = ({ isDay, inputData, handleChange, linkedinError }) => {
                 checkInputLength={handleChange}
                 span={'Linkedin'}
                 error={linkedinError}
+                isDay={isDay}
             />
             <p>
                 <b>Or add as attachment</b>(We accept: PDF)
